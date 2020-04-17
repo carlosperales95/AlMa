@@ -1,0 +1,46 @@
+[
+    {
+        "claim_evidence": "a visual target takes more time to be identified when the spectrum of background is carefully tuned to mask the spectrum of the foreground [ 28 ]", 
+        "claim_score": 0.81444574, 
+        "evidence": "More recent studies also indicate that a visual target takes more time to be identified when the spectrum of background is carefully tuned to mask the spectrum of the foreground [ 28 ] .", 
+        "evidence_score": 0.82658181, 
+        "text": "More recent studies also indicate that a visual target takes more time to be identified when the spectrum of background is carefully tuned to mask the spectrum of the foreground [ 28 ] ."
+    }, 
+    {
+        "claim_score": -2.5165041, 
+        "evidence": "6 .", 
+        "evidence_score": 0.79356372, 
+        "text": "6 ."
+    }, 
+    {
+        "claim_score": -2.4600702, 
+        "evidence": "5.2 .", 
+        "evidence_score": 0.79140545, 
+        "text": "5.2 ."
+    }, 
+    {
+        "claim_score": -0.74460397, 
+        "evidence": "Finally , compared with other detection algorithms , the computational consumption of our method is extremely parsimonious , providing a promising solution to real time systems .", 
+        "evidence_score": 0.45537841, 
+        "text": "Finally , compared with other detection algorithms , the computational consumption of our method is extremely parsimonious , providing a promising solution to real time systems ."
+    }, 
+    {
+        "claim_score": -0.31547171, 
+        "evidence": "It has been reported that different objects with similar frequency spectra interfere with each other [ 2 ] .", 
+        "evidence_score": 0.24608736, 
+        "text": "It has been reported that different objects with similar frequency spectra interfere with each other [ 2 ] ."
+    }, 
+    {
+        "claim_evidence": "frames of a video sequence without considering their continuity , incorporating motion features will greatly extend the application of our method", 
+        "claim_score": 0.1265599, 
+        "evidence": "frames of a video sequence without considering their continuity , incorporating motion features will greatly extend the application of our method .", 
+        "evidence_score": 0.1272755, 
+        "text": "frames of a video sequence without considering their continuity , incorporating motion features will greatly extend the application of our method ."
+    }, 
+    {
+        "claim_score": -1.4412728, 
+        "evidence": "In comparison , our method overlooked the spatial homogeneity of an object .", 
+        "evidence_score": 0.099769045, 
+        "text": "In comparison , our method overlooked the spatial homogeneity of an object ."
+    }
+]

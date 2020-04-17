@@ -1,0 +1,73 @@
+[
+    {
+        "claim_evidence": "It would be nice to understand general principles that make some curriculum strategies work better than othersshould be the subject of future work on curriculum learning", 
+        "claim_score": 0.75193361, 
+        "evidence": "It would be nice to understand general principles that make some curriculum strategies work better than others , and this clearly should be the subject of future work on curriculum learning .", 
+        "evidence_score": 0.54850431, 
+        "text": "It would be nice to understand general principles that make some curriculum strategies work better than others , and this clearly should be the subject of future work on curriculum learning ."
+    }, 
+    {
+        "claim_evidence": "some curriculum strategies work better than otherssome are actually useless for some tasksbetter results could be obtained on our data sets with more appropriate curriculum strategies", 
+        "claim_score": 0.48458135, 
+        "evidence": "It is plausible that some curriculum strategies work better than others , that some are actually useless for some tasks ( as in Rohde and Plaut ( 1999 ) ) , and that better results could be obtained on our data sets with more appropriate curriculum strategies .", 
+        "evidence_score": 0.42872795, 
+        "text": "It is plausible that some curriculum strategies work better than others , that some are actually useless for some tasks ( as in Rohde and Plaut ( 1999 ) ) , and that better results could be obtained on our data sets with more appropriate curriculum strategies ."
+    }, 
+    {
+        "claim_evidence": "capacity is fixed throughout the curriculumcompared to using no curriculum , worse results were obtained with fixed neural resources", 
+        "claim_score": 0.063518368, 
+        "evidence": "However , unlike in our experiments where capacity is fixed throughout the curriculum , they found that compared to using no curriculum , worse results were obtained with fixed neural resources .", 
+        "evidence_score": 0.35694864, 
+        "text": "However , unlike in our experiments where capacity is fixed throughout the curriculum , they found that compared to using no curriculum , worse results were obtained with fixed neural resources ."
+    }, 
+    {
+        "claim_evidence": "significant improvements in generalization can be achieved", 
+        "claim_score": 1.1324365, 
+        "evidence": "The experiments show that significant improvements in generalization can be achieved .", 
+        "evidence_score": 0.32091019, 
+        "text": "The experiments show that significant improvements in generalization can be achieved ."
+    }, 
+    {
+        "claim_score": -0.73774404, 
+        "evidence": "Curriculum Learning Acknowledgements : The authors thank NSERC , CIFAR , and MITACS for support .", 
+        "evidence_score": 0.29145738, 
+        "text": "Curriculum Learning Acknowledgements : The authors thank NSERC , CIFAR , and MITACS for support ."
+    }, 
+    {
+        "claim_score": -0.37553485, 
+        "evidence": "This is important to help us devise better curriculum strategies and automate that process to some extent .", 
+        "evidence_score": 0.27617082, 
+        "text": "This is important to help us devise better curriculum strategies and automate that process to some extent ."
+    }, 
+    {
+        "claim_score": -1.1142429, 
+        "evidence": "Discussion and Future Work We started with the following question left from previous cognitive science research ( Elman , 1993 ; Rohde & Plaut , 1999 ) : can machine learning algorithms benefit from a curriculum strategy ?", 
+        "evidence_score": 0.1669702, 
+        "text": "Discussion and Future Work We started with the following question left from previous cognitive science research ( Elman , 1993 ; Rohde & Plaut , 1999 ) : can machine learning algorithms benefit from a curriculum strategy ?"
+    }, 
+    {
+        "claim_score": -0.64553162, 
+        "evidence": "In both cases , though , an appropriate curriculum strategy acts to help the training process ( faster convergence to better solutions ) , and we even find that it regularizes , giving rise to lower generalization error for the same training error .", 
+        "evidence_score": 0.14698663, 
+        "text": "In both cases , though , an appropriate curriculum strategy acts to help the training process ( faster convergence to better solutions ) , and we even find that it regularizes , giving rise to lower generalization error for the same training error ."
+    }, 
+    {
+        "claim_score": -2.2595207, 
+        "evidence": "In the experiments we performed , that pace was fixed arbitrarily .", 
+        "evidence_score": 0.11779991, 
+        "text": "In the experiments we performed , that pace was fixed arbitrarily ."
+    }, 
+    {
+        "claim_evidence": "curriculum learning has both an effect on the speed of convergence of the training process to a minimumcurriculum learning can be seen as a particular form of continuation method ( a general strategy for global optimization", 
+        "claim_score": 0.29801851, 
+        "evidence": "We hypothesize that curriculum learning has both an effect on the speed of convergence of the training process to a minimum and , in the case of non-convex criteria , on the quality of the local minima obtained : curriculum learning can be seen as a particular form of continuation method ( a general strategy for global optimization of non-convex functions ) .", 
+        "evidence_score": 0.030985303, 
+        "text": "We hypothesize that curriculum learning has both an effect on the speed of convergence of the training process to a minimum and , in the case of non-convex criteria , on the quality of the local minima obtained : curriculum learning can be seen as a particular form of continuation method ( a general strategy for global optimization of non-convex functions ) ."
+    }, 
+    {
+        "claim_score": -2.2889526, 
+        "evidence": "Faster convergence with a curriculum was already observed in ( Krueger & Dayan , 2009 ) .", 
+        "evidence_score": 0.0033069227, 
+        "text": "Faster convergence with a curriculum was already observed in ( Krueger & Dayan , 2009 ) ."
+    }
+]
