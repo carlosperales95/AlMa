@@ -50,6 +50,16 @@ for idx,file in enumerate(onlyfiles):
 
     find_index_safe = paper_full.find('\n1. ')
     find_index = paper_full.find('Abstract')
+    if find_index == -1:
+        find_index = paper_full.find("ABSTRACT")
+
+    if find_index == -1:
+        find_index = paper_full.find("Introduction")
+
+    if find_index == -1:
+        find_index = paper_full.find("INTRODUCTION")
+        
+
     paper_temp = paper_full[find_index:]
     find_index_2 = find_index + paper_temp.find('\n')
 
