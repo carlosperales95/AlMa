@@ -1,79 +1,20 @@
-- ﻿Semantic Role Features for Machine Translation
-
+- ﻿Automatic  Verb Classification Using Distributions of Grammatical Features 
 ---------------------------------------------------------------------------------
-- ﻿Computational Complexity of Statistical Machine  Translation
-
+- ﻿Semantic Role Features for Machine Translation 
 ---------------------------------------------------------------------------------
-- ﻿An Algorithmic Framework for the Decoding Problem in
-Statistical Machine Translation
-
+- ﻿Exploiting the Scope of Negations and Heterogeneous Features for Relation Extraction: A Case Study for Drug-Drug Interaction Extraction 
 ---------------------------------------------------------------------------------
-- ﻿Greedy Decoding for Statistical Machine Translation in Almost Linear Time
-
+- ﻿Exploring Syntactic Features for Relation Extraction using  a Convolution Tree Kernel 
 ---------------------------------------------------------------------------------
-- ﻿Refined Lexicon Models for Statistical Machine Translation using a
-Maximum Entropy Approach
-
+- ﻿Fusion of Multiple Features and Ranking SVM for Web-based English-Chinese OOV Term Translation 
 ---------------------------------------------------------------------------------
-- ﻿The RWTH System for Statistical Translation of Spoken
-Dialogues
-
+- ﻿Multi-Lingual Coreference Resolution With Syntactic  Features 
 ---------------------------------------------------------------------------------
-- ﻿Enriching Entity Translation  Discovery using Selective Temporality
-
+- ﻿Extracting and Ranking  Product Features  in Opinion Documents 
 ---------------------------------------------------------------------------------
-- ﻿Fusion of Multiple Features and Ranking SVM for
-Web-based English-Chinese OOV Term Translation
-
+- ﻿The Effects of Syntactic Features in Automatic Prediction of Morphology 
 ---------------------------------------------------------------------------------
-- ﻿Mining Name Translations from Entity Graph Mapping∗
-
+- ﻿A Bayesian Mixture Model for Part-of-Speech Induction Using Multiple Features 
 ---------------------------------------------------------------------------------
-- ﻿Cross-lingual WSD for Translation Extraction 
-from Comparable Corpora
-
----------------------------------------------------------------------------------
-- ﻿Name-aware Machine Translation
-
-Haibo Li†	Jing Zheng‡	Heng Ji†	Qi Li†	Wen Wang‡
-
----------------------------------------------------------------------------------
-- ﻿Revisiting Context-based Projection Methods for
-Term-Translation Spotting in Comparable Corpora
-
----------------------------------------------------------------------------------
-- ﻿
-NICT-ATR Speech-to-Speech Translation System
-
----------------------------------------------------------------------------------
-- ﻿Improved Statistical Machine Translation by Multiple Chinese Word
-Segmentation
-
----------------------------------------------------------------------------------
-- ﻿Bayesian Word Alignment for Statistical Machine Translation
-
----------------------------------------------------------------------------------
-- ﻿Topic Models for Dynamic Translation Model Adaptation
-
----------------------------------------------------------------------------------
-- ﻿Domain Adaptation in Statistical Machine Translation with Mixture
-Modelling ∗
-
----------------------------------------------------------------------------------
-- ﻿Cache-based Document-level Statistical Machine Translation
-
----------------------------------------------------------------------------------
-- ﻿Bilingual-LSA Based LM Adaptation for Spoken Language Translation
-
----------------------------------------------------------------------------------
-- ﻿Bilingual Word Embeddings for Phrase-Based Machine Translation
-
----------------------------------------------------------------------------------
-- ﻿The Karlsruhe Institute of Technology Translation Systems 
-for the WMT 2011
-
----------------------------------------------------------------------------------
-- ﻿A Class-Based Agreement Model for
-Generating Accurately Inflected Translations
-
+- ﻿Improving  Arabic Dependency Parsing with Form-based and Functional Morphological Features 
 ---------------------------------------------------------------------------------

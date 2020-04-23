@@ -9,7 +9,7 @@ import shutil
 
 
 
-onlyfiles = [f for f in listdir("./sum_corpus/") if isfile(join("./sum_corpus/", f))]
+onlyfiles = [f for f in listdir("./sum_batch/") if isfile(join("./sum_batch/", f))]
 
 num = 0
 try:
@@ -39,7 +39,7 @@ print("Executing MARGOT on papers.....")
 for idx,file in enumerate(onlyfiles):
     print("MARGOT for file: " + file[:-4] + "......... (" + str(idx+1) + "/" + str(len(onlyfiles)) + ")\n" )
 
-    process = Popen(['../MARGOT/run_margot.sh ' + "../AlMa/sum_corpus/" + file + " " + "output"], shell=True, cwd="../MARGOT/")
+    process = Popen(['../MARGOT/run_margot.sh ' + "../AlMa/sum_batch/" + file + " " + "output"], shell=True, cwd="../MARGOT/")
     process.wait()
 
     newPath = shutil.copy('../MARGOT/output/OUTPUT.json', './rank/batch_' + str(num) + '/MARGOT_output/' + file[:-4] + '/')

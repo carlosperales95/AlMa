@@ -1,6 +1,7 @@
 import sys
 from os import listdir
 from os.path import isfile, join
+from utils import *
 
 
 if len(sys.argv) == 1:
@@ -31,24 +32,32 @@ if str(sys.argv[1]) == "-test":
     onlyfiles = [f for f in listdir("./test_corpus/") if isfile(join("./test_corpus/", f))]
     dir="./test_corpus/"
 else:
-    onlyfiles = []
-    onlyfiles.append(str(sys.argv[1]))
-    dir=""
+    if str(sys.argv[1]) == "-batch":
+        onlyfiles = [f for f in listdir("./full_batch/") if isfile(join("./full_batch/", f))]
+        dir="./full_batch/"
+    else:
+        onlyfiles = []
+        onlyfiles.append(str(sys.argv[1]))
+        dir=""
 
 
 for idx,file in enumerate(onlyfiles):
 
     if len(onlyfiles) > 1:
-        output_name = "./sum_corpus/sum_"+file[:-4]+".txt"
+        output_name = "./sum_batch/sum_"+file[:-4]+".txt"
 
     f = open(dir+file, "r")
     f2 = open(output_name, "w")
 
     paper_full =f.read()
 
+    print("Starting paper " + file[:-4])
     print("Found Abstract .... (1/4)")
 
-    find_index_safe = paper_full.find('\n1. ')
+    find_index_safe = paper_full.find('Introduction')
+    if find_index_safe == -1:
+        find_index_safe = paper_full.find("INTRODUCTION")
+
     find_index = paper_full.find('Abstract')
     if find_index == -1:
         find_index = paper_full.find("ABSTRACT")
@@ -58,7 +67,7 @@ for idx,file in enumerate(onlyfiles):
 
     if find_index == -1:
         find_index = paper_full.find("INTRODUCTION")
-        
+
 
     paper_temp = paper_full[find_index:]
     find_index_2 = find_index + paper_temp.find('\n')
@@ -66,15 +75,25 @@ for idx,file in enumerate(onlyfiles):
     f2.write(paper_full[find_index:find_index_2])
     f2.write("\n")
 
+
     paper_temp = paper_full[find_index_2:]
     if find_index_safe > find_index:
-        find_index = find_index_2 + paper_temp.find('\n\n1. ')
+        find_index = find_index_2 + paper_temp.find('Introduction') - 6
+        if paper_temp.find('Introduction') == -1:
+            find_index = find_index_2 + paper_temp.find('INTRODUCTION') - 6
+            #12
+
     else:
         find_index = find_index_2 + paper_temp.find('\n\n2. ')
+        if paper_temp.find('\n\n2. ') == -1:
+            find_index = find_index_2 + paper_temp.find('\n\n2 ')
+            if paper_temp.find('\n\n2 ') == -1:
+                find_index = find_index_2 + paper_temp.find('\n2 ')
 
+    abstract = paper_full[find_index_2:find_index].replace("\n", "")
+    abstract = abstract.replace(" - ", "")
 
-
-    f2.write(paper_full[find_index_2:find_index].replace("\n", " "))
+    f2.write(abstract)
     f2.write("\n")
     f2.write("\n")
 
@@ -91,20 +110,31 @@ for idx,file in enumerate(onlyfiles):
     f2.write(paper_full[find_index:find_index_2])
     f2.write("\n")
 
-    print("Found Conclusion/Discussion .... (3/4)")
+    print("Found Conclusion/Discussion .... (3/5)")
 
-
-    find_index = paper_full.find('Bibliography')
-
+    find_index = paper_temp.find('Acknowledgement')
     if find_index == -1:
-        find_index = paper_temp.find('References')
+        find_index = paper_temp.find('Acknowledgment')
+        if find_index == -1:
+            find_index = paper_full.find('Bibliography')
+            if find_index == -1:
+                find_index = paper_temp.find('References')
 
-    f2.write(paper_full[find_index_2 : find_index_2+find_index].replace("\n", " "))
+    print("Cleaning Conclusion/Discussion .... (4/5)")
+
+    temp_conclusion = paper_full[find_index_2 : (find_index_2 + find_index)]
+    conclusion = figureHunter(temp_conclusion)
+    conclusion = conclusion[:conclusion.rfind('\n')]
+
+    f2.write(conclusion.replace('\n', ''))
     f2.write("\n")
 
-    print("Writing .... (4/4)")
+    print("Writing .... (5/5)")
 
     f.close()
     f2.close()
 
-    print("Script finished.")
+    print("Paper " + file[:-4] + " finished.")
+    print("\n")
+
+print("Script finished")

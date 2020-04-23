@@ -2,10 +2,12 @@ import sys
 import os
 from os import listdir
 from os.path import isfile, join
+import shutil
 
 
 
-if len(sys.argv) < 1:
+
+if len(sys.argv) < 2:
     print("\n")
     print("Topic query or not specified.")
     print("Need at least 1 argument to be passed.")
@@ -15,9 +17,9 @@ if len(sys.argv) < 1:
     sys.exit()
 
 
-#query = str(sys.argv[1])
+topic = str(sys.argv[1]).lower()
 corpus_path = "../scisumm-corpus/data/"
-topic = "Translation"
+#topic = "Translation"
 
 txt_dirs = []
 # r=root, d=directories, f = files
@@ -53,7 +55,6 @@ for file in txt_files:
     f = open(file, "r")
     paper_full =f.read()
 
-    #paper_temp = paper_full[:200]
     index_title = paper_full.find("Abstract")
     if index_title == -1:
         index_title = paper_full.find("ABSTRACT")
@@ -76,7 +77,6 @@ for file in txt_files:
             paper_title2 = paper_title[paper_cut_start:]
             paper_title = paper_title2
             paper_cut_start = paper_title.find('\n')
-            #print(paper_cut_start)
 
             if paper_cut_start == -1:
                 break
@@ -90,17 +90,10 @@ for file in txt_files:
 
     block = 0
     init_block = "empty"
-    #print(paper_doubt)
 
     while block < 2:
 
         paper_doubt_temp = paper_doubt.find("\n")
-        #print(paper_doubt_temp)
-        #print(paper_doubt)
-
-        #print(paper_doubt)
-        #print("CIT: ")
-        #print(paper_doubt_temp)
 
         if paper_doubt_temp > 1:
             block += 1
@@ -112,12 +105,9 @@ for file in txt_files:
         if paper_doubt_temp == -1:
             break
 
-        #print("BL: ")
-        #print(block)
         paper_doubt2 = paper_doubt[paper_doubt_temp+1:]
         paper_doubt = paper_doubt2
-        #print("l'bloq: ")
-        #print(init_block)
+
 
     index = paper_title.find(init_block)
     paper_title =  paper_title[:index]
@@ -138,22 +128,27 @@ for file in txt_files:
                 paper_title2 = paper_title[:res[idx]]
                 break
 
+
     paper_title = paper_title2
-    if paper_title.find(topic) != -1:
+    if paper_title2.lower().find(topic) != -1:
+
         topic_papers.append(file)
-        f2.write("- " + paper_title + "\n")
+        f2.write("- " + paper_title.replace("\n", " ") + "\n")
         f2.write("---------------------------------------------------------------------------------\n")
         #print(paper_title + "\nOTHER PAPER\n\n\n")
     f.close()
 f2.close()
 
 
-print("Papers based on "+topic+": "+str(len(topic_papers)))
+print("Papers based on "+topic+": "+str(len(topic_papers))+"\n\n")
 
 
-
-
-
+for paper in topic_papers:
+    print(paper)
+    filename = paper[ (paper.find("_TXT/") + 5) : ]
+    newPath = shutil.copy(paper, './full_batch/' + filename)
+    print("Moving paper to full_batch folder...")
+    print("\n")
 #if index_title != -1:
     #if index_title >= 90:
     #    paper_title = paper_temp[:index_title]
