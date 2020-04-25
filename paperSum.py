@@ -91,7 +91,7 @@ for idx,file in enumerate(onlyfiles):
                 find_index = find_index_2 + paper_temp.find('\n2 ')
 
     abstract = paper_full[find_index_2:find_index].replace("\n", "")
-    abstract = abstract.replace(" - ", "")
+    abstract = abstract.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' ')
 
     f2.write(abstract)
     f2.write("\n")
@@ -126,7 +126,7 @@ for idx,file in enumerate(onlyfiles):
     conclusion = figureHunter(temp_conclusion)
     conclusion = conclusion[:conclusion.rfind('\n')]
 
-    f2.write(conclusion.replace('\n', ''))
+    f2.write(conclusion.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' '))
     f2.write("\n")
 
     print("Writing .... (5/5)")
