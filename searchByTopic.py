@@ -3,6 +3,9 @@ import os
 from os import listdir
 from os.path import isfile, join
 import shutil
+from utils import *
+from parsingUtils import *
+
 
 
 
@@ -18,119 +21,34 @@ if len(sys.argv) < 2:
 
 
 topic = str(sys.argv[1]).lower()
+if topic.find("_") != -1:
+    topic = topic.replace("_", " ")
+
 corpus_path = "../scisumm-corpus/data/"
-#topic = "Translation"
-
-txt_dirs = []
-# r=root, d=directories, f = files
-for r, d, f in os.walk(corpus_path):
-    for dir in d:
-        if str(dir).find("Documents_TXT") == 0:
-            txt_dirs.append(os.path.join(r, dir))
+txt_folder_name = "Documents_TXT"
 
 
-txt_files = []
-for dir in txt_dirs:
-    count = 0
-    temp = []
-    for r, d, f in os.walk(dir):
-        for file in f:
-            if str(file).find("word") == -1:
-                count = count + 1
-                temp.append(str(dir)+"/"+str(file))
+print("Deleting previous batch......")
+print("\n")
+cleanBatch("./full_batch/")
+cleanBatch("./sum_batch/")
 
-            else:
-                txt_files.append(str(dir)+"/"+str(file))
 
-        if len(f) == count:
-            for tf in temp:
-                txt_files.append(tf)
-
+txt_files = scisummFindTXT(corpus_path, txt_folder_name)
 
 ###SEARCH TOPIC IN TITLE
 topic_papers = []
 f2 = open("titles.txt", "w")
 
+
+
 for file in txt_files:
+
     f = open(file, "r")
     paper_full =f.read()
+    paper_title = findTitle(paper_full)
 
-    index_title = paper_full.find("Abstract")
-    if index_title == -1:
-        index_title = paper_full.find("ABSTRACT")
-
-    if index_title == -1:
-        index_title = paper_full.find("Introduction")
-
-    if index_title == -1:
-        index_title = paper_full.find("INTRODUCTION")
-
-    paper_temp = paper_full[index_title:]
-    find_index_2 = index_title + paper_temp.find('\n')
-
-    paper_title = paper_full[:find_index_2]
-
-    paper_cut_start = paper_title.find("\n")
-    paper_title2 = ""
-    while paper_cut_start < 2:
-            paper_cut_start = 1
-            paper_title2 = paper_title[paper_cut_start:]
-            paper_title = paper_title2
-            paper_cut_start = paper_title.find('\n')
-
-            if paper_cut_start == -1:
-                break
-
-
-    paper_title = paper_title[0:]
-    paper_cut = paper_title.find("\n")
-
-    paper_doubt = paper_title[paper_cut:]
-    paper_doubt_cut = 0
-
-    block = 0
-    init_block = "empty"
-
-    while block < 2:
-
-        paper_doubt_temp = paper_doubt.find("\n")
-
-        if paper_doubt_temp > 1:
-            block += 1
-
-        else:
-            block = 0
-            init_block = paper_doubt[paper_doubt_temp:]
-
-        if paper_doubt_temp == -1:
-            break
-
-        paper_doubt2 = paper_doubt[paper_doubt_temp+1:]
-        paper_doubt = paper_doubt2
-
-
-    index = paper_title.find(init_block)
-    paper_title =  paper_title[:index]
-
-    res = [i for i in range(len(paper_title)) if paper_title.startswith("\n", i)]
-    #print("The start indices of the substrings are : " + str(res))
-
-    gap = 0
-    paper_title2 = ""
-    for idx,r in enumerate(res):
-        if idx < len(res)-1:
-            if res[idx+1]-res[idx] == 2:
-                gap += 1
-            else:
-                gap = 0
-
-            if gap == 2:
-                paper_title2 = paper_title[:res[idx]]
-                break
-
-
-    paper_title = paper_title2
-    if paper_title2.lower().find(topic) != -1:
+    if paper_title.lower().find(topic) != -1:
 
         topic_papers.append(file)
         f2.write("- " + paper_title.replace("\n", " ") + "\n")
@@ -142,22 +60,22 @@ f2.close()
 
 print("Papers based on "+topic+": "+str(len(topic_papers))+"\n\n")
 
-
-for paper in topic_papers:
-    print(paper)
-    filename = paper[ (paper.find("_TXT/") + 5) : ]
-    newPath = shutil.copy(paper, './full_batch/' + filename)
-    print("Moving paper to full_batch folder...")
-    print("\n")
-#if index_title != -1:
-    #if index_title >= 90:
-    #    paper_title = paper_temp[:index_title]
-        #print("**"+paper_title+"\n\n\n\n")
-    #else :
-    #    if index_title < 50:
-    #        paper_temp2 = paper_temp[index_title:]
-    #        index_title2 = paper_temp2.find("\n\n")
-    #        paper_title = paper_temp[:index_title2]
-            #print(paper_title)
-#dirs = walkfs(corpus_dir, "Documents_TXT/")
-#print(dirs[2])
+if(len(topic_papers) > 0):
+    for paper in topic_papers:
+        print(paper)
+        filename = paper[ (paper.find("_TXT/") + 5) : ]
+        newPath = shutil.copy(paper, './full_batch/' + filename)
+        print("Moving paper to full_batch folder...")
+        print("\n")
+    #if index_title != -1:
+        #if index_title >= 90:
+        #    paper_title = paper_temp[:index_title]
+            #print("**"+paper_title+"\n\n\n\n")
+        #else :
+        #    if index_title < 50:
+        #        paper_temp2 = paper_temp[index_title:]
+        #        index_title2 = paper_temp2.find("\n\n")
+        #        paper_title = paper_temp[:index_title2]
+                #print(paper_title)
+    #dirs = walkfs(corpus_dir, "Documents_TXT/")
+    #print(dirs[2])

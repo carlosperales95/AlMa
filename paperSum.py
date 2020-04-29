@@ -2,6 +2,7 @@ import sys
 from os import listdir
 from os.path import isfile, join
 from utils import *
+from parsingUtils import *
 
 
 if len(sys.argv) == 1:
@@ -43,7 +44,7 @@ else:
 
 for idx,file in enumerate(onlyfiles):
 
-    if len(onlyfiles) > 1:
+    if len(onlyfiles) > 0:
         output_name = "./sum_batch/sum_"+file[:-4]+".txt"
 
     f = open(dir+file, "r")
@@ -54,50 +55,19 @@ for idx,file in enumerate(onlyfiles):
     print("Starting paper " + file[:-4])
     print("Found Abstract .... (1/4)")
 
-    find_index_safe = paper_full.find('Introduction')
-    if find_index_safe == -1:
-        find_index_safe = paper_full.find("INTRODUCTION")
+    paper_abstract = getAbstract(paper_full)
 
-    find_index = paper_full.find('Abstract')
-    if find_index == -1:
-        find_index = paper_full.find("ABSTRACT")
-
-    if find_index == -1:
-        find_index = paper_full.find("Introduction")
-
-    if find_index == -1:
-        find_index = paper_full.find("INTRODUCTION")
-
-
-    paper_temp = paper_full[find_index:]
-    find_index_2 = find_index + paper_temp.find('\n')
-
-    f2.write(paper_full[find_index:find_index_2])
-    f2.write("\n")
-
-
-    paper_temp = paper_full[find_index_2:]
-    if find_index_safe > find_index:
-        find_index = find_index_2 + paper_temp.find('Introduction') - 6
-        if paper_temp.find('Introduction') == -1:
-            find_index = find_index_2 + paper_temp.find('INTRODUCTION') - 6
-            #12
-
-    else:
-        find_index = find_index_2 + paper_temp.find('\n\n2. ')
-        if paper_temp.find('\n\n2. ') == -1:
-            find_index = find_index_2 + paper_temp.find('\n\n2 ')
-            if paper_temp.find('\n\n2 ') == -1:
-                find_index = find_index_2 + paper_temp.find('\n2 ')
-
-    abstract = paper_full[find_index_2:find_index].replace("\n", "")
-    abstract = abstract.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' ')
-
-    f2.write(abstract)
+    f2.write(paper_abstract)
     f2.write("\n")
     f2.write("\n")
 
     print("Writing .... (2/4)")
+
+    intro = getIntro(paper_full)
+
+    f2.write(intro)
+    f2.write("\n")
+    f2.write("\n")
 
     find_index = paper_full.find('Conclusion')
 
@@ -107,26 +77,18 @@ for idx,file in enumerate(onlyfiles):
     paper_temp = paper_full[find_index:]
     find_index_2 = find_index + paper_temp.find('\n')
 
-    f2.write(paper_full[find_index:find_index_2])
-    f2.write("\n")
+    line_conclusion = paper_full[find_index:find_index_2] + "\n"
 
     print("Found Conclusion/Discussion .... (3/5)")
 
-    find_index = paper_temp.find('Acknowledgement')
-    if find_index == -1:
-        find_index = paper_temp.find('Acknowledgment')
-        if find_index == -1:
-            find_index = paper_full.find('Bibliography')
-            if find_index == -1:
-                find_index = paper_temp.find('References')
+    temp_conclusion = getConclusion(paper_full)
 
     print("Cleaning Conclusion/Discussion .... (4/5)")
 
-    temp_conclusion = paper_full[find_index_2 : (find_index_2 + find_index)]
     conclusion = figureHunter(temp_conclusion)
     conclusion = conclusion[:conclusion.rfind('\n')]
 
-    f2.write(conclusion.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' '))
+    f2.write(line_conclusion + conclusion.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' '))
     f2.write("\n")
 
     print("Writing .... (5/5)")
@@ -137,4 +99,5 @@ for idx,file in enumerate(onlyfiles):
     print("Paper " + file[:-4] + " finished.")
     print("\n")
 
-print("Script finished")
+
+print("Script finished, paper(s) summarized")
