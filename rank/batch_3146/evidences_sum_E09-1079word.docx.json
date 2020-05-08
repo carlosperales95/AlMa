@@ -1,0 +1,33 @@
+[
+    {
+        "claim_score": -0.81348262, 
+        "evidence": "After providing a separate lexicon of 70,568 types , SVM tool again shows the best accuracy of 95.66 percent .", 
+        "evidence_score": 0.47427689, 
+        "text": "After providing a separate lexicon of 70,568 types , SVM tool again shows the best accuracy of 95.66 percent ."
+    }, 
+    {
+        "claim_score": -2.4521167, 
+        "evidence": "With the small training corpus , all the taggers showed accuracies around 95percent .", 
+        "evidence_score": 0.29643337, 
+        "text": "With the small training corpus , all the taggers showed accuracies around 95percent ."
+    }, 
+    {
+        "claim_score": -1.4760007, 
+        "evidence": "Table 13 : Tagset of Urdu '' Table 17 : Examples of KAF pronoun and KAF demonstrative", 
+        "evidence_score": 0.2501799, 
+        "text": "Table 13 : Tagset of Urdu '' Table 17 : Examples of KAF pronoun and KAF demonstrative"
+    }, 
+    {
+        "claim_score": -0.6394767, 
+        "evidence": "Using the lexicon extracted from the training corpus , SVM tool shows the best accuracy of 94.15 percent .", 
+        "evidence_score": 0.19842033, 
+        "text": "Using the lexicon extracted from the training corpus , SVM tool shows the best accuracy of 94.15 percent ."
+    }, 
+    {
+        "claim_evidence": "The SVM tool shows the best accuracyproblem could be to introduce a separate tag for verbal nouns which will certainly remove the ambiguity between the KER tag and the semantic marker and reduce the ambiguity between verb and noun", 
+        "claim_score": 0.41902971, 
+        "evidence": "The SVM tool shows the best accuracy in 8 One possible solution to this problem could be to introduce a separate tag for verbal nouns which will certainly remove the ambiguity between the KER tag and the semantic marker and reduce the ambiguity between verb and noun .", 
+        "evidence_score": 0.059801518, 
+        "text": "The SVM tool shows the best accuracy in 8 One possible solution to this problem could be to introduce a separate tag for verbal nouns which will certainly remove the ambiguity between the KER tag and the semantic marker and reduce the ambiguity between verb and noun ."
+    }
+]

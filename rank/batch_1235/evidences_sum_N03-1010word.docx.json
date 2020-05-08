@@ -1,0 +1,8 @@
+[
+    {
+        "claim_score": -1.1517583, 
+        "evidence": "We present improvements to a greedy decod ing algorithm for statistical machine translation that reduce its time complexity from at least cubic ( when applied na \u00a8 \u0131vely ) to prac tically linear time1 without sacrificing trans lation quality .", 
+        "evidence_score": 0.50994891, 
+        "text": "We present improvements to a greedy decod ing algorithm for statistical machine translation that reduce its time complexity from at least cubic ( when applied na \u00a8 \u0131vely ) to prac tically linear time1 without sacrificing trans lation quality ."
+    }
+]

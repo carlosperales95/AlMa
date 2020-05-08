@@ -1,0 +1,8 @@
+[
+    {
+        "claim": "the topic of a document can help choose specific translation candidatesphrases and even sentences may be rather ambiguous and thus difficult to understand Conclusionour cache-based approach significantly improves the performance with the help of various cachesap proach may introduce some negative impact on BLEU scores for certain documents", 
+        "claim_score": 0.82856205, 
+        "evidence_score": -0.19869437, 
+        "text": "At least , the topic of a document can help choose specific translation candidates , since when taken out of the context from their document , some words , phrases and even sentences may be rather ambiguous and thus difficult to understand Conclusion We have shown that our cache-based approach significantly improves the performance with the help of various caches , such as the dynamic , static and topic caches , although the cache-based ap proach may introduce some negative impact on BLEU scores for certain documents ."
+    }
+]

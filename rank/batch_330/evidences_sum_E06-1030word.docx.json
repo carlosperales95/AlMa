@@ -1,0 +1,53 @@
+[
+    {
+        "claim_evidence": "carefully collected and filtered web corpora can be as useful as newswire corpora of equivalent sizes", 
+        "claim_score": 0.53450565, 
+        "evidence": "We have demonstrated that carefully collected and filtered web corpora can be as useful as newswire corpora of equivalent sizes .", 
+        "evidence_score": 0.75358208, 
+        "text": "We have demonstrated that carefully collected and filtered web corpora can be as useful as newswire corpora of equivalent sizes ."
+    }, 
+    {
+        "claim_evidence": "for context-sensitive spelling correction the Web Corpus results are bet ter than using a search engine", 
+        "claim_score": 0.36345559, 
+        "evidence": "We show that for context-sensitive spelling correction the Web Corpus results are bet ter than using a search engine .", 
+        "evidence_score": 0.72020908, 
+        "text": "We show that for context-sensitive spelling correction the Web Corpus results are bet ter than using a search engine ."
+    }, 
+    {
+        "claim_evidence": "NLP algorithms tend to perform better when more data is availablestate-of-the-art results for many tasks will come from exploiting web text", 
+        "claim_score": 1.2684352, 
+        "evidence": "As NLP algorithms tend to perform better when more data is available , we expect state-of-the-art results for many tasks will come from exploiting web text .", 
+        "evidence_score": 0.53825855, 
+        "text": "As NLP algorithms tend to perform better when more data is available , we expect state-of-the-art results for many tasks will come from exploiting web text ."
+    }, 
+    {
+        "claim_score": -0.91250845, 
+        "evidence": "Conclusion In this paper , the accuracy of natural language application training on a 10 billion word Web Corpus is compared with other methods using search engine hit counts and corpora of printed text .", 
+        "evidence_score": 0.36712852, 
+        "text": "Conclusion In this paper , the accuracy of natural language application training on a 10 billion word Web Corpus is compared with other methods using search engine hit counts and corpora of printed text ."
+    }, 
+    {
+        "claim_score": -0.3121968, 
+        "evidence": "Although the 10 billion words Web Corpus is smaller than the number of words indexed by search engines , better results have been achieved using the smaller collection .", 
+        "evidence_score": 0.36380362, 
+        "text": "Although the 10 billion words Web Corpus is smaller than the number of words indexed by search engines , better results have been achieved using the smaller collection ."
+    }, 
+    {
+        "claim_score": -0.51175755, 
+        "evidence": "Using the same framework describe here , it is possible to collect a much larger corpus of freely available web text than our 10 billion word corpus .", 
+        "evidence_score": 0.15026739, 
+        "text": "Using the same framework describe here , it is possible to collect a much larger corpus of freely available web text than our 10 billion word corpus ."
+    }, 
+    {
+        "claim_score": -1.1750079, 
+        "evidence": "While most previous work accesses web text through search engine hit counts , we created a Web Corpus by downloading web pages to create a topic-diverse collec tion of 10 billion words of English .", 
+        "evidence_score": 0.13017094, 
+        "text": "While most previous work accesses web text through search engine hit counts , we created a Web Corpus by downloading web pages to create a topic-diverse collec tion of 10 billion words of English ."
+    }, 
+    {
+        "claim_score": -1.5536515, 
+        "evidence": "In the context-sensitive spelling correction task , a simple memory-based learner trained on our Web Corpus achieved better results than method based on search engine queries .", 
+        "evidence_score": 0.11818981, 
+        "text": "In the context-sensitive spelling correction task , a simple memory-based learner trained on our Web Corpus achieved better results than method based on search engine queries ."
+    }
+]

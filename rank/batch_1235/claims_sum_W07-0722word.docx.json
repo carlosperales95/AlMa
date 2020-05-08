@@ -1,0 +1,8 @@
+[
+    {
+        "claim": "Mixture modelling is a standard technique for density estimationhas just started to be explored", 
+        "claim_score": 0.14717622, 
+        "evidence_score": -0.14541269, 
+        "text": "Mixture modelling is a standard technique for density estimation , but its use in sta tistical machine translation ( SMT ) has just started to be explored ."
+    }
+]

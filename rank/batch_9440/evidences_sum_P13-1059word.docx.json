@@ -1,0 +1,8 @@
+[
+    {
+        "claim_score": -0.76724218, 
+        "evidence": "We developed a name-aware MT framework which tightly integrates name tagging and name translation into training and decoding of MT. Experiments on Chinese-English translation demonstrated the effectiveness of our approach over a high-quality MT baseline in both overall translation and name translation , especially for formal genres .", 
+        "evidence_score": 0.31684914, 
+        "text": "We developed a name-aware MT framework which tightly integrates name tagging and name translation into training and decoding of MT. Experiments on Chinese-English translation demonstrated the effectiveness of our approach over a high-quality MT baseline in both overall translation and name translation , especially for formal genres ."
+    }
+]

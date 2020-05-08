@@ -1,0 +1,14 @@
+[
+    {
+        "claim_score": -0.76834843, 
+        "evidence": "We developed a classifier to distinguish temporal/atemporal entities and our proposed method outperforms the state-of-the-art approach by 6.1 percent .", 
+        "evidence_score": 0.71591375, 
+        "text": "We developed a classifier to distinguish temporal/atemporal entities and our proposed method outperforms the state-of-the-art approach by 6.1 percent ."
+    }, 
+    {
+        "claim_score": -0.02580314, 
+        "evidence": "This paper studies named entity trans lation and proposes `` selective temporal ity '' as a new feature , as using temporal features may be harmful for translating `` atemporal '' entities .", 
+        "evidence_score": 0.08778354, 
+        "text": "This paper studies named entity trans lation and proposes `` selective temporal ity '' as a new feature , as using temporal features may be harmful for translating `` atemporal '' entities ."
+    }
+]

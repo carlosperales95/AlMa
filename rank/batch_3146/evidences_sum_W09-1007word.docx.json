@@ -1,0 +1,40 @@
+[
+    {
+        "claim_evidence": "Preliminary results show that the performance of the generic clas sifier approach is only", 
+        "claim_score": 0.7967242, 
+        "evidence": "Preliminary results show that the performance of the generic clas sifier approach is only slightly worse that that of the specific classifier approach .", 
+        "evidence_score": 0.56684891, 
+        "text": "Preliminary results show that the performance of the generic clas sifier approach is only slightly worse that that of the specific classifier approach ."
+    }, 
+    {
+        "claim_score": -0.69747851, 
+        "evidence": "In particular , instead of back-off , smoothing techniques could be investigated to reduce the impact of zero probability problems ( Chen and Goodman , 1996 ) .", 
+        "evidence_score": 0.17803104, 
+        "text": "In particular , instead of back-off , smoothing techniques could be investigated to reduce the impact of zero probability problems ( Chen and Goodman , 1996 ) ."
+    }, 
+    {
+        "claim_score": -0.6822368, 
+        "evidence": "Also , the exact computation of the probabilities using the n-grams , in particular the means of backing-off , has a large impact on the results .", 
+        "evidence_score": 0.10108005, 
+        "text": "Also , the exact computation of the probabilities using the n-grams , in particular the means of backing-off , has a large impact on the results ."
+    }, 
+    {
+        "claim_evidence": "The entire language is mod eledall the information on words in their context is inherently present", 
+        "claim_score": 1.3514896, 
+        "evidence": "The entire language is mod eled , which means that all the information on words in their context is inherently present .", 
+        "evidence_score": 0.041877401, 
+        "text": "The entire language is mod eled , which means that all the information on words in their context is inherently present ."
+    }, 
+    {
+        "claim_score": -0.67061124, 
+        "evidence": "This assumes that the training data we are currently working with is not enough to properly describe the language .", 
+        "evidence_score": 0.0097337978, 
+        "text": "This assumes that the training data we are currently working with is not enough to properly describe the language ."
+    }, 
+    {
+        "claim_score": -0.85462477, 
+        "evidence": "In this article , we investigate the use of language models in the context of confusible disambiguation .", 
+        "evidence_score": 0.0060642564, 
+        "text": "In this article , we investigate the use of language models in the context of confusible disambiguation ."
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "claim_score": -0.72578745, 
+        "evidence": "We apply non-parametric Bayesian language models to segment each noun phrase in these resources according to the statistical behavior of its supposed constituents in text .", 
+        "evidence_score": 0.35001517, 
+        "text": "We apply non-parametric Bayesian language models to segment each noun phrase in these resources according to the statistical behavior of its supposed constituents in text ."
+    }, 
+    {
+        "claim_evidence": "Although supervised segmentation is very competitiveit can be supplemented", 
+        "claim_score": 1.0201417, 
+        "evidence": "Although supervised segmentation is very competitive , we showed that it can be supplemented", 
+        "evidence_score": 0.32272161, 
+        "text": "Although supervised segmentation is very competitive , we showed that it can be supplemented"
+    }, 
+    {
+        "claim_score": -2.0796459, 
+        "evidence": "In this paper , we proposed a new task of Japanese noun phrase segmentation .", 
+        "evidence_score": 0.08668409, 
+        "text": "In this paper , we proposed a new task of Japanese noun phrase segmentation ."
+    }
+]

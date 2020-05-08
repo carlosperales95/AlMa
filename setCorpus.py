@@ -45,3 +45,9 @@ for idx,file in enumerate(onlyfiles):
     newPath = shutil.copy('../MARGOT/output/OUTPUT.json', './rank/batch_' + str(num) + '/MARGOT_output/' + file[:-4] + '/')
     print("\nMoving OUTPUT.json to batch structure...")
     print("\n")
+
+
+
+print("\n")
+print("\n")
+print("Batch can be found in the directory: ./rank/batch_" +  str(num) + "/")

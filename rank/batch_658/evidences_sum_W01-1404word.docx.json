@@ -1,0 +1,21 @@
+[
+    {
+        "claim_score": -0.7780357, 
+        "evidence": "We have tried to obtain a rational transduction that approximates a bigram model , trained on the strings comprising 4 It uses a trie to represent productions ( similar to ELR both source and target sentences and reorder oper ators , as explained in Section 4 .", 
+        "evidence_score": 0.32663521, 
+        "text": "We have tried to obtain a rational transduction that approximates a bigram model , trained on the strings comprising 4 It uses a trie to represent productions ( similar to ELR both source and target sentences and reorder oper ators , as explained in Section 4 ."
+    }, 
+    {
+        "claim_evidence": "a weighted context-free transduction of reasonable quality can be effectively learned from examples", 
+        "claim_score": 0.96533308, 
+        "evidence": "Abstract Existing studies show that a weighted context-free transduction of reasonable quality can be effectively learned from examples .", 
+        "evidence_score": 0.31032187, 
+        "text": "Abstract Existing studies show that a weighted context-free transduction of reasonable quality can be effectively learned from examples ."
+    }, 
+    {
+        "claim_score": -2.01806, 
+        "evidence": "Some of these studies have concentrated on finite-state or extended finite-state machinery , such as ( Vilar and others , 1999 ) , others have chosen models closer to context-free grammars and context-free transduction , such as ( Alshawi et al. , 2000 ; Watanabe et al. , 2000 ; Yamamoto and Matsumoto , 2000 ) , and yet other studies can not be comfortably assigned to either of these two frameworks , such as ( Brown and others , 1990 ) and ( Tillmann and Ney , 2000 ) .", 
+        "evidence_score": 0.010778253, 
+        "text": "Some of these studies have concentrated on finite-state or extended finite-state machinery , such as ( Vilar and others , 1999 ) , others have chosen models closer to context-free grammars and context-free transduction , such as ( Alshawi et al. , 2000 ; Watanabe et al. , 2000 ; Yamamoto and Matsumoto , 2000 ) , and yet other studies can not be comfortably assigned to either of these two frameworks , such as ( Brown and others , 1990 ) and ( Tillmann and Ney , 2000 ) ."
+    }
+]

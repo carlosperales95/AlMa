@@ -1,0 +1,28 @@
+[
+    {
+        "claim_evidence": "The entire language is mod eledall the information on words in their context is inherently present", 
+        "claim_score": 1.3514896, 
+        "evidence": "The entire language is mod eled , which means that all the information on words in their context is inherently present .", 
+        "evidence_score": 0.041877401, 
+        "text": "The entire language is mod eled , which means that all the information on words in their context is inherently present ."
+    }, 
+    {
+        "claim_evidence": "Preliminary results show that the performance of the generic clas sifier approach is only", 
+        "claim_score": 0.7967242, 
+        "evidence": "Preliminary results show that the performance of the generic clas sifier approach is only slightly worse that that of the specific classifier approach .", 
+        "evidence_score": 0.56684891, 
+        "text": "Preliminary results show that the performance of the generic clas sifier approach is only slightly worse that that of the specific classifier approach ."
+    }, 
+    {
+        "claim": "it is easy to add new sets of confusibles without retraining", 
+        "claim_score": 0.42199581, 
+        "evidence_score": -0.35124, 
+        "text": "The main advantage of using language models as generic classifiers is that it is easy to add new sets of confusibles without retraining or adding additional classifiers ."
+    }, 
+    {
+        "claim": "text is typically tackled using specifically trained machine learning clas sifiers", 
+        "claim_score": 0.18502584, 
+        "evidence_score": -0.63516414, 
+        "text": "The problem of identifying and correcting confusibles , i.e. context-sensitive spelling errors , in text is typically tackled using specifically trained machine learning clas sifiers ."
+    }
+]

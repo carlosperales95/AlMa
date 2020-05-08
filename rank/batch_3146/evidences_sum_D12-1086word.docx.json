@@ -1,0 +1,20 @@
+[
+    {
+        "claim_score": -0.459523, 
+        "evidence": "\u2022 We demonstrated that using paradigmatic representations of word context and modeling cooccurrences of word and context types with the S-CODE learning framework give superior results when compared to a baseline bigram model .", 
+        "evidence_score": 0.45029482, 
+        "text": "\u2022 We demonstrated that using paradigmatic representations of word context and modeling cooccurrences of word and context types with the S-CODE learning framework give superior results when compared to a baseline bigram model ."
+    }, 
+    {
+        "claim_score": -0.98737044, 
+        "evidence": "\u2022 We extended the S-CODE framework to incorporate morphological and orthographic features and improved the state-of-the-art in unsupervised part-of-speech induction to 80percent many-to-one accuracy .", 
+        "evidence_score": 0.14255364, 
+        "text": "\u2022 We extended the S-CODE framework to incorporate morphological and orthographic features and improved the state-of-the-art in unsupervised part-of-speech induction to 80percent many-to-one accuracy ."
+    }, 
+    {
+        "claim_score": -0.3614906, 
+        "evidence": "Our main contributions can be summarized as follows : \u2022 We introduced substitute vectors as paradigmatic representations of word context and demonstrated their use in syntactic category acquisition .", 
+        "evidence_score": 0.043370782, 
+        "text": "Our main contributions can be summarized as follows : \u2022 We introduced substitute vectors as paradigmatic representations of word context and demonstrated their use in syntactic category acquisition ."
+    }
+]

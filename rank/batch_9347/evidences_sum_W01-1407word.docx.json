@@ -1,0 +1,26 @@
+[
+    {
+        "claim_score": -1.0672783, 
+        "evidence": "Table 4 : Effect of two-level lexicon combination .", 
+        "evidence_score": 0.5794696, 
+        "text": "Table 4 : Effect of two-level lexicon combination ."
+    }, 
+    {
+        "claim_score": -0.98610016, 
+        "evidence": "Introduction Introduction The statistical approach to machine translation has become widely accepted in the last few years .", 
+        "evidence_score": 0.06785959, 
+        "text": "Introduction Introduction The statistical approach to machine translation has become widely accepted in the last few years ."
+    }, 
+    {
+        "claim_score": -1.533042, 
+        "evidence": "We will investigate this in the future .", 
+        "evidence_score": 0.039763995, 
+        "text": "We will investigate this in the future ."
+    }, 
+    {
+        "claim_score": -0.96097894, 
+        "evidence": "It has been successfully applied to realistic tasks in various national and international research programs .", 
+        "evidence_score": 0.019727017, 
+        "text": "It has been successfully applied to realistic tasks in various national and international research programs ."
+    }
+]

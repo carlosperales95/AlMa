@@ -1,0 +1,14 @@
+[
+    {
+        "claim_score": -1.0999571, 
+        "evidence": "We achieved best results when the model training data , MT tuning set , and MT evaluation set con", 
+        "evidence_score": 0.38291427, 
+        "text": "We achieved best results when the model training data , MT tuning set , and MT evaluation set con"
+    }, 
+    {
+        "claim_score": -2.7820836, 
+        "evidence": "( 1 ) .", 
+        "evidence_score": 0.0031156679, 
+        "text": "( 1 ) ."
+    }
+]

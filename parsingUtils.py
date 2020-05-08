@@ -46,6 +46,11 @@ def deleteFigure(index, conclusion):
     index_n = conclusion.find(index)
     temp = conclusion[index_n:]
     table_i = temp.find("Table ")
+    if table_i == -1:
+        table_i = temp.find("Figure ")
+    if table_i == -1:
+        table_i = temp.find("\r\n\r\n")
+
     temp2 = temp[table_i:]
     temp1 = conclusion[:index_n]
     conclusion = temp1 + " " + temp2
@@ -54,16 +59,28 @@ def deleteFigure(index, conclusion):
 
 
 
-def figureHunter(conclusion):
+def removeFigureTags(conclusion, name):
 
-    paper_cut = conclusion.find("\n")
-    conclusion_doubt = conclusion[paper_cut:]
+    while conclusion.find(name) != -1:
+
+        index = conclusion.find(name)
+        conclusion_temp = conclusion [index: ]
+        index_end = conclusion_temp.find("\n")
+        conclusion2 = conclusion[:index] + conclusion_temp[index_end:]
+        conclusion = conclusion2
+
+    return conclusion
+
+
+
+def figureHunter(conclusion_doubt):
 
     index = "All"
 
-    while index is not "None":
+    while index != "None":
         index = findFigureIndex(conclusion_doubt)
-        conclusion_doubt = deleteFigure(index, conclusion_doubt)
+        conclusion_doubt2 = deleteFigure(index, conclusion_doubt)
+        conclusion_doubt = conclusion_doubt2
 
     return conclusion_doubt
 
@@ -174,7 +191,7 @@ def getAbstract(paper_full):
     paper_temp = paper_full[find_index:]
     find_index_2 = find_index + paper_temp.find('\n')
 
-    line_abstract = paper_full[find_index:find_index_2] + "\n"
+    #line_abstract = paper_full[find_index:find_index_2] + "\n"
 
     paper_temp = paper_full[find_index_2:]
     if find_index_safe > find_index:
@@ -192,7 +209,7 @@ def getAbstract(paper_full):
 
     abstract = paper_full[find_index_2:find_index].replace("\n", "")
     abstract = abstract.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' ')
-    abstract = line_abstract + abstract
+    #abstract = line_abstract + abstract
 
     return abstract
 
@@ -202,58 +219,64 @@ def getConclusion(paper_full):
 
 
     find_index = paper_full.find('Conclusion')
-
     if find_index == -1:
-        find_index = paper_full.find('Discussion')
+        find_index = paper_full.find('CONCLUSION')
+        if find_index == -1:
+            find_index = paper_full.find('Conclusions')
+            if find_index == -1:
+                find_index = paper_full.find('CONCLUSIONS')
+                if find_index == -1:
+                    find_index = paper_full.find('Discussion')
+                    if find_index == -1:
+                        find_index = paper_full.find('DISCUSSION')
+                        if find_index == -1:
+                            find_index = paper_full.find('Contribution')
+                            if find_index == -1:
+                                find_index = paper_full.find('CONTRIBUTION')
+                                if find_index == -1:
+                                    find_index = paper_full.find('Summary')
+                                    if find_index == -1:
+                                        find_index = paper_full.find('SUMMARY')
+
 
     paper_temp = paper_full[find_index:]
-    find_index_2 = find_index + paper_temp.find('\n')
+    find_index_2 = paper_temp.find('\n')
+    paper_temp = paper_full[find_index + find_index_2 : ]
 
     find_index = paper_temp.find('Acknowledgement')
     if find_index == -1:
-        find_index = paper_temp.find('Acknowledgment')
+        find_index = paper_temp.find('ACKNOWLEDGEMENT')
         if find_index == -1:
-            find_index = paper_full.find('Bibliography')
+            find_index = paper_temp.find('Acknowledgment')
             if find_index == -1:
-                find_index = paper_temp.find('References')
+                find_index = paper_temp.find('ACKNOWLEDGMENT')
+                if find_index == -1:
+                    find_index = paper_full.find('Bibliography')
+                    if find_index == -1:
+                        find_index = paper_temp.find('BIBLIOGRAPHY')
+                        if find_index == -1:
+                            find_index = paper_temp.find('References')
+                            if find_index == -1:
+                                find_index = paper_temp.find('REFERENCES')
 
 
-    temp_conclusion = paper_full[find_index_2 : (find_index_2 + find_index)]
+    temp_conclusion = paper_temp[ :find_index]
 
     return temp_conclusion
 
 
 
-def getIntro(paper_full):
+def getSection(paper_full, section_name, next_section):
 
+    print(next_section)
 
-    find_index = paper_full.find("Introduction")
+    find_index = paper_full.find(section_name)
+    find_next_index = paper_full.find(next_section)
 
-    if find_index == -1:
-        find_index = paper_full.find("INTRODUCTION")
+    section = paper_full[find_index + len(section_name) : find_next_index]
 
+    #section = figureHunter(section)
 
-    paper_temp = paper_full[find_index:]
-    find_index_2 = find_index + paper_temp.find('\n')
+    section = section.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' ')
 
-    line_intro = paper_full[find_index:find_index_2] + "\n"
-
-    print(line_intro)
-    find_index = 1000
-    while find_index > 3000:
-        find_index = paper_temp.find('\r\n2. ')
-        if paper_temp.find('\r\n2. ') == -1:
-            find_index = paper_temp.find('\n\n2. ')
-            if paper_temp.find('\n\n2. ') == -1:
-                find_index = paper_temp.find('\n\n2 ')
-                if paper_temp.find('\n\n2 ') == -1:
-                    break
-
-    print(find_index)
-
-    intro = paper_temp[:find_index]
-    print(paper_temp[:find_index])
-    intro = intro.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' ')
-    intro = line_intro + intro
-
-    return intro
+    return section

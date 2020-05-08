@@ -1,0 +1,14 @@
+[
+    {
+        "claim_score": -1.0672783, 
+        "evidence": "Table 4 : Effect of two-level lexicon combination .", 
+        "evidence_score": 0.5794696, 
+        "text": "Table 4 : Effect of two-level lexicon combination ."
+    }, 
+    {
+        "claim_score": -1.533042, 
+        "evidence": "We will investigate this in the future .", 
+        "evidence_score": 0.039763995, 
+        "text": "We will investigate this in the future ."
+    }
+]

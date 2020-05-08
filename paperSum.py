@@ -3,6 +3,8 @@ from os import listdir
 from os.path import isfile, join
 from utils import *
 from parsingUtils import *
+from xmlUtils import *
+
 
 
 if len(sys.argv) == 1:
@@ -44,8 +46,18 @@ else:
 
 for idx,file in enumerate(onlyfiles):
 
+
     if len(onlyfiles) > 0:
         output_name = "./sum_batch/sum_"+file[:-4]+".txt"
+
+    if file.find("word.docx.txt") != -1:
+        xml_name = "./batch_xml/" + file[:file.find("word.docx.txt")] + ".xml"
+    else:
+        xml_name = "./batch_xml/" + file[:-4] + ".xml"
+
+
+    sections = xmlToSections(xml_name)
+
 
     f = open(dir+file, "r")
     f2 = open(output_name, "w")
@@ -63,21 +75,13 @@ for idx,file in enumerate(onlyfiles):
 
     print("Writing .... (2/4)")
 
-    intro = getIntro(paper_full)
+    intro = getSection(paper_full, sections[0], sections[1])
 
-    f2.write(intro)
-    f2.write("\n")
-    f2.write("\n")
+    if len(intro) < 10000:
+        f2.write(intro)
+        f2.write("\n")
+        f2.write("\n")
 
-    find_index = paper_full.find('Conclusion')
-
-    if find_index == -1:
-        find_index = paper_full.find('Discussion')
-
-    paper_temp = paper_full[find_index:]
-    find_index_2 = find_index + paper_temp.find('\n')
-
-    line_conclusion = paper_full[find_index:find_index_2] + "\n"
 
     print("Found Conclusion/Discussion .... (3/5)")
 
@@ -86,9 +90,11 @@ for idx,file in enumerate(onlyfiles):
     print("Cleaning Conclusion/Discussion .... (4/5)")
 
     conclusion = figureHunter(temp_conclusion)
+    conclusion = removeFigureTags(conclusion, "Figure ")
+    conclusion = removeFigureTags(conclusion, "Table ")
     conclusion = conclusion[:conclusion.rfind('\n')]
 
-    f2.write(line_conclusion + conclusion.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' '))
+    f2.write(conclusion.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' '))
     f2.write("\n")
 
     print("Writing .... (5/5)")

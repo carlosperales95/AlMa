@@ -1,0 +1,14 @@
+[
+    {
+        "claim": "As there is a large overlaplog-linear combination would result in more improvement of the translation quality than the combination by linear interpolation does", 
+        "claim_score": 1.0811026, 
+        "evidence_score": -0.14901122, 
+        "text": "As there is a large overlap between the modeled events in the combined probabilistic models , we assume that log-linear combination would result in more improvement of the translation quality than the combination by linear interpolation does ."
+    }, 
+    {
+        "claim": "human mind is very well capable of deriving dependenciespresented methods for a better exploitation of the bilingual training data for statistical machine translationbase form", 
+        "claim_score": 0.19558014, 
+        "evidence_score": -0.25461167, 
+        "text": "Nevertheless , they found that human mind is very well capable of deriving dependencies such Conclusion and Future Work We have presented methods for a better exploitation of the bilingual training data for statistical machine translation by explicitly taking into account the interdependencies of the different derivatives of the same base form ."
+    }
+]

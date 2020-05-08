@@ -1,0 +1,20 @@
+[
+    {
+        "claim_score": -0.31533658, 
+        "evidence": "Abstract Mixture modelling is a standard technique for density estimation , but its use in sta tistical machine translation ( SMT ) has just started to be explored .", 
+        "evidence_score": 0.12883705, 
+        "text": "Abstract Mixture modelling is a standard technique for density estimation , but its use in sta tistical machine translation ( SMT ) has just started to be explored ."
+    }, 
+    {
+        "claim_score": -0.87094577, 
+        "evidence": "Experiments carried out on the Europarl and News Commentary corpora show the potential interest and limi tations of mixture modelling .", 
+        "evidence_score": 0.053611018, 
+        "text": "Experiments carried out on the Europarl and News Commentary corpora show the potential interest and limi tations of mixture modelling ."
+    }, 
+    {
+        "claim_score": -1.4244545, 
+        "evidence": "\u2217 Work supported by the EC ( FEDER ) and the Spanish MEC under grant TIN2006-15694-CO2-01 , the Conseller \u00b4 \u0131a d\u2019Empresa , Universitat i Cie ` ncia Generalitat Valenciana under contract GV06/252 , the Universidad Polite \u00b4 cnica de Valencia with ILETA project and Ministerio de Educacio \u00b4 n y Ciencia", 
+        "evidence_score": 0.0031875541, 
+        "text": "\u2217 Work supported by the EC ( FEDER ) and the Spanish MEC under grant TIN2006-15694-CO2-01 , the Conseller \u00b4 \u0131a d\u2019Empresa , Universitat i Cie ` ncia Generalitat Valenciana under contract GV06/252 , the Universidad Polite \u00b4 cnica de Valencia with ILETA project and Ministerio de Educacio \u00b4 n y Ciencia ."
+    }
+]

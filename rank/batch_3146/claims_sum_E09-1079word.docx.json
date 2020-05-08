@@ -1,0 +1,9 @@
+[
+    {
+        "claim_evidence": "The SVM tool shows the best accuracyproblem could be to introduce a separate tag for verbal nouns which will certainly remove the ambiguity between the KER tag and the semantic marker and reduce the ambiguity between verb and noun", 
+        "claim_score": 0.41902971, 
+        "evidence": "The SVM tool shows the best accuracy in 8 One possible solution to this problem could be to introduce a separate tag for verbal nouns which will certainly remove the ambiguity between the KER tag and the semantic marker and reduce the ambiguity between verb and noun .", 
+        "evidence_score": 0.059801518, 
+        "text": "The SVM tool shows the best accuracy in 8 One possible solution to this problem could be to introduce a separate tag for verbal nouns which will certainly remove the ambiguity between the KER tag and the semantic marker and reduce the ambiguity between verb and noun ."
+    }
+]

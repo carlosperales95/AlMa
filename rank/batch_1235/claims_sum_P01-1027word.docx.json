@@ -1,0 +1,9 @@
+[
+    {
+        "claim_evidence": "it is possible to significantly decrease train ing and test corpus perplexity of the translation models", 
+        "claim_score": 0.28591355, 
+        "evidence": "We show that it is possible to significantly decrease train ing and test corpus perplexity of the translation models .", 
+        "evidence_score": 1.0588199, 
+        "text": "We show that it is possible to significantly decrease train ing and test corpus perplexity of the translation models ."
+    }
+]

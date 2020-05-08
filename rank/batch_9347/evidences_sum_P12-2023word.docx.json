@@ -1,0 +1,21 @@
+[
+    {
+        "claim_evidence": "incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamicallysignificant performance gains", 
+        "claim_score": 0.31338205, 
+        "evidence": "We show that incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamically biasing SMT towards relevant translations , as evidenced by significant performance gains .", 
+        "evidence_score": 0.43800079, 
+        "text": "We show that incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamically biasing SMT towards relevant translations , as evidenced by significant performance gains ."
+    }, 
+    {
+        "claim_score": -0.85253199, 
+        "evidence": "Conditioning lexical probabilities on the topic biases translations toward topic relevant output , resulting in significant im provements of up to 1 BLEU and 3 TER on Chinese to English translation over a strong baseline .", 
+        "evidence_score": 0.21680934, 
+        "text": "Conditioning lexical probabilities on the topic biases translations toward topic relevant output , resulting in significant im provements of up to 1 BLEU and 3 TER on Chinese to English translation over a strong baseline ."
+    }, 
+    {
+        "claim_score": -1.0121336, 
+        "evidence": "We can construct a topic model once on the training data , and use it infer topics on any test set to adapt the translation model .", 
+        "evidence_score": 0.14625465, 
+        "text": "We can construct a topic model once on the training data , and use it infer topics on any test set to adapt the translation model ."
+    }
+]

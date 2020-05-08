@@ -1,0 +1,15 @@
+[
+    {
+        "claim_evidence": "incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamicallysignificant performance gains", 
+        "claim_score": 0.31338205, 
+        "evidence": "We show that incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamically biasing SMT towards relevant translations , as evidenced by significant performance gains .", 
+        "evidence_score": 0.43800079, 
+        "text": "We show that incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamically biasing SMT towards relevant translations , as evidenced by significant performance gains ."
+    }, 
+    {
+        "claim": "biases machine translation systems toward relevant transla tions based on topic-specific contextswhere topics are induced in an unsupervised way using topiccan be thought of as inducing subcorpora for adaptation with out any human annotation", 
+        "claim_score": 0.25467021, 
+        "evidence_score": -0.55510014, 
+        "text": "Abstract We propose an approach that biases machine translation systems toward relevant transla tions based on topic-specific contexts , where topics are induced in an unsupervised way using topic models ; this can be thought of as inducing subcorpora for adaptation with out any human annotation ."
+    }
+]

@@ -1,0 +1,8 @@
+[
+    {
+        "claim_score": -0.38518553, 
+        "evidence": "1 Some of the resources and open source programs developed in this work are made freely available for research purpose at http://nlp Conclusions and Future Work We developed a name-aware MT framework which tightly integrates name tagging and name translation into training and decoding of MT. Experiments on Chinese-English translation demonstrated the effectiveness of our approach over a high-quality MT baseline in both overall translation and name translation , especially for formal genres .", 
+        "evidence_score": 0.30639517, 
+        "text": "1 Some of the resources and open source programs developed in this work are made freely available for research purpose at http://nlp Conclusions and Future Work We developed a name-aware MT framework which tightly integrates name tagging and name translation into training and decoding of MT. Experiments on Chinese-English translation demonstrated the effectiveness of our approach over a high-quality MT baseline in both overall translation and name translation , especially for formal genres ."
+    }
+]

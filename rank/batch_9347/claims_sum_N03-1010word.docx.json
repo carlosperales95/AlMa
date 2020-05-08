@@ -1,0 +1,14 @@
+[
+    {
+        "claim": "such algorithms can perform resonably well", 
+        "claim_score": 0.81781931, 
+        "evidence_score": -0.55596426, 
+        "text": "Empirical evidence suggests that such algorithms can perform resonably well ."
+    }, 
+    {
+        "claim": "Experimental data suggests a good correlation between G1 decoding", 
+        "claim_score": 0.28694216, 
+        "evidence_score": -0.2997077, 
+        "text": "Experimental data suggests a good correlation between G1 decoding"
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "claim_evidence": "NLP algorithms tend to perform better when more data is availablestate-of-the-art results for many tasks will come from exploiting web text", 
+        "claim_score": 1.2684352, 
+        "evidence": "As NLP algorithms tend to perform better when more data is available , we expect state-of-the-art results for many tasks will come from exploiting web text .", 
+        "evidence_score": 0.53825855, 
+        "text": "As NLP algorithms tend to perform better when more data is available , we expect state-of-the-art results for many tasks will come from exploiting web text ."
+    }, 
+    {
+        "claim_evidence": "carefully collected and filtered web corpora can be as useful as newswire corpora of equivalent sizes", 
+        "claim_score": 0.53450565, 
+        "evidence": "We have demonstrated that carefully collected and filtered web corpora can be as useful as newswire corpora of equivalent sizes .", 
+        "evidence_score": 0.75358208, 
+        "text": "We have demonstrated that carefully collected and filtered web corpora can be as useful as newswire corpora of equivalent sizes ."
+    }, 
+    {
+        "claim_evidence": "for context-sensitive spelling correction the Web Corpus results are bet ter than using a search engine", 
+        "claim_score": 0.36345559, 
+        "evidence": "We show that for context-sensitive spelling correction the Web Corpus results are bet ter than using a search engine .", 
+        "evidence_score": 0.72020908, 
+        "text": "We show that for context-sensitive spelling correction the Web Corpus results are bet ter than using a search engine ."
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "claim_evidence": "high quality entity translation is essential in cross-lingual information access and trans lationit is non-trivial to achieveentity translation", 
+        "claim_score": 0.68849216, 
+        "evidence": "While high quality entity translation is essential in cross-lingual information access and trans lation , it is non-trivial to achieve , due to the challenge that entity translation , though typically bearing pronunciation similarity , can also be arbitrary , e.g. , Jackie Chan and fiX : it ( pronounced Cheng Long ) .", 
+        "evidence_score": 0.15178645, 
+        "text": "While high quality entity translation is essential in cross-lingual information access and trans lation , it is non-trivial to achieve , due to the challenge that entity translation , though typically bearing pronunciation similarity , can also be arbitrary , e.g. , Jackie Chan and fiX : it ( pronounced Cheng Long ) ."
+    }, 
+    {
+        "claim_score": -1.3384523, 
+        "evidence": "To achieve this goal , we de Table 3 : Precision , Recall , and F1-score of Baseline , Engkoo , Google , and Ours over test sets Ti Table 4 : Precision , Recall , and F1-score of Engkoo , Google , and Ours with head and tail datasets", 
+        "evidence_score": 0.12852646, 
+        "text": "To achieve this goal , we de Table 3 : Precision , Recall , and F1-score of Baseline , Engkoo , Google , and Ours over test sets Ti Table 4 : Precision , Recall , and F1-score of Engkoo , Google , and Ours with head and tail datasets"
+    }
+]

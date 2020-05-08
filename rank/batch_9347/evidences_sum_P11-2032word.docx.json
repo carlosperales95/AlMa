@@ -1,0 +1,26 @@
+[
+    {
+        "claim_score": -1.2770063, 
+        "evidence": "10 The GIZA + + implementation of Model 4 artificially limits fertility parameter values to at most nine .", 
+        "evidence_score": 0.66114691, 
+        "text": "10 The GIZA + + implementation of Model 4 artificially limits fertility parameter values to at most nine ."
+    }, 
+    {
+        "claim_score": -0.81366039, 
+        "evidence": "We show that Bayesian inference outperforms EM in all of the tested language pairs , domains and data set sizes , by up to 2.99 BLEU points .", 
+        "evidence_score": 0.40844196, 
+        "text": "We show that Bayesian inference outperforms EM in all of the tested language pairs , domains and data set sizes , by up to 2.99 BLEU points ."
+    }, 
+    {
+        "claim_score": -1.4693852, 
+        "evidence": "As a result of this increase , Bayesian Model 1 alignments perform close to or better than the state-of-the-art IBM 9 Each target word was aligned to the source candidate that co-occured the most number of times with that target word in the entire parallel corpus .", 
+        "evidence_score": 0.39974283, 
+        "text": "As a result of this increase , Bayesian Model 1 alignments perform close to or better than the state-of-the-art IBM 9 Each target word was aligned to the source candidate that co-occured the most number of times with that target word in the entire parallel corpus ."
+    }, 
+    {
+        "claim_score": -0.35608143, 
+        "evidence": "However , being a maxi mization ( e.g. , maximum likelihood ( ML ) or maximum a posteriori ( MAP ) ) technique , EM is generally prone to local optima and overfitti Conclusion We developed a Gibbs sampling-based Bayesian inference method for IBM Model 1 word alignments and showed that it outperforms EM estimation in terms of translation BLEU scores across several language pairs , data sizes and domains .", 
+        "evidence_score": 0.22544708, 
+        "text": "However , being a maxi mization ( e.g. , maximum likelihood ( ML ) or maximum a posteriori ( MAP ) ) technique , EM is generally prone to local optima and overfitti Conclusion We developed a Gibbs sampling-based Bayesian inference method for IBM Model 1 word alignments and showed that it outperforms EM estimation in terms of translation BLEU scores across several language pairs , data sizes and domains ."
+    }
+]

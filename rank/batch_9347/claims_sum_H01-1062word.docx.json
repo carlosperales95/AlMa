@@ -1,0 +1,16 @@
+[
+    {
+        "claim_evidence": "speech translation has to cope with a lack of conventional syntactic structures because the structures of spontaneous speech differ from that of written language", 
+        "claim_score": 0.45905175, 
+        "evidence": "Even without recognition errors , speech translation has to cope with a lack of conventional syntactic structures because the structures of spontaneous speech differ from that of written language .", 
+        "evidence_score": 0.30602606, 
+        "text": "Even without recognition errors , speech translation has to cope with a lack of conventional syntactic structures because the structures of spontaneous speech differ from that of written language ."
+    }, 
+    {
+        "claim_evidence": "speech and especially spontaneous speech poses additional difficulties for the task of automatic translation", 
+        "claim_score": 0.20337802, 
+        "evidence": "INTRODUCTION INTRODUCTION In comparison with written language , speech and especially spontaneous speech poses additional difficulties for the task of automatic translation .", 
+        "evidence_score": 0.46499627, 
+        "text": "INTRODUCTION INTRODUCTION In comparison with written language , speech and especially spontaneous speech poses additional difficulties for the task of automatic translation ."
+    }
+]

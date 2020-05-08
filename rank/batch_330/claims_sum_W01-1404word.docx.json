@@ -1,0 +1,15 @@
+[
+    {
+        "claim_evidence": "a weighted context-free transduction of reasonable quality can be effectively learned from examples", 
+        "claim_score": 0.96533308, 
+        "evidence": "Abstract Existing studies show that a weighted context-free transduction of reasonable quality can be effectively learned from examples .", 
+        "evidence_score": 0.31032187, 
+        "text": "Abstract Existing studies show that a weighted context-free transduction of reasonable quality can be effectively learned from examples ."
+    }, 
+    {
+        "claim": "context-free transduction has a relatively high accuracymay be difficult to obtain robustness without further increasing the time costs", 
+        "claim_score": 0.33359997, 
+        "evidence_score": -0.32660543, 
+        "text": "Conclusions For our application , context-free transduction has a relatively high accuracy , but it also has a high time consumption , and it may be difficult to obtain robustness without further increasing the time costs ."
+    }
+]
