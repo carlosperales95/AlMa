@@ -1,0 +1,15 @@
+[
+    {
+        "claim_score": -0.62483772, 
+        "evidence": "We have shown how cross-lingual WSD can be applied to bilingual lexicon extraction from comparable corpora .", 
+        "evidence_score": 0.50234564, 
+        "text": "We have shown how cross-lingual WSD can be applied to bilingual lexicon extraction from comparable corpora ."
+    }, 
+    {
+        "claim_evidence": "data-driven semantic analysis can help to circumvent the need for an external seed dictionarya prerequisite for translation extraction from parallel corpora", 
+        "claim_score": 0.70275141, 
+        "evidence": "The results show that data-driven semantic analysis can help to circumvent the need for an external seed dictionary , traditionally considered as a prerequisite for translation extraction from parallel corpora .", 
+        "evidence_score": 0.041705166, 
+        "text": "The results show that data-driven semantic analysis can help to circumvent the need for an external seed dictionary , traditionally considered as a prerequisite for translation extraction from parallel corpora ."
+    }
+]

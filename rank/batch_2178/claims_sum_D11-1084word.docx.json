@@ -1,0 +1,9 @@
+[
+    {
+        "claim_evidence": "our cache-based approach significantly improves the performance with the help of various cachescache-based ap-proach may introduce some negative impact onBLEU scores for certain documents.In the futurehow to re-flect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments", 
+        "claim_score": 0.52212082, 
+        "evidence": "We have shown that our cache-based approach significantly improves the performance with the help of various caches , such as the dynamic , static and topic caches , although the cache-based ap-proach may introduce some negative impact onBLEU scores for certain documents.In the future , we will further explore how to re-flect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments , such as named entity , event and coreference .", 
+        "evidence_score": 0.16279275, 
+        "text": "We have shown that our cache-based approach significantly improves the performance with the help of various caches , such as the dynamic , static and topic caches , although the cache-based ap-proach may introduce some negative impact onBLEU scores for certain documents.In the future , we will further explore how to re-flect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments , such as named entity , event and coreference ."
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "claim_score": -0.95657012, 
+        "evidence": "Statistical machine translation systems are usually trained on a large amount of bilingual sentence pairs and translate one sentence at a time , ignoring document-level information .", 
+        "evidence_score": 0.2237554, 
+        "text": "Statistical machine translation systems are usually trained on a large amount of bilingual sentence pairs and translate one sentence at a time , ignoring document-level information ."
+    }, 
+    {
+        "claim_evidence": "our cache-based approach significantly improves the performance with the help of various cachescache-based ap-proach may introduce some negative impact onBLEU scores for certain documents.In the futurehow to re-flect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments", 
+        "claim_score": 0.52212082, 
+        "evidence": "We have shown that our cache-based approach significantly improves the performance with the help of various caches , such as the dynamic , static and topic caches , although the cache-based ap-proach may introduce some negative impact onBLEU scores for certain documents.In the future , we will further explore how to re-flect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments , such as named entity , event and coreference .", 
+        "evidence_score": 0.16279275, 
+        "text": "We have shown that our cache-based approach significantly improves the performance with the help of various caches , such as the dynamic , static and topic caches , although the cache-based ap-proach may introduce some negative impact onBLEU scores for certain documents.In the future , we will further explore how to re-flect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments , such as named entity , event and coreference ."
+    }, 
+    {
+        "claim_score": -1.099675, 
+        "evidence": "In particular , three new features are designed to explore various kinds of document-level information in above three kinds of caches .", 
+        "evidence_score": 0.094788654, 
+        "text": "In particular , three new features are designed to explore various kinds of document-level information in above three kinds of caches ."
+    }, 
+    {
+        "claim_score": -0.28377832, 
+        "evidence": "Evaluation shows the effectiveness of our cache-based approach to document-level translation with the performance improvement of 0.81 in BLUE score over Moses .", 
+        "evidence_score": 0.02488721, 
+        "text": "Evaluation shows the effectiveness of our cache-based approach to document-level translation with the performance improvement of 0.81 in BLUE score over Moses ."
+    }
+]

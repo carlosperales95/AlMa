@@ -1,0 +1,600 @@
+We show that incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamically biasing SMT towards relevant translations , as evidenced by significant performance gains .
+[('We', 'PRP'), ('show', 'VBP'), ('that', 'IN'), ('incorporating', 'VBG'), ('lexical', 'JJ'), ('weighting', 'NN'), ('features', 'NNS'), ('conditioned', 'VBN'), ('on', 'IN'), ('soft', 'JJ'), ('domain', 'NN'), ('membership', 'NN'), ('directly', 'RB'), ('into', 'IN'), ('our', 'PRP$'), ('model', 'NN'), ('is', 'VBZ'), ('an', 'DT'), ('effective', 'JJ'), ('strategy', 'NN'), ('for', 'IN'), ('dynamically', 'RB'), ('biasing', 'VBG'), ('SMT', 'NNP'), ('towards', 'NNS'), ('relevant', 'JJ'), ('translations', 'NNS'), (',', ','), ('as', 'IN'), ('evidenced', 'VBN'), ('by', 'IN'), ('significant', 'JJ'), ('performance', 'NN'), ('gains', 'NNS'), ('.', '.')]
+METHOD|soft domain membership
+TECH|SMT
+METHOD|performance gains
+
+
+Conditioning lexical probabilities on the topic biases translations toward topicrelevant output , resulting in significant improvements of up to 1 BLEU and 3 TER on Chinese to English translation over a strong baseline .
+[('Conditioning', 'VBG'), ('lexical', 'JJ'), ('probabilities', 'NNS'), ('on', 'IN'), ('the', 'DT'), ('topic', 'NN'), ('biases', 'VBZ'), ('translations', 'NNS'), ('toward', 'IN'), ('topicrelevant', 'JJ'), ('output', 'NN'), (',', ','), ('resulting', 'VBG'), ('in', 'IN'), ('significant', 'JJ'), ('improvements', 'NNS'), ('of', 'IN'), ('up', 'IN'), ('to', 'TO'), ('1', 'CD'), ('BLEU', 'NNP'), ('and', 'CC'), ('3', 'CD'), ('TER', 'NN'), ('on', 'IN'), ('Chinese', 'NNP'), ('to', 'TO'), ('English', 'VB'), ('translation', 'NN'), ('over', 'IN'), ('a', 'DT'), ('strong', 'JJ'), ('baseline', 'NN'), ('.', '.')]
+METHOD|topic biases
+TECH|BLEU
+METHOD|English translation
+
+
+We can construct a topic model once on the training data , and use it infer topics on any test set to adapt the translation model .
+[('We', 'PRP'), ('can', 'MD'), ('construct', 'VB'), ('a', 'DT'), ('topic', 'NN'), ('model', 'NN'), ('once', 'RB'), ('on', 'IN'), ('the', 'DT'), ('training', 'NN'), ('data', 'NNS'), (',', ','), ('and', 'CC'), ('use', 'VB'), ('it', 'PRP'), ('infer', 'VB'), ('topics', 'NNS'), ('on', 'IN'), ('any', 'DT'), ('test', 'NN'), ('set', 'VBN'), ('to', 'TO'), ('adapt', 'VB'), ('the', 'DT'), ('translation', 'NN'), ('model', 'NN'), ('.', '.')]
+METHOD|topic model
+METHOD|translation model
+
+
+We show that it is possible to significantly decrease training and test corpus perplexity of the translation models .
+[('We', 'PRP'), ('show', 'VBP'), ('that', 'IN'), ('it', 'PRP'), ('is', 'VBZ'), ('possible', 'JJ'), ('to', 'TO'), ('significantly', 'RB'), ('decrease', 'VB'), ('training', 'NN'), ('and', 'CC'), ('test', 'NN'), ('corpus', 'NN'), ('perplexity', 'NN'), ('of', 'IN'), ('the', 'DT'), ('translation', 'NN'), ('models', 'NNS'), ('.', '.')]
+
+
+We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality .
+[('We', 'PRP'), ('believe', 'VBP'), ('that', 'IN'), ('by', 'IN'), ('performing', 'VBG'), ('a', 'DT'), ('rescoring', 'NN'), ('on', 'IN'), ('translation', 'NN'), ('word', 'NN'), ('graphs', 'NN'), ('we', 'PRP'), ('will', 'MD'), ('obtain', 'VB'), ('a', 'DT'), ('more', 'RBR'), ('significant', 'JJ'), ('improvement', 'NN'), ('in', 'IN'), ('translation', 'NN'), ('quality', 'NN'), ('.', '.')]
+
+
+We have been able to obtain a significant better test corpus perplexity and also a slight improvement in translation quality .
+[('We', 'PRP'), ('have', 'VBP'), ('been', 'VBN'), ('able', 'JJ'), ('to', 'TO'), ('obtain', 'VB'), ('a', 'DT'), ('significant', 'JJ'), ('better', 'JJR'), ('test', 'NN'), ('corpus', 'NN'), ('perplexity', 'NN'), ('and', 'CC'), ('also', 'RB'), ('a', 'DT'), ('slight', 'JJ'), ('improvement', 'NN'), ('in', 'IN'), ('translation', 'NN'), ('quality', 'NN'), ('.', '.')]
+
+
+In addition , we perform a rescoring of - Best lists using our maximum entropy model and thereby yield an improvement in translation quality .
+[('In', 'IN'), ('addition', 'NN'), (',', ','), ('we', 'PRP'), ('perform', 'VBP'), ('a', 'DT'), ('rescoring', 'NN'), ('of', 'IN'), ('-', ':'), ('Best', 'JJS'), ('lists', 'NNS'), ('using', 'VBG'), ('our', 'PRP$'), ('maximum', 'JJ'), ('entropy', 'JJ'), ('model', 'NN'), ('and', 'CC'), ('thereby', 'RB'), ('yield', 'VB'), ('an', 'DT'), ('improvement', 'NN'), ('in', 'IN'), ('translation', 'NN'), ('quality', 'NN'), ('.', '.')]
+METHOD|- Best
+
+
+Statistical machine translation systems are usually trained on a large amount of bilingual sentence pairs and translate one sentence at a time , ignoring document-level information .
+[('Statistical', 'JJ'), ('machine', 'NN'), ('translation', 'NN'), ('systems', 'NNS'), ('are', 'VBP'), ('usually', 'RB'), ('trained', 'VBN'), ('on', 'IN'), ('a', 'DT'), ('large', 'JJ'), ('amount', 'NN'), ('of', 'IN'), ('bilingual', 'JJ'), ('sentence', 'NN'), ('pairs', 'NNS'), ('and', 'CC'), ('translate', 'VB'), ('one', 'CD'), ('sentence', 'NN'), ('at', 'IN'), ('a', 'DT'), ('time', 'NN'), (',', ','), ('ignoring', 'VBG'), ('document-level', 'JJ'), ('information', 'NN'), ('.', '.')]
+TECH|sentence
+METHOD|document-level
+METHOD|machine translation
+
+
+We have shown that our cache-based approach significantly improves the performance with the help of various caches , such as the dynamic , static and topic caches , although the cache-based ap-proach may introduce some negative impact onBLEU scores for certain documents.In the future , we will further explore how to re-flect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments , such as named entity , event and coreference .
+[('We', 'PRP'), ('have', 'VBP'), ('shown', 'VBN'), ('that', 'IN'), ('our', 'PRP$'), ('cache-based', 'JJ'), ('approach', 'NN'), ('significantly', 'RB'), ('improves', 'VBZ'), ('the', 'DT'), ('performance', 'NN'), ('with', 'IN'), ('the', 'DT'), ('help', 'NN'), ('of', 'IN'), ('various', 'JJ'), ('caches', 'NNS'), (',', ','), ('such', 'JJ'), ('as', 'IN'), ('the', 'DT'), ('dynamic', 'NN'), (',', ','), ('static', 'JJ'), ('and', 'CC'), ('topic', 'JJ'), ('caches', 'NNS'), (',', ','), ('although', 'IN'), ('the', 'DT'), ('cache-based', 'JJ'), ('ap-proach', 'NN'), ('may', 'MD'), ('introduce', 'VB'), ('some', 'DT'), ('negative', 'JJ'), ('impact', 'NN'), ('onBLEU', 'NN'), ('scores', 'NNS'), ('for', 'IN'), ('certain', 'JJ'), ('documents.In', 'VBP'), ('the', 'DT'), ('future', 'NN'), (',', ','), ('we', 'PRP'), ('will', 'MD'), ('further', 'RB'), ('explore', 'VB'), ('how', 'WRB'), ('to', 'TO'), ('re-flect', 'JJ'), ('document', 'NN'), ('divergence', 'NN'), ('during', 'IN'), ('training', 'NN'), ('and', 'CC'), ('dynamically', 'RB'), ('adjust', 'JJ'), ('cache', 'NN'), ('weights', 'NNS'), ('according', 'VBG'), ('to', 'TO'), ('different', 'JJ'), ('documents.There', 'EX'), ('are', 'VBP'), ('many', 'JJ'), ('useful', 'JJ'), ('components', 'NNS'), ('in', 'IN'), ('trainingdocuments', 'NNS'), (',', ','), ('such', 'JJ'), ('as', 'IN'), ('named', 'VBN'), ('entity', 'NN'), (',', ','), ('event', 'NN'), ('and', 'CC'), ('coreference', 'NN'), ('.', '.')]
+METHOD|cache-based
+METHOD|topic caches
+METHOD|cache-based
+TECH|-
+TECH|-
+METHOD|divergence during
+METHOD|coreference .
+
+
+In particular , three new features are designed to explore various kinds of document-level information in above three kinds of caches .
+[('In', 'IN'), ('particular', 'JJ'), (',', ','), ('three', 'CD'), ('new', 'JJ'), ('features', 'NNS'), ('are', 'VBP'), ('designed', 'VBN'), ('to', 'TO'), ('explore', 'VB'), ('various', 'JJ'), ('kinds', 'NNS'), ('of', 'IN'), ('document-level', 'JJ'), ('information', 'NN'), ('in', 'IN'), ('above', 'IN'), ('three', 'CD'), ('kinds', 'NNS'), ('of', 'IN'), ('caches', 'NNS'), ('.', '.')]
+METHOD|document-level
+
+
+Evaluation shows the effectiveness of our cache-based approach to document-level translation with the performance improvement of 0.81 in BLUE score over Moses .
+[('Evaluation', 'NN'), ('shows', 'VBZ'), ('the', 'DT'), ('effectiveness', 'NN'), ('of', 'IN'), ('our', 'PRP$'), ('cache-based', 'JJ'), ('approach', 'NN'), ('to', 'TO'), ('document-level', 'JJ'), ('translation', 'NN'), ('with', 'IN'), ('the', 'DT'), ('performance', 'NN'), ('improvement', 'NN'), ('of', 'IN'), ('0.81', 'CD'), ('in', 'IN'), ('BLUE', 'NNP'), ('score', 'NN'), ('over', 'IN'), ('Moses', 'NNP'), ('.', '.')]
+METHOD|cache-based
+METHOD|-level translation
+TECH|BLUE
+TECH|Moses
+
+
+Considering our semantic features are the most basic ones , using more sophisticated features ( e.g. , the head words and their translations of the sourceside semantic roles ) provides a possible direction for further experimentation .
+[('Considering', 'VBG'), ('our', 'PRP$'), ('semantic', 'JJ'), ('features', 'NNS'), ('are', 'VBP'), ('the', 'DT'), ('most', 'RBS'), ('basic', 'JJ'), ('ones', 'NNS'), (',', ','), ('using', 'VBG'), ('more', 'RBR'), ('sophisticated', 'JJ'), ('features', 'NNS'), ('(', '('), ('e.g', 'NN'), ('.', '.'), (',', ','), ('the', 'DT'), ('head', 'NN'), ('words', 'NNS'), ('and', 'CC'), ('their', 'PRP$'), ('translations', 'NNS'), ('of', 'IN'), ('the', 'DT'), ('sourceside', 'JJ'), ('semantic', 'JJ'), ('roles', 'NNS'), (')', ')'), ('provides', 'VBZ'), ('a', 'DT'), ('possible', 'JJ'), ('direction', 'NN'), ('for', 'IN'), ('further', 'JJ'), ('experimentation', 'NN'), ('.', '.')]
+TECH|(
+
+
+Our evaluation results empirically validated the accuracy of our algorithm over real-life datasets , and showed the effectiveness on our proposed perspective .
+[('Our', 'PRP$'), ('evaluation', 'NN'), ('results', 'NNS'), ('empirically', 'RB'), ('validated', 'VBD'), ('the', 'DT'), ('accuracy', 'NN'), ('of', 'IN'), ('our', 'PRP$'), ('algorithm', 'NN'), ('over', 'IN'), ('real-life', 'JJ'), ('datasets', 'NNS'), (',', ','), ('and', 'CC'), ('showed', 'VBD'), ('the', 'DT'), ('effectiveness', 'NN'), ('on', 'IN'), ('our', 'PRP$'), ('proposed', 'VBN'), ('perspective', 'NN'), ('.', '.')]
+METHOD|real-life datasets
+
+
+To achieve this goal , we de veloped a graph alignment algorithm that iteratively reinforces the matching similarity exploiting relational similarity and then extracts correct matches .
+[('To', 'TO'), ('achieve', 'VB'), ('this', 'DT'), ('goal', 'NN'), (',', ','), ('we', 'PRP'), ('de', 'VBP'), ('veloped', 'VBD'), ('a', 'DT'), ('graph', 'JJ'), ('alignment', 'NN'), ('algorithm', 'NN'), ('that', 'WDT'), ('iteratively', 'RB'), ('reinforces', 'VBZ'), ('the', 'DT'), ('matching', 'JJ'), ('similarity', 'NN'), ('exploiting', 'VBG'), ('relational', 'JJ'), ('similarity', 'NN'), ('and', 'CC'), ('then', 'RB'), ('extracts', 'NNS'), ('correct', 'VBP'), ('matches', 'NNS'), ('.', '.')]
+
+
+We evaluated the adapted LM on SMT and found that the evaluation metrics are crucial to reflect the actual improvement in performance .
+[('We', 'PRP'), ('evaluated', 'VBD'), ('the', 'DT'), ('adapted', 'JJ'), ('LM', 'NNP'), ('on', 'IN'), ('SMT', 'NNP'), ('and', 'CC'), ('found', 'VBD'), ('that', 'IN'), ('the', 'DT'), ('evaluation', 'NN'), ('metrics', 'NNS'), ('are', 'VBP'), ('crucial', 'JJ'), ('to', 'TO'), ('reflect', 'VB'), ('the', 'DT'), ('actual', 'JJ'), ('improvement', 'NN'), ('in', 'IN'), ('performance', 'NN'), ('.', '.')]
+TECH|SMT
+
+
+Results showed that our approach significantly reduces the word perplexity on the target language in both cases using ASR hypotheses and manual transcripts .
+[('Results', 'NNS'), ('showed', 'VBD'), ('that', 'IN'), ('our', 'PRP$'), ('approach', 'NN'), ('significantly', 'RB'), ('reduces', 'VBZ'), ('the', 'DT'), ('word', 'NN'), ('perplexity', 'NN'), ('on', 'IN'), ('the', 'DT'), ('target', 'NN'), ('language', 'NN'), ('in', 'IN'), ('both', 'DT'), ('cases', 'NNS'), ('using', 'VBG'), ('ASR', 'NNP'), ('hypotheses', 'NNS'), ('and', 'CC'), ('manual', 'JJ'), ('transcripts', 'NNS'), ('.', '.')]
+TECH|ASR
+
+
+On Chinese to English speech and text translation the proposed bLSA framework successfully reduced word perplexity of the English LM by over 27percent for a unigram LM and up to 13.6 percent for a 4-gram LM .
+[('On', 'IN'), ('Chinese', 'NNP'), ('to', 'TO'), ('English', 'VB'), ('speech', 'NN'), ('and', 'CC'), ('text', 'JJ'), ('translation', 'NN'), ('the', 'DT'), ('proposed', 'VBN'), ('bLSA', 'NN'), ('framework', 'NN'), ('successfully', 'RB'), ('reduced', 'VBN'), ('word', 'NN'), ('perplexity', 'NN'), ('of', 'IN'), ('the', 'DT'), ('English', 'NNP'), ('LM', 'NNP'), ('by', 'IN'), ('over', 'IN'), ('27percent', 'CD'), ('for', 'IN'), ('a', 'DT'), ('unigram', 'JJ'), ('LM', 'NNP'), ('and', 'CC'), ('up', 'RB'), ('to', 'TO'), ('13.6', 'CD'), ('percent', 'NN'), ('for', 'IN'), ('a', 'DT'), ('4-gram', 'JJ'), ('LM', 'NNP'), ('.', '.')]
+METHOD|text translation
+TECH|English
+TECH|4-gram
+
+
+We also found the correlation between the CWS F-score and SMT BLEU score was very weak .
+[('We', 'PRP'), ('also', 'RB'), ('found', 'VBD'), ('the', 'DT'), ('correlation', 'NN'), ('between', 'IN'), ('the', 'DT'), ('CWS', 'NNP'), ('F-score', 'NNP'), ('and', 'CC'), ('SMT', 'NNP'), ('BLEU', 'NNP'), ('score', 'NN'), ('was', 'VBD'), ('very', 'RB'), ('weak', 'JJ'), ('.', '.')]
+TECH|CWS
+METHOD|-
+TECH|SMT
+
+
+We found these approaches were very effective in improving quality of translations .
+[('We', 'PRP'), ('found', 'VBD'), ('these', 'DT'), ('approaches', 'NNS'), ('were', 'VBD'), ('very', 'RB'), ('effective', 'JJ'), ('in', 'IN'), ('improving', 'VBG'), ('quality', 'NN'), ('of', 'IN'), ('translations', 'NNS'), ('.', '.')]
+
+
+We tested dictionarybased and CRF-based approaches and found there was no significant difference between the two in the qualty of the resulting translations .
+[('We', 'PRP'), ('tested', 'VBD'), ('dictionarybased', 'JJ'), ('and', 'CC'), ('CRF-based', 'JJ'), ('approaches', 'NNS'), ('and', 'CC'), ('found', 'VBD'), ('there', 'EX'), ('was', 'VBD'), ('no', 'DT'), ('significant', 'JJ'), ('difference', 'NN'), ('between', 'IN'), ('the', 'DT'), ('two', 'CD'), ('in', 'IN'), ('the', 'DT'), ('qualty', 'NN'), ('of', 'IN'), ('the', 'DT'), ('resulting', 'JJ'), ('translations', 'NNS'), ('.', '.')]
+TECH|CRF
+
+
+We have published a much more detailed paper ( Zhang et al. , 2008 ) to describe the relations between CWS and SMT .
+[('We', 'PRP'), ('have', 'VBP'), ('published', 'VBN'), ('a', 'DT'), ('much', 'RB'), ('more', 'JJR'), ('detailed', 'JJ'), ('paper', 'NN'), ('(', '('), ('Zhang', 'NNP'), ('et', 'RB'), ('al', 'RB'), ('.', '.'), (',', ','), ('2008', 'CD'), (')', ')'), ('to', 'TO'), ('describe', 'VB'), ('the', 'DT'), ('relations', 'NNS'), ('between', 'IN'), ('CWS', 'NNP'), ('and', 'CC'), ('SMT', 'NNP'), ('.', '.')]
+TECH|CWS
+TECH|SMT
+
+
+Secondly , we investigated the advantages and disadvantages of various CWS approaches , both dictionary-based and CRF-based , and built CWSs using these approaches to examine their effect on translations .
+[('Secondly', 'RB'), (',', ','), ('we', 'PRP'), ('investigated', 'VBD'), ('the', 'DT'), ('advantages', 'NNS'), ('and', 'CC'), ('disadvantages', 'NNS'), ('of', 'IN'), ('various', 'JJ'), ('CWS', 'NNP'), ('approaches', 'NNS'), (',', ','), ('both', 'DT'), ('dictionary-based', 'JJ'), ('and', 'CC'), ('CRF-based', 'JJ'), (',', ','), ('and', 'CC'), ('built', 'VBD'), ('CWSs', 'NNP'), ('using', 'VBG'), ('these', 'DT'), ('approaches', 'NNS'), ('to', 'TO'), ('examine', 'VB'), ('their', 'PRP$'), ('effect', 'NN'), ('on', 'IN'), ('translations', 'NNS'), ('.', '.')]
+TECH|CRF
+TECH|CWS
+
+
+We proposed a new approach to linear interpolation of translation features .
+[('We', 'PRP'), ('proposed', 'VBD'), ('a', 'DT'), ('new', 'JJ'), ('approach', 'NN'), ('to', 'TO'), ('linear', 'JJ'), ('interpolation', 'NN'), ('of', 'IN'), ('translation', 'NN'), ('features', 'NNS'), ('.', '.')]
+
+
+This approach produced a significant improvement in translation and achieved the best BLEU score of all the CWSschemes .
+[('This', 'DT'), ('approach', 'NN'), ('produced', 'VBD'), ('a', 'DT'), ('significant', 'JJ'), ('improvement', 'NN'), ('in', 'IN'), ('translation', 'NN'), ('and', 'CC'), ('achieved', 'VBD'), ('the', 'DT'), ('best', 'JJS'), ('BLEU', 'NNP'), ('score', 'NN'), ('of', 'IN'), ('all', 'PDT'), ('the', 'DT'), ('CWSschemes', 'NNP'), ('.', '.')]
+TECH|BLEU
+
+
+We investigated the effect of CWS on SMT from two points of view .
+[('We', 'PRP'), ('investigated', 'VBD'), ('the', 'DT'), ('effect', 'NN'), ('of', 'IN'), ('CWS', 'NNP'), ('on', 'IN'), ('SMT', 'NNP'), ('from', 'IN'), ('two', 'CD'), ('points', 'NNS'), ('of', 'IN'), ('view', 'NN'), ('.', '.')]
+TECH|CWS
+TECH|SMT
+
+
+Chinese word segmentation ( CWS ) is a necessary step in Chinese-English statistical machine translation ( SMT ) and its performance has an impact on the results of SMT .
+[('Chinese', 'JJ'), ('word', 'NN'), ('segmentation', 'NN'), ('(', '('), ('CWS', 'NNP'), (')', ')'), ('is', 'VBZ'), ('a', 'DT'), ('necessary', 'JJ'), ('step', 'NN'), ('in', 'IN'), ('Chinese-English', 'JJ'), ('statistical', 'JJ'), ('machine', 'NN'), ('translation', 'NN'), ('(', '('), ('SMT', 'NNP'), (')', ')'), ('and', 'CC'), ('its', 'PRP$'), ('performance', 'NN'), ('has', 'VBZ'), ('an', 'DT'), ('impact', 'NN'), ('on', 'IN'), ('the', 'DT'), ('results', 'NNS'), ('of', 'IN'), ('SMT', 'NNP'), ('.', '.')]
+TECH|CWS
+METHOD|-English
+METHOD|machine translation
+TECH|SMT
+TECH|SMT
+METHOD|word segmentation
+
+
+We will investigate this in the future .
+[('We', 'PRP'), ('will', 'MD'), ('investigate', 'VB'), ('this', 'DT'), ('in', 'IN'), ('the', 'DT'), ('future', 'NN'), ('.', '.')]
+
+
+We evaluated our approach on CRL NE data and obtained a higher F-measure than existing approaches that do not use structural information .
+[('We', 'PRP'), ('evaluated', 'VBD'), ('our', 'PRP$'), ('approach', 'NN'), ('on', 'IN'), ('CRL', 'NNP'), ('NE', 'NNP'), ('data', 'NNS'), ('and', 'CC'), ('obtained', 'VBD'), ('a', 'DT'), ('higher', 'JJR'), ('F-measure', 'NN'), ('than', 'IN'), ('existing', 'VBG'), ('approaches', 'NNS'), ('that', 'WDT'), ('do', 'VBP'), ('not', 'RB'), ('use', 'VB'), ('structural', 'JJ'), ('information', 'NN'), ('.', '.')]
+TECH|CRL
+METHOD|-measure
+
+
+We also conducted experiments on IREX NE data and an NE-annotated web corpus and conﬁrmed that structural information improves the performance of NER .
+[('We', 'PRP'), ('also', 'RB'), ('conducted', 'VBD'), ('experiments', 'NNS'), ('on', 'IN'), ('IREX', 'NNP'), ('NE', 'NNP'), ('data', 'NN'), ('and', 'CC'), ('an', 'DT'), ('NE-annotated', 'JJ'), ('web', 'NN'), ('corpus', 'NN'), ('and', 'CC'), ('conﬁrmed', 'VBD'), ('that', 'IN'), ('structural', 'JJ'), ('information', 'NN'), ('improves', 'VBZ'), ('the', 'DT'), ('performance', 'NN'), ('of', 'IN'), ('NER', 'NNP'), ('.', '.')]
+TECH|IREX
+METHOD|-annotated
+TECH|NER
+
+
+As a consequence , the performance of NER was improved by using structural information and our approach achieved a higher F-measure than existing approaches .
+[('As', 'IN'), ('a', 'DT'), ('consequence', 'NN'), (',', ','), ('the', 'DT'), ('performance', 'NN'), ('of', 'IN'), ('NER', 'NNP'), ('was', 'VBD'), ('improved', 'VBN'), ('by', 'IN'), ('using', 'VBG'), ('structural', 'JJ'), ('information', 'NN'), ('and', 'CC'), ('our', 'PRP$'), ('approach', 'NN'), ('achieved', 'VBD'), ('a', 'DT'), ('higher', 'JJR'), ('F-measure', 'NN'), ('than', 'IN'), ('existing', 'VBG'), ('approaches', 'NNS'), ('.', '.')]
+TECH|NER
+METHOD|-measure
+
+
+We introduced four types of structural information to an SVM-based NER system : cache features , coreference relations , syntactic features and caseframe features , and conducted NER experiments on three data .
+[('We', 'PRP'), ('introduced', 'VBD'), ('four', 'CD'), ('types', 'NNS'), ('of', 'IN'), ('structural', 'JJ'), ('information', 'NN'), ('to', 'TO'), ('an', 'DT'), ('SVM-based', 'JJ'), ('NER', 'NNP'), ('system', 'NN'), (':', ':'), ('cache', 'NN'), ('features', 'NNS'), (',', ','), ('coreference', 'NN'), ('relations', 'NNS'), (',', ','), ('syntactic', 'JJ'), ('features', 'NNS'), ('and', 'CC'), ('caseframe', 'NN'), ('features', 'NNS'), (',', ','), ('and', 'CC'), ('conducted', 'VBD'), ('NER', 'NNP'), ('experiments', 'NNS'), ('on', 'IN'), ('three', 'CD'), ('data', 'NNS'), ('.', '.')]
+TECH|SVM
+TECH|NER
+TECH|NER
+
+
+We developed a name-aware MT framework which tightly integrates name tagging and name translation into training and decoding of MT. Experiments on Chinese-English translation demonstrated the effectiveness of our approach over a high-quality MT baseline in both overall translation and name translation , especially for formal genres .
+[('We', 'PRP'), ('developed', 'VBD'), ('a', 'DT'), ('name-aware', 'JJ'), ('MT', 'NNP'), ('framework', 'NN'), ('which', 'WDT'), ('tightly', 'RB'), ('integrates', 'VBZ'), ('name', 'NN'), ('tagging', 'VBG'), ('and', 'CC'), ('name', 'JJ'), ('translation', 'NN'), ('into', 'IN'), ('training', 'NN'), ('and', 'CC'), ('decoding', 'NN'), ('of', 'IN'), ('MT', 'NNP'), ('.', '.'), ('Experiments', 'NNS'), ('on', 'IN'), ('Chinese-English', 'JJ'), ('translation', 'NN'), ('demonstrated', 'VBD'), ('the', 'DT'), ('effectiveness', 'NN'), ('of', 'IN'), ('our', 'PRP$'), ('approach', 'NN'), ('over', 'IN'), ('a', 'DT'), ('high-quality', 'JJ'), ('MT', 'NNP'), ('baseline', 'NN'), ('in', 'IN'), ('both', 'DT'), ('overall', 'JJ'), ('translation', 'NN'), ('and', 'CC'), ('name', 'NN'), ('translation', 'NN'), (',', ','), ('especially', 'RB'), ('for', 'IN'), ('formal', 'JJ'), ('genres', 'NNS'), ('.', '.')]
+METHOD|-aware
+TECH|Chinese
+METHOD|-English translation
+METHOD|-quality
+
+
+Experiments on Chinese-English translation demonstrated the effectiveness of our approach on enhancing the quality of overall translation , name translation and word alignment over a high-quality MT baseline1 .
+[('Experiments', 'NNS'), ('on', 'IN'), ('Chinese-English', 'JJ'), ('translation', 'NN'), ('demonstrated', 'VBD'), ('the', 'DT'), ('effectiveness', 'NN'), ('of', 'IN'), ('our', 'PRP$'), ('approach', 'NN'), ('on', 'IN'), ('enhancing', 'VBG'), ('the', 'DT'), ('quality', 'NN'), ('of', 'IN'), ('overall', 'JJ'), ('translation', 'NN'), (',', ','), ('name', 'NN'), ('translation', 'NN'), ('and', 'CC'), ('word', 'NN'), ('alignment', 'NN'), ('over', 'IN'), ('a', 'DT'), ('high-quality', 'JJ'), ('MT', 'NNP'), ('baseline1', 'NN'), ('.', '.')]
+TECH|Chinese
+METHOD|-English translation
+METHOD|overall translation
+METHOD|word alignment
+METHOD|high-quality MT
+
+
+The evaluation has demonstrated that our system is both effective and useful in a real-world environment .
+[('The', 'DT'), ('evaluation', 'NN'), ('has', 'VBZ'), ('demonstrated', 'VBN'), ('that', 'IN'), ('our', 'PRP$'), ('system', 'NN'), ('is', 'VBZ'), ('both', 'DT'), ('effective', 'JJ'), ('and', 'CC'), ('useful', 'JJ'), ('in', 'IN'), ('a', 'DT'), ('real-world', 'JJ'), ('environment', 'NN'), ('.', '.')]
+METHOD|-world
+
+
+We achieved best results when the model training data , MT tuning set , and MT evaluation set con The bottom category includes all lexical items that the decoder could produce in a translation of the source .
+[('We', 'PRP'), ('achieved', 'VBD'), ('best', 'JJS'), ('results', 'NNS'), ('when', 'WRB'), ('the', 'DT'), ('model', 'NN'), ('training', 'NN'), ('data', 'NNS'), (',', ','), ('MT', 'NNP'), ('tuning', 'VBG'), ('set', 'NN'), (',', ','), ('and', 'CC'), ('MT', 'NNP'), ('evaluation', 'NN'), ('set', 'VBN'), ('con', 'VBP'), ('The', 'DT'), ('bottom', 'JJ'), ('category', 'NN'), ('includes', 'VBZ'), ('all', 'DT'), ('lexical', 'JJ'), ('items', 'NNS'), ('that', 'IN'), ('the', 'DT'), ('decoder', 'NN'), ('could', 'MD'), ('produce', 'VB'), ('in', 'IN'), ('a', 'DT'), ('translation', 'NN'), ('of', 'IN'), ('the', 'DT'), ('source', 'NN'), ('.', '.')]
+METHOD|MT evaluation
+
+
+One potential avenue of future work would be to adapt our component models to new genres by self-training them on the target side of a large bitext .10 To focus on possibly inflected word forms , we excluded numbers and punctuation from this analysis .11 The annotator was the first author .
+[('One', 'CD'), ('potential', 'JJ'), ('avenue', 'NN'), ('of', 'IN'), ('future', 'JJ'), ('work', 'NN'), ('would', 'MD'), ('be', 'VB'), ('to', 'TO'), ('adapt', 'VB'), ('our', 'PRP$'), ('component', 'NN'), ('models', 'NNS'), ('to', 'TO'), ('new', 'JJ'), ('genres', 'NNS'), ('by', 'IN'), ('self-training', 'VBG'), ('them', 'PRP'), ('on', 'IN'), ('the', 'DT'), ('target', 'NN'), ('side', 'NN'), ('of', 'IN'), ('a', 'DT'), ('large', 'JJ'), ('bitext', 'NN'), ('.10', 'NN'), ('To', 'TO'), ('focus', 'VB'), ('on', 'IN'), ('possibly', 'RB'), ('inflected', 'VBN'), ('word', 'NN'), ('forms', 'NNS'), (',', ','), ('we', 'PRP'), ('excluded', 'VBD'), ('numbers', 'NNS'), ('and', 'CC'), ('punctuation', 'NN'), ('from', 'IN'), ('this', 'DT'), ('analysis', 'NN'), ('.11', 'VBZ'), ('The', 'DT'), ('annotator', 'NN'), ('was', 'VBD'), ('the', 'DT'), ('first', 'JJ'), ('author', 'NN'), ('.', '.')]
+METHOD|-training
+METHOD|word forms
+
+
+( 1 ) .
+[('(', '('), ('1', 'CD'), (')', ')'), ('.', '.')]
+
+
+The experience obtained in the Verbmobil project , in particular a large-scale end-to-end evaluation , showed that the statistical approach resulted in significantly lower error rates than three competing translation approaches : the sentence error rate was 29percent in comparison with 52percent to 62percent for the other translation approaches .
+[('The', 'DT'), ('experience', 'NN'), ('obtained', 'VBN'), ('in', 'IN'), ('the', 'DT'), ('Verbmobil', 'NNP'), ('project', 'NN'), (',', ','), ('in', 'IN'), ('particular', 'JJ'), ('a', 'DT'), ('large-scale', 'JJ'), ('end-to-end', 'JJ'), ('evaluation', 'NN'), (',', ','), ('showed', 'VBD'), ('that', 'IN'), ('the', 'DT'), ('statistical', 'JJ'), ('approach', 'NN'), ('resulted', 'VBD'), ('in', 'IN'), ('significantly', 'RB'), ('lower', 'JJR'), ('error', 'NN'), ('rates', 'NNS'), ('than', 'IN'), ('three', 'CD'), ('competing', 'VBG'), ('translation', 'NN'), ('approaches', 'NNS'), (':', ':'), ('the', 'DT'), ('sentence', 'NN'), ('error', 'NN'), ('rate', 'NN'), ('was', 'VBD'), ('29percent', 'CD'), ('in', 'IN'), ('comparison', 'NN'), ('with', 'IN'), ('52percent', 'CD'), ('to', 'TO'), ('62percent', 'CD'), ('for', 'IN'), ('the', 'DT'), ('other', 'JJ'), ('translation', 'NN'), ('approaches', 'NNS'), ('.', '.')]
+METHOD|-scale
+METHOD|-end
+METHOD|competing translation
+METHOD|sentence error
+
+
+Comparative evaluations with other translation approaches of the Verbmobil prototype system show that the statistical translation is superior , especially in the presence of speech input and ungrammatical input .
+[('Comparative', 'JJ'), ('evaluations', 'NNS'), ('with', 'IN'), ('other', 'JJ'), ('translation', 'NN'), ('approaches', 'NNS'), ('of', 'IN'), ('the', 'DT'), ('Verbmobil', 'NNP'), ('prototype', 'NN'), ('system', 'NN'), ('show', 'VBP'), ('that', 'IN'), ('the', 'DT'), ('statistical', 'JJ'), ('translation', 'NN'), ('is', 'VBZ'), ('superior', 'JJ'), (',', ','), ('especially', 'RB'), ('in', 'IN'), ('the', 'DT'), ('presence', 'NN'), ('of', 'IN'), ('speech', 'NN'), ('input', 'NN'), ('and', 'CC'), ('ungrammatical', 'JJ'), ('input', 'NN'), ('.', '.')]
+
+
+Starting with the Bayes decision rule as in speech recognition , we show how the required probability distributions can be structured into three parts : the language model , the alignment model and the lexicon model .
+[('Starting', 'VBG'), ('with', 'IN'), ('the', 'DT'), ('Bayes', 'NNP'), ('decision', 'NN'), ('rule', 'NN'), ('as', 'IN'), ('in', 'IN'), ('speech', 'NN'), ('recognition', 'NN'), (',', ','), ('we', 'PRP'), ('show', 'VBP'), ('how', 'WRB'), ('the', 'DT'), ('required', 'JJ'), ('probability', 'NN'), ('distributions', 'NNS'), ('can', 'MD'), ('be', 'VB'), ('structured', 'VBN'), ('into', 'IN'), ('three', 'CD'), ('parts', 'NNS'), (':', ':'), ('the', 'DT'), ('language', 'NN'), ('model', 'NN'), (',', ','), ('the', 'DT'), ('alignment', 'JJ'), ('model', 'NN'), ('and', 'CC'), ('the', 'DT'), ('lexicon', 'NN'), ('model', 'NN'), ('.', '.')]
+TECH|Bayes
+METHOD|language model
+METHOD|lexicon model
+
+
+We describe the components of the system and report results on the Verbmobil task .
+[('We', 'PRP'), ('describe', 'VBP'), ('the', 'DT'), ('components', 'NNS'), ('of', 'IN'), ('the', 'DT'), ('system', 'NN'), ('and', 'CC'), ('report', 'NN'), ('results', 'NNS'), ('on', 'IN'), ('the', 'DT'), ('Verbmobil', 'NNP'), ('task', 'NN'), ('.', '.')]
+
+
+We present improvements to a greedy decoding algorithm for statistical machine translation that reduce its time complexity from at least cubic ( when applied na ¨ ıvely ) to practically linear time1 without sacrificing translation quality .
+[('We', 'PRP'), ('present', 'JJ'), ('improvements', 'NNS'), ('to', 'TO'), ('a', 'DT'), ('greedy', 'NN'), ('decoding', 'VBG'), ('algorithm', 'NN'), ('for', 'IN'), ('statistical', 'JJ'), ('machine', 'NN'), ('translation', 'NN'), ('that', 'WDT'), ('reduce', 'VB'), ('its', 'PRP$'), ('time', 'NN'), ('complexity', 'NN'), ('from', 'IN'), ('at', 'IN'), ('least', 'JJS'), ('cubic', 'JJ'), ('(', '('), ('when', 'WRB'), ('applied', 'VBN'), ('na', 'TO'), ('¨', 'NNP'), ('ıvely', 'RB'), (')', ')'), ('to', 'TO'), ('practically', 'RB'), ('linear', 'JJ'), ('time1', 'NN'), ('without', 'IN'), ('sacrificing', 'VBG'), ('translation', 'NN'), ('quality', 'NN'), ('.', '.')]
+METHOD|machine translation
+METHOD|sacrificing translation
+
+
+The times shown are averages of 100 sentences each for length10 , 20 , , 80 .
+[('The', 'DT'), ('times', 'NNS'), ('shown', 'VBN'), ('are', 'VBP'), ('averages', 'NNS'), ('of', 'IN'), ('100', 'CD'), ('sentences', 'NNS'), ('each', 'DT'), ('for', 'IN'), ('length10', 'NN'), (',', ','), ('20', 'CD'), (',', ','), (',', ','), ('80', 'CD'), ('.', '.')]
+METHOD|100 sentences
+
+
+IBM Model 4 scores and the BLEU metric .
+[('IBM', 'NNP'), ('Model', 'NNP'), ('4', 'CD'), ('scores', 'NNS'), ('and', 'CC'), ('the', 'DT'), ('BLEU', 'NNP'), ('metric', 'JJ'), ('.', '.')]
+TECH|IBM
+TECH|BLEU
+
+
+Operations not included in the figures consume so little time that their plots can not be discerned in the graphs .
+[('Operations', 'NNS'), ('not', 'RB'), ('included', 'VBN'), ('in', 'IN'), ('the', 'DT'), ('figures', 'NNS'), ('consume', 'VBP'), ('so', 'RB'), ('little', 'JJ'), ('time', 'NN'), ('that', 'IN'), ('their', 'PRP$'), ('plots', 'NNS'), ('can', 'MD'), ('not', 'RB'), ('be', 'VB'), ('discerned', 'VBN'), ('in', 'IN'), ('the', 'DT'), ('graphs', 'NN'), ('.', '.')]
+METHOD|little time
+
+
+The speed improvements discussed in this paper make multiple randomized searches per sentence feasible , leading to a faster and better decoder for machine translation with IBM Model 4.6
+[('The', 'DT'), ('speed', 'NN'), ('improvements', 'NNS'), ('discussed', 'VBN'), ('in', 'IN'), ('this', 'DT'), ('paper', 'NN'), ('make', 'VBP'), ('multiple', 'JJ'), ('randomized', 'JJ'), ('searches', 'NNS'), ('per', 'IN'), ('sentence', 'NN'), ('feasible', 'NN'), (',', ','), ('leading', 'VBG'), ('to', 'TO'), ('a', 'DT'), ('faster', 'NN'), ('and', 'CC'), ('better', 'JJR'), ('decoder', 'NN'), ('for', 'IN'), ('machine', 'NN'), ('translation', 'NN'), ('with', 'IN'), ('IBM', 'NNP'), ('Model', 'NNP'), ('4.6', 'CD')]
+METHOD|multiple randomized
+METHOD|sentence feasible
+METHOD|machine translation
+TECH|IBM
+
+
+We achieve this by integrating hypothesis evaluation into hypothesis creation , tiling improvements over the translation hypothesis at the end of each search iteration , and by imposing restrictions on the amount of word reordering during decoding .
+[('We', 'PRP'), ('achieve', 'VBP'), ('this', 'DT'), ('by', 'IN'), ('integrating', 'VBG'), ('hypothesis', 'NN'), ('evaluation', 'NN'), ('into', 'IN'), ('hypothesis', 'NN'), ('creation', 'NN'), (',', ','), ('tiling', 'VBG'), ('improvements', 'NNS'), ('over', 'IN'), ('the', 'DT'), ('translation', 'NN'), ('hypothesis', 'NN'), ('at', 'IN'), ('the', 'DT'), ('end', 'NN'), ('of', 'IN'), ('each', 'DT'), ('search', 'NN'), ('iteration', 'NN'), (',', ','), ('and', 'CC'), ('by', 'IN'), ('imposing', 'VBG'), ('restrictions', 'NNS'), ('on', 'IN'), ('the', 'DT'), ('amount', 'NN'), ('of', 'IN'), ('word', 'NN'), ('reordering', 'VBG'), ('during', 'IN'), ('decoding', 'VBG'), ('.', '.')]
+METHOD|hypothesis evaluation
+METHOD|word reordering
+
+
+We developed a classifier to distinguish temporal/atemporal entities and our proposed method outperforms the state-of-the-art approach by 6.1 percent .
+[('We', 'PRP'), ('developed', 'VBD'), ('a', 'DT'), ('classifier', 'NN'), ('to', 'TO'), ('distinguish', 'VB'), ('temporal/atemporal', 'JJ'), ('entities', 'NNS'), ('and', 'CC'), ('our', 'PRP$'), ('proposed', 'VBN'), ('method', 'NN'), ('outperforms', 'VBZ'), ('the', 'DT'), ('state-of-the-art', 'JJ'), ('approach', 'NN'), ('by', 'IN'), ('6.1', 'CD'), ('percent', 'NN'), ('.', '.')]
+METHOD|-the
+TECH|-
+
+
+This paper studies named entity translation and proposes `` selective temporality '' as a new feature , as using temporal features may be harmful for translating `` atemporal '' entities .
+[('This', 'DT'), ('paper', 'NN'), ('studies', 'NNS'), ('named', 'VBN'), ('entity', 'NN'), ('translation', 'NN'), ('and', 'CC'), ('proposes', 'VBZ'), ('``', '``'), ('selective', 'JJ'), ('temporality', 'NN'), ('``', '``'), ('as', 'IN'), ('a', 'DT'), ('new', 'JJ'), ('feature', 'NN'), (',', ','), ('as', 'IN'), ('using', 'VBG'), ('temporal', 'JJ'), ('features', 'NNS'), ('may', 'MD'), ('be', 'VB'), ('harmful', 'JJ'), ('for', 'IN'), ('translating', 'VBG'), ('``', '``'), ('atemporal', 'JJ'), ('``', '``'), ('entities', 'NNS'), ('.', '.')]
+
+
+We have shown how cross-lingual WSD can be applied to bilingual lexicon extraction from comparable corpora .
+[('We', 'PRP'), ('have', 'VBP'), ('shown', 'VBN'), ('how', 'WRB'), ('cross-lingual', 'JJ'), ('WSD', 'NNP'), ('can', 'MD'), ('be', 'VB'), ('applied', 'VBN'), ('to', 'TO'), ('bilingual', 'JJ'), ('lexicon', 'NN'), ('extraction', 'NN'), ('from', 'IN'), ('comparable', 'JJ'), ('corpora', 'NNS'), ('.', '.')]
+METHOD|cross-lingual WSD
+METHOD|lexicon extraction
+
+
+The results show that data-driven semantic analysis can help to circumvent the need for an external seed dictionary , traditionally considered as a prerequisite for translation extraction from parallel corpora .
+[('The', 'DT'), ('results', 'NNS'), ('show', 'VBP'), ('that', 'IN'), ('data-driven', 'JJ'), ('semantic', 'JJ'), ('analysis', 'NN'), ('can', 'MD'), ('help', 'VB'), ('to', 'TO'), ('circumvent', 'VB'), ('the', 'DT'), ('need', 'NN'), ('for', 'IN'), ('an', 'DT'), ('external', 'JJ'), ('seed', 'NN'), ('dictionary', 'NN'), (',', ','), ('traditionally', 'RB'), ('considered', 'VBN'), ('as', 'IN'), ('a', 'DT'), ('prerequisite', 'NN'), ('for', 'IN'), ('translation', 'NN'), ('extraction', 'NN'), ('from', 'IN'), ('parallel', 'JJ'), ('corpora', 'NNS'), ('.', '.')]
+METHOD|data-driven
+METHOD|translation extraction
+
+
+We apply non-parametric Bayesian language models to segment each noun phrase in these resources according to the statistical behavior of its supposed constituents in text .
+[('We', 'PRP'), ('apply', 'VBP'), ('non-parametric', 'JJ'), ('Bayesian', 'JJ'), ('language', 'NN'), ('models', 'NNS'), ('to', 'TO'), ('segment', 'NN'), ('each', 'DT'), ('noun', 'JJ'), ('phrase', 'NN'), ('in', 'IN'), ('these', 'DT'), ('resources', 'NNS'), ('according', 'VBG'), ('to', 'TO'), ('the', 'DT'), ('statistical', 'JJ'), ('behavior', 'NN'), ('of', 'IN'), ('its', 'PRP$'), ('supposed', 'JJ'), ('constituents', 'NNS'), ('in', 'IN'), ('text', 'NN'), ('.', '.')]
+METHOD|-parametric Bayesian language
+
+
+The presence of `` clarinet , '' `` alto '' and `` contrabass '' and others in the main text allowed the model to iden-text to segment noun phrases in it .
+[('The', 'DT'), ('presence', 'NN'), ('of', 'IN'), ('``', '``'), ('clarinet', 'NN'), (',', ','), ('``', '``'), ('``', '``'), ('alto', 'JJ'), ('``', '``'), ('and', 'CC'), ('``', '``'), ('contrabass', 'NN'), ('``', '``'), ('and', 'CC'), ('others', 'NNS'), ('in', 'IN'), ('the', 'DT'), ('main', 'JJ'), ('text', 'NN'), ('allowed', 'VBD'), ('the', 'DT'), ('model', 'NN'), ('to', 'TO'), ('iden-text', 'JJ'), ('to', 'TO'), ('segment', 'NN'), ('noun', 'NN'), ('phrases', 'VBZ'), ('in', 'IN'), ('it', 'PRP'), ('.', '.')]
+TECH|`
+TECH|`
+TECH|''
+METHOD|main text
+METHOD|-text
+
+
+So it would be helpful to augment them with rich semantic information in advance instead of disambiguating their meaning every time we analyze given text .
+[('So', 'IN'), ('it', 'PRP'), ('would', 'MD'), ('be', 'VB'), ('helpful', 'JJ'), ('to', 'TO'), ('augment', 'VB'), ('them', 'PRP'), ('with', 'IN'), ('rich', 'JJ'), ('semantic', 'JJ'), ('information', 'NN'), ('in', 'IN'), ('advance', 'NN'), ('instead', 'RB'), ('of', 'IN'), ('disambiguating', 'VBG'), ('their', 'PRP$'), ('meaning', 'NN'), ('every', 'DT'), ('time', 'NN'), ('we', 'PRP'), ('analyze', 'VBP'), ('given', 'VBN'), ('text', 'NN'), ('.', '.')]
+
+
+Although supervised segmentation is very competitive , we showed that it can be supplemented + クラリネット very important to identify hiragana words correctly .
+[('Although', 'IN'), ('supervised', 'VBN'), ('segmentation', 'NN'), ('is', 'VBZ'), ('very', 'RB'), ('competitive', 'JJ'), (',', ','), ('we', 'PRP'), ('showed', 'VBD'), ('that', 'IN'), ('it', 'PRP'), ('can', 'MD'), ('be', 'VB'), ('supplemented', 'VBN'), ('+', 'JJ'), ('クラリネット', 'JJ'), ('very', 'RB'), ('important', 'JJ'), ('to', 'TO'), ('identify', 'VB'), ('hiragana', 'JJ'), ('words', 'NNS'), ('correctly', 'RB'), ('.', '.')]
+METHOD|supervised segmentation
+
+
+In this paper , we proposed a new task of Japanese noun phrase segmentation .
+[('In', 'IN'), ('this', 'DT'), ('paper', 'NN'), (',', ','), ('we', 'PRP'), ('proposed', 'VBD'), ('a', 'DT'), ('new', 'JJ'), ('task', 'NN'), ('of', 'IN'), ('Japanese', 'JJ'), ('noun', 'JJ'), ('phrase', 'NN'), ('segmentation', 'NN'), ('.', '.')]
+METHOD|phrase segmentation
+
+
+All these aspects will be our research focus in the future .
+[('All', 'PDT'), ('these', 'DT'), ('aspects', 'NNS'), ('will', 'MD'), ('be', 'VB'), ('our', 'PRP$'), ('research', 'NN'), ('focus', 'NN'), ('in', 'IN'), ('the', 'DT'), ('future', 'NN'), ('.', '.')]
+
+
+From the experimental results for combining our OOV term translation model with English-Chinese CrossLanguage Information Retrieval ( CLIR ) on the data sets of Text Retrieval Evaluation Conference ( TREC ) , it can be found that the obvious performance improvement for both query translation and retrieval can also be obtained .
+[('From', 'IN'), ('the', 'DT'), ('experimental', 'JJ'), ('results', 'NNS'), ('for', 'IN'), ('combining', 'VBG'), ('our', 'PRP$'), ('OOV', 'JJ'), ('term', 'NN'), ('translation', 'NN'), ('model', 'NN'), ('with', 'IN'), ('English-Chinese', 'JJ'), ('CrossLanguage', 'NNP'), ('Information', 'NNP'), ('Retrieval', 'NNP'), ('(', '('), ('CLIR', 'NNP'), (')', ')'), ('on', 'IN'), ('the', 'DT'), ('data', 'NNS'), ('sets', 'NNS'), ('of', 'IN'), ('Text', 'NNP'), ('Retrieval', 'NNP'), ('Evaluation', 'NNP'), ('Conference', 'NNP'), ('(', '('), ('TREC', 'NNP'), (')', ')'), (',', ','), ('it', 'PRP'), ('can', 'MD'), ('be', 'VB'), ('found', 'VBN'), ('that', 'IN'), ('the', 'DT'), ('obvious', 'JJ'), ('performance', 'NN'), ('improvement', 'NN'), ('for', 'IN'), ('both', 'DT'), ('query', 'JJ'), ('translation', 'NN'), ('and', 'CC'), ('retrieval', 'NN'), ('can', 'MD'), ('also', 'RB'), ('be', 'VB'), ('obtained', 'VBN'), ('.', '.')]
+TECH|English-Chinese
+TECH|CLIR
+METHOD|Retrieval Evaluation
+TECH|TREC
+
+
+We show good performance on Chinese semantic similarity with bilingual trained embeddings .
+[('We', 'PRP'), ('show', 'VBP'), ('good', 'JJ'), ('performance', 'NN'), ('on', 'IN'), ('Chinese', 'NNP'), ('semantic', 'JJ'), ('similarity', 'NN'), ('with', 'IN'), ('bilingual', 'JJ'), ('trained', 'JJ'), ('embeddings', 'NNS'), ('.', '.')]
+METHOD|trained embeddings
+
+
+When used to compute semantic similarity of phrase pairs , bilingual embeddings improve NIST08 end-to-end machine translation results by just below half a BLEU point .
+[('When', 'WRB'), ('used', 'VBN'), ('to', 'TO'), ('compute', 'VB'), ('semantic', 'JJ'), ('similarity', 'NN'), ('of', 'IN'), ('phrase', 'NN'), ('pairs', 'NNS'), (',', ','), ('bilingual', 'JJ'), ('embeddings', 'NNS'), ('improve', 'VBP'), ('NIST08', 'NNP'), ('end-to-end', 'JJ'), ('machine', 'NN'), ('translation', 'NN'), ('results', 'NNS'), ('by', 'IN'), ('just', 'RB'), ('below', 'IN'), ('half', 'PDT'), ('a', 'DT'), ('BLEU', 'NNP'), ('point', 'NN'), ('.', '.')]
+METHOD|bilingual embeddings
+METHOD|machine translation
+TECH|BLEU
+
+
+Further , our results offer suggestive evidence that bilingual word embeddings act as high-quality semantic features and embody bilingual translation equivalence across languages .6 We report case-insensitive BLEU7 With 4-gram BLEU metric from
+[('Further', 'RB'), (',', ','), ('our', 'PRP$'), ('results', 'NNS'), ('offer', 'VBP'), ('suggestive', 'JJ'), ('evidence', 'NN'), ('that', 'IN'), ('bilingual', 'JJ'), ('word', 'NN'), ('embeddings', 'NNS'), ('act', 'NN'), ('as', 'IN'), ('high-quality', 'NN'), ('semantic', 'JJ'), ('features', 'NNS'), ('and', 'CC'), ('embody', 'NN'), ('bilingual', 'JJ'), ('translation', 'NN'), ('equivalence', 'NN'), ('across', 'IN'), ('languages', 'NNS'), ('.6', 'VBP'), ('We', 'PRP'), ('report', 'VBP'), ('case-insensitive', 'JJ'), ('BLEU7', 'NNP'), ('With', 'IN'), ('4-gram', 'JJ'), ('BLEU', 'NNP'), ('metric', 'JJ'), ('from', 'IN')]
+METHOD|suggestive evidence
+METHOD|word embeddings
+METHOD|high-quality
+METHOD|case-insensitive
+TECH|BLEU7
+TECH|4-gram
+TECH|BLEU
+
+
+We introduce bilingual word embeddings : semantic embeddings associated across two languages in the context of neural language models .
+[('We', 'PRP'), ('introduce', 'VBP'), ('bilingual', 'JJ'), ('word', 'NN'), ('embeddings', 'NNS'), (':', ':'), ('semantic', 'JJ'), ('embeddings', 'NNS'), ('associated', 'VBN'), ('across', 'IN'), ('two', 'CD'), ('languages', 'NNS'), ('in', 'IN'), ('the', 'DT'), ('context', 'NN'), ('of', 'IN'), ('neural', 'JJ'), ('language', 'NN'), ('models', 'NNS'), ('.', '.')]
+METHOD|semantic embeddings
+METHOD|word embeddings
+
+
+We believe that our results on the computational complexity of the tasks in SMT will result in a better understanding of these tasks from a theoretical perspective .
+[('We', 'PRP'), ('believe', 'VBP'), ('that', 'IN'), ('our', 'PRP$'), ('results', 'NNS'), ('on', 'IN'), ('the', 'DT'), ('computational', 'JJ'), ('complexity', 'NN'), ('of', 'IN'), ('the', 'DT'), ('tasks', 'NNS'), ('in', 'IN'), ('SMT', 'NNP'), ('will', 'MD'), ('result', 'VB'), ('in', 'IN'), ('a', 'DT'), ('better', 'JJR'), ('understanding', 'NN'), ('of', 'IN'), ('these', 'DT'), ('tasks', 'NNS'), ('from', 'IN'), ('a', 'DT'), ('theoretical', 'JJ'), ('perspective', 'NN'), ('.', '.')]
+TECH|SMT
+
+
+Our results showthat there can not exist a closed form expression ( whose representation is polynomial in the size of the input ) for P ( f | e ) and the counts in the EMiterations for Models 3-5 unless P = NP .
+[('Our', 'PRP$'), ('results', 'NNS'), ('showthat', 'IN'), ('there', 'EX'), ('can', 'MD'), ('not', 'RB'), ('exist', 'VB'), ('a', 'DT'), ('closed', 'JJ'), ('form', 'NN'), ('expression', 'NN'), ('(', '('), ('whose', 'WP$'), ('representation', 'NN'), ('is', 'VBZ'), ('polynomial', 'JJ'), ('in', 'IN'), ('the', 'DT'), ('size', 'NN'), ('of', 'IN'), ('the', 'DT'), ('input', 'NN'), (')', ')'), ('for', 'IN'), ('P', 'NNP'), ('(', '('), ('f', 'JJ'), ('|', 'NNP'), ('e', 'NN'), (')', ')'), ('and', 'CC'), ('the', 'DT'), ('counts', 'NNS'), ('in', 'IN'), ('the', 'DT'), ('EMiterations', 'NNS'), ('for', 'IN'), ('Models', 'NNP'), ('3-5', 'JJ'), ('unless', 'IN'), ('P', 'NNP'), ('=', 'NNP'), ('NP', 'NNP'), ('.', '.')]
+TECH|P
+TECH|P
+TECH|NP
+
+
+For models 1-2 , closed formexpressions exist for P ( f | e ) and the counts in theEM iterations for models 3-5 .
+[('For', 'IN'), ('models', 'NNS'), ('1-2', 'CD'), (',', ','), ('closed', 'VBD'), ('formexpressions', 'NNS'), ('exist', 'VBP'), ('for', 'IN'), ('P', 'NNP'), ('(', '('), ('f', 'JJ'), ('|', 'NNP'), ('e', 'NN'), (')', ')'), ('and', 'CC'), ('the', 'DT'), ('counts', 'NNS'), ('in', 'IN'), ('theEM', 'JJ'), ('iterations', 'NNS'), ('for', 'IN'), ('models', 'NNS'), ('3-5', 'CD'), ('.', '.')]
+TECH|-2
+TECH|P
+METHOD|-5
+
+
+2008 .
+[('2008', 'CD'), ('.', '.')]
+
+
+2008 .
+[('2008', 'CD'), ('.', '.')]
+
+
+2009 .
+[('2009', 'CD'), ('.', '.')]
+
+
+2009 .
+[('2009', 'CD'), ('.', '.')]
+
+
+2010 .
+[('2010', 'CD'), ('.', '.')]
+
+
+1999 .
+[('1999', 'CD'), ('.', '.')]
+
+
+2004 .
+[('2004', 'CD'), ('.', '.')]
+
+
+2007 .
+[('2007', 'CD'), ('.', '.')]
+
+
+2007 .
+[('2007', 'CD'), ('.', '.')]
+
+
+2006 .
+[('2006', 'CD'), ('.', '.')]
+
+
+1992 .
+[('1992', 'CD'), ('.', '.')]
+
+
+In 1st Workshop Building and Using Comparable Corpora .
+[('In', 'IN'), ('1st', 'CD'), ('Workshop', 'NNP'), ('Building', 'NNP'), ('and', 'CC'), ('Using', 'NNP'), ('Comparable', 'NNP'), ('Corpora', 'NNP'), ('.', '.')]
+
+
+In 1st Workshop Building and Using Comparable Corpora .
+[('In', 'IN'), ('1st', 'CD'), ('Workshop', 'NNP'), ('Building', 'NNP'), ('and', 'CC'), ('Using', 'NNP'), ('Comparable', 'NNP'), ('Corpora', 'NNP'), ('.', '.')]
+
+
+The highest Top 1 precision , 55.2 percent , was reached with the following parameters : sentence contexts , LO , cosine and a 9,000-entry mixed lexicon , with the use of a cognate heuristic .
+[('The', 'DT'), ('highest', 'JJS'), ('Top', 'JJ'), ('1', 'CD'), ('precision', 'NN'), (',', ','), ('55.2', 'CD'), ('percent', 'NN'), (',', ','), ('was', 'VBD'), ('reached', 'VBN'), ('with', 'IN'), ('the', 'DT'), ('following', 'VBG'), ('parameters', 'NNS'), (':', ':'), ('sentence', 'NN'), ('contexts', 'NN'), (',', ','), ('LO', 'NNP'), (',', ','), ('cosine', 'NN'), ('and', 'CC'), ('a', 'DT'), ('9,000-entry', 'JJ'), ('mixed', 'JJ'), ('lexicon', 'NN'), (',', ','), ('with', 'IN'), ('the', 'DT'), ('use', 'NN'), ('of', 'IN'), ('a', 'DT'), ('cognate', 'NN'), ('heuristic', 'NN'), ('.', '.')]
+TECH|1
+
+
+A closer look at the translation candidates obtained when using LL , the most popular association measure in projection-based approaches , shows that they are often collocates of the reference translation .
+[('A', 'DT'), ('closer', 'JJR'), ('look', 'NN'), ('at', 'IN'), ('the', 'DT'), ('translation', 'NN'), ('candidates', 'NNS'), ('obtained', 'VBD'), ('when', 'WRB'), ('using', 'VBG'), ('LL', 'NNP'), (',', ','), ('the', 'DT'), ('most', 'RBS'), ('popular', 'JJ'), ('association', 'NN'), ('measure', 'NN'), ('in', 'IN'), ('projection-based', 'JJ'), ('approaches', 'NNS'), (',', ','), ('shows', 'VBZ'), ('that', 'IN'), ('they', 'PRP'), ('are', 'VBP'), ('often', 'RB'), ('collocates', 'NNS'), ('of', 'IN'), ('the', 'DT'), ('reference', 'NN'), ('translation', 'NN'), ('.', '.')]
+TECH|LL
+METHOD|-based
+METHOD|reference translation
+
+
+Moreover , we have seen that the cosine similarity measure and sentence contexts give moreLO is used .
+[('Moreover', 'RB'), (',', ','), ('we', 'PRP'), ('have', 'VBP'), ('seen', 'VBN'), ('that', 'IN'), ('the', 'DT'), ('cosine', 'NN'), ('similarity', 'NN'), ('measure', 'NN'), ('and', 'CC'), ('sentence', 'NN'), ('contexts', 'NNS'), ('give', 'VBP'), ('moreLO', 'NN'), ('is', 'VBZ'), ('used', 'VBN'), ('.', '.')]
+TECH|moreLO
+
+
+In future works , other parameters which influence the performance will be studied , among which the use of a terminological extractor to treat complex terms ( Daille and Morin , 2005 ) , more contextual window configurations , and the use of syntactic information in combination with lexical information ( Yu and Tsujii , 2009 ) .
+[('In', 'IN'), ('future', 'JJ'), ('works', 'NNS'), (',', ','), ('other', 'JJ'), ('parameters', 'NNS'), ('which', 'WDT'), ('influence', 'VBP'), ('the', 'DT'), ('performance', 'NN'), ('will', 'MD'), ('be', 'VB'), ('studied', 'VBN'), (',', ','), ('among', 'IN'), ('which', 'WDT'), ('the', 'DT'), ('use', 'NN'), ('of', 'IN'), ('a', 'DT'), ('terminological', 'JJ'), ('extractor', 'NN'), ('to', 'TO'), ('treat', 'VB'), ('complex', 'JJ'), ('terms', 'NNS'), ('(', '('), ('Daille', 'NNP'), ('and', 'CC'), ('Morin', 'NNP'), (',', ','), ('2005', 'CD'), (')', ')'), (',', ','), ('more', 'RBR'), ('contextual', 'JJ'), ('window', 'NN'), ('configurations', 'NNS'), (',', ','), ('and', 'CC'), ('the', 'DT'), ('use', 'NN'), ('of', 'IN'), ('syntactic', 'JJ'), ('information', 'NN'), ('in', 'IN'), ('combination', 'NN'), ('with', 'IN'), ('lexical', 'JJ'), ('information', 'NN'), ('(', '('), ('Yu', 'NNP'), ('and', 'CC'), ('Tsujii', 'NNP'), (',', ','), ('2009', 'CD'), (')', ')'), ('.', '.')]
+TECH|Daille
+TECH|Morin
+METHOD|syntactic information
+
+
+Our results show that using the log-odds ratio as the association measure allows for significantly better translation spotting than the log-likelihood .
+[('Our', 'PRP$'), ('results', 'NNS'), ('show', 'VBP'), ('that', 'IN'), ('using', 'VBG'), ('the', 'DT'), ('log-odds', 'JJ'), ('ratio', 'NN'), ('as', 'IN'), ('the', 'DT'), ('association', 'NN'), ('measure', 'NN'), ('allows', 'VBZ'), ('for', 'IN'), ('significantly', 'RB'), ('better', 'JJR'), ('translation', 'NN'), ('spotting', 'VBG'), ('than', 'IN'), ('the', 'DT'), ('log-likelihood', 'NN'), ('.', '.')]
+METHOD|-odds
+METHOD|-likelihood
+
+
+Yu , Kun and Junichi Tsujii .
+[('Yu', 'NNP'), (',', ','), ('Kun', 'NNP'), ('and', 'CC'), ('Junichi', 'NNP'), ('Tsujii', 'NNP'), ('.', '.')]
+
+
+Glottopol , 8 .
+[('Glottopol', 'NNP'), (',', ','), ('8', 'CD'), ('.', '.')]
+
+
+Morin , Emmanuel , Be ´ atrice Daille , Koichi Takeuchi , and Kyo Kageura .
+[('Morin', 'NNP'), (',', ','), ('Emmanuel', 'NNP'), (',', ','), ('Be', 'NNP'), ('´', 'NNP'), ('atrice', 'NN'), ('Daille', 'NNP'), (',', ','), ('Koichi', 'NNP'), ('Takeuchi', 'NNP'), (',', ','), ('and', 'CC'), ('Kyo', 'NNP'), ('Kageura', 'NNP'), ('.', '.')]
+TECH|Emmanuel
+
+
+We plan to check its adequacy for other domains and verify that LO remains a better association measure for different corpora and domains .
+[('We', 'PRP'), ('plan', 'VBP'), ('to', 'TO'), ('check', 'VB'), ('its', 'PRP$'), ('adequacy', 'NN'), ('for', 'IN'), ('other', 'JJ'), ('domains', 'NNS'), ('and', 'CC'), ('verify', 'VB'), ('that', 'DT'), ('LO', 'NNP'), ('remains', 'VBZ'), ('a', 'DT'), ('better', 'JJR'), ('association', 'NN'), ('measure', 'NN'), ('for', 'IN'), ('different', 'JJ'), ('corpora', 'NNS'), ('and', 'CC'), ('domains', 'NNS'), ('.', '.')]
+
+
+Ne ´ ve ´ ol , Aure ´ lie and Sylwia Ozdowska .
+[('Ne', 'NNP'), ('´', 'NNP'), ('ve', 'NN'), ('´', 'NNP'), ('ol', 'NN'), (',', ','), ('Aure', 'NNP'), ('´', 'NNP'), ('lie', 'NN'), ('and', 'CC'), ('Sylwia', 'NNP'), ('Ozdowska', 'NNP'), ('.', '.')]
+TECH|Sylwia
+
+
+Bilingual terminology mining -- using brain , not brawn comparable corpora .
+[('Bilingual', 'NNP'), ('terminology', 'NN'), ('mining', 'NN'), ('--', ':'), ('using', 'VBG'), ('brain', 'NN'), (',', ','), ('not', 'RB'), ('brawn', 'VBN'), ('comparable', 'JJ'), ('corpora', 'NNS'), ('.', '.')]
+METHOD|-- using
+
+
+to Information Retrieval .
+[('to', 'TO'), ('Information', 'NNP'), ('Retrieval', 'NNP'), ('.', '.')]
+
+
+In 20th International Conference on Computational Linguistics , pages 618 -- 624 .
+[('In', 'IN'), ('20th', 'CD'), ('International', 'NNP'), ('Conference', 'NNP'), ('on', 'IN'), ('Computational', 'NNP'), ('Linguistics', 'NNP'), (',', ','), ('pages', 'VBZ'), ('618', 'CD'), ('--', ':'), ('624', 'CD'), ('.', '.')]
+
+
+Otero , Pablo Gamallo .
+[('Otero', 'NNP'), (',', ','), ('Pablo', 'NNP'), ('Gamallo', 'NNP'), ('.', '.')]
+
+
+Otero , Pablo Gamallo .
+[('Otero', 'NNP'), (',', ','), ('Pablo', 'NNP'), ('Gamallo', 'NNP'), ('.', '.')]
+
+
+We applied POS-based reordering to improve our translations in all directions , using short-range re-ordering for English ↔ French and long-range re-ordering for English ↔ German .
+[('We', 'PRP'), ('applied', 'VBD'), ('POS-based', 'JJ'), ('reordering', 'NN'), ('to', 'TO'), ('improve', 'VB'), ('our', 'PRP$'), ('translations', 'NNS'), ('in', 'IN'), ('all', 'DT'), ('directions', 'NNS'), (',', ','), ('using', 'VBG'), ('short-range', 'JJ'), ('re-ordering', 'NN'), ('for', 'IN'), ('English', 'NNP'), ('↔', 'NNP'), ('French', 'NNP'), ('and', 'CC'), ('long-range', 'JJ'), ('re-ordering', 'NN'), ('for', 'IN'), ('English', 'NNP'), ('↔', 'JJ'), ('German', 'NNP'), ('.', '.')]
+TECH|POS
+METHOD|short-range
+METHOD|-
+METHOD|-range
+METHOD|-ordering
+
+
+In addition , a parallel phrase scoring technique was implemented that could speed up the MT training process tremendously .
+[('In', 'IN'), ('addition', 'NN'), (',', ','), ('a', 'DT'), ('parallel', 'JJ'), ('phrase', 'NN'), ('scoring', 'VBG'), ('technique', 'NN'), ('was', 'VBD'), ('implemented', 'VBN'), ('that', 'IN'), ('could', 'MD'), ('speed', 'VB'), ('up', 'RP'), ('the', 'DT'), ('MT', 'NNP'), ('training', 'NN'), ('process', 'NN'), ('tremendously', 'RB'), ('.', '.')]
+METHOD|scoring technique
+
+
+We have presented the systems for our participation in the WMT 2011 Evaluation for English ↔ German and English ↔ French .
+[('We', 'PRP'), ('have', 'VBP'), ('presented', 'VBN'), ('the', 'DT'), ('systems', 'NNS'), ('for', 'IN'), ('our', 'PRP$'), ('participation', 'NN'), ('in', 'IN'), ('the', 'DT'), ('WMT', 'NNP'), ('2011', 'CD'), ('Evaluation', 'NNP'), ('for', 'IN'), ('English', 'NNP'), ('↔', 'JJ'), ('German', 'NNP'), ('and', 'CC'), ('English', 'NNP'), ('↔', 'NNP'), ('French', 'NNP'), ('.', '.')]
+TECH|WMT
+METHOD|Evaluation
+TECH|English
+
+
+A Discriminative Word Alignment Model led to an increase in BLEU for English-German .
+[('A', 'DT'), ('Discriminative', 'NNP'), ('Word', 'NNP'), ('Alignment', 'NNP'), ('Model', 'NNP'), ('led', 'VBD'), ('to', 'TO'), ('an', 'DT'), ('increase', 'NN'), ('in', 'IN'), ('BLEU', 'NNP'), ('for', 'IN'), ('English-German', 'NNP'), ('.', '.')]
+METHOD|Discriminative Word Alignment Model
+TECH|BLEU
+METHOD|English-German
+
+
+We developed a Gibbs sampling-based Bayesian inference method for IBM Model 1 word alignments and showed that it outperforms EM estimation in terms of translation BLEU scores across several language pairs , data sizes and domains .
+[('We', 'PRP'), ('developed', 'VBD'), ('a', 'DT'), ('Gibbs', 'NNP'), ('sampling-based', 'JJ'), ('Bayesian', 'NNP'), ('inference', 'NN'), ('method', 'NN'), ('for', 'IN'), ('IBM', 'NNP'), ('Model', 'NNP'), ('1', 'CD'), ('word', 'NN'), ('alignments', 'NNS'), ('and', 'CC'), ('showed', 'VBD'), ('that', 'IN'), ('it', 'PRP'), ('outperforms', 'VBZ'), ('EM', 'NNP'), ('estimation', 'NN'), ('in', 'IN'), ('terms', 'NNS'), ('of', 'IN'), ('translation', 'NN'), ('BLEU', 'NNP'), ('scores', 'VBZ'), ('across', 'IN'), ('several', 'JJ'), ('language', 'NN'), ('pairs', 'NNS'), (',', ','), ('data', 'NNS'), ('sizes', 'NNS'), ('and', 'CC'), ('domains', 'NNS'), ('.', '.')]
+METHOD|sampling-based Bayesian
+TECH|IBM Model
+METHOD|EM estimation
+METHOD|translation BLEU
+
+
+As a result of this increase , Bayesian Model 1 alignments perform close to or better than the state-of-the-art IBM9 Each target word was aligned to the source candidate that co-occured the most number of times with that target word in the entire parallel corpus .
+[('As', 'IN'), ('a', 'DT'), ('result', 'NN'), ('of', 'IN'), ('this', 'DT'), ('increase', 'NN'), (',', ','), ('Bayesian', 'JJ'), ('Model', 'NNP'), ('1', 'CD'), ('alignments', 'NNS'), ('perform', 'VBP'), ('close', 'JJ'), ('to', 'TO'), ('or', 'CC'), ('better', 'JJR'), ('than', 'IN'), ('the', 'DT'), ('state-of-the-art', 'JJ'), ('IBM9', 'NNP'), ('Each', 'DT'), ('target', 'NN'), ('word', 'NN'), ('was', 'VBD'), ('aligned', 'VBN'), ('to', 'TO'), ('the', 'DT'), ('source', 'NN'), ('candidate', 'NN'), ('that', 'IN'), ('co-occured', 'VBD'), ('the', 'DT'), ('most', 'RBS'), ('number', 'NN'), ('of', 'IN'), ('times', 'NNS'), ('with', 'IN'), ('that', 'DT'), ('target', 'NN'), ('word', 'NN'), ('in', 'IN'), ('the', 'DT'), ('entire', 'JJ'), ('parallel', 'NN'), ('corpus', 'NN'), ('.', '.')]
+TECH|Bayesian
+METHOD|-the
+TECH|-
+
+
+10 The GIZA + + implementation of Model 4 artificially limits fertility parameter values to at most nine.Model 4 .
+[('10', 'CD'), ('The', 'DT'), ('GIZA', 'NNP'), ('+', 'NNP'), ('+', 'NNP'), ('implementation', 'NN'), ('of', 'IN'), ('Model', 'NNP'), ('4', 'CD'), ('artificially', 'RB'), ('limits', 'NNS'), ('fertility', 'NN'), ('parameter', 'NN'), ('values', 'NNS'), ('to', 'TO'), ('at', 'IN'), ('most', 'JJS'), ('nine.Model', 'JJ'), ('4', 'CD'), ('.', '.')]
+TECH|GIZA
+METHOD|.Model
+
+
+We show that Bayesian inference outperforms EM in all of the tested language pairs , domains and data set sizes , by up to 2.99 BLEU points .
+[('We', 'PRP'), ('show', 'VBP'), ('that', 'IN'), ('Bayesian', 'JJ'), ('inference', 'NN'), ('outperforms', 'NNS'), ('EM', 'NNP'), ('in', 'IN'), ('all', 'DT'), ('of', 'IN'), ('the', 'DT'), ('tested', 'JJ'), ('language', 'NN'), ('pairs', 'NNS'), (',', ','), ('domains', 'NNS'), ('and', 'CC'), ('data', 'NNS'), ('set', 'NN'), ('sizes', 'NNS'), (',', ','), ('by', 'IN'), ('up', 'IN'), ('to', 'TO'), ('2.99', 'CD'), ('BLEU', 'NNP'), ('points', 'NNS'), ('.', '.')]
+TECH|Bayesian
+TECH|EM
+TECH|BLEU
+
+
+2003 .
+[('2003', 'CD'), ('.', '.')]
+
+
+2003 .
+[('2003', 'CD'), ('.', '.')]
+
+
+2 .
+[('2', 'CD'), ('.', '.')]
+
+
+We believe that decoding algorithms derived from our framework can be of practical significance .
+[('We', 'PRP'), ('believe', 'VBP'), ('that', 'IN'), ('decoding', 'VBG'), ('algorithms', 'RB'), ('derived', 'VBN'), ('from', 'IN'), ('our', 'PRP$'), ('framework', 'NN'), ('can', 'MD'), ('be', 'VB'), ('of', 'IN'), ('practical', 'JJ'), ('significance', 'NN'), ('.', '.')]
+METHOD|significance .
+
+
+We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm .
+[('We', 'PRP'), ('have', 'VBP'), ('also', 'RB'), ('shown', 'VBN'), ('that', 'IN'), ('alternating', 'VBG'), ('maximization', 'NN'), ('can', 'MD'), ('be', 'VB'), ('employed', 'VBN'), ('tocome', 'VB'), ('up', 'RP'), ('with', 'IN'), ('O', 'NNP'), ('(', '('), ('m2', 'NN'), (')', ')'), ('decoding', 'VBG'), ('algorithm', 'NN'), ('.', '.')]
+TECH|m2
+
+
+At one end of the spectrum is a provably linear time algorithm for computing a suboptimal solution and at the other end is an exponential time algorithm for computingNIST Scores7 Logscoresmada .
+[('At', 'IN'), ('one', 'CD'), ('end', 'NN'), ('of', 'IN'), ('the', 'DT'), ('spectrum', 'NN'), ('is', 'VBZ'), ('a', 'DT'), ('provably', 'RB'), ('linear', 'JJ'), ('time', 'NN'), ('algorithm', 'NN'), ('for', 'IN'), ('computing', 'VBG'), ('a', 'DT'), ('suboptimal', 'JJ'), ('solution', 'NN'), ('and', 'CC'), ('at', 'IN'), ('the', 'DT'), ('other', 'JJ'), ('end', 'NN'), ('is', 'VBZ'), ('an', 'DT'), ('exponential', 'JJ'), ('time', 'NN'), ('algorithm', 'NN'), ('for', 'IN'), ('computingNIST', 'NN'), ('Scores7', 'NNP'), ('Logscoresmada', 'NNP'), ('.', '.')]
+TECH|Scores7
+
+
+A family of provably fast decoding algorithms can be derived from the basic techniques underlying the framework and we present a few illustrations .
+[('A', 'DT'), ('family', 'NN'), ('of', 'IN'), ('provably', 'RB'), ('fast', 'JJ'), ('decoding', 'VBG'), ('algorithms', 'NN'), ('can', 'MD'), ('be', 'VB'), ('derived', 'VBN'), ('from', 'IN'), ('the', 'DT'), ('basic', 'JJ'), ('techniques', 'NNS'), ('underlying', 'VBG'), ('the', 'DT'), ('framework', 'NN'), ('and', 'CC'), ('we', 'PRP'), ('present', 'VBP'), ('a', 'DT'), ('few', 'JJ'), ('illustrations', 'NNS'), ('.', '.')]
+
+

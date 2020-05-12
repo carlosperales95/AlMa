@@ -13,7 +13,7 @@ def findFigureIndex(conclusion_doubt):
     index_n = 0
     table = 0
 
-    while table < 3:
+    while table < 4:
 
         doubt_temp = conclusion_doubt.find("\n")
 
@@ -28,7 +28,7 @@ def findFigureIndex(conclusion_doubt):
             table = 0
             index = "None"
 
-        if table == 3:
+        if table == 4:
             return index
             break
 
@@ -208,7 +208,7 @@ def getAbstract(paper_full):
                 find_index = find_index_2 + paper_temp.find('\n2 ')
 
     abstract = paper_full[find_index_2:find_index].replace("\n", "")
-    abstract = abstract.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' ')
+    abstract = abstract.replace(' \n', ' ').replace(' \r', ' ').replace('\n', '').replace('\r', '').replace('   ', ' ').replace('- ', '').replace('  ', ' ')
     #abstract = line_abstract + abstract
 
     return abstract
@@ -238,27 +238,22 @@ def getConclusion(paper_full):
                                     if find_index == -1:
                                         find_index = paper_full.find('SUMMARY')
 
-
     paper_temp = paper_full[find_index:]
     find_index_2 = paper_temp.find('\n')
     paper_temp = paper_full[find_index + find_index_2 : ]
 
-    find_index = paper_temp.find('Acknowledgement')
-    if find_index == -1:
-        find_index = paper_temp.find('ACKNOWLEDGEMENT')
-        if find_index == -1:
-            find_index = paper_temp.find('Acknowledgment')
-            if find_index == -1:
-                find_index = paper_temp.find('ACKNOWLEDGMENT')
-                if find_index == -1:
-                    find_index = paper_full.find('Bibliography')
-                    if find_index == -1:
-                        find_index = paper_temp.find('BIBLIOGRAPHY')
-                        if find_index == -1:
-                            find_index = paper_temp.find('References')
-                            if find_index == -1:
-                                find_index = paper_temp.find('REFERENCES')
 
+    find_index = paper_temp.find('Acknowl')
+    if find_index == -1:
+        find_index = paper_temp.find('ACKNOWL')
+        if find_index == -1:
+            find_index = paper_full.find('Bibl')
+            if find_index == -1:
+                find_index = paper_temp.find('BIBL')
+                if find_index == -1:
+                    find_index = paper_temp.find('Refer')
+                    if find_index == -1:
+                        find_index = paper_temp.find('REF')
 
     temp_conclusion = paper_temp[ :find_index]
 

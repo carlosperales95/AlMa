@@ -1,0 +1,651 @@
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1, 33)
+Start: 1
+End: 33
+All fields: T303 KEYPHRASE 1 33 Context-based projection methods
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (69, 74)
+Start: 69
+End: 74
+All fields: T313 KEYPHRASE 69 74 terms
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (89, 96)
+Start: 89
+End: 96
+All fields: T60 KEYPHRASE 89 96 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (120, 129)
+Start: 120
+End: 129
+All fields: T62 KEYPHRASE 120 129 attention
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (137, 146)
+Start: 137
+End: 146
+All fields: T63 KEYPHRASE 137 146 community
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (148, 152)
+Start: 148
+End: 152
+All fields: T64 KEYPHRASE 148 152 e.g.
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (193, 197)
+Start: 193
+End: 197
+All fields: T65 KEYPHRASE 193 197 none
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (207, 212)
+Start: 207
+End: 212
+All fields: T314 KEYPHRASE 207 212 works
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (321, 331)
+Start: 321
+End: 331
+All fields: T378 KEYPHRASE 321 331 study aims
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (434, 451)
+Start: 434
+End: 451
+All fields: T305 KEYPHRASE 434 451 exploit ing pages
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (463, 472)
+Start: 463
+End: 472
+All fields: T176 KEYPHRASE 463 472 Wikipedia
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (507, 512)
+Start: 507
+End: 512
+All fields: T75 KEYPHRASE 507 512 study
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (611, 619)
+Start: 611
+End: 619
+All fields: T79 KEYPHRASE 611 619 practice
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (677, 682)
+Start: 677
+End: 682
+All fields: T182 KEYPHRASE 677 682 Morin
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (789, 794)
+Start: 789
+End: 794
+All fields: T83 KEYPHRASE 789 794 brain
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (817, 824)
+Start: 817
+End: 824
+All fields: T84 KEYPHRASE 817 824 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (914, 922)
+Start: 914
+End: 922
+All fields: T194 KEYPHRASE 914 922 Ne´ve´ol
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (924, 932)
+Start: 924
+End: 932
+All fields: T195 KEYPHRASE 924 932 Aure´lie
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1042, 1051)
+Start: 1042
+End: 1051
+All fields: T199 KEYPHRASE 1042 1051 Glottopol
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1056, 1061)
+Start: 1056
+End: 1061
+All fields: T200 KEYPHRASE 1056 1061 Otero
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1148, 1155)
+Start: 1148
+End: 1155
+All fields: T88 KEYPHRASE 1148 1155 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1209, 1214)
+Start: 1209
+End: 1214
+All fields: T207 KEYPHRASE 1209 1214 Otero
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1262, 1269)
+Start: 1262
+End: 1269
+All fields: T323 KEYPHRASE 1262 1269 methods
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1332, 1339)
+Start: 1332
+End: 1339
+All fields: T90 KEYPHRASE 1332 1339 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1396, 1406)
+Start: 1396
+End: 1406
+All fields: T215 KEYPHRASE 1396 1406 Prochasson
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1418, 1432)
+Start: 1418
+End: 1432
+All fields: T553 KEYPHRASE 1418 1432 Emmanuel Morin
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1526, 1533)
+Start: 1526
+End: 1533
+All fields: T93 KEYPHRASE 1526 1533 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1585, 1589)
+Start: 1585
+End: 1589
+All fields: T226 KEYPHRASE 1585 1589 Rapp
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1591, 1599)
+Start: 1591
+End: 1599
+All fields: T227 KEYPHRASE 1591 1599 Reinhard
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1617, 1631)
+Start: 1617
+End: 1631
+All fields: T94 KEYPHRASE 1617 1631 identification
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1687, 1694)
+Start: 1687
+End: 1694
+All fields: T96 KEYPHRASE 1687 1694 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1782, 1788)
+Start: 1782
+End: 1788
+All fields: T98 KEYPHRASE 1782 1788 Rubino
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1790, 1798)
+Start: 1790
+End: 1798
+All fields: T232 KEYPHRASE 1790 1798 Raphae¨l
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1838, 1845)
+Start: 1838
+End: 1845
+All fields: T414 KEYPHRASE 1838 1845 lexicon
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1858, 1883)
+Start: 1858
+End: 1883
+All fields: T18 KEYPHRASE 1858 1883 projection-based approach
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1888, 1904)
+Start: 1888
+End: 1904
+All fields: T46 KEYPHRASE 1888 1904 term translation
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1970, 1976)
+Start: 1970
+End: 1976
+All fields: T237 KEYPHRASE 1970 1976 RANLP–
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (1994, 2002)
+Start: 1994
+End: 2002
+All fields: T238 KEYPHRASE 1994 2002 Saralegi
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2004, 2005)
+Start: 2004
+End: 2005
+All fields: T239 KEYPHRASE 2004 2005 X
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2028, 2029)
+Start: 2028
+End: 2029
+All fields: T242 KEYPHRASE 2028 2029 A
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2031, 2041)
+Start: 2031
+End: 2041
+All fields: T243 KEYPHRASE 2031 2041 Gurrutxaga
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2059, 2069)
+Start: 2059
+End: 2069
+All fields: T104 KEYPHRASE 2059 2069 extraction
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2105, 2112)
+Start: 2105
+End: 2112
+All fields: T329 KEYPHRASE 2105 2112 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2197, 2201)
+Start: 2197
+End: 2201
+All fields: T249 KEYPHRASE 2197 2201 Shao
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2203, 2205)
+Start: 2203
+End: 2205
+All fields: T250 KEYPHRASE 2203 2205 Li
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2274, 2281)
+Start: 2274
+End: 2281
+All fields: T108 KEYPHRASE 2274 2281 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2361, 2367)
+Start: 2361
+End: 2367
+All fields: T258 KEYPHRASE 2361 2367 Simard
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2425, 2433)
+Start: 2425
+End: 2433
+All fields: T331 KEYPHRASE 2425 2433 cognates
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2443, 2452)
+Start: 2443
+End: 2452
+All fields: T332 KEYPHRASE 2443 2452 sentences
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2466, 2473)
+Start: 2466
+End: 2473
+All fields: T109 KEYPHRASE 2466 2473 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2537, 2556)
+Start: 2537
+End: 2556
+All fields: T572 KEYPHRASE 2537 2556 Machine Translation
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2578, 2585)
+Start: 2578
+End: 2585
+All fields: T573 KEYPHRASE 2578 2585 Jason R
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2588, 2599)
+Start: 2588
+End: 2599
+All fields: T574 KEYPHRASE 2588 2599 Chris Quirk
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2631, 2660)
+Start: 2631
+End: 2660
+All fields: T588 KEYPHRASE 2631 2660 Extracting parallel sentences
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2677, 2684)
+Start: 2677
+End: 2684
+All fields: T334 KEYPHRASE 2677 2684 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2813, 2816)
+Start: 2813
+End: 2816
+All fields: T280 KEYPHRASE 2813 2816 ACL
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2833, 2835)
+Start: 2833
+End: 2835
+All fields: T114 KEYPHRASE 2833 2835 Yu
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2837, 2840)
+Start: 2837
+End: 2840
+All fields: T281 KEYPHRASE 2837 2840 Kun
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (2904, 2913)
+Start: 2904
+End: 2913
+All fields: T285 KEYPHRASE 2904 2913 Wikipedia
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3009, 3028)
+Start: 3009
+End: 3028
+All fields: T49 KEYPHRASE 3009 3028 association measure
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3061, 3072)
+Start: 3061
+End: 3072
+All fields: T119 KEYPHRASE 3061 3072 translation
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3116, 3120)
+Start: 3116
+End: 3120
+All fields: T121 KEYPHRASE 3116 3120 look
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3171, 3173)
+Start: 3171
+End: 3173
+All fields: T290 KEYPHRASE 3171 3173 LL
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3215, 3242)
+Start: 3215
+End: 3242
+All fields: T466 KEYPHRASE 3215 3242 projection-based approaches
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3288, 3309)
+Start: 3288
+End: 3309
+All fields: T51 KEYPHRASE 3288 3309 reference translation
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3322, 3324)
+Start: 3322
+End: 3324
+All fields: T291 KEYPHRASE 3322 3324 LL
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3347, 3364)
+Start: 3347
+End: 3364
+All fields: T29 KEYPHRASE 3347 3364 indirect approach
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3375, 3378)
+Start: 3375
+End: 3378
+All fields: T128 KEYPHRASE 3375 3378 one
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3394, 3399)
+Start: 3394
+End: 3399
+All fields: T293 KEYPHRASE 3394 3399 Morin
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3498, 3500)
+Start: 3498
+End: 3500
+All fields: T294 KEYPHRASE 3498 3500 LO
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3546, 3556)
+Start: 3546
+End: 3556
+All fields: T341 KEYPHRASE 3546 3556 parameters
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3594, 3604)
+Start: 3594
+End: 3604
+All fields: T343 KEYPHRASE 3594 3604 Parameters
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3620, 3632)
+Start: 3620
+End: 3632
+All fields: T54 KEYPHRASE 3620 3632 seed lexicon
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3634, 3638)
+Start: 3634
+End: 3638
+All fields: T135 KEYPHRASE 3634 3638 size
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3647, 3658)
+Start: 3647
+End: 3658
+All fields: T136 KEYPHRASE 3647 3658 specificity
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3694, 3705)
+Start: 3694
+End: 3705
+All fields: T138 KEYPHRASE 3694 3705 performance
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3742, 3751)
+Start: 3742
+End: 3751
+All fields: T344 KEYPHRASE 3742 3751 resources
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3849, 3859)
+Start: 3849
+End: 3859
+All fields: T345 KEYPHRASE 3849 3859 parameters
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3861, 3878)
+Start: 3861
+End: 3878
+All fields: T55 KEYPHRASE 3861 3878 sentence contexts
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3880, 3882)
+Start: 3880
+End: 3882
+All fields: T295 KEYPHRASE 3880 3882 LO
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3884, 3890)
+Start: 3884
+End: 3890
+All fields: T145 KEYPHRASE 3884 3890 cosine
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3915, 3922)
+Start: 3915
+End: 3922
+All fields: T146 KEYPHRASE 3915 3922 lexicon
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (3964, 3976)
+Start: 3964
+End: 3976
+All fields: T468 KEYPHRASE 3964 3976 future works
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (4015, 4026)
+Start: 4015
+End: 4026
+All fields: T150 KEYPHRASE 4015 4026 performance
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (4069, 4093)
+Start: 4069
+End: 4093
+All fields: T32 KEYPHRASE 4069 4093 terminological extractor
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (4129, 4134)
+Start: 4129
+End: 4134
+All fields: T297 KEYPHRASE 4129 4134 Morin
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (4222, 4233)
+Start: 4222
+End: 4233
+All fields: T156 KEYPHRASE 4222 4233 combination
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (4326, 4353)
+Start: 4326
+End: 4353
+All fields: T471 KEYPHRASE 4326 4353 projection-based approaches
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (4451, 4458)
+Start: 4451
+End: 4458
+All fields: T160 KEYPHRASE 4451 4458 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (4500, 4509)
+Start: 4500
+End: 4509
+All fields: T301 KEYPHRASE 4500 4509 Wikipedia
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (4625, 4627)
+Start: 4625
+End: 4627
+All fields: T302 KEYPHRASE 4625 4627 LO
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (4679, 4686)
+Start: 4679
+End: 4686
+All fields: T353 KEYPHRASE 4679 4686 corpora
+
+- - - - - KEYPHRASE - - - - -
+Label: KEYPHRASE
+Span: (4691, 4698)
+Start: 4691
+End: 4698
+All fields: T354 KEYPHRASE 4691 4698 domains
+

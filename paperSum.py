@@ -6,7 +6,6 @@ from parsingUtils import *
 from xmlUtils import *
 
 
-
 if len(sys.argv) == 1:
     print("\n")
     print("Input file or directory not specified.")
@@ -69,6 +68,7 @@ for idx,file in enumerate(onlyfiles):
 
     paper_abstract = getAbstract(paper_full)
 
+
     f2.write(paper_abstract)
     f2.write("\n")
     f2.write("\n")
@@ -92,9 +92,11 @@ for idx,file in enumerate(onlyfiles):
     conclusion = figureHunter(temp_conclusion)
     conclusion = removeFigureTags(conclusion, "Figure ")
     conclusion = removeFigureTags(conclusion, "Table ")
-    conclusion = conclusion[:conclusion.rfind('\n')]
+    #conclusion = conclusion[:conclusion.rfind('\n')]
 
-    f2.write(conclusion.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' '))
+    #f2.write(conclusion.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' '))
+    conclusion = conclusion.replace(' \n', ' ').replace(' \r', ' ').replace('\n', '').replace('\r', '').replace('   ', ' ').replace('- ', '').replace('  ', ' ').replace('\t', '')
+    f2.write(conclusion)
     f2.write("\n")
 
     print("Writing .... (5/5)")

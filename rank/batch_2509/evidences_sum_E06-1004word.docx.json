@@ -1,0 +1,14 @@
+[
+    {
+        "claim_score": -0.37130169, 
+        "evidence": "We believe that our results on the computational complexity of the tasks in SMT will result in a better understanding of these tasks from a theoretical perspective .", 
+        "evidence_score": 0.34797446, 
+        "text": "We believe that our results on the computational complexity of the tasks in SMT will result in a better understanding of these tasks from a theoretical perspective ."
+    }, 
+    {
+        "claim_score": -0.15381239, 
+        "evidence": "Our results show that there can not exist a closed form expression ( whose representation is polynomial in the size of the input ) for P ( f | e ) and the counts in the EM iterations for Models 3-5 unless P = NP .", 
+        "evidence_score": 0.30169128, 
+        "text": "Our results show that there can not exist a closed form expression ( whose representation is polynomial in the size of the input ) for P ( f | e ) and the counts in the EM iterations for Models 3-5 unless P = NP ."
+    }
+]

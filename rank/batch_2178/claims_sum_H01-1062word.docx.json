@@ -1,0 +1,9 @@
+[
+    {
+        "claim_evidence": "the statistical translation is superior , especially in the presence of speech input and ungrammatical input", 
+        "claim_score": 0.82691282, 
+        "evidence": "Comparative evaluations with other translation approaches of the Verbmobil prototype system show that the statistical translation is superior , especially in the presence of speech input and ungrammatical input .", 
+        "evidence_score": 0.35743638, 
+        "text": "Comparative evaluations with other translation approaches of the Verbmobil prototype system show that the statistical translation is superior , especially in the presence of speech input and ungrammatical input ."
+    }
+]

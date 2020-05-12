@@ -1,0 +1,14 @@
+[
+    {
+        "claim_score": -1.629988, 
+        "evidence": "Our evaluation results empirically validated the accuracy of our algorithm over real-life datasets , and showed the effectiveness on our proposed perspective .", 
+        "evidence_score": 0.3923619, 
+        "text": "Our evaluation results empirically validated the accuracy of our algorithm over real-life datasets , and showed the effectiveness on our proposed perspective ."
+    }, 
+    {
+        "claim_score": -0.60431747, 
+        "evidence": "To achieve this goal , we de veloped a graph alignment algorithm that iteratively reinforces the matching similarity exploiting relational similarity and then extracts correct matches .", 
+        "evidence_score": 0.24504342, 
+        "text": "To achieve this goal , we de veloped a graph alignment algorithm that iteratively reinforces the matching similarity exploiting relational similarity and then extracts correct matches ."
+    }
+]
