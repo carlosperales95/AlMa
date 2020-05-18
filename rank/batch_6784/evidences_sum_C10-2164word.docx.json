@@ -1,0 +1,21 @@
+[
+    {
+        "claim_score": -1.1436, 
+        "evidence": "All these aspects will be our research focus in the future .", 
+        "evidence_score": 0.18115225, 
+        "text": "All these aspects will be our research focus in the future ."
+    }, 
+    {
+        "claim_evidence": "the obvious performance improvement for query translation can be obtained , which is very beneficial to CLIR and can improve the whole retrieval performance", 
+        "claim_score": 0.83012262, 
+        "evidence": "It can be observed from the experimental results on the data sets of Text Retrieval Evaluation Conference ( TREC ) that the obvious performance improvement for query translation can be obtained , which is very beneficial to CLIR and can improve the whole retrieval performance .", 
+        "evidence_score": 0.17619985, 
+        "text": "It can be observed from the experimental results on the data sets of Text Retrieval Evaluation Conference ( TREC ) that the obvious performance improvement for query translation can be obtained , which is very beneficial to CLIR and can improve the whole retrieval performance ."
+    }, 
+    {
+        "claim_score": -0.60542147, 
+        "evidence": "From the experimental results for combining our OOV term translation model with English-Chinese CrossLanguage Information Retrieval ( CLIR ) on the data sets of Text Retrieval Evaluation Conference ( TREC ) , it can be found that the obvious performance improvement for both query translation and retrieval can also be obtained .", 
+        "evidence_score": 0.14114007, 
+        "text": "From the experimental results for combining our OOV term translation model with English-Chinese CrossLanguage Information Retrieval ( CLIR ) on the data sets of Text Retrieval Evaluation Conference ( TREC ) , it can be found that the obvious performance improvement for both query translation and retrieval can also be obtained ."
+    }
+]

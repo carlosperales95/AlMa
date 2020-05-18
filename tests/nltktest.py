@@ -10,7 +10,7 @@ import os
 
 
 
-dir = "./rank/batch_2178/"
+dir = "./rank/batch_3068/"
 
 
 onlyfiles = [f for f in listdir(dir) if isfile(join(dir, f))]

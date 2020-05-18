@@ -97,17 +97,16 @@ def print_topics(model, count_vectorizer, n_top_words):
                         for i in topic.argsort()[:-n_top_words - 1:-1]]))
 
 # Tweak the two parameters below
-number_topics = 5
+number_topics = 3
 number_words = 10# Create and fit the LDA model
 lda = LDA(n_components=number_topics, n_jobs=-1)
 lda.fit(count_data)# Print the topics found by the LDA model
 print("Topics found via LDA:")
 print_topics(lda, count_vectorizer, number_words)
 
-
+import pyLDAvis
 from pyLDAvis import sklearn as sklearn_lda
 import pickle
-import pyLDAvis
 
 LDAvis_data_filepath = os.path.join('./ldavis_prepared_'+str(number_topics))
 # # this is a bit time consuming - make the if statement True

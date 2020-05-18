@@ -1,0 +1,38 @@
+[
+    {
+        "claim_score": -0.35384663, 
+        "evidence": "We also present a filtering method directly addressing the problems of web-crawled corpora , which enabled us to make use of the French-English Giga corpus .", 
+        "evidence_score": 0.36354919, 
+        "text": "We also present a filtering method directly addressing the problems of web-crawled corpora , which enabled us to make use of the French-English Giga corpus ."
+    }, 
+    {
+        "claim_score": -1.15634, 
+        "evidence": "We applied POS-based reordering to improve our translations in all directions , using short-range reordering for English \u2194 French and long-range reordering for English \u2194 German .", 
+        "evidence_score": 0.29166517, 
+        "text": "We applied POS-based reordering to improve our translations in all directions , using short-range reordering for English \u2194 French and long-range reordering for English \u2194 German ."
+    }, 
+    {
+        "claim_score": -0.56336684, 
+        "evidence": "In addition , a parallel phrase scoring technique was implemented that could speed up the MT training process tremendously .", 
+        "evidence_score": 0.22910382, 
+        "text": "In addition , a parallel phrase scoring technique was implemented that could speed up the MT training process tremendously ."
+    }, 
+    {
+        "claim_score": -2.242408, 
+        "evidence": "We participated in the Shared Translation Task and submitted translations for English \u2194 German and English \u2194 French .", 
+        "evidence_score": 0.22896117, 
+        "text": "We participated in the Shared Translation Task and submitted translations for English \u2194 German and English \u2194 French ."
+    }, 
+    {
+        "claim_score": -1.8604276, 
+        "evidence": "2 We have presented the systems for our participation in the WMT 2011 Evaluation for English \u2194 German and English \u2194 French .", 
+        "evidence_score": 0.13397356, 
+        "text": "2 We have presented the systems for our participation in the WMT 2011 Evaluation for English \u2194 German and English \u2194 French ."
+    }, 
+    {
+        "claim_score": -1.5143254, 
+        "evidence": "A Discriminative Word Alignment Model led to an increase in BLEU for English-German .", 
+        "evidence_score": 0.040337578, 
+        "text": "A Discriminative Word Alignment Model led to an increase in BLEU for English-German ."
+    }
+]

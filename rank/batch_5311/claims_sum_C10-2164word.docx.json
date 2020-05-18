@@ -1,0 +1,9 @@
+[
+    {
+        "claim_evidence": "the obvious performance improvement for query translation can be obtained , which is very beneficial to CLIR and can improve the whole retrieval performance", 
+        "claim_score": 0.83012262, 
+        "evidence": "It can be observed from the experimental results on the data sets of Text Retrieval Evaluation Conference ( TREC ) that the obvious performance improvement for query translation can be obtained , which is very beneficial to CLIR and can improve the whole retrieval performance .", 
+        "evidence_score": 0.17619985, 
+        "text": "It can be observed from the experimental results on the data sets of Text Retrieval Evaluation Conference ( TREC ) that the obvious performance improvement for query translation can be obtained , which is very beneficial to CLIR and can improve the whole retrieval performance ."
+    }
+]

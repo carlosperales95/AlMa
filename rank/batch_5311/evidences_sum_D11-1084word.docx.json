@@ -1,0 +1,51 @@
+[
+    {
+        "claim_score": -0.24608801, 
+        "evidence": "Tiedemann ( 2010 ) showed that the repetition and consistency are very important when modeling natural language and translation .", 
+        "evidence_score": 0.33507205, 
+        "text": "Tiedemann ( 2010 ) showed that the repetition and consistency are very important when modeling natural language and translation ."
+    }, 
+    {
+        "claim_score": -0.95657012, 
+        "evidence": "Statistical machine translation systems are usually trained on a large amount of bilingual sentence pairs and translate one sentence at a time , ignoring document-level information .", 
+        "evidence_score": 0.2237554, 
+        "text": "Statistical machine translation systems are usually trained on a large amount of bilingual sentence pairs and translate one sentence at a time , ignoring document-level information ."
+    }, 
+    {
+        "claim_score": -0.54009615, 
+        "evidence": "In order to resolve this problem , this paper employs a topic model to weaken those noisy/unnecessary bilingual phrase pairs by recommending the decoder to choose most likely phrase pairs according to the topic words extracted from the target-side text of similar bilingual document pairs .", 
+        "evidence_score": 0.12404175, 
+        "text": "In order to resolve this problem , this paper employs a topic model to weaken those noisy/unnecessary bilingual phrase pairs by recommending the decoder to choose most likely phrase pairs according to the topic words extracted from the target-side text of similar bilingual document pairs ."
+    }, 
+    {
+        "claim_score": -1.099675, 
+        "evidence": "In particular , three new features are designed to explore various kinds of document-level information in above three kinds of caches .", 
+        "evidence_score": 0.094788654, 
+        "text": "In particular , three new features are designed to explore various kinds of document-level information in above three kinds of caches ."
+    }, 
+    {
+        "claim_evidence": "our cache-based approach significantly improves the performance with the help of various cachescache-based ap-proach may introduce some negative impact onBLEU scores for certain documents.In the futurehow to re-flect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments", 
+        "claim_score": 0.45667013, 
+        "evidence": "2 We have shown that our cache-based approach significantly improves the performance with the help of various caches , such as the dynamic , static and topic caches , although the cache-based ap-proach may introduce some negative impact onBLEU scores for certain documents.In the future , we will further explore how to re-flect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments , such as named entity , event and coreference .", 
+        "evidence_score": 0.093925871, 
+        "text": "2 We have shown that our cache-based approach significantly improves the performance with the help of various caches , such as the dynamic , static and topic caches , although the cache-based ap-proach may introduce some negative impact onBLEU scores for certain documents.In the future , we will further explore how to re-flect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments , such as named entity , event and coreference ."
+    }, 
+    {
+        "claim_score": -1.7452712, 
+        "evidence": "He proposed to employ cache-based language and translation models in a phrase-based SMT system for domain 909 Proceedings of the 2011 Conference on Empirical Methods in Natural Language Processing , pages 909 -- 919 , Edinburgh , Scotland , UK , July 27 -- 31 , 2011 .", 
+        "evidence_score": 0.083605519, 
+        "text": "He proposed to employ cache-based language and translation models in a phrase-based SMT system for domain 909 Proceedings of the 2011 Conference on Empirical Methods in Natural Language Processing , pages 909 -- 919 , Edinburgh , Scotland , UK , July 27 -- 31 , 2011 ."
+    }, 
+    {
+        "claim_score": -1.7185856, 
+        "evidence": "Section 3 presents our cache-based approach to documentlevel SMT .", 
+        "evidence_score": 0.034319031, 
+        "text": "Section 3 presents our cache-based approach to documentlevel SMT ."
+    }, 
+    {
+        "claim_score": -0.28377832, 
+        "evidence": "Evaluation shows the effectiveness of our cache-based approach to document-level translation with the performance improvement of 0.81 in BLUE score over Moses .", 
+        "evidence_score": 0.02488721, 
+        "text": "Evaluation shows the effectiveness of our cache-based approach to document-level translation with the performance improvement of 0.81 in BLUE score over Moses ."
+    }
+]

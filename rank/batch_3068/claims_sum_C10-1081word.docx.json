@@ -1,0 +1,20 @@
+[
+    {
+        "claim": "the MT system is capable of providing wordis generally true for current statistical MT systems", 
+        "claim_score": 0.42581888, 
+        "evidence_score": -0.55437614, 
+        "text": "We assume here that the MT system is capable of providing word alignment ( or equivalent ) information during decoding , which is generally true for current statistical MT systems ."
+    }, 
+    {
+        "claim": "partial SRSs must be recorded inthey can be combined", 
+        "claim_score": 0.25668134, 
+        "evidence_score": -0.37637641, 
+        "text": "In such cases partial SRSs must be recorded in such a way that they can be combined later with other partial SRSs ."
+    }, 
+    {
+        "claim": "there has not been much success in using them to improve SMT systems", 
+        "claim_score": 0.060486671, 
+        "evidence_score": -0.28340483, 
+        "text": "In spite of the theoretical potential of the semantic roles , there has not been much success in using them to improve SMT systems ."
+    }
+]

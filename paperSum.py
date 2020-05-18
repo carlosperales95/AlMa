@@ -43,6 +43,8 @@ else:
         dir=""
 
 
+filen = open("INTROS.txt", "w")
+
 for idx,file in enumerate(onlyfiles):
 
 
@@ -56,6 +58,18 @@ for idx,file in enumerate(onlyfiles):
 
 
     sections = xmlToSections(xml_name)
+
+    filen.write(file)
+    filen.write("\n")
+
+    for section in sections:
+        filen.write(section)
+        filen.write("\n")
+
+    filen.write("\n")
+    filen.write("--------------------------------------")
+    filen.write("\n")
+    filen.write("\n")
 
 
     f = open(dir+file, "r")
@@ -77,10 +91,12 @@ for idx,file in enumerate(onlyfiles):
 
     intro = getSection(paper_full, sections[0], sections[1])
 
-    if len(intro) < 10000:
-        f2.write(intro)
-        f2.write("\n")
-        f2.write("\n")
+    #if len(intro) < 10000:
+    f2.write(intro)
+    f2.write("\n")
+    f2.write("\n")
+
+    #intro = getIntro(paper_full)
 
 
     print("Found Conclusion/Discussion .... (3/5)")
@@ -95,7 +111,7 @@ for idx,file in enumerate(onlyfiles):
     #conclusion = conclusion[:conclusion.rfind('\n')]
 
     #f2.write(conclusion.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' '))
-    conclusion = conclusion.replace(' \n', ' ').replace(' \r', ' ').replace('\n', '').replace('\r', '').replace('   ', ' ').replace('- ', '').replace('  ', ' ').replace('\t', '')
+    conclusion = conclusion.replace('- \r', '').replace('-\r', '').replace(' \n', ' ').replace(' \r', ' ').replace('\n', '').replace('\r', '').replace('   ', ' ').replace('- ', '').replace('  ', ' ').replace('\t', '')
     f2.write(conclusion)
     f2.write("\n")
 
@@ -109,3 +125,4 @@ for idx,file in enumerate(onlyfiles):
 
 
 print("Script finished, paper(s) summarized")
+filen.close()

@@ -1,0 +1,20 @@
+[
+    {
+        "claim": "\u2022 Name translations pose a greater complexity because the set of names is open and highly dynamic", 
+        "claim_score": 0.84712334, 
+        "evidence_score": -0.19453146, 
+        "text": "\u2022 Name translations pose a greater complexity because the set of names is open and highly dynamic ."
+    }, 
+    {
+        "claim": "It is also important to acknowledge that there are many fundamental differences between the translation of names and other tokensa name is rendered phonetically", 
+        "claim_score": 0.091457712, 
+        "evidence_score": -0.44650565, 
+        "text": "It is also important to acknowledge that there are many fundamental differences between the translation of names and other tokens , depending on whether a name is rendered phonetically , semantically , or a mixture of both ( Ji et al. , 2009 ) ."
+    }, 
+    {
+        "claim": "\u2022 The artificial settings of assigning low weights to informationgovernment evaluations have discouraged MT developers to spend time and explore resources to tackle this problem", 
+        "claim_score": 0.013312905, 
+        "evidence_score": -0.54042251, 
+        "text": "\u2022 The artificial settings of assigning low weights to information translation ( compared to overall word translation ) in some largescale government evaluations have discouraged MT developers to spend time and explore resources to tackle this problem ."
+    }
+]

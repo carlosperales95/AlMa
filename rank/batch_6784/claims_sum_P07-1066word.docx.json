@@ -1,0 +1,8 @@
+[
+    {
+        "claim": "the model searches for a common latent topic space in an unsupervised fashion , rather than to require manual interaction", 
+        "claim_score": 0.575909, 
+        "evidence_score": -0.28339293, 
+        "text": "The beauty of the bLSA framework is that the model searches for a common latent topic space in an unsupervised fashion , rather than to require manual interaction ."
+    }
+]

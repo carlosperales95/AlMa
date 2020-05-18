@@ -1,0 +1,16 @@
+[
+    {
+        "claim_evidence": "decoding algorithms derived from our framework can be of practical significance", 
+        "claim_score": 0.74563549, 
+        "evidence": "We believe that decoding algorithms derived from our framework can be of practical significance .", 
+        "evidence_score": 0.51123533, 
+        "text": "We believe that decoding algorithms derived from our framework can be of practical significance ."
+    }, 
+    {
+        "claim_evidence": "alternating maximization can be employed", 
+        "claim_score": 0.093171025, 
+        "evidence": "We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm .", 
+        "evidence_score": 0.50280489, 
+        "text": "We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm ."
+    }
+]

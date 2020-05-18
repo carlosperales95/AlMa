@@ -1,0 +1,81 @@
+[
+    {
+        "claim_score": -2.1896027, 
+        "evidence": "Och et al. ( 2001 ) and Germann et al. ( 2001 ) both implemented optimal decoders and benchmarked approximative algorithms against them .", 
+        "evidence_score": 0.38175034, 
+        "text": "Och et al. ( 2001 ) and Germann et al. ( 2001 ) both implemented optimal decoders and benchmarked approximative algorithms against them ."
+    }, 
+    {
+        "claim_score": -0.9227228, 
+        "evidence": "We present improvements to a greedy decoding algorithm for statistical machine translation that reduce its time complexity from at least cubic ( when applied na \u00a8 \u0131vely ) to practically linear time1 without sacrificing translation quality .", 
+        "evidence_score": 0.38153842, 
+        "text": "We present improvements to a greedy decoding algorithm for statistical machine translation that reduce its time complexity from at least cubic ( when applied na \u00a8 \u0131vely ) to practically linear time1 without sacrificing translation quality ."
+    }, 
+    {
+        "claim_score": -2.0714592, 
+        "evidence": "The times shown are averages of 100 sentences each for length10 , 20 , , 80 .", 
+        "evidence_score": 0.31740742, 
+        "text": "The times shown are averages of 100 sentences each for length10 , 20 , , 80 ."
+    }, 
+    {
+        "claim_score": -0.65621977, 
+        "evidence": "In Section 4 , we discuss improvements to the algorithm and its implementation , and the effect of restrictions on word reordering .", 
+        "evidence_score": 0.24699716, 
+        "text": "In Section 4 , we discuss improvements to the algorithm and its implementation , and the effect of restrictions on word reordering ."
+    }, 
+    {
+        "claim_score": -2.4967784, 
+        "evidence": "IBM Model 4 scores and the BLEU metric .", 
+        "evidence_score": 0.21729648, 
+        "text": "IBM Model 4 scores and the BLEU metric ."
+    }, 
+    {
+        "claim_score": -1.1188922, 
+        "evidence": "Och et al. report word error rates of 68.68 percent for optimal search ( based on a variant of the A * algorithm ) , and 69.65 percent for the most restricted version of a decoder that combines dynamic programming with a beam search ( Tillmann and Ney , 2000 ) .", 
+        "evidence_score": 0.18043398, 
+        "text": "Och et al. report word error rates of 68.68 percent for optimal search ( based on a variant of the A * algorithm ) , and 69.65 percent for the most restricted version of a decoder that combines dynamic programming with a beam search ( Tillmann and Ney , 2000 ) ."
+    }, 
+    {
+        "claim_score": -0.56878603, 
+        "evidence": "Operations not included in the figures consume so little time that their plots can not be discerned in the graphs .", 
+        "evidence_score": 0.1326544, 
+        "text": "Operations not included in the figures consume so little time that their plots can not be discerned in the graphs ."
+    }, 
+    {
+        "claim_score": -1.0353955, 
+        "evidence": "In the following , we first describe the underlying IBM initial string : I do not understand the logic of these people .", 
+        "evidence_score": 0.081752644, 
+        "text": "In the following , we first describe the underlying IBM initial string : I do not understand the logic of these people ."
+    }, 
+    {
+        "claim_evidence": "this time can be reduced to ca. 40 minutes without sacrificing translation quality", 
+        "claim_score": 0.011659802, 
+        "evidence": "We will show that this time can be reduced to ca. 40 minutes without sacrificing translation quality .", 
+        "evidence_score": 0.064890397, 
+        "text": "We will show that this time can be reduced to ca. 40 minutes without sacrificing translation quality ."
+    }, 
+    {
+        "claim_score": -1.5208885, 
+        "evidence": "Using the same evaluation metric ( but different evaluation data ) , Wang and Waibel ( 1997 ) report search error rates of 7.9 percent and 9.3 percent , respectively , for their decoders .", 
+        "evidence_score": 0.051201343, 
+        "text": "Using the same evaluation metric ( but different evaluation data ) , Wang and Waibel ( 1997 ) report search error rates of 7.9 percent and 9.3 percent , respectively , for their decoders ."
+    }, 
+    {
+        "claim_score": -1.205877, 
+        "evidence": "2 In this paper , we have analyzed the complexity of the greedy decoding algorithm originally presented in Germann et al. ( 2001 ) and presented improvements that drastically reduce the decoder 's complexity and speed to practically linear time.Experimental data suggests a good correlation betweenG1 decoding anddecoding ( with 10 translations per input word considered , a list of 498 candidates for INSERT , a maximum swap distance of 2 and a maximum swap segment size of 5 ) .", 
+        "evidence_score": 0.037818883, 
+        "text": "2 In this paper , we have analyzed the complexity of the greedy decoding algorithm originally presented in Germann et al. ( 2001 ) and presented improvements that drastically reduce the decoder 's complexity and speed to practically linear time.Experimental data suggests a good correlation betweenG1 decoding anddecoding ( with 10 translations per input word considered , a list of 498 candidates for INSERT , a maximum swap distance of 2 and a maximum swap segment size of 5 ) ."
+    }, 
+    {
+        "claim_score": -0.60220886, 
+        "evidence": "The speed improvements discussed in this paper make multiple randomized searches per sentence feasible , leading to a faster and better decoder for machine translation with IBM Model 4.6", 
+        "evidence_score": 0.026806951, 
+        "text": "The speed improvements discussed in this paper make multiple randomized searches per sentence feasible , leading to a faster and better decoder for machine translation with IBM Model 4.6"
+    }, 
+    {
+        "claim_score": -0.27441496, 
+        "evidence": "We achieve this by integrating hypothesis evaluation into hypothesis creation , tiling improvements over the translation hypothesis at the end of each search iteration , and by imposing restrictions on the amount of word reordering during decoding .", 
+        "evidence_score": 0.0030233184, 
+        "text": "We achieve this by integrating hypothesis evaluation into hypothesis creation , tiling improvements over the translation hypothesis at the end of each search iteration , and by imposing restrictions on the amount of word reordering during decoding ."
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "claim": "association is rarely observed in English corpus", 
+        "claim_score": 0.53515892, 
+        "evidence_score": -0.65136781, 
+        "text": "In such case , as Hillary Clinton is a famous female leader , she may be associated with other Chinese female leaders in Chinese corpus , while such association is rarely observed in English corpus , which causes asymmetry ."
+    }, 
+    {
+        "claim_evidence": "using such dissimilarity against deciding this pair as a correct translation would be harmful", 
+        "claim_score": 0.030339008, 
+        "evidence": "That is , Hillary Clinton is `` atemporal , '' as Figure 1 ( b ) shows , such that using such dissimilarity against deciding this pair as a correct translation would be harmful .", 
+        "evidence_score": 0.32139642, 
+        "text": "That is , Hillary Clinton is `` atemporal , '' as Figure 1 ( b ) shows , such that using such dissimilarity against deciding this pair as a correct translation would be harmful ."
+    }, 
+    {
+        "claim": "considering temporality selectively is helpful for improving the translation quality", 
+        "claim_score": 0.020114607, 
+        "evidence_score": -0.038617621, 
+        "text": "2 This paper validated that considering temporality selectively is helpful for improving the translation quality ."
+    }
+]

@@ -1,7 +1,6 @@
 import spacy
 import random
 
-
 TRAIN_DATA = [('Search Analytics: Business Value & BigData NoSQL Backend, Otis Gospodnetic ', {'entities': [(35,42,'TECH'), (43,48,'TECH')]}),
               ('Introduction to Elasticsearch by Radu', {'entities': [ (16,29,'TECH')]}),
               ('Our approach joins MySQL and SVM', {'entities': [(19, 24, 'TECH'), (29, 32, 'TECH')]}),
@@ -29,7 +28,29 @@ TRAIN_DATA = [('Search Analytics: Business Value & BigData NoSQL Backend, Otis G
               ('Next is to stem the words using Krovetz Algorithm based on WordNet Dictionary', {'entities': [(32, 49, 'METHOD'), (59, 66, 'TECH')]}),
               ('Using TF-IDF variants, there are six different values for every word and filtering can be done by using cross-domain comparison', {'entities': [(6, 13, 'TECH'), (104, 127, 'METHOD')]}),
               ('We perform clustering algorithms such as K-means in the topic space to obtain clusters', {'entities': [(11, 32, 'METHOD'), (41, 48, 'TECH')]}),
-              ('This method uses a CRFs model to label keyphrases in text', {'entities': [(19, 23, 'TECH'), (33, 49, 'METHOD')]})]
+              ('This method uses a CRFs model to label keyphrases in text', {'entities': [(19, 23, 'TECH'), (33, 49, 'METHOD')]}),
+              ('For example, the current-best error rate on the MNIST digit-recognition task (<0.3%) approaches human performance', {'entities': [(48, 53, 'TECH'), (54, 71, 'METHOD')]}),
+              ('We  are  not  the  first  to  consider  alternatives  to  traditional neuron models in CNNs.', {'entities': [(70, 83, 'METHOD'), (87, 108, 'TECH')]}),
+              ('Max-pooling layers, of the kind described in Section 3.4, follow both response normalization layers as well as the fifth convolutional layer', {'entities': [(0, 18, 'METHOD'), (70, 99, 'METHOD'), (121, 140, 'METHOD')]}),
+              ('The ReLU non-linearity is applied to the output of every convolutional and fully connected layer', {'entities': [(4, 8, 'TECH'), (9, 22, 'METHOD'), (81, 96, 'METHOD')]}),
+              ('Many current NLP systems and techniques treat words as atomic unit', {'entities': [(13, 16, 'TECH')]}),
+              ('Another interesting architecture of NNLM was presented', {'entities': [(36, 40, 'TECH')]}),
+              ('Then the word vectors are first learned using neural network with a single hidden layer', {'entities': [(9, 21, 'METHOD'), (46, 60, 'TECH'), (75, 87, 'METHOD')]}),
+              ('LDA moreover becomes computationally very expensive on large data sets', {'entities': [(0, 3, 'TECH')]}),
+              ('Recurrent neural network based language model has been proposed to overcome certain limitations of the feedforward NNLM, ', {'entities': [(0, 24, 'TECH'), (31, 45, 'METHOD'), (103, 119, 'TECH')]}),
+              ('We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSVRC-2010 contest', {'entities': [(20, 53, 'TECH'), (112, 120, 'TECH')]}),
+              ('ImageNet is a dataset of over 15 million labeled high-resolution images belonging to roughly 22,000 categories', {'entities': [(0, 8, 'TECH')]}),
+              ('We define Markov chains over various image maps, and treat the equilibrium distribution over map locations as activation and saliency values', {'entities': [(10, 23, 'TECH'), (63, 87, 'METHOD'), (125, 140, 'METHOD')]}),
+              ('Given access to the same feature information, GBVS predicts human fixations more reliably than the standard algorithms', {'entities': [(46, 50, 'TECH')]}),
+              ('This paper proposes a Fast Region-based Convolutional Network method (Fast R-CNN) for object detection', {'entities': [(22, 61, 'TECH'), (70, 80, 'TECH'), (86, 102, 'METHOD')]}),
+              ('For SVM and bounding-box regressor training, features are extracted from each object proposal in each image and written to disk', {'entities': [(4, 7, 'TECH'), (12, 43, 'TECH')]}),
+              ('With very deep networks, such as VGG16, this process takes 2.5 GPU-days for the 5k images of the VOC07 trainval set', {'entities': [(33, 38, 'TECH')]}),
+              ('We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic  objective  functions,  based  on  adaptive  estimates  of  lower-order  moments', {'entities': [(13, 17, 'TECH'), (48, 75, 'METHOD'), (79, 111, 'METHOD'), (125, 144, 'METHOD')]}),
+              ('Our method is designed to combine the advantages of two recently popular methods: AdaGrad (Duchi et al., 2011), which works well with sparse gradients, and RMSProp (Tieleman & Hinton, 2012), which works well in on-line and non-stationary settings', {'entities': [(82, 89, 'TECH'), (134, 150, 'METHOD'), (156, 163, 'TECH'), (223, 246, 'METHOD')]}),
+              ('Plugging the appropriate matrix from the above equation into var1 or var2 gives rise to our ADAGRAD family of algorithms', {'entities': [(92, 99, 'TECH'), (100, 120, 'METHOD')]}),
+              ('Informally, FTRL methods choose the best decision in hindsight at every iteration', {'entities': [(12, 16, 'TECH')]})
+]
+
 
 
 def train_spacy(data,iterations):

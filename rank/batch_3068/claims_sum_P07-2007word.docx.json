@@ -1,0 +1,9 @@
+[
+    {
+        "claim_evidence": "our system is both effective and useful in a real-world environment", 
+        "claim_score": 0.68313743, 
+        "evidence": "The evaluation has demonstrated that our system is both effective and useful in a real-world environment .", 
+        "evidence_score": 0.19916017, 
+        "text": "The evaluation has demonstrated that our system is both effective and useful in a real-world environment ."
+    }
+]

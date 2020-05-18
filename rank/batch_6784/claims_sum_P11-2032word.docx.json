@@ -1,0 +1,8 @@
+[
+    {
+        "claim": "the proposed method effectively addresses the well-known rare word problemsame time induces a much smaller dictionary of bilingual word-pairs", 
+        "claim_score": 0.20322872, 
+        "evidence_score": -0.31653466, 
+        "text": "We also show that the proposed method effectively addresses the well-known rare word problem in EM-estimated models ; and at the same time induces a much smaller dictionary of bilingual word-pairs ."
+    }
+]

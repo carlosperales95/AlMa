@@ -263,15 +263,34 @@ def getConclusion(paper_full):
 
 def getSection(paper_full, section_name, next_section):
 
-    print(next_section)
+    find_index = paper_full.find(section_name[: len(section_name) - 1])
+    if find_index != -1:
+        paper_temp = paper_full[find_index:]
+        find_end = paper_temp.find("\n")
+        title = False
+        section_temp = ""
+        while title != True:
+            find_next_index = paper_temp.find(next_section)
+            if find_next_index != -1:
+                section_temp = paper_temp[find_next_index:]
+                find_end2 = section_temp.find("\n")
+                if find_end2 <= 30:
+                    title = True
+                else:
+                    paper_change = paper_temp.find(section_temp)
+                    paper_temp2 = paper_temp[paper_change + find_end2:]
+                    paper_temp = paper_temp2
+            else:
+                section = ""
+                break
 
-    find_index = paper_full.find(section_name)
-    find_next_index = paper_full.find(next_section)
+        section_start = paper_full.find(section_temp)
+        section = paper_full[find_index + find_end : section_start]
+        #section = paper_full[find_index + len(section_name) : find_next_index]
+        #section = figureHunter(section)
 
-    section = paper_full[find_index + len(section_name) : find_next_index]
-
-    #section = figureHunter(section)
-
-    section = section.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' ')
+        section = section.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' ')
+    else:
+        section = ""
 
     return section

@@ -1,0 +1,63 @@
+[
+    {
+        "claim_score": -1.0038417, 
+        "evidence": "Section 4 reports experimental results and Section 5 concludes our work .", 
+        "evidence_score": 0.58109169, 
+        "text": "Section 4 reports experimental results and Section 5 concludes our work ."
+    }, 
+    {
+        "claim_score": -2.1087351, 
+        "evidence": "Such engine \u2217 This work was done when the first two authors visited Mi - crosoft Research Asia .", 
+        "evidence_score": 0.57064078, 
+        "text": "Such engine \u2217 This work was done when the first two authors visited Mi - crosoft Research Asia ."
+    }, 
+    {
+        "claim_score": -1.629988, 
+        "evidence": "Our evaluation results empirically validated the accuracy of our algorithm over real-life datasets , and showed the effectiveness on our proposed perspective .", 
+        "evidence_score": 0.3923619, 
+        "text": "Our evaluation results empirically validated the accuracy of our algorithm over real-life datasets , and showed the effectiveness on our proposed perspective ."
+    }, 
+    {
+        "claim_score": -0.64321667, 
+        "evidence": "To illustrate this , an English news article mentioning `` Bill Gates '' and `` Melinda Gates '' evidences a relationship between the two entities , which can be quantified from their co-occurrences in the entire English Web corpus .", 
+        "evidence_score": 0.34530112, 
+        "text": "To illustrate this , an English news article mentioning `` Bill Gates '' and `` Melinda Gates '' evidences a relationship between the two entities , which can be quantified from their co-occurrences in the entire English Web corpus ."
+    }, 
+    {
+        "claim_score": -1.7643482, 
+        "evidence": "To highlight the advantage of our proposed approach , we compare our results with commercial machine translators ( 1 ) Engkoo3 developed in Microsoft Research Asia and ( 2 ) Google Translator4 .", 
+        "evidence_score": 0.27874763, 
+        "text": "To highlight the advantage of our proposed approach , we compare our results with commercial machine translators ( 1 ) Engkoo3 developed in Microsoft Research Asia and ( 2 ) Google Translator4 ."
+    }, 
+    {
+        "claim_score": -0.60431747, 
+        "evidence": "To achieve this goal , we de veloped a graph alignment algorithm that iteratively reinforces the matching similarity exploiting relational similarity and then extracts correct matches .", 
+        "evidence_score": 0.24504342, 
+        "text": "To achieve this goal , we de veloped a graph alignment algorithm that iteratively reinforces the matching similarity exploiting relational similarity and then extracts correct matches ."
+    }, 
+    {
+        "claim_evidence": "high quality entity translation is essential in cross-lingual information access and trans lationit is non-trivial to achieveentity translation", 
+        "claim_score": 0.68849216, 
+        "evidence": "While high quality entity translation is essential in cross-lingual information access and trans lation , it is non-trivial to achieve , due to the challenge that entity translation , though typically bearing pronunciation similarity , can also be arbitrary , e.g. , Jackie Chan and fiX : it ( pronounced Cheng Long ) .", 
+        "evidence_score": 0.15178645, 
+        "text": "While high quality entity translation is essential in cross-lingual information access and trans lation , it is non-trivial to achieve , due to the challenge that entity translation , though typically bearing pronunciation similarity , can also be arbitrary , e.g. , Jackie Chan and fiX : it ( pronounced Cheng Long ) ."
+    }, 
+    {
+        "claim_score": -0.37820642, 
+        "evidence": "To illustrate , Figure 1 ( a ) demonstrates the query result for `` Bill Gates , '' retrieving and visualizing the `` entity-relationship graph '' of related people names that frequently co-occur with Bill in English corpus .", 
+        "evidence_score": 0.12057348, 
+        "text": "To illustrate , Figure 1 ( a ) demonstrates the query result for `` Bill Gates , '' retrieving and visualizing the `` entity-relationship graph '' of related people names that frequently co-occur with Bill in English corpus ."
+    }, 
+    {
+        "claim_score": -1.617605, 
+        "evidence": "com 430 Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing , pages 430 -- 439 , MIT , Massachusetts , USA , 9-11 October 2010 .", 
+        "evidence_score": 0.11045688, 
+        "text": "com 430 Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing , pages 430 -- 439 , MIT , Massachusetts , USA , 9-11 October 2010 ."
+    }, 
+    {
+        "claim_score": -2.2732785, 
+        "evidence": "Section 3 then develops our framework .", 
+        "evidence_score": 0.10202778, 
+        "text": "Section 3 then develops our framework ."
+    }
+]

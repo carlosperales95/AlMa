@@ -1,0 +1,51 @@
+[
+    {
+        "claim_score": -0.46233819, 
+        "evidence": "We validate this `` selective '' use of temporal features boosts the accuracy by 6.1 percent .", 
+        "evidence_score": 0.82254141, 
+        "text": "We validate this `` selective '' use of temporal features boosts the accuracy by 6.1 percent ."
+    }, 
+    {
+        "claim_score": -0.76834843, 
+        "evidence": "We developed a classifier to distinguish temporal/atemporal entities and our proposed method outperforms the state-of-the-art approach by 6.1 percent .", 
+        "evidence_score": 0.71591375, 
+        "text": "We developed a classifier to distinguish temporal/atemporal entities and our proposed method outperforms the state-of-the-art approach by 6.1 percent ."
+    }, 
+    {
+        "claim_score": -0.27699561, 
+        "evidence": "To overcome such problems , we propose a new notion of `` selective temporality '' ( called this fea 2.3 Step 3 : Reinforcement We reinforce R0 by leveraging R and obtain a converged matrix R \u221e using the following model : ture ST to distinguish from T ) to automatically distinguish temporal and atemporal entities .", 
+        "evidence_score": 0.41341766, 
+        "text": "To overcome such problems , we propose a new notion of `` selective temporality '' ( called this fea 2.3 Step 3 : Reinforcement We reinforce R0 by leveraging R and obtain a converged matrix R \u221e using the following model : ture ST to distinguish from T ) to automatically distinguish temporal and atemporal entities ."
+    }, 
+    {
+        "claim_score": -1.6349698, 
+        "evidence": "( Shao and Ng , 2004 ) rank translation candidates using PH and CX independently and return results with the highest average rank .", 
+        "evidence_score": 0.38685216, 
+        "text": "( Shao and Ng , 2004 ) rank translation candidates using PH and CX independently and return results with the highest average rank ."
+    }, 
+    {
+        "claim_score": -1.3682097, 
+        "evidence": "In contrast , Figure 1 illustrates asymmetry , by showing the frequencies of `` Usain Bolt , '' a Jamaican sprinter , and `` Hillary Clinton , '' an American politician , in comparable news articles during the year 2008 .", 
+        "evidence_score": 0.3352178, 
+        "text": "In contrast , Figure 1 illustrates asymmetry , by showing the frequencies of `` Usain Bolt , '' a Jamaican sprinter , and `` Hillary Clinton , '' an American politician , in comparable news articles during the year 2008 ."
+    }, 
+    {
+        "claim_evidence": "using such dissimilarity against deciding this pair as a correct translation would be harmful", 
+        "claim_score": 0.030339008, 
+        "evidence": "That is , Hillary Clinton is `` atemporal , '' as Figure 1 ( b ) shows , such that using such dissimilarity against deciding this pair as a correct translation would be harmful .", 
+        "evidence_score": 0.32139642, 
+        "text": "That is , Hillary Clinton is `` atemporal , '' as Figure 1 ( b ) shows , such that using such dissimilarity against deciding this pair as a correct translation would be harmful ."
+    }, 
+    {
+        "claim_score": -0.46604219, 
+        "evidence": "This paper studies named entity translation and proposes `` selective temporality '' as a new feature , as using temporal features may be harmful for translating `` atemporal '' entities .", 
+        "evidence_score": 0.2885442, 
+        "text": "This paper studies named entity translation and proposes `` selective temporality '' as a new feature , as using temporal features may be harmful for translating `` atemporal '' entities ."
+    }, 
+    {
+        "claim_score": -2.3364884, 
+        "evidence": "More recent approaches consider temporal feature ( called T ) of entities in two corpora ( Klementiev and Roth , 2006 ; Tao et al. , 2006 ; Sproat et 0 5 10 15 20 25 30 35 40 45 50 Week ( b ) Atemporal entity : `` Hillary Clinton '' Figure 1 : Illustration on temporality al. , 2006 ; Kim et al. , 2012 ) .", 
+        "evidence_score": 0.079867491, 
+        "text": "More recent approaches consider temporal feature ( called T ) of entities in two corpora ( Klementiev and Roth , 2006 ; Tao et al. , 2006 ; Sproat et 0 5 10 15 20 25 30 35 40 45 50 Week ( b ) Atemporal entity : `` Hillary Clinton '' Figure 1 : Illustration on temporality al. , 2006 ; Kim et al. , 2012 ) ."
+    }
+]

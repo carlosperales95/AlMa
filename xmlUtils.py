@@ -17,15 +17,19 @@ def xmlToSections(file):
         temp_xmlstring = xmlstring[index+9:]
 
         end_title_ind = temp_xmlstring.find("number =")
-        if end_title_ind == -1:
+        if end_title_ind == -1 or end_title_ind > 70:
             end_title_ind = temp_xmlstring.find(">")
 
         title = temp_xmlstring[len("title="): end_title_ind]
+        ind = title.find(".")
+        if ind != -1:
+            title = title[:ind]
+
         topic_sections_titles.append(title.replace('"', ""))
 
         next_index = temp_xmlstring.find('</SECTION>')
         xmlstring = temp_xmlstring[next_index:]
-        print(title.replace('"', ""))
+        #print(title.replace('"', ""))
 
     f.close()
 

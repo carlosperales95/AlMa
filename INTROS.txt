@@ -1,0 +1,251 @@
+E06-1004word.docx.txt
+Introduction
+Expectation  Evaluation  in EM Iterations is
+Conditional    Probability   computation   is
+Exact Decoding is #P-Hard for IBM Mod-
+Relaxed  Decoding  is  NP-Hard   for  IBM
+
+--------------------------------------
+
+P13-2036word.docx.txt
+Introduction 
+Preliminaries
+Entity Translation Discovery using
+Experimental Evaluation
+Conclusion
+Acknowledgment
+
+--------------------------------------
+
+P11-2032word.docx.txt
+Introduction 
+Bayesian Inference with IBM Model 1
+Experimental Setup
+Results
+Conclusion
+Acknowledgments
+
+--------------------------------------
+
+C10-2164word.docx.txt
+Introduction 
+Related Work
+Our Solutions
+Chinese Key Term Extraction
+Multiple Feature Representation
+Ranking based on Ranking SVM
+Experiment and Analysis
+Conclusions
+Acknowledgements
+
+--------------------------------------
+
+D10-1042word.docx.txt
+Introduction 
+Related Work
+Our Framework
+Experiments
+Conclusion
+Acknowledgments
+
+--------------------------------------
+
+W13-2501word.docx.txt
+Introduction 
+Related work
+Resources
+Experimental  setup
+Evaluation
+Discussion and conclusion
+
+--------------------------------------
+
+P07-2007word.docx.txt
+Introduction 
+SPEECH-TO-SPEECH	TRANSLA-
+EVALUATION
+System presented at ACL 2007
+CONCLUSION
+
+--------------------------------------
+
+C04-1091word.docx.txt
+Introduction 
+Decoding
+Framework for Decoding
+A Linear Time Algorithm for 
+Experiments and Results
+Conclusions
+Acknowledgements
+
+--------------------------------------
+
+N03-1010word.docx.txt
+Introduction 
+The IBM Translation Models
+Decoding
+
+--------------------------------------
+
+P12-2023word.docx.txt
+Introduction 
+Model Description
+Experiments
+Discussion and
+Acknowledgments
+
+--------------------------------------
+
+P13-1059word.docx.txt
+Introduction 
+Tightly integrate name tagging and transla-
+Optimize name translation and context trans-
+Propose a new MT evaluation metric which
+Experiments
+Related Work
+Conclusions and Future  Work
+Acknowledgement
+
+--------------------------------------
+
+C10-1081word.docx.txt
+Introduction 
+Semantic Role Features for Machine
+Using Semantic Role Features in
+Experiments
+Conclusion
+
+--------------------------------------
+
+W11-2145word.docx.txt
+Introduction 
+System Description
+Results
+Conclusions
+Acknowledgments
+
+--------------------------------------
+
+P01-1027word.docx.txt
+Introduction 
+Statistical Machine Translation
+Maximum entropy modeling
+Contextual information and training
+Features
+Experimental results
+Conclusions
+
+--------------------------------------
+
+W07-0722word.docx.txt
+Introduction 
+HMM alignment model
+
+--------------------------------------
+
+D11-1056word.docx.txt
+Introduction 
+Related Work
+Japanese Noun Phrase Segmentation
+Non-parametric  Bayesian Language
+Inference
+Experiments
+Acknowledgments
+
+--------------------------------------
+
+D11-1084word.docx.txt
+Introduction 
+Related work
+Cache-based document-level SMT
+Experimentation
+Discussion
+Conclusion
+Acknowledgments
+
+--------------------------------------
+
+W01-1407word.docx.txt
+Introduction 
+Statistical Machine Translation
+Basic Considerations
+Output Representation after
+Equivalence classes of words with
+Hierarchical Models
+Translation Experiments
+Conclusion and Future Work
+
+--------------------------------------
+
+W08-0335word.docx.txt
+Introduction 
+CWS specifications and corpora from
+Experiments
+Effect of combining multiple CWS
+Related work  and Discussions
+Conclusions
+
+--------------------------------------
+
+P07-1066word.docx.txt
+Introduction 
+Bilingual Latent Semantic Analysis
+Generate a document using the topic multino-
+Conclusions
+Acknowledgment
+
+--------------------------------------
+
+H01-1062word.docx.txt
+INTRODUCTION 
+STATISTICAL	DECISION	THEORY
+ALIGNMENT MODELLING
+SEARCH
+EXPERIMENTAL RESULTS
+SUMMARY
+Acknowledgment
+REFERENCES
+
+--------------------------------------
+
+D13-1141word.docx.txt
+Introduction 
+Review of prior work
+Algorithm and methods
+Experiments
+This  is evaluated  on 10,000  randomly  selected  sentence
+We report case-insensitive BLEU
+
+--------------------------------------
+
+C10-1070word.docx.txt
+Introduction 
+Projection-based variants
+Experimental protocol
+Experiments
+Discussion
+Acknowledgments
+
+--------------------------------------
+
+I08-2080word.docx.txt
+Introduction 
+Japanese NER Task
+Motivation for Our Approach
+NER Using Structural Information
+Experiments
+Add thesaurus features to baseline
+
+--------------------------------------
+
+P12-1016word.docx.txt
+Introduction 
+A Class-based Model of Agreement 
+Mada, the standard tool for Arabic segmentation (Habash
+Related Work
+Experiments
+Discussion of Translation Results
+Conclusion and Outlook
+
+--------------------------------------
+

@@ -1,0 +1,14 @@
+[
+    {
+        "claim": "Out-of-vocabulary recognition may have two-sided effects on SMT performance", 
+        "claim_score": 0.35343501, 
+        "evidence_score": -0.11729229, 
+        "text": "Out-of-vocabulary recognition may have two-sided effects on SMT performance ."
+    }, 
+    {
+        "claim": "There is also significant disagreement on the specificationsalthough much of their contents is the same", 
+        "claim_score": 0.06936234, 
+        "evidence_score": -0.73910056, 
+        "text": "There is also significant disagreement on the specifications , although much of their contents is the same ."
+    }
+]
