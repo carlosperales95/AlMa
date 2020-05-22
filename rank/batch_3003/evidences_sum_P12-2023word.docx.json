@@ -1,0 +1,63 @@
+[
+    {
+        "claim_score": -0.84730833, 
+        "evidence": "In our case , by building a topic distribution for the source side of the training data , we abstract the notion of domain to include automatically derived subcorpora with probabilistic membership .", 
+        "evidence_score": 0.79006548, 
+        "text": "In our case , by building a topic distribution for the source side of the training data , we abstract the notion of domain to include automatically derived subcorpora with probabilistic membership ."
+    }, 
+    {
+        "claim_score": -0.29039079, 
+        "evidence": "Qc 2012 Association for Computational Linguisticsdata come from ; and even if we do , subcorpus may not be the most useful notion of domain for better translations .", 
+        "evidence_score": 0.7609634, 
+        "text": "Qc 2012 Association for Computational Linguisticsdata come from ; and even if we do , subcorpus may not be the most useful notion of domain for better translations ."
+    }, 
+    {
+        "claim_evidence": "incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamicallysignificant performance gains", 
+        "claim_score": 0.31338205, 
+        "evidence": "We show that incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamically biasing SMT towards relevant translations , as evidenced by significant performance gains .", 
+        "evidence_score": 0.43800079, 
+        "text": "We show that incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamically biasing SMT towards relevant translations , as evidenced by significant performance gains ."
+    }, 
+    {
+        "claim_score": -0.69978507, 
+        "evidence": "Conditioning lexical probabilities on the topic biases translations toward topicrelevant output , resulting in significant improvements of up to 1 BLEU and 3 TER on Chinese to English translation over a strong baseline .", 
+        "evidence_score": 0.30877683, 
+        "text": "Conditioning lexical probabilities on the topic biases translations toward topicrelevant output , resulting in significant improvements of up to 1 BLEU and 3 TER on Chinese to English translation over a strong baseline ."
+    }, 
+    {
+        "claim_score": -0.52855765, 
+        "evidence": "Matsoukas et al. introduced assigning a pair of binary features to each training sentence , indicating sentences genre and collection as a way to capture domains .", 
+        "evidence_score": 0.26555092, 
+        "text": "Matsoukas et al. introduced assigning a pair of binary features to each training sentence , indicating sentences genre and collection as a way to capture domains ."
+    }, 
+    {
+        "claim_score": -0.35286567, 
+        "evidence": "Depending on the model used to select subcorpora , we can bias our translation toward any arbitrary distinction .", 
+        "evidence_score": 0.23639391, 
+        "text": "Depending on the model used to select subcorpora , we can bias our translation toward any arbitrary distinction ."
+    }, 
+    {
+        "claim_score": -1.0121336, 
+        "evidence": "We can construct a topic model once on the training data , and use it infer topics on any test set to adapt the translation model .", 
+        "evidence_score": 0.14625465, 
+        "text": "We can construct a topic model once on the training data , and use it infer topics on any test set to adapt the translation model ."
+    }, 
+    {
+        "claim_score": -0.87992168, 
+        "evidence": "To obtain the lexical probability conditioned on topic distribution , we first compute the expected count ezn ( e , f of a word pair under topic zn : features in the translation model , and interpolating them log-linearly with our other features , thus allowezn ( e , f =p ( zn | di ) cj ( e , f ) ing us to discriminatively optimize their weights on di T xj di an arbitrary objective function .", 
+        "evidence_score": 0.1159573, 
+        "text": "To obtain the lexical probability conditioned on topic distribution , we first compute the expected count ezn ( e , f of a word pair under topic zn : features in the translation model , and interpolating them log-linearly with our other features , thus allowezn ( e , f =p ( zn | di ) cj ( e , f ) ing us to discriminatively optimize their weights on di T xj di an arbitrary objective function ."
+    }, 
+    {
+        "claim_score": -0.82693176, 
+        "evidence": "They then learn a mapping from these features to sentence weights , use the sentence weights to bias the model probability estimates and subsequently learn the model weights .", 
+        "evidence_score": 0.043442885, 
+        "text": "They then learn a mapping from these features to sentence weights , use the sentence weights to bias the model probability estimates and subsequently learn the model weights ."
+    }, 
+    {
+        "claim_score": -1.0713496, 
+        "evidence": "We induce unsupervised domains from large corpora , and we incorporate soft , probabilistic domain membership into a translation model .", 
+        "evidence_score": 0.0065037827, 
+        "text": "We induce unsupervised domains from large corpora , and we incorporate soft , probabilistic domain membership into a translation model ."
+    }
+]

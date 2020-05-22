@@ -1,4 +1,7 @@
+# coding: utf-8
+
 import sys
+import string
 from os import listdir
 from os.path import isfile, join
 from utils import *
@@ -42,7 +45,6 @@ else:
         onlyfiles.append(str(sys.argv[1]))
         dir=""
 
-
 filen = open("INTROS.txt", "w")
 
 for idx,file in enumerate(onlyfiles):
@@ -77,11 +79,17 @@ for idx,file in enumerate(onlyfiles):
 
     paper_full =f.read()
 
+    printable = set(string.printable)
+
+
     print("Starting paper " + file[:-4])
     print("Found Abstract .... (1/4)")
 
     paper_abstract = getAbstract(paper_full)
 
+    paper_abstract = filter(lambda x: x in printable, paper_abstract)
+    paper_abstract = cleanTextRubble(paper_abstract)
+    paper_abstract =  paper_abstract.replace('   ', ' ').replace('  ', ' ')
 
     f2.write(paper_abstract)
     f2.write("\n")
@@ -90,7 +98,13 @@ for idx,file in enumerate(onlyfiles):
     print("Writing .... (2/4)")
 
     intro = getSection(paper_full, sections[0], sections[1])
+    if intro.endswith(' 2 ') or intro.endswith(' 2.') or intro.endswith(' 2. ') or intro.endswith(' 2.\t') or intro.endswith(' 2  ') or intro.endswith(' 2\t'):
+        intro = intro[:-3]
 
+
+    intro = filter(lambda x: x in printable, intro)
+    intro = cleanTextRubble(intro)
+    intro =  intro.replace('   ', ' ').replace('  ', ' ')
     #if len(intro) < 10000:
     f2.write(intro)
     f2.write("\n")
@@ -112,6 +126,11 @@ for idx,file in enumerate(onlyfiles):
 
     #f2.write(conclusion.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' '))
     conclusion = conclusion.replace('- \r', '').replace('-\r', '').replace(' \n', ' ').replace(' \r', ' ').replace('\n', '').replace('\r', '').replace('   ', ' ').replace('- ', '').replace('  ', ' ').replace('\t', '')
+
+    conclusion = filter(lambda x: x in printable, conclusion)
+    conclusion = cleanTextRubble(conclusion)
+    conclusion =  conclusion.replace('   ', ' ').replace('  ', ' ')
+
     f2.write(conclusion)
     f2.write("\n")
 
@@ -126,3 +145,15 @@ for idx,file in enumerate(onlyfiles):
 
 print("Script finished, paper(s) summarized")
 filen.close()
+
+#text = """
+# * Corresponding [5][6687] author. translation (SMT) systems.       .English and Chinese graphs, simply 0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1 0 Tail Head Ours  Google.  1 http://people.entitycube. com 430 Proceedings of the 2010 Conference [c] on Empirical Methods in Natural Language [57] Processing. Section 2 reviews exi                          sting work. Section 3 then develops our framework. Section 4 reports (667) experimental results (5) and Section 5 concludes our work. (a) English PeopleEntityCube Ge. Such engine ∗This work was done when the first two authors visited Mi-    crosoft Research Asia.
+#https://stackoverflow.com/questions/6883049/regex-to-extract-urls-from-href-attribute-in-html-with-python
+#
+ #On NIST08 Chinese-English translation task, we obtain an improvement of 0.48 BLEU from a competitive baseline (30.01 BLEU to 30.49 BLEU) with the Stanford Phrasal MT system. 1393 Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing, pages 1393–1398, Seattle, Washington, USA, 18-21 October 2013. Qc 2013 Association for Computational Linguistics
+ #"""
+
+#print(text)
+#print("\n")
+#text = cleanTextRubble(text)
+#print(text)

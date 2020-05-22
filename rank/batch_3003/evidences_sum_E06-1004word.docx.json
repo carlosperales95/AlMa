@@ -1,0 +1,62 @@
+[
+    {
+        "claim_score": -0.82157645, 
+        "evidence": "In their seminal paper on SMT , Brown and his colleagues highlighted the problems we face as we go from IBM Models 1-2 to 3-5 ( Brown et al. , 1993 ) 3 : As we progress from Model 1 to Model 5 , evaluating the expectations that gives us counts becomes increasingly difficult .", 
+        "evidence_score": 1.3173266, 
+        "text": "In their seminal paper on SMT , Brown and his colleagues highlighted the problems we face as we go from IBM Models 1-2 to 3-5 ( Brown et al. , 1993 ) 3 : As we progress from Model 1 to Model 5 , evaluating the expectations that gives us counts becomes increasingly difficult ."
+    }, 
+    {
+        "claim_score": -1.0585506, 
+        "evidence": "In ( Knight , 1999 ) it was proved that the Exact Decoding prob Given the model parameters and a sentence f , determine the most probable translation of f .", 
+        "evidence_score": 0.58625873, 
+        "text": "In ( Knight , 1999 ) it was proved that the Exact Decoding prob Given the model parameters and a sentence f , determine the most probable translation of f ."
+    }, 
+    {
+        "claim_score": -0.37130169, 
+        "evidence": "We believe that our results on the computational complexity of the tasks in SMT will result in a better understanding of these tasks from a theoretical perspective .", 
+        "evidence_score": 0.34797446, 
+        "text": "We believe that our results on the computational complexity of the tasks in SMT will result in a better understanding of these tasks from a theoretical perspective ."
+    }, 
+    {
+        "claim_score": -0.82434541, 
+        "evidence": "In practice , we are never sure that we have found the Viterbi alignment .", 
+        "evidence_score": 0.32609188, 
+        "text": "In practice , we are never sure that we have found the Viterbi alignment ."
+    }, 
+    {
+        "claim_score": -1.2868691, 
+        "evidence": "In the classic work on SMT , Brown and his colleagues at IBM introduced the notion of alignment between a sentence f and its translation e and used it in the development of translation models ( Brown et al. , 1993 ) .", 
+        "evidence_score": 0.29920355, 
+        "text": "In the classic work on SMT , Brown and his colleagues at IBM introduced the notion of alignment between a sentence f and its translation e and used it in the development of translation models ( Brown et al. , 1993 ) ."
+    }, 
+    {
+        "claim_score": -1.1432764, 
+        "evidence": "el is a many-to-one mapping a : -LCB- 1 , .", 
+        "evidence_score": 0.13684601, 
+        "text": "el is a many-to-one mapping a : -LCB- 1 , ."
+    }, 
+    {
+        "claim_score": -1.8205107, 
+        "evidence": ", l -RCB- .", 
+        "evidence_score": 0.12659302, 
+        "text": ", l -RCB- ."
+    }, 
+    {
+        "claim_score": -0.50333227, 
+        "evidence": "Our results showthat there can not exist a closed form expression ( whose representation is polynomial in the size of the input ) for P ( f | e ) and the counts in the EMiterations for Models 3-5 unless P = NP .", 
+        "evidence_score": 0.1216174, 
+        "text": "Our results showthat there can not exist a closed form expression ( whose representation is polynomial in the size of the input ) for P ( f | e ) and the counts in the EMiterations for Models 3-5 unless P = NP ."
+    }, 
+    {
+        "claim_score": -1.5896861, 
+        "evidence": "For models 1-2 , closed formexpressions exist for P ( f | e ) and the counts in theEM iterations for models 3-5 .", 
+        "evidence_score": 0.10244697, 
+        "text": "For models 1-2 , closed formexpressions exist for P ( f | e ) and the counts in theEM iterations for models 3-5 ."
+    }, 
+    {
+        "claim_score": -0.88969877, 
+        "evidence": "around the Viterbi alignment , i.e. in determining j = 1 tfj | eajdj : aj I = 0 d ( j | i , m , ) the goodness of the Viterbi alignment in compar ison to the rest of the alignments.Decoding is an integral component of all SMT systems ( Wang , Table 1 : IBM Model 3 Here , n ( | e ) is the fertility model , t ( f | e ) is the lexicon model and d ( j | i , m , ) is the distortion model .", 
+        "evidence_score": 0.019529057, 
+        "text": "around the Viterbi alignment , i.e. in determining j = 1 tfj | eajdj : aj I = 0 d ( j | i , m , ) the goodness of the Viterbi alignment in compar ison to the rest of the alignments.Decoding is an integral component of all SMT systems ( Wang , Table 1 : IBM Model 3 Here , n ( | e ) is the fertility model , t ( f | e ) is the lexicon model and d ( j | i , m , ) is the distortion model ."
+    }
+]

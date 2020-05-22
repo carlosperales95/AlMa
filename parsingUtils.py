@@ -1,9 +1,10 @@
+# coding: utf-8
 import sys
 import os
 from os import listdir
 from os.path import isfile, join
 import shutil
-
+import re
 
 
 
@@ -264,17 +265,20 @@ def getConclusion(paper_full):
 def getSection(paper_full, section_name, next_section):
 
     find_index = paper_full.find(section_name[: len(section_name) - 1])
+
     if find_index != -1:
         paper_temp = paper_full[find_index:]
         find_end = paper_temp.find("\n")
         title = False
         section_temp = ""
+        if next_section.endswith(' '):
+            next_section = next_section[:-1]
         while title != True:
             find_next_index = paper_temp.find(next_section)
             if find_next_index != -1:
                 section_temp = paper_temp[find_next_index:]
-                find_end2 = section_temp.find("\n")
-                if find_end2 <= 30:
+                find_end2 = section_temp.find("\n\r\n")
+                if find_end2 <= 35:
                     title = True
                 else:
                     paper_change = paper_temp.find(section_temp)
@@ -289,8 +293,31 @@ def getSection(paper_full, section_name, next_section):
         #section = paper_full[find_index + len(section_name) : find_next_index]
         #section = figureHunter(section)
 
-        section = section.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' ')
+        section = section.replace('\n', ' ').replace('\r', ' ').replace('   ', ' ').replace('- ', '').replace('  ', ' ').replace('\t', ' ')
     else:
         section = ""
 
     return section
+
+
+def cleanTextRubble(text):
+    text = re.sub(r'[\*]','',text)
+    text = re.sub(r'https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+','',text)
+    text = re.sub(r'(/[aA-zZ,0-9,:%,\.,-]+)+\s', '', text)
+    text = re.sub(r'\([a-k]\)','',text)
+    text = re.sub(r'[[a-k]\]','',text)
+    text = re.sub(r'-?\s\s(\s)*','',text)
+    text = re.sub(r'[0-9].?,?([0-9])(\s[0-9].?,?[0-9] )+','',text)
+    text = re.sub(r'[\∗]','',text)
+    text = re.sub(r'\s[0-9]\)\s', ') ',text)
+    text = re.sub(r'\s[a-z]\)\s', ') ',text)
+    text = re.sub(r'\s\)\s', ' ',text)
+    text = re.sub(r'\;\)\s', '; ',text)
+    text = re.sub(r'\.\.','.',text)
+    text = re.sub(r'\.\s\s[0-9]\s', '. ', text)
+    text = re.sub(r'\.\s(\s)*\.','',text)
+    text = re.sub(r'\([[0-9]([0-9]+)?\)','',text)
+    text = re.sub(r'\[[0-9]([0-9]+)?\]','',text)
+    text = re.sub(r'\.[\s]?([aA-zZ,0-9]+\s)+\n','',text)
+
+    return text

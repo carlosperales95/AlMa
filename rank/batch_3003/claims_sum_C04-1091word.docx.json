@@ -1,0 +1,36 @@
+[
+    {
+        "claim_evidence": "the algorithmic handles provided by our framework can be employed to develop a very fast decoding algorithm which finds good quality translations", 
+        "claim_score": 1.1475651, 
+        "evidence": "We show that the algorithmic handles provided by our framework can be employed to develop a very fast decoding algorithm which finds good quality translations .", 
+        "evidence_score": 0.38004317, 
+        "text": "We show that the algorithmic handles provided by our framework can be employed to develop a very fast decoding algorithm which finds good quality translations ."
+    }, 
+    {
+        "claim_evidence": "decoding algorithms derived from our framework can be of practical significance", 
+        "claim_score": 0.74563549, 
+        "evidence": "We believe that decoding algorithms derived from our framework can be of practical significance .", 
+        "evidence_score": 0.51123533, 
+        "text": "We believe that decoding algorithms derived from our framework can be of practical significance ."
+    }, 
+    {
+        "claim_evidence": "both of these problems are easy to solve and provide efficient solutions for them", 
+        "claim_score": 0.53327949, 
+        "evidence": "We show that both of these problems are easy to solve and provide efficient solutions for them .", 
+        "evidence_score": 0.36718273, 
+        "text": "We show that both of these problems are easy to solve and provide efficient solutions for them ."
+    }, 
+    {
+        "claim": "optimal solution can not be computed for practical problem instances in a reasonable amount of time , much of recent work has focused on good quality suboptimal solutions", 
+        "claim_score": 0.40527387, 
+        "evidence_score": -0.24557656, 
+        "text": "Since optimal solution can not be computed for practical problem instances in a reasonable amount of time , much of recent work has focused on good quality suboptimal solutions ."
+    }, 
+    {
+        "claim_evidence": "alternating maximization can be employed", 
+        "claim_score": 0.093171025, 
+        "evidence": "We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm .", 
+        "evidence_score": 0.50280489, 
+        "text": "We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm ."
+    }
+]

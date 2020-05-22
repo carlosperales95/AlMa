@@ -1,0 +1,34 @@
+[
+    {
+        "claim_evidence": "it is possible to significantly decrease training and test corpus perplexity of the translation models", 
+        "claim_score": 0.22870353, 
+        "evidence": "We show that it is possible to significantly decrease training and test corpus perplexity of the translation models .", 
+        "evidence_score": 1.1620379, 
+        "text": "We show that it is possible to significantly decrease training and test corpus perplexity of the translation models ."
+    }, 
+    {
+        "claim_score": -0.25432741, 
+        "evidence": "In addition , we perform a rescoring of-Best lists using our maximum entropy model and thereby yield an improvement in translation quality .", 
+        "evidence_score": 0.64262339, 
+        "text": "In addition , we perform a rescoring of-Best lists using our maximum entropy model and thereby yield an improvement in translation quality ."
+    }, 
+    {
+        "claim_evidence": "by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality", 
+        "claim_score": 0.16814659, 
+        "evidence": "We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality .", 
+        "evidence_score": 0.63124473, 
+        "text": "We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality ."
+    }, 
+    {
+        "claim_score": -0.81306344, 
+        "evidence": "We have been able to obtain a significant better test corpus perplexity and also a slight improvement in translation quality .", 
+        "evidence_score": 0.4361579, 
+        "text": "We have been able to obtain a significant better test corpus perplexity and also a slight improvement in translation quality ."
+    }, 
+    {
+        "claim_score": -0.47102635, 
+        "evidence": "This additional information could be : Simple context information : information of the words surrounding the word pair ; Syntactic information : part-of-speech information , syntactic constituent , sentence Semantic information : disambiguation information ( e.g.from WordNet ) , currentspeech or dialog act .", 
+        "evidence_score": 0.18007227, 
+        "text": "This additional information could be : Simple context information : information of the words surrounding the word pair ; Syntactic information : part-of-speech information , syntactic constituent , sentence Semantic information : disambiguation information ( e.g.from WordNet ) , currentspeech or dialog act ."
+    }
+]

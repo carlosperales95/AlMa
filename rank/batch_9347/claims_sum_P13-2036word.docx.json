@@ -1,9 +1,0 @@
-[
-    {
-        "claim_evidence": "temporal features may be harmful", 
-        "claim_score": 0.0031476866, 
-        "evidence": "Abstract This paper studies named entity trans lation and proposes `` selective temporal ity '' as a new feature , as using temporal features may be harmful for translating `` atemporal '' entities .", 
-        "evidence_score": 0.097079592, 
-        "text": "Abstract This paper studies named entity trans lation and proposes `` selective temporal ity '' as a new feature , as using temporal features may be harmful for translating `` atemporal '' entities ."
-    }
-]

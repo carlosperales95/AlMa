@@ -1,8 +1,0 @@
-[
-    {
-        "claim_score": -0.2395608, 
-        "evidence": "Considering our semantic features are the most basic ones , using more sophisticated features ( e.g. , the head words and their translations of the sourceside semantic roles ) provides a possible direction for further experimentation .", 
-        "evidence_score": 0.068683045, 
-        "text": "Considering our semantic features are the most basic ones , using more sophisticated features ( e.g. , the head words and their translations of the sourceside semantic roles ) provides a possible direction for further experimentation ."
-    }
-]

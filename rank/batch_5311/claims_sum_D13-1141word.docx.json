@@ -1,9 +1,0 @@
-[
-    {
-        "claim_evidence": "our results offer suggestive evidence that bilingual word embeddings act as high-quality semantic featurescase-insensitive BLEU7 With 4-gram BLEU metric from", 
-        "claim_score": 0.90889419, 
-        "evidence": "Further , our results offer suggestive evidence that bilingual word embeddings act as high-quality semantic features and embody bilingual translation equivalence across languages .6 We report case-insensitive BLEU7 With 4-gram BLEU metric from", 
-        "evidence_score": 0.12986178, 
-        "text": "Further , our results offer suggestive evidence that bilingual word embeddings act as high-quality semantic features and embody bilingual translation equivalence across languages .6 We report case-insensitive BLEU7 With 4-gram BLEU metric from"
-    }
-]

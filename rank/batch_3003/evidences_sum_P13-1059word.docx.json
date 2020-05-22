@@ -1,0 +1,38 @@
+[
+    {
+        "claim_score": -1.2550246, 
+        "evidence": "Compared to previous methods , the novel contributions of our approach are : 1 .", 
+        "evidence_score": 0.4116435, 
+        "text": "Compared to previous methods , the novel contributions of our approach are : 1 ."
+    }, 
+    {
+        "claim_score": -0.76724218, 
+        "evidence": "We developed a name-aware MT framework which tightly integrates name tagging and name translation into training and decoding of MT. Experiments on Chinese-English translation demonstrated the effectiveness of our approach over a high-quality MT baseline in both overall translation and name translation , especially for formal genres .", 
+        "evidence_score": 0.31684914, 
+        "text": "We developed a name-aware MT framework which tightly integrates name tagging and name translation into training and decoding of MT. Experiments on Chinese-English translation demonstrated the effectiveness of our approach over a high-quality MT baseline in both overall translation and name translation , especially for formal genres ."
+    }, 
+    {
+        "claim_score": -0.55893049, 
+        "evidence": "Experiments on Chinese-English translation demonstrated the effectiveness of our approach on enhancing the quality of overall translation , name translation and word alignment over a high-quality MT baseline1 .", 
+        "evidence_score": 0.15770295, 
+        "text": "Experiments on Chinese-English translation demonstrated the effectiveness of our approach on enhancing the quality of overall translation , name translation and word alignment over a high-quality MT baseline1 ."
+    }, 
+    {
+        "claim_score": -1.6057763, 
+        "evidence": "Tightly integrate joint bilingual name tagging into MT training by coordinating tagged604 Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics , pages 604614 , Sofia , Bulgaria , August 4-9 2013 .", 
+        "evidence_score": 0.15489272, 
+        "text": "Tightly integrate joint bilingual name tagging into MT training by coordinating tagged604 Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics , pages 604614 , Sofia , Bulgaria , August 4-9 2013 ."
+    }, 
+    {
+        "claim_score": -0.74246992, 
+        "evidence": "1 Some of the resources and open source programs developed in this work are made freely available for research purpose at A typical statistical MT system can only translate 60percent person names correctly ( Ji et al. , 2009 ) .", 
+        "evidence_score": 0.097090513, 
+        "text": "1 Some of the resources and open source programs developed in this work are made freely available for research purpose at A typical statistical MT system can only translate 60percent person names correctly ( Ji et al. , 2009 ) ."
+    }, 
+    {
+        "claim_score": -0.38125263, 
+        "evidence": "We propose a novel Name-aware MT ( NAMT ) approach which can tightly integrate name processing into the training and decoding processes of an end-to-end MT pipeline , and a new name-aware metric to evaluate MT which can assign different weights to different tokens according to their importance values in a document .", 
+        "evidence_score": 0.043308019, 
+        "text": "We propose a novel Name-aware MT ( NAMT ) approach which can tightly integrate name processing into the training and decoding processes of an end-to-end MT pipeline , and a new name-aware metric to evaluate MT which can assign different weights to different tokens according to their importance values in a document ."
+    }
+]

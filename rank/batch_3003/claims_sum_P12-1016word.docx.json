@@ -1,0 +1,27 @@
+[
+    {
+        "claim_evidence": "thatit there is ample room for translation quality improvements through better selection of formsclass-based agreement model improves translation qualityminimal increase in decoding time", 
+        "claim_score": 0.38416925, 
+        "evidence": "However , using lexical coverage experiments , we show thatit there is ample room for translation quality improvements through better selection of forms that already exist in the translation model.they writewilland Our class-based agreement model improves translation quality by promoting local agreement , but with a minimal increase in decoding time and no additional storage requirements for the phrase table .", 
+        "evidence_score": 0.16271835, 
+        "text": "However , using lexical coverage experiments , we show thatit there is ample room for translation quality improvements through better selection of forms that already exist in the translation model.they writewilland Our class-based agreement model improves translation quality by promoting local agreement , but with a minimal increase in decoding time and no additional storage requirements for the phrase table ."
+    }, 
+    {
+        "claim": "there is less morphology to score", 
+        "claim_score": 0.30704379, 
+        "evidence_score": -0.18010181, 
+        "text": "However , our analysis has shown that for Arabic , these genres typically contain more Latin script and transliterated words , and thus there is less morphology to score ."
+    }, 
+    {
+        "claim": "The subject should agree with the verb in both genderverb has masculine inflection", 
+        "claim_score": 0.24355726, 
+        "evidence_score": -0.562936, 
+        "text": "The subject should agree with the verb in both gender and number , but the verb has masculine inflection ."
+    }, 
+    {
+        "claim": "statistics are sparse , and they are made sparser by morphological variation", 
+        "claim_score": 0.15651973, 
+        "evidence_score": -0.50284311, 
+        "text": "However , LM statistics are sparse , and they are made sparser by morphological variation ."
+    }
+]

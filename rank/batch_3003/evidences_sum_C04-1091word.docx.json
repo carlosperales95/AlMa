@@ -1,0 +1,90 @@
+[
+    {
+        "claim_score": -2.4800189, 
+        "evidence": "2003 .", 
+        "evidence_score": 0.99761955, 
+        "text": "2003 ."
+    }, 
+    {
+        "claim_score": -2.4800189, 
+        "evidence": "2003 .", 
+        "evidence_score": 0.99761955, 
+        "text": "2003 ."
+    }, 
+    {
+        "claim_score": -2.2546666, 
+        "evidence": "2 .", 
+        "evidence_score": 0.88063411, 
+        "text": "2 ."
+    }, 
+    {
+        "claim_evidence": "decoding algorithms derived from our framework can be of practical significance", 
+        "claim_score": 0.74563549, 
+        "evidence": "We believe that decoding algorithms derived from our framework can be of practical significance .", 
+        "evidence_score": 0.51123533, 
+        "text": "We believe that decoding algorithms derived from our framework can be of practical significance ."
+    }, 
+    {
+        "claim_evidence": "alternating maximization can be employed", 
+        "claim_score": 0.093171025, 
+        "evidence": "We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm .", 
+        "evidence_score": 0.50280489, 
+        "text": "We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm ."
+    }, 
+    {
+        "claim_score": -1.6376663, 
+        "evidence": "In an iterative search for a local optimal solution , we alternate between the two algorithms and refine our solution .", 
+        "evidence_score": 0.48118913, 
+        "text": "In an iterative search for a local optimal solution , we alternate between the two algorithms and refine our solution ."
+    }, 
+    {
+        "claim_evidence": "the algorithmic handles provided by our framework can be employed to develop a very fast decoding algorithm which finds good quality translations", 
+        "claim_score": 1.1475651, 
+        "evidence": "We show that the algorithmic handles provided by our framework can be employed to develop a very fast decoding algorithm which finds good quality translations .", 
+        "evidence_score": 0.38004317, 
+        "text": "We show that the algorithmic handles provided by our framework can be employed to develop a very fast decoding algorithm which finds good quality translations ."
+    }, 
+    {
+        "claim_evidence": "both of these problems are easy to solve and provide efficient solutions for them", 
+        "claim_score": 0.53327949, 
+        "evidence": "We show that both of these problems are easy to solve and provide efficient solutions for them .", 
+        "evidence_score": 0.36718273, 
+        "text": "We show that both of these problems are easy to solve and provide efficient solutions for them ."
+    }, 
+    {
+        "claim_score": -0.18419664, 
+        "evidence": "In this paper , we propose an algorithmic framework for solving the decoding problem and show that several efficient decoding algorithms can be derived from the techniques developed in the framework .", 
+        "evidence_score": 0.13157116, 
+        "text": "In this paper , we propose an algorithmic framework for solving the decoding problem and show that several efficient decoding algorithms can be derived from the techniques developed in the framework ."
+    }, 
+    {
+        "claim_score": -1.5162795, 
+        "evidence": "Our fast suboptimal search algorithms can translate sentences that are 50 words long in about 5 seconds on a simple computing facility .", 
+        "evidence_score": 0.075001969, 
+        "text": "Our fast suboptimal search algorithms can translate sentences that are 50 words long in about 5 seconds on a simple computing facility ."
+    }, 
+    {
+        "claim_score": -1.7658243, 
+        "evidence": "We then develop the alternating search paradigm and use it to develop several decoding algorithms ( Section 3 ) .", 
+        "evidence_score": 0.063626658, 
+        "text": "We then develop the alternating search paradigm and use it to develop several decoding algorithms ( Section 3 ) ."
+    }, 
+    {
+        "claim_score": -0.67210721, 
+        "evidence": "At one end of the spectrum is a provably linear time algorithm for computing a suboptimal solution and at the other end is an exponential time algorithm for computingNIST Scores7 Logscoresmada .", 
+        "evidence_score": 0.060055447, 
+        "text": "At one end of the spectrum is a provably linear time algorithm for computing a suboptimal solution and at the other end is an exponential time algorithm for computingNIST Scores7 Logscoresmada ."
+    }, 
+    {
+        "claim_score": -0.81641386, 
+        "evidence": "A family of provably fast decoding algorithms can be derived from the basic techniques underlying the framework and we present a few illustrations .", 
+        "evidence_score": 0.05334718, 
+        "text": "A family of provably fast decoding algorithms can be derived from the basic techniques underlying the framework and we present a few illustrations ."
+    }, 
+    {
+        "claim_score": -0.38779763, 
+        "evidence": "In perhaps the first work on the computational complexity of Decoding , Kevin Knight showed that the problem is closely related to the more famous Traveling Salesman problem ( TSP ) .", 
+        "evidence_score": 0.045425843, 
+        "text": "In perhaps the first work on the computational complexity of Decoding , Kevin Knight showed that the problem is closely related to the more famous Traveling Salesman problem ( TSP ) ."
+    }
+]

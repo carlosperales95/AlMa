@@ -1,0 +1,48 @@
+[
+    {
+        "claim": "Wikipedia is surprisingly suitable for mining medical terms", 
+        "claim_score": 0.5453139, 
+        "evidence_score": -0.46227762, 
+        "text": "One latent outcome of this work is that Wikipedia is surprisingly suitable for mining medical terms ."
+    }, 
+    {
+        "claim_evidence": "A closer look at the translation candidates obtainedthey are often collocates of the reference translation", 
+        "claim_score": 0.30161449, 
+        "evidence": "A closer look at the translation candidates obtained when using LL , the most popular association measure in projection-based approaches , shows that they are often collocates of the reference translation .", 
+        "evidence_score": 0.3367754, 
+        "text": "A closer look at the translation candidates obtained when using LL , the most popular association measure in projection-based approaches , shows that they are often collocates of the reference translation ."
+    }, 
+    {
+        "claim": "significant gains can be obtained by using an association measure that is rarely used in practice", 
+        "claim_score": 0.24225131, 
+        "evidence_score": -0.75167347, 
+        "text": "One interesting outcome of this study is that significant gains can be obtained by using an association measure that is rarely used in practice ."
+    }, 
+    {
+        "claim_evidence": "the cosine similarity measure and sentence contexts give moreLO is used", 
+        "claim_score": 0.20105208, 
+        "evidence": "Moreover , we have seen that the cosine similarity measure and sentence contexts give moreLO is used .", 
+        "evidence_score": 0.28292979, 
+        "text": "Moreover , we have seen that the cosine similarity measure and sentence contexts give moreLO is used ."
+    }, 
+    {
+        "claim_evidence": "We plan to check its adequacy for other domainsLO remains a better association measure for different corpora", 
+        "claim_score": 0.16707147, 
+        "evidence": "We plan to check its adequacy for other domains and verify that LO remains a better association measure for different corpora and domains .", 
+        "evidence_score": 0.056494249, 
+        "text": "We plan to check its adequacy for other domains and verify that LO remains a better association measure for different corpora and domains ."
+    }, 
+    {
+        "claim_evidence": "Dejean et al. instead use a bilingual thesaurus for translating these.Another distinction between approaches lies in the way the context is defined", 
+        "claim_score": 0.16217162, 
+        "evidence": "Dejean et al. instead use a bilingual thesaurus for translating these.Another distinction between approaches lies in the way the context is defined .", 
+        "evidence_score": 0.030217296, 
+        "text": "Dejean et al. instead use a bilingual thesaurus for translating these.Another distinction between approaches lies in the way the context is defined ."
+    }, 
+    {
+        "claim": "a direct comparison of them is difficult", 
+        "claim_score": 0.021091671, 
+        "evidence_score": -0.7248394, 
+        "text": "Still , it is already striking that a direct comparison of them is difficult , if not impossible ."
+    }
+]

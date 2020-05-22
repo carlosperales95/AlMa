@@ -1,0 +1,63 @@
+[
+    {
+        "claim": "encyclopedias are especiallythey contain a lota morphological dictionary fails to cover", 
+        "claim_score": 1.315576, 
+        "evidence_score": -0.56100222, 
+        "text": "Among them , encyclopedias are especially important in that they contain a lot of terms that a morphological dictionary fails to cover ."
+    }, 
+    {
+        "claim_evidence": "Although supervised segmentation is very competitiveit can be supplemented + very important to identify hiragana words correctly", 
+        "claim_score": 1.0843587, 
+        "evidence": "Although supervised segmentation is very competitive , we showed that it can be supplemented + very important to identify hiragana words correctly .", 
+        "evidence_score": 0.12530586, 
+        "text": "Although supervised segmentation is very competitive , we showed that it can be supplemented + very important to identify hiragana words correctly ."
+    }, 
+    {
+        "claim": "As hiragana is mainly used to write function words and other basic wordssegmentation errors concerning hiragana often bring disastrous effects on applications of morphological analysis", 
+        "claim_score": 0.85640558, 
+        "evidence_score": -0.68765558, 
+        "text": "As hiragana is mainly used to write function words and other basic words , segmentation errors concerning hiragana often bring disastrous effects on applications of morphological analysis ."
+    }, 
+    {
+        "claim": "Word segmentation is the first step of natural language processing for Japanese", 
+        "claim_score": 0.41660719, 
+        "evidence_score": -0.73020375, 
+        "text": "Word segmentation is the first step of natural language processing for Japanese , Chinese and Thai because they do not delimit words by white-space ."
+    }, 
+    {
+        "claim": "Most improvements come from correction of over-segmentation because the initial segmentation by the analyzer shows a tendency of oversegmentation", 
+        "claim_score": 0.29361995, 
+        "evidence_score": -0.13800462, 
+        "text": "Most improvements come from correction of over-segmentation because the initial segmentation by the analyzer shows a tendency of oversegmentation ."
+    }, 
+    {
+        "claim": "the meaning of constituents in a noun phrase rarely depends on outer context", 
+        "claim_score": 0.22780977, 
+        "evidence_score": -0.020579954, 
+        "text": "We assume that the meaning of constituents in a noun phrase rarely depends on outer context ."
+    }, 
+    {
+        "claim": "external lexical resources for human readers are potentially good knowledge sources , they have not been utilized due to differences in segmentation criteria", 
+        "claim_score": 0.14318633, 
+        "evidence_score": -0.80297171, 
+        "text": "Although external lexical resources for human readers are potentially good knowledge sources , they have not been utilized due to differences in segmentation criteria ."
+    }, 
+    {
+        "claim": "the proposed method efficiently corrects the initial segmentation given by a morphological analyzer", 
+        "claim_score": 0.098322765, 
+        "evidence_score": -0.32526486, 
+        "text": "Experiments show that the proposed method efficiently corrects the initial segmentation given by a morphological analyzer ."
+    }, 
+    {
+        "claim": "the orthography of Japanese does not specify a standard for segmentation , researchers define their own criteria before constructing lexical resources", 
+        "claim_score": 0.0874551, 
+        "evidence_score": -0.47249817, 
+        "text": "Since the orthography of Japanese does not specify a standard for segmentation , researchers define their own criteria before constructing lexical resources ."
+    }, 
+    {
+        "claim": "We can now segment them into words in a more sophisticated way", 
+        "claim_score": 0.069172216, 
+        "evidence_score": -0.25976592, 
+        "text": "We can now segment them into words in a more sophisticated way ."
+    }
+]

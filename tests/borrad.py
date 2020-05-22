@@ -47,3 +47,82 @@ print("\n")
     # onegrams = OneGramDist(filename='count_1w.txt')
     onegram_fitness = functools.partial(onegram_log, onegrams)
     paper_abstract = segment(sentence, word_seq_fitness=onegram_fitness)
+
+
+
+
+
+
+
+
+
+from nltk.tokenize import sent_tokenize, word_tokenize
+import warnings
+
+warnings.filterwarnings(action = 'ignore')
+
+import gensim
+from gensim.models import Word2Vec
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+
+
+import random
+import json
+import sys
+from os import listdir
+from os.path import isfile, join
+import os
+
+
+import re
+import logging
+import time
+import config
+
+from operator import add
+
+from pyspark import SparkConf, SparkContext, SQLContext
+from pyspark.broadcast import _broadcastRegistry
+
+
+
+dir = "./rank/batch_3068/"
+
+
+onlyfiles = [f for f in listdir(dir) if isfile(join(dir, f))]
+evidences = []
+paper_evidences = []
+paper_claims = []
+
+
+for file in onlyfiles:
+
+    if file.startswith( 'evidence' ):
+        paper_evidences.append(file)
+
+for idx,file in enumerate(paper_evidences):
+
+    f = open(dir+file, "r")
+    paper_full =f.read()
+
+    jso = json.loads(paper_full)
+    for idx,item in enumerate(jso):
+        evidences.append(jso[idx]['text'])
+
+    f.close()
+
+
+from gensim.models import Phrases
+sentence_stream = [doc.split(" ") for doc in evidences]
+
+#sentence_stream=brown_raw[0:10]
+bigram = Phrases(sentence_stream, min_count=1, delimiter=b' ')
+trigram = Phrases(bigram[sentence_stream], min_count=1, delimiter=b' ')
+
+for sent in sentence_stream:
+    bigrams_ = [b for b in bigram[sent] if b.count(' ') == 1]
+    trigrams_ = [t for t in trigram[bigram[sent]] if t.count(' ') == 2]
+
+    print(bigrams_)
+    print(trigrams_)
