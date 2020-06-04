@@ -300,6 +300,7 @@ def getSection(paper_full, section_name, next_section):
     return section
 
 
+
 def cleanTextRubble(text):
     text = re.sub(r'[\*]','',text)
     text = re.sub(r'https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+','',text)
@@ -312,10 +313,14 @@ def cleanTextRubble(text):
     text = re.sub(r'\s[0-9]\)\s', ') ',text)
     text = re.sub(r'\s[a-z]\)\s', ') ',text)
     text = re.sub(r'\s\)\s', ' ',text)
+    text = re.sub(r'\s\l\l\s', '',text)
     text = re.sub(r'\;\)\s', '; ',text)
+    text = re.sub(r'[^A-Za-z0-9][^A-Za-z0-9]([^A-Za-z0-9])+',' ',text)
     text = re.sub(r'\.\.','.',text)
+    text = re.sub(r'[\`]+','',text)
+    text = re.sub(r'[\´]+','',text)
     text = re.sub(r'\.\s\s[0-9]\s', '. ', text)
-    text = re.sub(r'\.\s(\s)*\.','',text)
+    text = re.sub(r'\.\s(\s)*\.','.',text)
     text = re.sub(r'\([[0-9]([0-9]+)?\)','',text)
     text = re.sub(r'\[[0-9]([0-9]+)?\]','',text)
     text = re.sub(r'\.[\s]?([aA-zZ,0-9]+\s)+\n','',text)

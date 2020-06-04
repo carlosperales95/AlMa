@@ -1,0 +1,16 @@
+[
+    {
+        "claim_evidence": "it is possible to significantly decrease training and test corpus perplexity of the translation models", 
+        "claim_score": 0.22870353, 
+        "evidence": "We show that it is possible to significantly decrease training and test corpus perplexity of the translation models .", 
+        "evidence_score": 1.1620379, 
+        "text": "We show that it is possible to significantly decrease training and test corpus perplexity of the translation models ."
+    }, 
+    {
+        "claim_evidence": "by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality", 
+        "claim_score": 0.16814659, 
+        "evidence": "We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality .", 
+        "evidence_score": 0.63124473, 
+        "text": "We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality ."
+    }
+]

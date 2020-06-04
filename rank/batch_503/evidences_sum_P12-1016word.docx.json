@@ -1,0 +1,45 @@
+[
+    {
+        "claim_score": -0.0053076533, 
+        "evidence": "We achieved best results when the model training data , MT tuning set , and MT evaluation set conThe bottom category includes all lexical items that the decoder could produce in a translation of the source .", 
+        "evidence_score": 0.65188453, 
+        "text": "We achieved best results when the model training data , MT tuning set , and MT evaluation set conThe bottom category includes all lexical items that the decoder could produce in a translation of the source ."
+    }, 
+    {
+        "claim_evidence": "+ PlPrtConj contain all inflectedthatit there is ample room for translation quality improvements through better selection of forms", 
+        "claim_score": 0.087880262, 
+        "evidence": "Qc 2012 Association for Computational LinguisticsIt has also been suggested that this setting requires morphological generation because the bitext may not Pron + Fem + SgVerb + Masc +3 + PlPrtConj contain all inflected variants ( Minkov et al 2007 ; Toutanova et al 2008 ; Fraser et al 2012 However , using lexical coverage experiments , we show thatit there is ample room for translation quality improvements through better selection of forms that already exist in the translation model.they writewilland .", 
+        "evidence_score": 0.42239509, 
+        "text": "Qc 2012 Association for Computational LinguisticsIt has also been suggested that this setting requires morphological generation because the bitext may not Pron + Fem + SgVerb + Masc +3 + PlPrtConj contain all inflected variants ( Minkov et al 2007 ; Toutanova et al 2008 ; Fraser et al 2012 However , using lexical coverage experiments , we show thatit there is ample room for translation quality improvements through better selection of forms that already exist in the translation model.they writewilland ."
+    }, 
+    {
+        "claim_score": -0.64873275, 
+        "evidence": "fem The car goes quickly Figure 1 : Ungrammatical Arabic output of Google Translate for the English input The car goes quickly .", 
+        "evidence_score": 0.37895357, 
+        "text": "fem The car goes quickly Figure 1 : Ungrammatical Arabic output of Google Translate for the English input The car goes quickly ."
+    }, 
+    {
+        "claim_score": -2.6650506, 
+        "evidence": "( 1 ll .", 
+        "evidence_score": 0.14395874, 
+        "text": "( 1 ll ."
+    }, 
+    {
+        "claim_score": -1.6529089, 
+        "evidence": "For English-to-Arabic translation , we achieve a +1.04 BLEU average improvement by tiling our model on top of a large LM .146 Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics , pages 146155 , Jeju , Republic of Korea , 8-14 July 2012 .", 
+        "evidence_score": 0.13614813, 
+        "text": "For English-to-Arabic translation , we achieve a +1.04 BLEU average improvement by tiling our model on top of a large LM .146 Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics , pages 146155 , Jeju , Republic of Korea , 8-14 July 2012 ."
+    }, 
+    {
+        "claim_score": -1.2921394, 
+        "evidence": "Consider the output of Google Translate for the simple English sentence in Fig. 1 .", 
+        "evidence_score": 0.10111469, 
+        "text": "Consider the output of Google Translate for the simple English sentence in Fig. 1 ."
+    }, 
+    {
+        "claim_score": -0.9158764, 
+        "evidence": "Agreement relations that cross statistical phrase boundaries are not explicitly modeled in most phrasebased MT systems ( Avramidis and Koehn , 2008 We address this shortcoming with an agreement model that scores sequences of fine-grained morphosyntactic classes .", 
+        "evidence_score": 0.09156387, 
+        "text": "Agreement relations that cross statistical phrase boundaries are not explicitly modeled in most phrasebased MT systems ( Avramidis and Koehn , 2008 We address this shortcoming with an agreement model that scores sequences of fine-grained morphosyntactic classes ."
+    }
+]

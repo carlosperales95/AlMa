@@ -88,6 +88,11 @@ for idx,file in enumerate(onlyfiles):
     paper_abstract = getAbstract(paper_full)
 
     paper_abstract = filter(lambda x: x in printable, paper_abstract)
+
+
+    if paper_abstract[len(paper_abstract)-1:] != ".":
+            paper_abstract = paper_abstract + "."
+
     paper_abstract = cleanTextRubble(paper_abstract)
     paper_abstract =  paper_abstract.replace('   ', ' ').replace('  ', ' ')
 
@@ -103,9 +108,13 @@ for idx,file in enumerate(onlyfiles):
 
 
     intro = filter(lambda x: x in printable, intro)
+
+    if intro[len(intro)-1:] != ".":
+            intro = intro + "."
+
     intro = cleanTextRubble(intro)
     intro =  intro.replace('   ', ' ').replace('  ', ' ')
-    #if len(intro) < 10000:
+
     f2.write(intro)
     f2.write("\n")
     f2.write("\n")
@@ -128,6 +137,10 @@ for idx,file in enumerate(onlyfiles):
     conclusion = conclusion.replace('- \r', '').replace('-\r', '').replace(' \n', ' ').replace(' \r', ' ').replace('\n', '').replace('\r', '').replace('   ', ' ').replace('- ', '').replace('  ', ' ').replace('\t', '')
 
     conclusion = filter(lambda x: x in printable, conclusion)
+
+    if conclusion[len(conclusion)-1:] != ".":
+            conclusion = conclusion + "."
+
     conclusion = cleanTextRubble(conclusion)
     conclusion =  conclusion.replace('   ', ' ').replace('  ', ' ')
 

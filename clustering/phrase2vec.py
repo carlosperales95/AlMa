@@ -17,51 +17,16 @@ from os import listdir
 from os.path import isfile, join
 import os
 
-
-dir = "./rank/batch_3003/"
-
-
-onlyfiles = [f for f in listdir(dir) if isfile(join(dir, f))]
-evidences = []
-paper_evidences = []
-paper_claims = []
-
-
-for file in onlyfiles:
-
-    if file.startswith( 'evidence' ):
-        paper_evidences.append(file)
-
-for idx,file in enumerate(paper_evidences):
-
-    f = open(dir+file, "r")
-    paper_full =f.read()
-
-    jso = json.loads(paper_full)
-    for idx,item in enumerate(jso):
-        evidences.append(jso[idx]['text'])
-
-    f.close()
-
-
+from nltk.cluster import KMeansClusterer
+import nltk
+from sklearn import cluster
+from sklearn import metrics
+import numpy as np
+import spacy
+from word2utils import *
 
 from gensim.models import Phrases
-sentence_stream = [doc.split(" ") for doc in evidences]
 
-#sentence_stream=brown_raw[0:10]
-bigram = Phrases(sentence_stream, min_count=1, delimiter=b' ')
-trigram = Phrases(bigram[sentence_stream], min_count=1, delimiter=b' ')
-bigrams_ = []
-trigrams_ = []
-
-for sent in sentence_stream:
-    bigrams_.append([b for b in bigram[sent] if b.count(' ') == 1])
-    trigrams_.append([t for t in trigram[bigram[sent]] if t.count(' ') == 2])
-
-    #print(bigrams_)
-    #print(trigrams_)
-
-#NEED TO CLEAN ARGS, BIGRAMS ARE TOO WEIRD
 import gzip
 import gensim
 import logging
@@ -69,35 +34,66 @@ import re
 
 
 
-bis = [['how', 'is', 'tell', 'al.'], [], ['( 2010', 'et al.']]
-
-#clean (can be done better)
-for bi in bigrams_:
-    for idx, b in enumerate(bi):
-        date = re.search('[0-9]*[0-9][0-9]', b)
-        if date is not None:
-            #print("remove " + bi[idx])
-            bi.remove(bi[idx])
-
-for bi in bigrams_:
-    for idx, b in enumerate(bi):
-        if b.find("al.") != -1:
-            bi.remove(bi[idx])
-        if b.find(" =") != -1:
-            bi.remove(bi[idx])
-        if len(b) == 1:
-            bi.remove(bi[idx])
-        if b.find(" et") != -1:
-            bi.remove(bi[idx])
-        if b.find("-- ") != -1:
-            bi.remove(bi[idx])
-        if b.find("( ") != -1 or b.find(" )") != -1:
-            bi.remove(bi[idx])
+dir = "./rank/batch_503/"
 
 
+print("Joining evidences....................")
+
+
+nlp_base = spacy.load("en_core_web_sm")
+nlp = spacy.load('mymodel')
+
+
+evidences, claims = getEvidences(dir)
+
+import nltk
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
+
+lemmatizer = WordNetLemmatizer()
+
+def nltk2wn_tag(nltk_tag):
+  if nltk_tag.startswith('J'):
+    return wordnet.ADJ
+  elif nltk_tag.startswith('V'):
+    return wordnet.VERB
+  elif nltk_tag.startswith('N'):
+    return wordnet.NOUN
+  elif nltk_tag.startswith('R'):
+    return wordnet.ADV
+  else:
+    return None
+
+def lemmatize_sentence(sentence):
+  nltk_tagged = nltk.pos_tag(nltk.word_tokenize(sentence))
+  wn_tagged = map(lambda x: (x[0], nltk2wn_tag(x[1])), nltk_tagged)
+
+  res_words = []
+  for word, tag in wn_tagged:
+    if tag is None:
+      res_words.append(word)
+    else:
+      res_words.append(lemmatizer.lemmatize(word, tag))
+
+  return " ".join(res_words)
+
+evid=[]
+for e in evidences:
+    evid.append(lemmatize_sentence(e))
+
+#print(evid)
+
+bigrams_, trigrams_ = evid2bitriGrams(evid)
+
+
+trigrams_ = filterStringRubble(trigrams_)
+
+#NEED TO CLEAN ARGS, BIGRAMS ARE TOO WEIRD
 
 #print(bigrams_)
 #print(bigrams_)
+
+print("(word2vec) Finding for bigrams and trigrams....................")
 
 
 #print(bigram[evidences])
@@ -117,198 +113,223 @@ model2 = gensim.models.Word2Vec(
         workers=10,
         iter=10)
 
-print("TRAINED")
+
+
 #print(model.wv.vocab)
 #print(model.wv.most_similar(positive="machine"))
 
-from nltk.cluster import KMeansClusterer
-import nltk
-from sklearn import cluster
-from sklearn import metrics
+#w2v_vectors = model.wv.vectors # here you load vectors for each word in your model
+#w2v_indices = {word: model.wv.vocab[word].index for word in model.wv.vocab} # here you load indices - with whom you can find an index of the particular word in your model
 
-w2v_vectors = model.wv.vectors # here you load vectors for each word in your model
-w2v_indices = {word: model.wv.vocab[word].index for word in model.wv.vocab} # here you load indices - with whom you can find an index of the particular word in your model
+
+
+#mentions = filterDates(mentions)
+#mentions = filterWeirdChars(mentions)
+
+print("Finding Technology/Method mentions....................")
+
+
+mentions = mentionsFromArgs(evid, nlp, nlp_base)
+mentions = filterWeirdChars(mentions)
+mentions = filterStopwords(mentions)
+mentions = filterSingleStrings(mentions)
+true_mentions = filterDoubles(mentions)
+
+semantic_mentions = getSemanticMentions(evid)
+
+true_mentions = filterSingleChars(true_mentions)
+semantic_mentions = filterSingleChars(semantic_mentions)
+
+pointed_mentions = addPoints(true_mentions, semantic_mentions, 1.3, 1.6)
+
+pointed_mentions = sorted(pointed_mentions, key=lambda tup: tup[1], reverse=True)
+
+
+f = open('./pointed_mentions.txt', "w")
+f.write("List of scored Method/Technologies")
+f.write("\n")
+f.write("-----------------------------------")
+f.write("\n")
+f.write("\n")
+
+for p in pointed_mentions:
+    f.write(str(p))
+    f.write("\n")
+
+f.close()
+
+print("Clustering/Plotting Bigrams....................")
+
+
+#filterW2VSoft/HArd
+vectors2, labels2 = filterW2VSoft(model2, pointed_mentions)
+
 
 import numpy as np
+from nltk.cluster import KMeansClusterer, euclidean_distance
 
-
-def vectorize(line):
-    words = []
-    for word in line: # line - iterable, for example list of tokens
-        try:
-            w2v_idx = w2v_indices[word]
-        except KeyError: # if you does not have a vector for this word in your w2v model, continue
-            continue
-        words.append(w2v_vectors[w2v_idx])
-        if words:
-            words = np.asarray(words)
-            min_vec = words.min(axis=0)
-            max_vec = words.max(axis=0)
-            return np.concatenate((min_vec, max_vec))
-        if not words:
-            return None
-
-
-#X = model.wv.vocab
-#for evidence in evidences:
-#    #print(evidence)
-#    for i in sent_tokenize(evidence):
-#        #print(i)
-#        if len(i) > 10:
-#            #print(sent_tokenize(i))
-#            X.append(word_tokenize(i))
-
-
-def tsne_plot(model):
-    "Creates and TSNE model and plots it"
-    labels = []
-    tokens = []
-
-    for word in model.wv.vocab:
-        tokens.append(model[word])
-        labels.append(word)
-
-    tsne_model = TSNE(perplexity=40, n_components=2, init='pca', n_iter=2500, random_state=23)
-    new_values = tsne_model.fit_transform(tokens)
-
-    x = []
-    y = []
-    for value in new_values:
-        x.append(value[0])
-        y.append(value[1])
-
-    plt.figure(figsize=(16, 16))
-    for i in range(len(x)):
-        plt.scatter(x[i],y[i])
-        plt.annotate(labels[i],
-                     xy=(x[i], y[i]),
-                     xytext=(5, 2),
-                     textcoords='offset points',
-                     ha='right',
-                     va='bottom')
-    plt.show()
-
-def isImportant(label, mentions):
-    important = False
-    label = label.split(' ')
-    for lab in label:
-        for mention in mentions:
-            if mention.text.find(lab) != -1:
-                important = True
-                break
-    return important
-
-
-def tsne_plot2(model, mentions):
-    "Creates and TSNE model and plots it"
-    labels = []
-    tokens = []
-
-    for word in model.wv.vocab:
-        if isImportant(word, mentions) == True:
-            tokens.append(model[word])
-            labels.append(word)
-            #print(word)
-
-    tsne_model = TSNE(perplexity=40, n_components=2, init='pca', n_iter=2500, random_state=23)
-    new_values = tsne_model.fit_transform(tokens)
-
-    x = []
-    y = []
-    for value in new_values:
-        x.append(value[0])
-        y.append(value[1])
-
-    plt.figure(figsize=(16, 16))
-    for i in range(len(x)):
-        plt.scatter(x[i],y[i])
-        plt.annotate(labels[i],
-                     xy=(x[i], y[i]),
-                     xytext=(5, 2),
-                     textcoords='offset points',
-                     ha='right',
-                     va='bottom')
-    plt.show()
-
-import spacy
-import nltk
-
-nlp_base = spacy.load("en_core_web_sm")
-nlp = spacy.load('mymodel')
-
-mentions = []
-
-for idx, evidence in enumerate(evidences):
-
-    text = word_tokenize(evidences[idx])
-    tokens = nltk.pos_tag(text)
-
-    tags = [lis[1] for lis in tokens]
-    texts = [lis[0] for lis in tokens]
-
-    precandidates = []
-    candidates = []
-    doc = nlp(evidence)
-    entities = doc.ents
-    doc_base = nlp_base(evidence)
-    entities_base = doc_base.ents
-    entities_final = []
-    for ent in entities_base:
-      for dent in entities:
-          if hasattr(ent, 'label_') and hasattr(dent, 'label_'):
-              if ent.text.find(dent.text):
-                  if ent.label_ == 'PRODUCT' or ent.label_ == 'ORG' or ent.label_ == 'NORP':
-                      entities_final.append(dent)
-                  #else:
-              else:
-                  entities_final.append(dent)
-
-    for idx, tag in enumerate(tags):
-        if tag == 'NN' or tag.startswith('JJ'):
-            #print(idx)
-            precandidates.append(texts[idx])
-            candidates.append(texts[idx+1])
-
-    for candidate in candidates:
-        for ent in entities:
-            if hasattr(ent, 'label_'):
-                if ent.text.find(candidate):
-                    mentions.append(ent)
-
-
-    mentions = list(dict.fromkeys(mentions))
-
-
-for idx, m in enumerate(mentions):
-    date = re.search('[0-9]*[0-9][0-9]', str(m))
-    if date is not None:
-        #print("remove " + bi[idx])
-        mentions.remove(mentions[idx])
-
-for idx, m in enumerate(mentions):
-    if str(m).find("al.") != -1:
-        mentions.remove(mentions[idx])
-    if str(m).find(" =") != -1:
-        mentions.remove(mentions[idx])
-    if len(str(m)) == 1:
-        mentions.remove(mentions[idx])
-    if str(m).find(" et") != -1:
-        mentions.remove(mentions[idx])
-    if str(m).find("-- ") != -1:
-        mentions.remove(mentions[idx])
-    if str(m) == '':
-        mentions.remove(mentions[idx])
-    if str(m).find("( ") != -1 or b.find(" )") != -1:
-        mentions.remove(mentions[idx])
-
-for idx, w in enumerate(mentions):
-    if w in set(stopwords.words('english')):
-        mentions.remove(mentions[idx])
-
-for mention in mentions:
-    print(mention)
+w2v_vectors = model2.wv.vectors
+# here you load indices - with whom you can find an index of the particular word in your model
+w2v_indices = {word: model2.wv.vocab[word].index for word in model2.wv.vocab}
 
 
 
-tsne_plot(model)
-tsne_plot2(model, mentions)
+# test k-means using 2 means, euclidean distance, and 10 trial clustering repetitions with random seeds
+clusterer = KMeansClusterer(4, euclidean_distance, repeats=10)
+clusters = clusterer.cluster(vectors2, True)
+centroids = clusterer.means()
+print('Clustered ')
+print('As:', clusters)
+#print('Means:', centroids)
+
+
+
+# classify a new vector
+#vector = np.array([2,2])
+#print('classify(%s):' % vector, end=' ')
+#print(clusterer.classify(vector))
+
+
+
+import matplotlib.pyplot as plt
+
+x0 = np.array([x[0] for idx, x in enumerate(vectors2) if clusters[idx]==0])
+y0 = np.array([x[1] for idx, x in enumerate(vectors2) if clusters[idx]==0])
+labels0 = np.array([labels2[idx] for idx, x in enumerate(vectors2) if clusters[idx]==0])
+plt.scatter(x0,y0, color='blue')
+for i, x in enumerate(x0):
+    plt.annotate(labels0[i],
+                 xy=(x0[i], y0[i]),
+                 xytext=(5, 2),
+                 textcoords='offset points',
+                 ha='right',
+                 va='bottom')
+
+x1 = np.array([x[0] for idx, x in enumerate(vectors2) if clusters[idx]==1])
+y1 = np.array([x[1] for idx, x in enumerate(vectors2) if clusters[idx]==1])
+labels1 = np.array([labels2[idx] for idx, x in enumerate(vectors2) if clusters[idx]==1])
+plt.scatter(x1,y1, color='orange')
+for i, x in enumerate(x1):
+    plt.annotate(labels1[i],
+                 xy=(x1[i], y1[i]),
+                 xytext=(5, 2),
+                 textcoords='offset points',
+                 ha='right',
+                 va='bottom')
+
+x2 = np.array([x[0] for idx, x in enumerate(vectors2) if clusters[idx]==2])
+y2 = np.array([x[1] for idx, x in enumerate(vectors2) if clusters[idx]==2])
+plt.scatter(x2,y2, color='green')
+labels02 = np.array([labels2[idx] for idx, x in enumerate(vectors2) if clusters[idx]==2])
+for i, x in enumerate(x2):
+    plt.annotate(labels02[i],
+                 xy=(x2[i], y2[i]),
+                 xytext=(5, 2),
+                 textcoords='offset points',
+                 ha='right',
+                 va='bottom')
+
+x3 = np.array([x[0] for idx, x in enumerate(vectors2) if clusters[idx]==3])
+y3 = np.array([x[1] for idx, x in enumerate(vectors2) if clusters[idx]==3])
+labels3 = np.array([labels2[idx] for idx, x in enumerate(vectors2) if clusters[idx]==3])
+plt.scatter(x3,y3, color='purple')
+for i, x in enumerate(x3):
+    plt.annotate(labels3[i],
+                 xy=(x3[i], y3[i]),
+                 xytext=(5, 2),
+                 textcoords='offset points',
+                 ha='right',
+                 va='bottom')
+#x4 = np.array([x[0] for idx, x in enumerate(w2v_vectors) if clusters[idx]==4])
+#y4 = np.array([x[1] for idx, x in enumerate(w2v_vectors) if clusters[idx]==4])
+#plt.scatter(x4,y4, color='purple')
+
+print("Clustering/Plotting Trigrams....................")
+
+
+vectors3, labels3 = filterW2VHard(model, pointed_mentions)
+
+
+wv_vectors = model.wv.vectors
+# here you load indices - with whom you can find an index of the particular word in your model
+wv_indices = {word: model.wv.vocab[word].index for word in model.wv.vocab}
+
+
+
+
+clusterer2 = KMeansClusterer(4, euclidean_distance, repeats=10)
+clusters2 = clusterer2.cluster(vectors3, True)
+centroids2 = clusterer2.means()
+print('Clustered ')
+print('As:', clusters2)
+
+x20 = np.array([x[0] for idx, x in enumerate(vectors3) if clusters2[idx]==0])
+y20 = np.array([x[1] for idx, x in enumerate(vectors3) if clusters2[idx]==0])
+labels20 = np.array([labels3[idx] for idx, x in enumerate(vectors3) if clusters2[idx]==0])
+plt.scatter(x20,y20, color='black')
+for i, x in enumerate(x20):
+    plt.annotate(labels20[i],
+                 xy=(x20[i], y20[i]),
+                 xytext=(5, 2),
+                 textcoords='offset points',
+                 ha='right',
+                 va='bottom')
+
+x21 = np.array([x[0] for idx, x in enumerate(vectors3) if clusters2[idx]==1])
+y21 = np.array([x[1] for idx, x in enumerate(vectors3) if clusters2[idx]==1])
+labels21 = np.array([labels3[idx] for idx, x in enumerate(vectors3) if clusters2[idx]==1])
+plt.scatter(x21,y21, color='pink')
+for i, x in enumerate(x21):
+    plt.annotate(labels21[i],
+                 xy=(x21[i], y21[i]),
+                 xytext=(5, 2),
+                 textcoords='offset points',
+                 ha='right',
+                 va='bottom')
+
+x22 = np.array([x[0] for idx, x in enumerate(vectors3) if clusters2[idx]==2])
+y22 = np.array([x[1] for idx, x in enumerate(vectors3) if clusters2[idx]==2])
+plt.scatter(x2,y2, color='brown')
+labels22 = np.array([labels3[idx] for idx, x in enumerate(vectors3) if clusters2[idx]==2])
+for i, x in enumerate(x22):
+    plt.annotate(labels22[i],
+                 xy=(x22[i], y22[i]),
+                 xytext=(5, 2),
+                 textcoords='offset points',
+                 ha='right',
+                 va='bottom')
+
+x23 = np.array([x[0] for idx, x in enumerate(vectors3) if clusters2[idx]==3])
+y23 = np.array([x[1] for idx, x in enumerate(vectors3) if clusters2[idx]==3])
+labels23 = np.array([labels2[idx] for idx, x in enumerate(vectors3) if clusters2[idx]==3])
+plt.scatter(x23,y23, color='yellow')
+for i, x in enumerate(x23):
+    plt.annotate(labels23[i],
+                 xy=(x23[i], y23[i]),
+                 xytext=(5, 2),
+                 textcoords='offset points',
+                 ha='right',
+                 va='bottom')
+
+
+
+
+
+
+xc = np.array([x[0] for x in centroids])
+yc = np.array([x[1] for x in centroids])
+plt.scatter(xc,yc, color='red')
+plt.show()
+
+
+
+doTheKM(bigrams_, model, evid, "bigram_claims.txt")
+doTheKM(trigrams_, model2, evid, "trigram_claims.txt")
+
+
+
+
+#print(true_mentions)
+
+#tsne_plot(model)
+#tsne_plot2(model, tris)

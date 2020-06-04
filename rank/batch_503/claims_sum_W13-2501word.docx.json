@@ -1,0 +1,53 @@
+[
+    {
+        "claim_evidence": "data-driven semantic analysis can help to circumvent the need for an external seed dictionarya prerequisite for translation extraction from parallel corpora", 
+        "claim_score": 0.70275141, 
+        "evidence": "The results show that data-driven semantic analysis can help to circumvent the need for an external seed dictionary , traditionally considered as a prerequisite for translation extraction from parallel corpora .", 
+        "evidence_score": 0.041705166, 
+        "text": "The results show that data-driven semantic analysis can help to circumvent the need for an external seed dictionary , traditionally considered as a prerequisite for translation extraction from parallel corpora ."
+    }, 
+    {
+        "claim_evidence": "We expect the disambiguation to have a beneficial impact on the results given that polysemy is a frequent phenomenon", 
+        "claim_score": 0.61132311, 
+        "evidence": "We expect the disambiguation to have a beneficial impact on the results given that polysemy is a frequent phenomenon in a general , mixed-domain corpus .", 
+        "evidence_score": 0.68963943, 
+        "text": "We expect the disambiguation to have a beneficial impact on the results given that polysemy is a frequent phenomenon in a general , mixed-domain corpus ."
+    }, 
+    {
+        "claim": "language corpus like Wikipedia can be polysemous and it is important to identify translations corresponding to their different senses", 
+        "claim_score": 0.31685455, 
+        "evidence_score": -0.55920293, 
+        "text": "However , words in a general language corpus like Wikipedia can be polysemous and it is important to identify translations corresponding to their different senses ."
+    }, 
+    {
+        "claim": "the sense clusters often contain more than one translationprovide supplementary material for the comparison of the vectors in the target language", 
+        "claim_score": 0.28061598, 
+        "evidence_score": -0.21089448, 
+        "text": "An additional advantage is that the sense clusters often contain more than one translation and , therefore , provide supplementary material for the comparison of the vectors in the target language ."
+    }, 
+    {
+        "claim_evidence": "a method capable of identifying the correct sense of the features and translating them accordingly could contribute to producing cleaner vectors and to extracting higher qualityhow source vectors can be translated into the target languagemethod which exploits the output of data-driven Wordfeature disambiguation enhances the quality of the translations extracted from the comparable corpus", 
+        "claim_score": 0.27549784, 
+        "evidence": "We expect that a method capable of identifying the correct sense of the features and translating them accordingly could contribute to producing cleaner vectors and to extracting higher quality lexicons.In this paper , we show how source vectors can be translated into the target language by a cross-lingual Word Sense Disambiguation ( WSD ) method which exploits the output of data-driven Word Sense Induction ( WSI Apidianaki , 2009 and demonstrate how feature disambiguation enhances the quality of the translations extracted from the comparable corpus .", 
+        "evidence_score": 0.23498831, 
+        "text": "We expect that a method capable of identifying the correct sense of the features and translating them accordingly could contribute to producing cleaner vectors and to extracting higher quality lexicons.In this paper , we show how source vectors can be translated into the target language by a cross-lingual Word Sense Disambiguation ( WSD ) method which exploits the output of data-driven Word Sense Induction ( WSI Apidianaki , 2009 and demonstrate how feature disambiguation enhances the quality of the translations extracted from the comparable corpus ."
+    }, 
+    {
+        "claim": "we intend to explore in future work is to extract translations corresponding to different senses of the headwords", 
+        "claim_score": 0.19838863, 
+        "evidence_score": -0.174385, 
+        "text": "An avenue that we intend to explore in future work is to extract translations corresponding to different senses of the headwords ."
+    }, 
+    {
+        "claim": "Our experiments are carried out on the English-Slovene language pairmethods are totally data-driventhe approach can be easily applied to other languages.The paper is organizedsome related work on bilingual lexicon extraction from comparable corpora", 
+        "claim_score": 0.059320313, 
+        "evidence_score": -0.4144114, 
+        "text": "Our experiments are carried out on the English-Slovene language pair but as the methods are totally data-driven , the approach can be easily applied to other languages.The paper is organized as follows : In the next section , we present some related work on bilingual lexicon extraction from comparable corpora ."
+    }, 
+    {
+        "claim": "disambiguating the vectors improves the quality of the extracted lexicons and manages to beat the simpler", 
+        "claim_score": 0.024102643, 
+        "evidence_score": -0.32209617, 
+        "text": "Moreover , it is clear that disambiguating the vectors improves the quality of the extracted lexicons and manages to beat the simpler , but yet powerful , most frequent translation heuristic ."
+    }
+]
