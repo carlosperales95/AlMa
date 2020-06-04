@@ -10,3 +10,4 @@ It will then run all your summarized papers through MARGOT and move the output t
 
 4. Run argRank.py. It will separate claims and evidences from the aummarized papers and rank them in terms of score. These .json files can be found in ./rank/<batch_number>/
 
+5. Run phrase2vec.py in the ./clustering folder
