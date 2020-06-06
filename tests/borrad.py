@@ -196,3 +196,17 @@ cmaps = cycle([
 for i in range(50):
     col = next(cmaps)
     display_cloud(i+1, col)
+
+
+    #print(labels)
+    #for index, evidence in enumerate(data):
+    #    print(str(labels[index]) + ":" + str(evidence))
+
+#    print("Top terms per cluster:")
+#    order_centroids = clf.cluster_centers_.argsort()[:, ::-1]
+    #terms = vectorizer.get_feature_names()
+#    for i in range(n_clusters):
+#        print ("Cluster %d: " + str(i))
+#        for ind in order_centroids[i, :4]:
+#            print(lr[ind])
+        #print

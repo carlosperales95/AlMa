@@ -1,60 +1,28 @@
+import nltk
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
-import warnings
+from nltk.corpus import wordnet
 
-import gensim
-from gensim.models import Word2Vec
-from sklearn.manifold import TSNE
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn import cluster
-from sklearn import metrics
-from sklearn.decomposition import PCA
-from scipy.cluster import hierarchy
-from sklearn.cluster import AgglomerativeClustering
+from gensim.models import Phrases
 
+import re
 
-
-import random
 import json
 import sys
 from os import listdir
 from os.path import isfile, join
-import os
 
 import numpy as np
-import spacy
-import nltk
-
-from nltk.cluster import KMeansClusterer
-from sklearn import cluster
-from sklearn import metrics
-import numpy as np
-import spacy
-from word2utils import *
-
-from gensim.models import Phrases
-
-import gzip
-import gensim
-import logging
-import re
-
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 
-def getEvidences(dir):
+
+def getClaimsEvidences(dir):
 
     onlyfiles = [f for f in listdir(dir) if isfile(join(dir, f))]
 
     paper_evidences = []
     paper_claims = []
-
-    evidences = []
-    claims = []
-
-
     for file in onlyfiles:
 
         if file.startswith( 'evidence' ):
@@ -63,6 +31,9 @@ def getEvidences(dir):
         if file.startswith( 'claim' ):
             paper_claims.append(file)
 
+
+    evidences = []
+    claims = []
     for idx,file in enumerate(paper_evidences):
 
         f = open(dir+file, "r")
@@ -92,15 +63,44 @@ def getEvidences(dir):
 
 
 
+def nltk2wn_tag(nltk_tag):
+
+  if nltk_tag.startswith('J'):
+    return wordnet.ADJ
+  elif nltk_tag.startswith('V'):
+    return wordnet.VERB
+  elif nltk_tag.startswith('N'):
+    return wordnet.NOUN
+  elif nltk_tag.startswith('R'):
+    return wordnet.ADV
+  else:
+    return None
+
+
+def lemmatize_sentence(sentence, lemmatizer):
+
+  nltk_tagged = nltk.pos_tag(nltk.word_tokenize(sentence))
+  wn_tagged = map(lambda x: (x[0], nltk2wn_tag(x[1])), nltk_tagged)
+
+  res_words = []
+  for word, tag in wn_tagged:
+    if tag is None:
+      res_words.append(word)
+    else:
+      res_words.append(lemmatizer.lemmatize(word, tag))
+
+  return " ".join(res_words)
+
+
+
 def sentenceTokenizer(evidences):
 
     data = []
-
     for evidence in evidences:
         # iterate through each sentence in the file
         for i in sent_tokenize(evidence):
-            temp = []
 
+            temp = []
             # tokenize the sentence into words
             for j in word_tokenize(i):
                 temp.append(j.lower())
@@ -111,26 +111,29 @@ def sentenceTokenizer(evidences):
 
 
 def vectorize(line):
+
     words = []
     for word in line: # line - iterable, for example list of tokens
+
         try:
             w2v_idx = w2v_indices[word]
         except KeyError: # if you does not have a vector for this word in your w2v model, continue
             continue
         words.append(w2v_vectors[w2v_idx])
         if words:
+
             words = np.asarray(words)
             min_vec = words.min(axis=0)
             max_vec = words.max(axis=0)
             return np.concatenate((min_vec, max_vec))
         if not words:
+
             return None
 
 
 def mentionsFromArgs(evidences, nlp, nlp_base):
 
     mentions = []
-
     for idx, evidence in enumerate(evidences):
 
         text = word_tokenize(evidences[idx])
@@ -139,12 +142,14 @@ def mentionsFromArgs(evidences, nlp, nlp_base):
         tags = [lis[1] for lis in tokens]
         texts = [lis[0] for lis in tokens]
 
-        precandidates = []
-        candidates = []
+
         doc = nlp(evidence)
         entities = doc.ents
         doc_base = nlp_base(evidence)
         entities_base = doc_base.ents
+
+        precandidates = []
+        candidates = []
         entities_final = []
         for ent in entities_base:
           for dent in entities:
@@ -182,6 +187,7 @@ def filterStopwords(mentions):
 
 
 def filterSingleStrings(mentions):
+
     lenmentions = []
     for mention in mentions:
         if len(str(mention)) > 2:
@@ -210,8 +216,8 @@ def filterDoubles(mentions):
 
 
 def getSemanticMentions(evidences):
-    semantic_mentions = []
 
+    semantic_mentions = []
     for idt, evidence in enumerate(evidences):
 
         text = word_tokenize(evidences[idt])
@@ -222,8 +228,6 @@ def getSemanticMentions(evidences):
 
         #phrases = []
         continuation = 0
-
-
         for idx, tag in enumerate(tags):
             subject = False
             verbal = False
@@ -412,122 +416,6 @@ def addPoints(array1, array2, points1, points2):
     return filtered_doubles
 
 
-
-def tsne_plot(model):
-    "Creates and TSNE model and plots it"
-    labels = []
-    tokens = []
-
-    for word in model.wv.vocab:
-        tokens.append(model[word])
-        labels.append(word)
-
-    tsne_model = TSNE(perplexity=40, n_components=2, init='pca', n_iter=2500, random_state=23)
-    new_values = tsne_model.fit_transform(tokens)
-
-    x = []
-    y = []
-    for value in new_values:
-        x.append(value[0])
-        y.append(value[1])
-
-    plt.figure(figsize=(16, 16))
-    for i in range(len(x)):
-        plt.scatter(x[i],y[i])
-        plt.annotate(labels[i],
-                     xy=(x[i], y[i]),
-                     xytext=(5, 2),
-                     textcoords='offset points',
-                     ha='right',
-                     va='bottom')
-    plt.show()
-
-
-def isImportant(label, mentions):
-    important = False
-    label = label.split(' ')
-    for lab in label:
-        for mention in mentions:
-            if lab in mention:
-                important = True
-                break
-    return important
-
-
-def tsne_plotMentions(model, mentions):
-    "Creates and TSNE model and plots it"
-    labels = []
-    tokens = []
-
-    for word in model.wv.vocab:
-        for mention in mentions:
-            if len(word) > 3:
-                ment = [x.lower() for x in mention]
-                if word in ment:
-                    double = False
-                    for label in labels:
-                        if label == word:
-                            double = True
-                    if double == False:
-                        print(word)
-                        tokens.append(model[word])
-                        labels.append(word)
-
-    #print(labels)
-    tsne_model = TSNE(perplexity=40, n_components=2, init='pca', n_iter=2500, random_state=23)
-    new_values = tsne_model.fit_transform(tokens)
-
-    x = []
-    y = []
-    for value in new_values:
-        x.append(value[0])
-        y.append(value[1])
-
-    plt.figure(figsize=(16, 16))
-    for i in range(len(x)):
-        plt.scatter(x[i],y[i])
-        plt.annotate(labels[i],
-                     xy=(x[i], y[i]),
-                     xytext=(5, 2),
-                     textcoords='offset points',
-                     ha='right',
-                     va='bottom')
-        #plt.axis([0,5,5,20])
-    plt.show()
-
-
-def tsne_plot2(model, mentions):
-    "Creates and TSNE model and plots it"
-    labels = []
-    tokens = []
-
-    for word in model.wv.vocab:
-        if isImportant(word, mentions) == True:
-            tokens.append(model[word])
-            labels.append(word)
-            #print(word)
-
-    tsne_model = TSNE(perplexity=40, n_components=2, init='pca', n_iter=2500, random_state=23)
-    new_values = tsne_model.fit_transform(tokens)
-
-    x = []
-    y = []
-    for value in new_values:
-        x.append(value[0])
-        y.append(value[1])
-
-    plt.figure(figsize=(16, 16))
-    for i in range(len(x)):
-        plt.scatter(x[i],y[i])
-        plt.annotate(labels[i],
-                     xy=(x[i], y[i]),
-                     xytext=(5, 2),
-                     textcoords='offset points',
-                     ha='right',
-                     va='bottom')
-    plt.show()
-
-
 def filterDates(mentions):
     for idx, m in enumerate(mentions):
         date = re.search('[0-9]*[0-9][0-9]', str(m))
@@ -586,6 +474,7 @@ def filterStringRubble(bigrams_):
 
 
 def filterWeirdChars(mentions):
+
     for idx, m in enumerate(mentions):
         if str(m).find("al.") != -1:
             mentions.remove(mentions[idx])
@@ -605,7 +494,8 @@ def filterWeirdChars(mentions):
     return mentions
 
 
-def MentionRankThreshold(tris):
+def mentionRankThreshold(tris):
+
     tris = []
     for pm in pointed_mentions:
         if pm[1] > 2:
@@ -614,6 +504,7 @@ def MentionRankThreshold(tris):
 
 
 def filterW2VSoft(model, pointed_mentions):
+
     #filter soft
     vectors2 = []
     labels2 = []
@@ -638,6 +529,7 @@ def filterW2VSoft(model, pointed_mentions):
 
 
 def filterW2VHard(model, pointed_mentions):
+
     #filter hard
     vectors = []
     labels = []
@@ -673,119 +565,3 @@ def filterW2VHard(model, pointed_mentions):
 
 
     return vectors2, labels2
-
-
-def w2vectorizer(sent, m):
-    vec=[]
-    numw = 0
-    for w in sent:
-        try:
-            if numw == 0:
-                vec = m[w]
-            else:
-                vec = np.add(vec, m[w])
-            numw+=1
-        except:
-            pass
-
-        return np.asarray(vec) / numw
-
-
-
-def doTheKM(data, model, evidences, filename):
-
-    l=[]
-    lr=[]
-    for idx, i in enumerate(data):
-        if len(i) > 0:
-            vectorized = w2vectorizer(i, model)
-            if len(vectorized) > 0:
-                l.append(vectorized)
-                lr.append(evidences[idx])
-            #print(i)
-    #for i in l:
-    #    print(len(i))
-
-    X=np.array(l)
-    #print(X)
-    #wcss=[]
-    #for i in range(1,169):
-    #    kmeans = KMeans(n_clusters = i, init = 'k-means++', random_state = 42)
-    #    kmeans.fit(X)
-    #    wcss.append(kmeans.inertia_)
-    #plt.plot(range(1,169), wcss)
-    #plt.title('The Elbow Method')
-    #plt.xlabel('NUmber of clusters')
-    #plt.ylabel('WCSS')
-    #plt.show()
-
-    n_clusters = 2
-    clf = KMeans(n_clusters=n_clusters,
-                 max_iter=1000,
-                 init='k-means++',
-                 n_init=1)
-    labels = clf.fit_predict(X)
-
-    #print(labels)
-    #for index, evidence in enumerate(data):
-    #    print(str(labels[index]) + ":" + str(evidence))
-
-#    print("Top terms per cluster:")
-#    order_centroids = clf.cluster_centers_.argsort()[:, ::-1]
-    #terms = vectorizer.get_feature_names()
-#    for i in range(n_clusters):
-#        print ("Cluster %d: " + str(i))
-#        for ind in order_centroids[i, :4]:
-#            print(lr[ind])
-        #print
-
-    f = open('./'+filename, "w")
-    f.write("PCA on evidences")
-    f.write("\n")
-    f.write("----------------")
-    f.write("\n")
-    f.write("----------------")
-    f.write("\n")
-    f.write("\n")
-
-    pca = PCA(n_components=2).fit(X)
-    coords = pca.transform(X)
-    label_colors = ['#2AB0E9', '#2BAF74', '#D7665E', '#CCCCCC',
-                    '#D2CA0D', '#522A64', '#A3DB05', '#FC6514',
-                    '#FF7F50', '#BDB76B', '#FF7F50', '#00FA9A',
-                    '#FFA07A', '#FFFACD', '#006400', '#32CD32',
-                    '#DC143C', '#FFEFD5', '#8FBC8F', '#808000'
-                    ]
-
-    #print(labels)
-    colors = [label_colors[i] for i in labels]
-    plt.scatter(coords[:, 0], coords[:, 1], c=colors)
-    centroids = clf.cluster_centers_
-    centroid_coords = pca.transform(centroids)
-    plt.scatter(centroid_coords[:, 0], centroid_coords[:, 1], marker='X', s=200,
-    linewidths=2, c='#444d61')
-
-    #print(pca.explained_variance_ratio_)
-    #print(pca.components_)
-    towrite=[]
-
-    for r in range(n_clusters):
-        f.write("Sentences in cluster n" + str(r) + ":")
-        f.write("\n")
-        f.write(".....................................")
-        f.write("\n")
-        cluster_cl = [lr[idx] for idx, x in enumerate(labels) if labels[idx]==r]
-        for c in cluster_cl:
-            f.write("\t" + c)
-            f.write("\n")
-            f.write("\n")
-
-        f.write("\n")
-        f.write("\n")
-        f.write("\n")
-
-    f.close()
-
-    plt.show()
-
-    return None
