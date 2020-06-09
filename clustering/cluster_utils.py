@@ -12,9 +12,16 @@ from sklearn import cluster
 from sklearn import metrics
 import numpy as np
 
+import matplotlib.pyplot as plt
+from scipy.spatial import ConvexHull
 
 
-def tsne_plot(model):
+
+
+################# TSNE ######################
+
+
+def tsne_plot_original(model):
 
     "Creates and TSNE model and plots it"
     labels = []
@@ -48,15 +55,18 @@ def tsne_plot(model):
 def isImportant(label, mentions):
     important = False
     label = label.split(' ')
+    count=0
     for lab in label:
         for mention in mentions:
             if lab in mention:
+                count+=1
+            if count == len(label):
                 important = True
                 break
     return important
 
 
-def tsne_plotMentions(model, mentions):
+def tsne_plot_mentions(model, mentions):
     "Creates and TSNE model and plots it"
     labels = []
     tokens = []
@@ -98,7 +108,7 @@ def tsne_plotMentions(model, mentions):
     plt.show()
 
 
-def tsne_plot2(model, mentions):
+def tsne_plot_custom(model, mentions):
     "Creates and TSNE model and plots it"
     labels = []
     tokens = []
@@ -118,7 +128,7 @@ def tsne_plot2(model, mentions):
         x.append(value[0])
         y.append(value[1])
 
-    plt.figure(figsize=(16, 16))
+    plt.figure(figsize=(50, 20))
     for i in range(len(x)):
         plt.scatter(x[i],y[i])
         plt.annotate(labels[i],
@@ -127,7 +137,42 @@ def tsne_plot2(model, mentions):
                      textcoords='offset points',
                      ha='right',
                      va='bottom')
+    plt.tight_layout()
     plt.show()
+
+
+##############################################
+
+############### PLOT ADDITIONS ###############
+
+
+def encircle2(axs, x,y, ax=None, **kw):
+    if not ax:
+        ax=fig.gca()
+    p = np.c_[x,y]
+    mean = np.mean(p, axis=0)
+    d = p-mean
+    r = np.max(np.sqrt(d[:,0]**2+d[:,1]**2 ))
+    circ = plt.Circle(mean, radius=1.05*r,**kw)
+    axs.add_patch(circ)
+
+    return None
+
+
+def encircle(fig, x,y, ax=None, **kw):
+    if not ax:
+        ax=fig.gca()
+    p = np.c_[x,y]
+    hull = ConvexHull(p)
+    poly = plt.Polygon(p[hull.vertices,:], **kw)
+    ax.add_patch(poly)
+
+    return None
+
+
+##############################################
+
+############### VECTORIZERS ##################
 
 
 def w2vectorizer(sent, m):
@@ -163,6 +208,11 @@ def vectorizeToX(data, model, evidences):
     return X, lr
 
 
+##############################################
+
+############### CLUSTER METHODS ##############
+
+
 def elbowMethod(X):
 
     wcss=[]
@@ -170,42 +220,11 @@ def elbowMethod(X):
         kmeans = KMeans(n_clusters = i, init = 'k-means++', random_state = 42)
         kmeans.fit(X)
         wcss.append(kmeans.inertia_)
-    plt.plot(range(1,8), wcss)
-    plt.title('The Elbow Method')
-    plt.xlabel('Number of clusters')
-    plt.ylabel('WCSS')
-    plt.show()
+
+    return wcss
 
 
-def plotKMtoPCA(X, labels, clf):
-
-    pca = PCA(n_components=2).fit(X)
-    coords = pca.transform(X)
-    label_colors = ['#2AB0E9', '#2BAF74', '#D7665E', '#CCCCCC',
-                    '#D2CA0D', '#522A64', '#A3DB05', '#FC6514',
-                    '#FF7F50', '#BDB76B', '#FF7F50', '#00FA9A',
-                    '#FFA07A', '#FFFACD', '#006400', '#32CD32',
-                    '#DC143C', '#FFEFD5', '#8FBC8F', '#808000'
-                    ]
-
-    colors = [label_colors[i] for i in labels]
-    plt.scatter(coords[:, 0], coords[:, 1], c=colors)
-    centroids = clf.cluster_centers_
-    centroid_coords = pca.transform(centroids)
-    plt.scatter(centroid_coords[:, 0], centroid_coords[:, 1], marker='X', s=200,
-    linewidths=2, c='#444d61')
-    plt.show()
-
-
-def Kmeans_PCA(data, model, evidences, filename):
-
-    X, lr = vectorizeToX(data, model, evidences)
-
-    elbowMethod(X)
-
-    n_clusters = int(input("After seeing the elbow method, select your number of clusters: "))
-#    if n_clusters < 2:
-#        n_clusters = 2
+def Kmeans_PCA(fig, axs, n_clusters, X, lr, filename):
 
     clf = KMeans(n_clusters=n_clusters,
                  max_iter=1000,
@@ -242,20 +261,25 @@ def Kmeans_PCA(data, model, evidences, filename):
 
     f.close()
 
-    plotKMtoPCA(X, labels, clf)
+    plot_PCA(fig, X, labels, clf, axs)
 
 
     return None
 
 
-def cluster_PlotAnnotate(clusters, vectors2, c_id, labels2):
+##############################################
+
+################### PLOTS ####################
+
+
+def scatter_Annotate(clusters, vectors2, c_id, labels2, ax):
 
     x0 = np.array([x[0] for idx, x in enumerate(vectors2) if clusters[idx]==c_id])
     y0 = np.array([x[1] for idx, x in enumerate(vectors2) if clusters[idx]==c_id])
     labels0 = np.array([labels2[idx] for idx, x in enumerate(vectors2) if clusters[idx]==c_id])
-    plt.scatter(x0,y0, color='#FF7F50')
+    ax.scatter(x0,y0, color='#FF7F50')
     for i, x in enumerate(x0):
-        plt.annotate(labels0[i],
+        ax.annotate(labels0[i],
                      xy=(x0[i], y0[i]),
                      xytext=(5, 2),
                      textcoords='offset points',
@@ -264,7 +288,7 @@ def cluster_PlotAnnotate(clusters, vectors2, c_id, labels2):
     return None
 
 
-def scatterW2V(vectors2, labels2):
+def scatter_Model(vectors2, labels2, ax):
 
 
     # test k-means using 2 means, euclidean distance, and 10 trial clustering repetitions with random seeds
@@ -277,7 +301,7 @@ def scatterW2V(vectors2, labels2):
 
 
     for i in range(4):
-        cluster_PlotAnnotate(clusters, vectors2, i, labels2)
+        scatter_Annotate(clusters, vectors2, i, labels2, ax)
 
     #x4 = np.array([x[0] for idx, x in enumerate(w2v_vectors) if clusters[idx]==4])
     #y4 = np.array([x[1] for idx, x in enumerate(w2v_vectors) if clusters[idx]==4])
@@ -290,7 +314,90 @@ def scatterW2V(vectors2, labels2):
 
     xc = np.array([x[0] for x in centroids])
     yc = np.array([x[1] for x in centroids])
-    plt.scatter(xc,yc, color='red')
-    plt.show()
+    ax.scatter(xc,yc, color='red')
+    #plt.show()
 
     return None
+
+
+def W2V_plot_Models(bi_vectors, tri_vectors, bi_labels, tri_labels):
+
+    fig, axes = plt.subplots(1, 2, figsize=(40,10))
+    fig.suptitle('ScatterPlots of Methods')
+    axes[0].set_title('Bigram Model', fontsize=14)
+    axes[1].set_title('Trigram Model', fontsize=14)
+
+    scatter_Model(bi_vectors, bi_labels, axes[0])
+    scatter_Model(tri_vectors, tri_labels, axes[1])
+
+    fig.tight_layout()
+    plt.show()
+
+
+def plot_elbows(X, X2):
+
+    fig, axes = plt.subplots(1, 2, figsize=(20,20))
+    fig.suptitle('Elbow Method for Evidences')
+    axes[0].set_title('Bigram Model', fontsize=14)
+    axes[1].set_title('Trigram Model', fontsize=14)
+
+    for ax in axes.flat:
+        ax.set(xlabel='Number of clusters', ylabel='WCSS')
+
+    wcss1 = elbowMethod(X)
+    wcss2 = elbowMethod(X2)
+
+    axes[0].plot(range(1,8), wcss1)
+    axes[1].plot(range(1,8), wcss2)
+
+    plt.show()
+
+
+def plot_PCA(fig, X, labels, clf, axs):
+
+    pca = PCA(n_components=2).fit(X)
+    coords = pca.transform(X)
+    label_colors = ['#2AB0E9', '#2BAF74', '#D7665E', '#CCCCCC',
+                    '#D2CA0D', '#522A64', '#A3DB05', '#FC6514',
+                    '#FF7F50', '#BDB76B', '#FF7F50', '#00FA9A',
+                    '#FFA07A', '#FFFACD', '#006400', '#32CD32',
+                    '#DC143C', '#FFEFD5', '#8FBC8F', '#808000'
+                    ]
+
+    colors = [label_colors[i] for i in labels]
+    axs.scatter(coords[:, 0], coords[:, 1], c=colors)
+    centroids = clf.cluster_centers_
+    centroid_coords = pca.transform(centroids)
+    axs.scatter(centroid_coords[:, 0], centroid_coords[:, 1], marker='X', s=10,
+    linewidths=2, c='#444d61')
+
+
+def clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemmatized):
+
+
+    X, lr = vectorizeToX(bigrams_, bigrams_model, lemmatized)
+    X2, lr2 = vectorizeToX(trigrams_, trigrams_model, lemmatized)
+
+    #plot_elbows(X, X2)
+
+    print("After seeing the elbow method, insert the number of clusters")
+    bi_clusters = int(input("Clusters for the Bigram Model: "))
+    tri_clusters = int(input("Clusters for the Trigram Model: "))
+
+
+    fig, axes = plt.subplots(1, 2, figsize=(20,20))
+    fig.suptitle('Clustered Evidences (K-means)')
+    axes[0].set_title('Bigram Model', fontsize=14)
+    axes[1].set_title('Trigram Model', fontsize=14)
+
+    for ax in axes.flat:
+        ax.set(xlabel='Number of clusters', ylabel='WCSS')
+
+
+    Kmeans_PCA(fig, axes[0], bi_clusters, X, lr, "bigram_evidences.txt")
+    Kmeans_PCA(fig, axes[1], tri_clusters, X2, lr2, "trigram_evidences.txt")
+
+    plt.show()
+
+
+##############################################

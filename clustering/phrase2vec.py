@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 from word2utils import *
 from cluster_utils import *
 
+import warnings
+#warnings.simplefilter("ignore")
 
 dir = "./rank/batch_503/"
 nlp_base = spacy.load("en_core_web_sm")
@@ -31,10 +33,10 @@ for c in claims:
     lemmatized_c.append(lemmatize_sentence(c, lemmatizer))
 
 
-bigrams_, trigrams_ = evid2bitriGrams(lemmatized_e)
+bigrams_, trigrams_ = convertSentsToBiTriGs(lemmatized_e)
 
 #NEED TO CLEAN ARGS, BIGRAMS ARE TOO WEIRD
-trigrams_ = filterStringRubble(trigrams_)
+trigrams_ = filter_stringRubble(trigrams_)
 
 
 print("(word2vec) Finding for bigrams and trigrams....................")
@@ -63,57 +65,32 @@ trigrams_model = gensim.models.Word2Vec(
 
 print("Finding Technology/Method mentions....................")
 
+pointed_mentions = getRankedMentions(lemmatized_e, nlp, nlp_base)
 
-mentions = mentionsFromArgs(lemmatized_e, nlp, nlp_base)
-mentions = filterWeirdChars(mentions)
-mentions = filterStopwords(mentions)
-mentions = filterSingleStrings(mentions)
-true_mentions = filterDoubles(mentions)
-
-semantic_mentions = getSemanticMentions(lemmatized_e)
-
-true_mentions = filterSingleChars(true_mentions)
-semantic_mentions = filterSingleChars(semantic_mentions)
-
-pointed_mentions = addPoints(true_mentions, semantic_mentions, 1.3, 1.6)
-
-pointed_mentions = sorted(pointed_mentions, key=lambda tup: tup[1], reverse=True)
-
-
-f = open('./pointed_mentions.txt', "w")
-f.write("List of scored Method/Technologies")
-f.write("\n")
-f.write("-----------------------------------")
-f.write("\n")
-f.write("\n")
-
-for p in pointed_mentions:
-    f.write(str(p))
-    f.write("\n")
-
-f.close()
-
-
-print("Clustering/Plotting Bigrams/Trigrams....................")
+print("Creating ScatterPlots of Bigrams/Trigrams....................")
 
 
 #filterW2VSoft/HArd
-bi_vectors, bi_labels = filterW2VHard(bigrams_model, pointed_mentions)
-tri_vectors, tri_labels = filterW2VSoft(trigrams_model, pointed_mentions)
+bi_vectors, bi_labels = W2V_filter_hard(bigrams_model, pointed_mentions)
+tri_vectors, tri_labels = W2V_filter_soft(trigrams_model, pointed_mentions)
 
 #w2v_vectors = model2.wv.vectors
 # here you load indices - with whom you can find an index of the particular word in your model
 #w2v_indices = {word: model2.wv.vocab[word].index for word in model2.wv.vocab}
 
 
-scatterW2V(bi_vectors, bi_labels)
-scatterW2V(tri_vectors, tri_labels)
+W2V_plot_Models(bi_vectors, tri_vectors, bi_labels, tri_labels)
+men = mentionRankThreshold(pointed_mentions)
+#men = [x[0] for x in men]
+tsne_plot_custom(bigrams_model, men)
+print("Clustering/Plotting Evidence Models....................")
 
-#print("Clustering/Plotting Trigrams....................")
+
+#clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemmatized_e)
+
+#######################################################################
 
 
-Kmeans_PCA(bigrams_, bigrams_model, lemmatized_e, "bigram_claims.txt")
-Kmeans_PCA(trigrams_, trigrams_model, lemmatized_e, "trigram_claims.txt")
 
 
 

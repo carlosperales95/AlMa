@@ -210,3 +210,140 @@ for i in range(50):
 #        for ind in order_centroids[i, :4]:
 #            print(lr[ind])
         #print
+
+
+
+
+
+bigrams_, trigrams_ = evid2bitriGrams(lemmatized_c)
+
+#NEED TO CLEAN ARGS, BIGRAMS ARE TOO WEIRD
+trigrams_ = filterStringRubble(trigrams_)
+
+
+print("(word2vec) Finding for bigrams and trigrams....................")
+
+
+bigrams_model = gensim.models.Word2Vec(
+        bigrams_,
+        size=150,
+        window=10,
+        min_count=2,
+        workers=10,
+        iter=10)
+
+trigrams_model = gensim.models.Word2Vec(
+        trigrams_,
+        size=150,
+        window=10,
+        min_count=2,
+        workers=10,
+        iter=10)
+
+
+
+#mentions = filterDates(mentions)
+#mentions = filterWeirdChars(mentions)
+
+print("Finding Technology/Method mentions....................")
+
+
+mentions = mentionsFromArgs(lemmatized_c, nlp, nlp_base)
+mentions = filterWeirdChars(mentions)
+mentions = filterStopwords(mentions)
+mentions = filterSingleStrings(mentions)
+true_mentions = filterDoubles(mentions)
+
+semantic_mentions = getSemanticMentions(lemmatized_c)
+
+true_mentions = filterSingleChars(true_mentions)
+semantic_mentions = filterSingleChars(semantic_mentions)
+
+pointed_mentions = addPoints(true_mentions, semantic_mentions, 1.3, 1.6)
+
+pointed_mentions = sorted(pointed_mentions, key=lambda tup: tup[1], reverse=True)
+
+
+print("Creating ScatterPlots of Bigrams/Trigrams....................")
+
+
+#filterW2VSoft/HArd
+bi_vectors, bi_labels = filterW2VHard(bigrams_model, pointed_mentions)
+tri_vectors, tri_labels = filterW2VSoft(trigrams_model, pointed_mentions)
+
+
+fig, axes = plt.subplots(1, 2, figsize=(40,10))
+fig.suptitle('ScatterPlots of Methods')
+axes[0].set_title('Bigram Model', fontsize=14)
+axes[1].set_title('Trigram Model', fontsize=14)
+
+#for ax in axes.flat:
+#    ax.set(xlabel='Number of clusters', ylabel='WCSS')
+
+
+scatterW2V(bi_vectors, bi_labels, axes[0])
+scatterW2V(tri_vectors, tri_labels, axes[1])
+
+fig.tight_layout()
+plt.show()
+
+
+
+print("Clustering/Plotting Claim Models....................")
+
+
+
+fig, axes = plt.subplots(1, 2, figsize=(20,20))
+fig.suptitle('Elbow Method for Claims')
+axes[0].set_title('Bigram Model', fontsize=14)
+axes[1].set_title('Trigram Model', fontsize=14)
+
+for ax in axes.flat:
+    ax.set(xlabel='Number of clusters', ylabel='WCSS')
+
+X, lr = vectorizeToX(bigrams_, bigrams_model, lemmatized_c)
+wcss1 = elbowMethod(X)
+
+X2, lr2 = vectorizeToX(trigrams_, trigrams_model, lemmatized_c)
+wcss2 = elbowMethod(X2)
+
+axes[0].plot(range(1,8), wcss1)
+axes[1].plot(range(1,8), wcss2)
+
+plt.show()
+
+print("After seeing the elbow method, insert the number of clusters")
+bi_clusters = int(input("Clusters for the Bigram Model: "))
+tri_clusters = int(input("Clusters for the Trigram Model: "))
+
+
+fig, axes = plt.subplots(1, 2, figsize=(20,20))
+fig.suptitle('Clustered Claims (K-means)')
+axes[0].set_title('Bigram Model', fontsize=14)
+axes[1].set_title('Trigram Model', fontsize=14)
+
+for ax in axes.flat:
+    ax.set(xlabel='Number of clusters', ylabel='WCSS')
+
+
+Kmeans_PCA(fig, axes[0], bi_clusters, X, lr, "bigram_claims.txt")
+Kmeans_PCA(fig, axes[1], tri_clusters, X2, lr2, "trigram_claims.txt")
+
+plt.show()
+
+
+
+
+    #vec1 = np.array([X[idx] for idx, x in enumerate(labels) if labels[idx]==0])
+    #vec2 = np.array([X[idx] for idx, x in enumerate(labels) if labels[idx]==1])
+    #vec3 = np.array([X[idx] for idx, x in enumerate(labels) if labels[idx]==2])
+
+
+    #encircle(fig, vec1[:, 0], vec1[:, 1], ec="k", fc="gold", alpha=0.2)
+    #encircle(fig, vec2[:, 0], vec2[:, 1], ec="k", fc="gold", alpha=0.2)
+    #encircle(fig, vec3[:, 0], vec3[:, 1], ec="k", fc="gold", alpha=0.2)
+
+    #encircle2(x2, y2, ec="orange", fc="none")
+
+    #fig.gca().relim()
+    #fig.gca().autoscale_view()

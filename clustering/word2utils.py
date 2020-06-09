@@ -16,6 +16,30 @@ import numpy as np
 
 
 
+def vectorize(line):
+
+    words = []
+    for word in line: # line - iterable, for example list of tokens
+
+        try:
+            w2v_idx = w2v_indices[word]
+        except KeyError: # if you does not have a vector for this word in your w2v model, continue
+            continue
+        words.append(w2v_vectors[w2v_idx])
+        if words:
+
+            words = np.asarray(words)
+            min_vec = words.min(axis=0)
+            max_vec = words.max(axis=0)
+            return np.concatenate((min_vec, max_vec))
+        if not words:
+
+            return None
+
+
+
+############## FETCH SENTENCES ##############
+
 
 def getClaimsEvidences(dir):
 
@@ -62,8 +86,12 @@ def getClaimsEvidences(dir):
     return evidences, claims
 
 
+##############################################
 
-def nltk2wn_tag(nltk_tag):
+############# SEMATINC FEATS #################
+
+
+def convert_nltkToWN_tag(nltk_tag):
 
   if nltk_tag.startswith('J'):
     return wordnet.ADJ
@@ -80,7 +108,7 @@ def nltk2wn_tag(nltk_tag):
 def lemmatize_sentence(sentence, lemmatizer):
 
   nltk_tagged = nltk.pos_tag(nltk.word_tokenize(sentence))
-  wn_tagged = map(lambda x: (x[0], nltk2wn_tag(x[1])), nltk_tagged)
+  wn_tagged = map(lambda x: (x[0], convert_nltkToWN_tag(x[1])), nltk_tagged)
 
   res_words = []
   for word, tag in wn_tagged:
@@ -92,8 +120,7 @@ def lemmatize_sentence(sentence, lemmatizer):
   return " ".join(res_words)
 
 
-
-def sentenceTokenizer(evidences):
+def tokenize_sentences(evidences):
 
     data = []
     for evidence in evidences:
@@ -110,28 +137,300 @@ def sentenceTokenizer(evidences):
     return data
 
 
-def vectorize(line):
-
-    words = []
-    for word in line: # line - iterable, for example list of tokens
-
-        try:
-            w2v_idx = w2v_indices[word]
-        except KeyError: # if you does not have a vector for this word in your w2v model, continue
-            continue
-        words.append(w2v_vectors[w2v_idx])
-        if words:
-
-            words = np.asarray(words)
-            min_vec = words.min(axis=0)
-            max_vec = words.max(axis=0)
-            return np.concatenate((min_vec, max_vec))
-        if not words:
-
-            return None
+##############################################
 
 
-def mentionsFromArgs(evidences, nlp, nlp_base):
+################## FILTERS ###################
+
+
+def filter_stopWords(mentions):
+
+    for idx, w in enumerate(mentions):
+        if w in set(stopwords.words('english')):
+            mentions.remove(mentions[idx])
+
+    return mentions
+
+
+def filter_singleStrings(mentions):
+
+    lenmentions = []
+    for mention in mentions:
+        if len(str(mention)) > 2:
+            lenmentions.append(mention)
+
+    return lenmentions
+
+
+def filter_doubles(mentions):
+
+    true_mentions = []
+    for mention in mentions:
+        double = False
+        for tm in true_mentions:
+            #print(true_mentions)
+            if str(mention) == str(tm):
+                #print(str(mention) + " / " + str(tm))
+                double = True
+                break
+        if double == False:
+            m_arr = str(mention).split(' ')
+            if len(m_arr) < 6:
+                true_mentions.append(m_arr)
+
+    return true_mentions
+
+
+def filter_singleChars(array):
+
+    filter_shorts = []
+    for men in array:
+        mention = []
+        for element in men:
+            if len(str(element)) > 2:
+                mention.append(element)
+        if len(mention) > 0:
+            filter_shorts.append(mention)
+
+    return filter_shorts
+
+
+def filter_dates(mentions):
+    for idx, m in enumerate(mentions):
+        date = re.search('[0-9]*[0-9][0-9]', str(m))
+        if date is not None:
+            #print("remove " + bi[idx])
+            mentions.remove(mentions[idx])
+    return mentions
+
+
+def filter_stringRubble(bigrams_):
+
+    #clean (can be done better)
+    for bi in bigrams_:
+        for idx, b in enumerate(bi):
+            date = re.search('[0-9]*[0-9][0-9]', b)
+            if date is not None:
+                #print("remove " + bi[idx])
+                bi.remove(bi[idx])
+
+    for bi in bigrams_:
+        for idx, b in enumerate(bi):
+            if b.find("al.") != -1:
+                bi.remove(bi[idx])
+            if b.find(" =") != -1:
+                bi.remove(bi[idx])
+            if len(b) == 1:
+                bi.remove(bi[idx])
+            if b.find(" et") != -1:
+                bi.remove(bi[idx])
+            if b.find("-- ") != -1:
+                bi.remove(bi[idx])
+            if b.find("( ") != -1 or b.find(" )") != -1:
+                bi.remove(bi[idx])
+
+    return bigrams_
+
+
+def filter_unclearChars(mentions):
+
+    for idx, m in enumerate(mentions):
+        if str(m).find("al.") != -1:
+            mentions.remove(mentions[idx])
+        if str(m).find(" =") != -1:
+            mentions.remove(mentions[idx])
+        if len(str(m)) == 1:
+            mentions.remove(mentions[idx])
+        if str(m).find(" et") != -1:
+            mentions.remove(mentions[idx])
+        if str(m).find("-- ") != -1:
+            mentions.remove(mentions[idx])
+        if str(m) == '':
+            mentions.remove(mentions[idx])
+        if str(m).find("( ") != -1 or str(m).find(" )") != -1:
+            mentions.remove(mentions[idx])
+
+    return mentions
+
+
+def W2V_filter_soft(model, pointed_mentions):
+
+    #filter soft
+    vectors2 = []
+    labels2 = []
+    for idx, word in enumerate(model.wv.vocab):
+        label = word.split(' ')
+        count = 0
+        for lab in label:
+            for mention in pointed_mentions:
+                if len(lab) > 3:
+                    ment = [x.lower() for x in mention[0]]
+                    if lab in ment:
+                        double = False
+
+                        for labe in labels2:
+                            if labe == word:
+                                double = True
+                        if double == False:
+                            labels2.append(word)
+                            vectors2.append(model.wv.vectors[idx])
+
+    return vectors2, labels2
+
+
+def W2V_filter_hard(model, pointed_mentions):
+
+    #filter hard
+    vectors = []
+    labels = []
+    for idx, word in enumerate(model.wv.vocab):
+        label = word.split(' ')
+        count = 0
+        for lab in label:
+            for mention in pointed_mentions:
+                if len(lab) > 3:
+                    ment = [x.lower() for x in mention[0]]
+                    if lab in ment:
+                        double = False
+                        count += 1
+                    else:
+                        count = 0
+                    if count == len(label):
+                        for labe in labels:
+                            if labe == word:
+                                double = True
+                        if double == False:
+                            labels.append(word)
+                            vectors.append(model.wv.vectors[idx])
+        vectors2 = []
+        labels2 = []
+        for idx, elem in enumerate(vectors):
+            count = 0
+            for w in elem:
+                if w not in set(stopwords.words('english')):
+                    count+=1
+            if count == len(elem):
+                vectors2.append(elem)
+                labels2.append(labels[idx])
+
+
+    return vectors2, labels2
+
+
+##############################################
+
+######### MENTION CROSSREF AND RANK ##########
+
+
+#Work In Progress
+def spacyBaseDoubleCheck(array, nlp, nlp_base):
+
+    filtered_ents = []
+    for ent in array:
+        entity = ""
+        for el in ent:
+            entity = entity + str(el) + " "
+        doc = nlp(entity)
+        entities = doc.ents
+        doc_base = nlp_base(entity)
+        entities_base = doc_base.ents
+        for nen in entities:
+            for bent in entities_base:
+                if hasattr(bent, 'label_') and hasattr(ent, 'label_') and (bent.text == ent.text):
+                    if bent.label_ in ['PRODUCT', 'ORG', 'NORP', 'WORK_OF_ART']:
+                        filtered_ents.append(ent)
+
+                else:
+                    filtered_ents.append(ent)
+
+    return filtered_ents
+
+
+def addPoints(array1, array2, points1, points2):
+
+    target = []
+    for idx, element in enumerate(array1):
+        points = points1
+        for idy, double_dummy in enumerate(array1):
+            if idy != idx:
+                #print(str(element) + "////" + str(double_dummy))
+                if element == double_dummy:
+                    points += 0.4
+
+        for e in element:
+            findings = 0
+            for comparative in array2:
+                if e in comparative:
+                    findings += 1
+            if findings == len(element):
+                points += points2
+            if len(element) == 1 and e.isupper():
+                points = points * 2
+
+
+        tuple = [element, points]
+        target.append(tuple)
+
+    for element in array2:
+        points = points2
+        for e in element:
+            findings = 0
+            for comparative in array2:
+                if e in comparative:
+                    findings += 1
+            if findings == len(element):
+                points += points1
+        tuple = [element, points]
+        target.append(tuple)
+
+    filtered_doubles = []
+    for element in target:
+        double = False
+        for elem in filtered_doubles:
+            if element == elem:
+                double = True
+                break
+        if double == False:
+            filtered_doubles.append(element)
+
+    return filtered_doubles
+
+
+def mentionRankThreshold(pointed_mentions):
+
+    tris = []
+    for pm in pointed_mentions:
+        if pm[1] > 1.5:
+            tris.append(pm[0])
+    return tris
+
+
+##############################################
+
+############### MODEL CONVERTERS #############
+
+
+def convertSentsToBiTriGs(evidences):
+
+    sentence_stream = [doc.split(" ") for doc in evidences]
+
+    #sentence_stream=brown_raw[0:10]
+    bigram = Phrases(sentence_stream, min_count=1, delimiter=b' ')
+    trigram = Phrases(bigram[sentence_stream], min_count=1, delimiter=b' ')
+    bigrams_ = []
+    trigrams_ = []
+
+    for sent in sentence_stream:
+        bigrams_.append([b for b in bigram[sent] if b.count(' ') == 1])
+        trigrams_.append([t for t in trigram[bigram[sent]] if t.count(' ') == 2])
+
+    return bigrams_, trigrams_
+
+
+##############################################
+
+
+def getMentionsFromArgs(evidences, nlp, nlp_base):
 
     mentions = []
     for idx, evidence in enumerate(evidences):
@@ -175,44 +474,6 @@ def mentionsFromArgs(evidences, nlp, nlp_base):
                         mentions.append(ent)
 
     return mentions
-
-
-def filterStopwords(mentions):
-
-    for idx, w in enumerate(mentions):
-        if w in set(stopwords.words('english')):
-            mentions.remove(mentions[idx])
-
-    return mentions
-
-
-def filterSingleStrings(mentions):
-
-    lenmentions = []
-    for mention in mentions:
-        if len(str(mention)) > 2:
-            lenmentions.append(mention)
-
-    return lenmentions
-
-
-def filterDoubles(mentions):
-
-    true_mentions = []
-    for mention in mentions:
-        double = False
-        for tm in true_mentions:
-            #print(true_mentions)
-            if str(mention) == str(tm):
-                #print(str(mention) + " / " + str(tm))
-                double = True
-                break
-        if double == False:
-            m_arr = str(mention).split(' ')
-            if len(m_arr) < 6:
-                true_mentions.append(m_arr)
-
-    return true_mentions
 
 
 def getSemanticMentions(evidences):
@@ -329,239 +590,36 @@ def getSemanticMentions(evidences):
     return semantic_mentions
 
 
-def filterSingleChars(array):
-    filter_shorts = []
-    for men in array:
-        mention = []
-        for element in men:
-            if len(str(element)) > 2:
-                mention.append(element)
-        if len(mention) > 0:
-            filter_shorts.append(mention)
-
-    return filter_shorts
+def getRankedMentions(lemmatized, nlp, nlp_base):
 
 
-#Work In Progress
-def spacyBaseDoubleCheck(array, nlp, nlp_base):
+    mentions = getMentionsFromArgs(lemmatized, nlp, nlp_base)
+    mentions = filter_unclearChars(mentions)
+    mentions = filter_stopWords(mentions)
+    mentions = filter_singleStrings(mentions)
+    true_mentions = filter_doubles(mentions)
 
-    filtered_ents = []
-    for ent in array:
-        entity = ""
-        for el in ent:
-            entity = entity + str(el) + " "
-        doc = nlp(entity)
-        entities = doc.ents
-        doc_base = nlp_base(entity)
-        entities_base = doc_base.ents
-        for nen in entities:
-            for bent in entities_base:
-                if hasattr(bent, 'label_') and hasattr(ent, 'label_') and (bent.text == ent.text):
-                    if bent.label_ in ['PRODUCT', 'ORG', 'NORP', 'WORK_OF_ART']:
-                        filtered_ents.append(ent)
+    semantic_mentions = getSemanticMentions(lemmatized)
 
-                else:
-                    filtered_ents.append(ent)
+    true_mentions = filter_singleChars(true_mentions)
+    semantic_mentions = filter_singleChars(semantic_mentions)
 
-    return filtered_ents
+    pointed_mentions = addPoints(true_mentions, semantic_mentions, 1.3, 1.6)
+
+    pointed_mentions = sorted(pointed_mentions, key=lambda tup: tup[1], reverse=True)
 
 
-def addPoints(array1, array2, points1, points2):
+    f = open('./pointed_mentions.txt', "w")
+    f.write("List of scored Method/Technologies")
+    f.write("\n")
+    f.write("-----------------------------------")
+    f.write("\n")
+    f.write("\n")
 
-    target = []
-    for idx, element in enumerate(array1):
-        points = points1
-        for idy, double_dummy in enumerate(array1):
-            if idy != idx:
-                #print(str(element) + "////" + str(double_dummy))
-                if element == double_dummy:
-                    points += 0.4
+    for p in pointed_mentions:
+        f.write(str(p))
+        f.write("\n")
 
-        for e in element:
-            findings = 0
-            for comparative in array2:
-                if e in comparative:
-                    findings += 1
-            if findings == len(element):
-                points += points2
-            if len(element) == 1 and e.isupper():
-                points = points * 2
+    f.close()
 
-
-        tuple = [element, points]
-        target.append(tuple)
-
-    for element in array2:
-        points = points2
-        for e in element:
-            findings = 0
-            for comparative in array2:
-                if e in comparative:
-                    findings += 1
-            if findings == len(element):
-                points += points1
-        tuple = [element, points]
-        target.append(tuple)
-
-    filtered_doubles = []
-    for element in target:
-        double = False
-        for elem in filtered_doubles:
-            if element == elem:
-                double = True
-                break
-        if double == False:
-            filtered_doubles.append(element)
-
-    return filtered_doubles
-
-
-def filterDates(mentions):
-    for idx, m in enumerate(mentions):
-        date = re.search('[0-9]*[0-9][0-9]', str(m))
-        if date is not None:
-            #print("remove " + bi[idx])
-            mentions.remove(mentions[idx])
-    return mentions
-
-
-
-def evid2bitriGrams(evidences):
-
-    sentence_stream = [doc.split(" ") for doc in evidences]
-
-    #sentence_stream=brown_raw[0:10]
-    bigram = Phrases(sentence_stream, min_count=1, delimiter=b' ')
-    trigram = Phrases(bigram[sentence_stream], min_count=1, delimiter=b' ')
-    bigrams_ = []
-    trigrams_ = []
-
-    for sent in sentence_stream:
-        bigrams_.append([b for b in bigram[sent] if b.count(' ') == 1])
-        trigrams_.append([t for t in trigram[bigram[sent]] if t.count(' ') == 2])
-
-    return bigrams_, trigrams_
-
-
-
-def filterStringRubble(bigrams_):
-
-    #clean (can be done better)
-    for bi in bigrams_:
-        for idx, b in enumerate(bi):
-            date = re.search('[0-9]*[0-9][0-9]', b)
-            if date is not None:
-                #print("remove " + bi[idx])
-                bi.remove(bi[idx])
-
-    for bi in bigrams_:
-        for idx, b in enumerate(bi):
-            if b.find("al.") != -1:
-                bi.remove(bi[idx])
-            if b.find(" =") != -1:
-                bi.remove(bi[idx])
-            if len(b) == 1:
-                bi.remove(bi[idx])
-            if b.find(" et") != -1:
-                bi.remove(bi[idx])
-            if b.find("-- ") != -1:
-                bi.remove(bi[idx])
-            if b.find("( ") != -1 or b.find(" )") != -1:
-                bi.remove(bi[idx])
-
-    return bigrams_
-
-
-
-def filterWeirdChars(mentions):
-
-    for idx, m in enumerate(mentions):
-        if str(m).find("al.") != -1:
-            mentions.remove(mentions[idx])
-        if str(m).find(" =") != -1:
-            mentions.remove(mentions[idx])
-        if len(str(m)) == 1:
-            mentions.remove(mentions[idx])
-        if str(m).find(" et") != -1:
-            mentions.remove(mentions[idx])
-        if str(m).find("-- ") != -1:
-            mentions.remove(mentions[idx])
-        if str(m) == '':
-            mentions.remove(mentions[idx])
-        if str(m).find("( ") != -1 or str(m).find(" )") != -1:
-            mentions.remove(mentions[idx])
-
-    return mentions
-
-
-def mentionRankThreshold(tris):
-
-    tris = []
-    for pm in pointed_mentions:
-        if pm[1] > 2:
-            tris.append(pm[0])
-    return tris
-
-
-def filterW2VSoft(model, pointed_mentions):
-
-    #filter soft
-    vectors2 = []
-    labels2 = []
-    for idx, word in enumerate(model.wv.vocab):
-        label = word.split(' ')
-        count = 0
-        for lab in label:
-            for mention in pointed_mentions:
-                if len(lab) > 3:
-                    ment = [x.lower() for x in mention[0]]
-                    if lab in ment:
-                        double = False
-
-                        for labe in labels2:
-                            if labe == word:
-                                double = True
-                        if double == False:
-                            labels2.append(word)
-                            vectors2.append(model.wv.vectors[idx])
-
-    return vectors2, labels2
-
-
-def filterW2VHard(model, pointed_mentions):
-
-    #filter hard
-    vectors = []
-    labels = []
-    for idx, word in enumerate(model.wv.vocab):
-        label = word.split(' ')
-        count = 0
-        for lab in label:
-            for mention in pointed_mentions:
-                if len(lab) > 3:
-                    ment = [x.lower() for x in mention[0]]
-                    if lab in ment:
-                        double = False
-                        count += 1
-                    else:
-                        count = 0
-                    if count == len(label):
-                        for labe in labels:
-                            if labe == word:
-                                double = True
-                        if double == False:
-                            labels.append(word)
-                            vectors.append(model.wv.vectors[idx])
-        vectors2 = []
-        labels2 = []
-        for idx, elem in enumerate(vectors):
-            count = 0
-            for w in elem:
-                if w not in set(stopwords.words('english')):
-                    count+=1
-            if count == len(elem):
-                vectors2.append(elem)
-                labels2.append(labels[idx])
-
-
-    return vectors2, labels2
+    return pointed_mentions
