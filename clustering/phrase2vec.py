@@ -70,7 +70,7 @@ pointed_mentions = getRankedMentions(lemmatized_e, nlp, nlp_base)
 print("Creating ScatterPlots of Bigrams/Trigrams....................")
 
 
-#filterW2VSoft/HArd
+###filterW2VSoft/HArd
 bi_vectors, bi_labels = W2V_filter_hard(bigrams_model, pointed_mentions)
 tri_vectors, tri_labels = W2V_filter_soft(trigrams_model, pointed_mentions)
 
@@ -81,7 +81,7 @@ tri_vectors, tri_labels = W2V_filter_soft(trigrams_model, pointed_mentions)
 
 W2V_plot_Models(bi_vectors, tri_vectors, bi_labels, tri_labels)
 men = mentionRankThreshold(pointed_mentions)
-#men = [x[0] for x in men]
+##########men = [x[0] for x in men]
 tsne_plot_custom(bigrams_model, men)
 print("Clustering/Plotting Evidence Models....................")
 

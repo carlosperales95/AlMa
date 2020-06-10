@@ -56,13 +56,20 @@ def isImportant(label, mentions):
     important = False
     label = label.split(' ')
     count=0
+    #print(mentions)
     for lab in label:
         for mention in mentions:
-            if lab in mention:
-                count+=1
-            if count == len(label):
+            if isinstance(mention, list):
+                if lab in mention:
+                    count+=1
+                    #print(lab + " matched")
+                if count == len(label):
+                    important = True
+                    break
+            elif lab == mention:
                 important = True
                 break
+
     return important
 
 

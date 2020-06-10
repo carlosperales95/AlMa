@@ -165,18 +165,24 @@ def filter_singleStrings(mentions):
 def filter_doubles(mentions):
 
     true_mentions = []
-    for mention in mentions:
+    for idx, mention in enumerate(mentions):
         double = False
-        for tm in true_mentions:
-            #print(true_mentions)
-            if str(mention) == str(tm):
-                #print(str(mention) + " / " + str(tm))
-                double = True
-                break
-        if double == False:
+        #print(true_mentions)
+        #if idx in range(70,90):
+        #    print(mention)
+        #    print(true_mentions)
+        #    print("\n")
+        #print(mention)
+        if mention in true_mentions:
+            #print(str(mention) + " / " + str(tm))
+            #double = True
+            continue
+            #break
+        #if double == False:
+        else:
             m_arr = str(mention).split(' ')
             if len(m_arr) < 6:
-                true_mentions.append(m_arr)
+                true_mentions.append(mention)
 
     return true_mentions
 
@@ -234,23 +240,80 @@ def filter_stringRubble(bigrams_):
 
 def filter_unclearChars(mentions):
 
+    mens = []
     for idx, m in enumerate(mentions):
-        if str(m).find("al.") != -1:
-            mentions.remove(mentions[idx])
-        if str(m).find(" =") != -1:
-            mentions.remove(mentions[idx])
-        if len(str(m)) == 1:
-            mentions.remove(mentions[idx])
-        if str(m).find(" et") != -1:
-            mentions.remove(mentions[idx])
-        if str(m).find("-- ") != -1:
-            mentions.remove(mentions[idx])
-        if str(m) == '':
-            mentions.remove(mentions[idx])
-        if str(m).find("( ") != -1 or str(m).find(" )") != -1:
-            mentions.remove(mentions[idx])
+        if str(m).find("al.") == -1:
+            mens.append(mentions[idx])
+        if str(m).find(" =") == -1:
+            mens.append(mentions[idx])
+        if len(str(m)) != 1:
+            mens.append(mentions[idx])
+        if str(m).find(" et") == -1:
+            mens.append(mentions[idx])
+        if str(m).find("-- ") == -1:
+            mens.append(mentions[idx])
+        if str(m) != '':
+            mens.append(mentions[idx])
+        if str(m).find("( ") == -1 or str(m).find(" )") == -1:
+            mens.append(mentions[idx])
 
-    return mentions
+    return mens
+
+
+def filter_brokenText(mentions):
+
+    mens=[]
+    for mention in mentions:
+        split_mention = mention.split(' ')
+        encounts = 0
+        for w in split_mention:
+            if len(w) > 2:
+                encounts += 1
+        if encounts == len(split_mention):
+            mens.append(mention)
+
+    return mens
+
+
+def filter_starts(mentions):
+
+    mens=[]
+    for mention in mentions:
+        if mention.startswith("-") or mention.endswith("-"):
+            continue
+        if mention.startswith(".") or mention.startswith(","):
+            continue
+        mens.append(mention)
+
+    return mens
+
+
+def filter_onlyNums(mentions):
+
+    mens=[]
+    for mention in mentions:
+        if re.search('[a-zA-Z]', mention) == None:
+            continue
+        if mention.lower().find("proceedings") != -1:
+            continue
+
+        mens.append(mention)
+
+    return mens
+
+
+def filter_spacyOutliers(nlp_base, mentions):
+
+    mens=[]
+    for m in mentions:
+        split_m = m.split(' ')
+        if len(split_m) == 1:
+            f_doc = nlp_base(m)
+            if len(f_doc.ents) > 0 and f_doc.ents[0].label_ in ['GPE', 'DATE']:
+                continue
+
+        mens.append(m)
+    return mens
 
 
 def W2V_filter_soft(model, pointed_mentions):
@@ -346,16 +409,16 @@ def spacyBaseDoubleCheck(array, nlp, nlp_base):
     return filtered_ents
 
 
-def addPoints(array1, array2, points1, points2):
+def addPoints(array_orig, array1, array2, points1, points2):
 
     target = []
     for idx, element in enumerate(array1):
         points = points1
-        for idy, double_dummy in enumerate(array1):
-            if idy != idx:
+        for idy, double_dummy in enumerate(array_orig):
+            #if idy != idx:
                 #print(str(element) + "////" + str(double_dummy))
-                if element == double_dummy:
-                    points += 0.4
+            if element == double_dummy:
+                points += 0.2
 
         for e in element:
             findings = 0
@@ -365,7 +428,8 @@ def addPoints(array1, array2, points1, points2):
             if findings == len(element):
                 points += points2
             if len(element) == 1 and e.isupper():
-                points = points * 2
+                #print(e + " pts: " + str(points))
+                points = points * 3.5
 
 
         tuple = [element, points]
@@ -380,6 +444,11 @@ def addPoints(array1, array2, points1, points2):
                     findings += 1
             if findings == len(element):
                 points += points1
+
+            if len(element) == 1 and e.isupper():
+                #print(e)
+                points = points * 3.5
+
         tuple = [element, points]
         target.append(tuple)
 
@@ -430,21 +499,75 @@ def convertSentsToBiTriGs(evidences):
 ##############################################
 
 
-def getMentionsFromArgs(evidences, nlp, nlp_base):
+def getMentionsFromArgs(sentences, nlp, nlp_base):
 
     mentions = []
-    for idx, evidence in enumerate(evidences):
+    for idx, sentence in enumerate(sentences):
 
-        text = word_tokenize(evidences[idx])
+        text = word_tokenize(sentences[idx])
         tokens = nltk.pos_tag(text)
 
         tags = [lis[1] for lis in tokens]
         texts = [lis[0] for lis in tokens]
 
 
-        doc = nlp(evidence)
+        doc = nlp(sentence)
         entities = doc.ents
-        doc_base = nlp_base(evidence)
+        doc_base = nlp_base(sentence)
+        entities_base = doc_base.ents
+
+        precandidates = []
+        candidates = []
+        entities_final = []
+        for ent in entities_base:
+          for dent in entities:
+              if hasattr(ent, 'label_') and hasattr(dent, 'label_'):
+                  if ent.text.find(dent.text):
+                      if ent.label_ == 'PRODUCT' or ent.label_ == 'ORG' or ent.label_ == 'NORP':
+                          entities_final.append(dent)
+                      #else:
+                  else:
+                      entities_final.append(dent)
+
+        #print(entities_final)
+        #for idx, tag in enumerate(tags):
+        #    if tag == 'NN' or tag.startswith('JJ'):
+        #        #print(idx)
+        #        precandidates.append(texts[idx])
+        #        if len(texts) > idx+1:
+        #            candidates.append(texts[idx+1])
+        #print(candidates)
+        #for candidate in precandidates:
+        #    for ent in entities_final:
+        #        if hasattr(ent, 'label_'):
+        #            if ent.text.find(candidate):
+        #                mentions.append(ent)
+        #print(entities_final)
+        ents = filter_doubles(entities_final)
+        if len(ents) > 0:
+            for e in ents:
+                mentions.append(e.text)
+    #print(mentions)
+        #mentions.append()
+
+    return mentions
+
+
+def mentionsfromSents(sentences, nlp, nlp_base):
+
+    mentions = []
+    for idx, sentence in enumerate(sentences):
+
+        text = word_tokenize(sentences[idx])
+        tokens = nltk.pos_tag(text)
+
+        tags = [lis[1] for lis in tokens]
+        texts = [lis[0] for lis in tokens]
+
+
+        doc = nlp(sentence)
+        entities = doc.ents
+        doc_base = nlp_base(sentence)
         entities_base = doc_base.ents
 
         precandidates = []
@@ -593,18 +716,29 @@ def getSemanticMentions(evidences):
 def getRankedMentions(lemmatized, nlp, nlp_base):
 
 
-    mentions = getMentionsFromArgs(lemmatized, nlp, nlp_base)
-    mentions = filter_unclearChars(mentions)
-    mentions = filter_stopWords(mentions)
+    mentions_orig = getMentionsFromArgs(lemmatized, nlp, nlp_base)
+    mentions = filter_doubles(mentions_orig)
+    #print(pointed_mentions)
+
     mentions = filter_singleStrings(mentions)
-    true_mentions = filter_doubles(mentions)
+    mentions = filter_brokenText(mentions)
+    mentions = filter_starts(mentions)
+    mentions = filter_onlyNums(mentions)
+    #mentions = filter_unclearChars(mentions)
+    mentions = filter_stopWords(mentions)
+    true_mentions = filter_spacyOutliers(nlp_base, mentions)
+
+
+    #print(true_mentions)
+    #true_mentions = filter_doubles(mentions)
+    #print(pointed_mentions)
 
     semantic_mentions = getSemanticMentions(lemmatized)
 
-    true_mentions = filter_singleChars(true_mentions)
+    #true_mentions = filter_singleChars(mentions)
     semantic_mentions = filter_singleChars(semantic_mentions)
 
-    pointed_mentions = addPoints(true_mentions, semantic_mentions, 1.3, 1.6)
+    pointed_mentions = addPoints(mentions_orig, true_mentions, semantic_mentions, 1.4, 1.6)
 
     pointed_mentions = sorted(pointed_mentions, key=lambda tup: tup[1], reverse=True)
 
