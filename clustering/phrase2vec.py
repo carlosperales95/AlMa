@@ -9,6 +9,8 @@ from word2utils import *
 from cluster_utils import *
 
 import warnings
+import webbrowser
+
 #warnings.simplefilter("ignore")
 
 dir = "./rank/batch_503/"
@@ -82,15 +84,17 @@ tri_vectors, tri_labels = W2V_filter_soft(trigrams_model, pointed_mentions)
 W2V_plot_Models(bi_vectors, tri_vectors, bi_labels, tri_labels)
 men = mentionRankThreshold(pointed_mentions)
 ##########men = [x[0] for x in men]
-tsne_plot_custom(bigrams_model, men)
+tsne_plot_Models(bigrams_model, trigrams_model, men)
+
 print("Clustering/Plotting Evidence Models....................")
 
 
-#clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemmatized_e)
+clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemmatized_e)
 
 #######################################################################
 
-
+create_output()
+webbrowser.open_new_tab('output.html')
 
 
 

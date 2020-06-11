@@ -8,11 +8,74 @@ Sentences in cluster n0:
 
 	Qc 2012 Association for Computational Linguisticsdata come from ; and even if we do , subcorpus may not be the most useful notion of domain for good translation .
 
+	We can construct a topic model once on the training data , and use it infer topic on any test set to adapt the translation model .
+
+	Section 3 present our cache-based approach to documentlevel SMT .
+
+	Section 4 report experimental result and Section 5 conclude our work.English PeopleEntityCube GeChinese Renlifang GcAbstracting translation as graph mapping Figure 1 : Illustration of entity-relationship graph .
+
+	We will investigate the incorporation of monolingual document for potentially good bilingual LSA modeling
+
+	In our approach we introduce equivalence class in order to ignore information not relevant to the translation process .
+
+	We furthermore suggest the use of hierarchical lexicon model .
+
+	We will investigate this in the future .
+
+	We also conduct experiment on IREX NE data and an NE-annotated web corpus and conrmed that structural information improve the performance of NER .
+
+	As a consequence , the performance of NER be improve by use structural information and our approach achieve a high F-measure than exist approach
+
+	The Japanese NER system propose in ( Nakano and Hirai , 2004 which achieve the high F-measure among conventional system , introduce the bunsetsu1 feature in order to consider wide context , but consider only adjacent bunsetsus .
+
+	Qc 2013 Association for Computational Linguistics name in parallel corpus , update word segmentation , word alignment and grammar extraction ( Section 3.1 We develop a name-aware MT framework which tightly integrate name tag and name translation into training and decoding of MT . Experiments on Chinese-English translation demonstrate the effectiveness of our approach over a high-quality MT baseline in both overall translation and name translation , especially for formal genre .
+
+	fem The car go quickly Figure 1 : Ungrammatical Arabic output of Google Translate for the English input The car go quickly .
+
+	The experience obtain in the Verbmobil project , in particular a large-scale end-to-end evaluation , show that the statistical approach result in significantly low error rate than three compete translation approach : the sentence error rate be 29percent in comparison with 52percent to 62percent for the other translation approach .
+
+	Starting with the Bayes decision rule as in speech recognition , we show how the required probability distribution can be structure into three part : the language model , the alignment model and the lexicon model .
+
+	In this paper , we have analyze the complexity of the greedy decode algorithm originally present in Germann et al 2001 ) and presented improvement that drastically reduce the decoder complexity and speed to practically linear time.Experimental data suggest a good correlation betweenG1 decode anddecoding ( with 10 translation per input word consider , a list of 498 candidate for INSERT , a maximum swap distance of 2 and a maximum swap segment size of 5 The profile show be cumulative , so that the top curve reflect the total decoding time .
+
+	We expect the disambiguation to have a beneficial impact on the result give that polysemy be a frequent phenomenon in a general , mixed-domain corpus .
+
+	Section 3 present the data use in our experiment and Section 4 provide detail on the approach and the experimental setup .
+
+	Although supervise segmentation be very competitive , we show that it can be supplement + very important to identify hiragana word correctly .
+
+	In this paper , we propose a new task of Japanese noun phrase segmentation .
+
+	From the experimental result for combine our OOV term translation model with English-Chinese CrossLanguage Information Retrieval ( CLIR ) on the data set of Text Retrieval Evaluation Conference ( TREC it can be find that the obvious performance improvement for both query translation and retrieval can also be obtain .
+
+	When use to compute semantic similarity of phrase pair , bilingual embeddings improve NIST08 end-to-end machine translation result by just below half a BLEU point .
+
+	In practice , we be never sure that we have find the Viterbi alignment .
+
+	around the Viterbi alignment , i.e . in determine j = 1 tfj | eajdj : aj I = 0 d ( j | i , m the goodness of the Viterbi alignment in compar ison to the rest of the alignments.Decoding be an integral component of all SMT system ( Wang , Table 1 : IBM Model 3 Here , n ( | e ) be the fertility model , t ( f | e ) be the lexicon model and d ( j | i , m be the distortion model .
+
+	In future work , other parameter which influence the performance will be study , among which the use of a terminological extractor to treat complex term ( Daille and Morin , 2005 more contextual window configuration , and the use of syntactic information in combination with lexical information ( Yu and Tsujii , 2009 It would also be interest to compare the projection-based approach to ( Haghighi et al 2008 ) s generative model for bilingual lexicon acquisition from monolingual corpus .
+
+	Therefore , LL may fare well in an indirect approach , like the one in ( Daille and Morin , 2005 Moreover , we have see that the cosine similarity measure and sentence context give moreLO be use .
+
+	While a few study have investigate pattern match approach to compare source and target context ( Fung , 1995 ; Diab and Finch , 2000 ; Yu and Tsujii , 2009 most variant make use of a bilingual lexicon in order to translate the word of the context of a term ( often call seed word Dejean et al 2005 ) instead use a bilingual thesaurus for translate these.Another distinction between approach lie in the way the context be define .
+
+	In the remainder of this paper , we describe the projection-based approach to translation spot in Section 2 and detail the parameter that directly influence its performance .
+
+	An O ( m6 ) greedy search algorithm be develop ( Germann et al 2003 ) whose complexity be re duced far to O ( m2 Germann , 2003 In this paper , we propose an algorithmic framework for solve the decoding problem and show that several efficient decode algorithm can be derive from the technique develop in the framework .
+
+	We start with a mathematical formulation of the decoding problem ( Section 2 We then develop the alternate search paradigm and use it to develop several decode algorithm ( Section 3 Next , we demonstrate the practical utility of our algorithm with the help of result from our initial experiment ( Section 5 ) .
+
+	Decoding be know to belong to a class of computational problem popularly know as NPhard problem ( Knight , 1999 NP-hard problem be know to be computationally hard and have elude polynomial time algorithm ( Garey and Johnson , 1979 The first algorithm for the decoding problem be base on what be know among the speech recognition community as stack-based search ( Jelinek , 1969 The original IBM solution to the decoding problem employ a restrict stack-based search ( Berger et al 1996 This idea be far explore by Wang and Waibel ( Wang and Waibel , 1997 ) who develop a faster stack-based search algorithm .
+
+
+
+
+Sentences in cluster n1:
+.....................................
 	We show that incorporate lexical weighting feature condition on soft domain membership directly into our model be an effective strategy for dynamically bias SMT towards relevant translation , as evidence by significant performance gain .
 
 	Depending on the model use to select subcorpora , we can bias our translation toward any arbitrary distinction .
-
-	We can construct a topic model once on the training data , and use it infer topic on any test set to adapt the translation model .
 
 	In this work , we consider the underlying latent topic of the document ( Blei et al 2003 Topic modeling have receive some use in SMT , for instance Bilingual LSA adaptation ( Tam et al 2007 and the BiTAM model ( Zhao and Xing , 2006 which use a bilingual topic model for learn alignment .
 
@@ -32,9 +95,9 @@ Sentences in cluster n0:
 
 	Evaluation show the effectiveness of our cache-based approach to document-level translation with the performance improvement of 0.81 in BLUE score over Moses .
 
-	In ( Zhao and Xing , 2006 three fairly sophisticated bayesian topical translation model , take IBM Model 1 as a baseline model , be present under the bilingual topic admixture model formalism .
+	Specifically , two type of semantic role feature be propose in this paper : a semantic role reorder feature design to capture the skeletonlevel permutation , and a semantic role deletion fea716 Proceedings of the 23rd International Conference on Computational Linguistics ( Coling 2010 page 716724 , Beijing , August 2010 ture design to penalize miss semantic role in the target sentence .
 
-	Section 4 report experimental result and Section 5 conclude our work.English PeopleEntityCube GeChinese Renlifang GcAbstracting translation as graph mapping Figure 1 : Illustration of entity-relationship graph .
+	In ( Zhao and Xing , 2006 three fairly sophisticated bayesian topical translation model , take IBM Model 1 as a baseline model , be present under the bilingual topic admixture model formalism .
 
 	Similarly , we can mine Chinese news article to obtain the re lationships between t Jli Vi and 1 ' 1 li \ itJli Vi .
 
@@ -68,19 +131,7 @@ Sentences in cluster n0:
 
 	On the other hand , the dictionarybased approach that do not support OOV recognition produce a low F-score , but with a relatively weak data spareness problem .
 
-	In our approach we introduce equivalence class in order to ignore information not relevant to the translation process .
-
-	We furthermore suggest the use of hierarchical lexicon model .
-
 	We evaluate our approach on CRL NE data and obtain a high F-measure than exist approach that do not use structural information .
-
-	We also conduct experiment on IREX NE data and an NE-annotated web corpus and conrmed that structural information improve the performance of NER .
-
-	As a consequence , the performance of NER be improve by use structural information and our approach achieve a high F-measure than exist approach
-
-	The Japanese NER system propose in ( Nakano and Hirai , 2004 which achieve the high F-measure among conventional system , introduce the bunsetsu1 feature in order to consider wide context , but consider only adjacent bunsetsus .
-
-	Qc 2013 Association for Computational Linguistics name in parallel corpus , update word segmentation , word alignment and grammar extraction ( Section 3.1 We develop a name-aware MT framework which tightly integrate name tag and name translation into training and decoding of MT . Experiments on Chinese-English translation demonstrate the effectiveness of our approach over a high-quality MT baseline in both overall translation and name translation , especially for formal genre .
 
 	Experiments on Chinese-English translation demonstrate the effectiveness of our approach on enhance the quality of overall translation , name translation and word alignment over a high-quality MT baseline1 .
 
@@ -92,17 +143,17 @@ Sentences in cluster n0:
 
 	After groundbreaking work for two decade , corpus-based speech and language processing technology have recently enable the achievement of speech-to-speech translation that be usable in the real world .
 
-	fem The car go quickly Figure 1 : Ungrammatical Arabic output of Google Translate for the English input The car go quickly .
-
 	For English-to-Arabic translation , we achieve a +1.04 BLEU average improvement by tile our model on top of a large LM .146 Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics , page 146155 , Jeju , Republic of Korea , 8-14 July 2012 .
-
-	Starting with the Bayes decision rule as in speech recognition , we show how the required probability distribution can be structure into three part : the language model , the alignment model and the lexicon model .
 
 	Comparative evaluation with other translation approach of the Verbmobil prototype system show that the statistical translation be superior , especially in the presence of speech input and ungrammatical input
 
 	We present improvement to a greedy decode algorithm for statistical machine translation that reduce its time complexity from at least cubic ( when apply navely ) to practically linear time1 without sacrifice translation quality .
 
 	Using the same evaluation metric ( but different evaluation data Wang and Waibel report search error rate of 7.9 percent and 9.3 respectively , for their decoder .
+
+	Operations not include in the figure consume so little time that their plot can not be discern in the graph .
+
+	The speed improvement discuss in this paper make multiple randomized search per sentence feasible , lead to a faster and good decoder for machine translation with IBM Model 4.6 .
 
 	Och et al . report word error rate of 68.68 percent for optimal search ( base on a variant of the A algorithm and 69.65 percent for the most restricted version of a decoder that combine dynamic program with a beam search ( Tillmann and Ney , 2000 Germann et al 2001 ) compare translation obtain by a multi-stack decoder and a greedy hill-climbing algorithm against those produce by an optimal integer program decoder that treat decode as a variant of the traveling-salesman problem ( cf . Knight , 1999 Their overall performance metric be the sentence error rate ( SER For decode with IBM Model 3 , they report SERs of about 57 6-word sentence ) and 76 8-word sentence ) for optimal decoding , 58percent and 75percent for stack decoding , and 60percent and 75percent for greedy decoding , which be the focus of this paper .
 
@@ -113,8 +164,6 @@ Sentences in cluster n0:
 	Early effort of name entity translation have focus on use phonetic feature ( call PH ) to estimate a phonetic similarity between two name ( Knight and Graehl , 1998 ; Li et al 2004 ; Virga and Khudanpur , 2003 In contrast , some approach have focus on use context feature ( call CX ) which compare surround word of entity ( Fung and Yee , 1998 ; Diab and Finch , 2000 ; Laroche and Langlais , 2010 Recently , holistic approach combine such similarity have be study ( Shao and Ng , 2004 ; You et al 2010 ; Kim et al 2011 Shao and Ng , 2004 ) rank translation candidate use PH and CX independently and return result with the high average rank You et al 2010 ) compute initial translation score use PH and iteratively update the score use relationship feature ( call R Kim et al 2011 ) boost Yous approach by additionally leverage CX .
 
 	This paper study name entity translation and propose selective temporality as a new feature , as use temporal feature may be harmful for translate atemporal entity .
-
-	We expect the disambiguation to have a beneficial impact on the result give that polysemy be a frequent phenomenon in a general , mixed-domain corpus .
 
 	We have show how cross-lingual WSD can be apply to bilingual lexicon extraction from comparable corpus .
 
@@ -128,29 +177,23 @@ Sentences in cluster n0:
 
 	We apply non-parametric Bayesian language model to segment each noun phrase in these resource accord to the statistical behavior of its supposed constituent in text .
 
-	Although supervise segmentation be very competitive , we show that it can be supplement + very important to identify hiragana word correctly .
-
-	From the experimental result for combine our OOV term translation model with English-Chinese CrossLanguage Information Retrieval ( CLIR ) on the data set of Text Retrieval Evaluation Conference ( TREC it can be find that the obvious performance improvement for both query translation and retrieval can also be obtain .
+	Further , our result offer suggestive evidence that bilingual word embeddings act as high-quality semantic feature and embody bilingual translation equivalence across language .6 We report case-insensitive BLEU7 With 4-gram BLEU metric from .
 
 	On NIST08 Chinese-English translation task , we obtain an improvement of 0.48 BLEU from a competitive baseline ( 30.01 BLEU to 30.49 BLEU ) with the Stanford Phrasal MT system .1393 Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing , page 13931398 , Seattle , Washington , USA , 18-21 October 2013 .
 
-	When use to compute semantic similarity of phrase pair , bilingual embeddings improve NIST08 end-to-end machine translation result by just below half a BLEU point .
+	We introduce bilingual word embeddings : semantic embeddings associate across two language in the context of neural language model .
 
 	We believe that our result on the computational complexity of the task in SMT will result in a good understanding of these task from a theoretical perspective .
 
-	In practice , we be never sure that we have find the Viterbi alignment .
+	Our result showthat there can not exist a closed form expression ( whose representation be polynomial in the size of the input ) for P ( f | e ) and the count in the EMiterations for Models 3-5 unless P NP
 
-	around the Viterbi alignment , i.e . in determine j = 1 tfj | eajdj : aj I = 0 d ( j | i , m the goodness of the Viterbi alignment in compar ison to the rest of the alignments.Decoding be an integral component of all SMT system ( Wang , Table 1 : IBM Model 3 Here , n ( | e ) be the fertility model , t ( f | e ) be the lexicon model and d ( j | i , m be the distortion model .
+	enomial time solution for any of these hardeproblems ( unless P NP and P # P P our result highlight and justify the need for develop polynomial time approximation for these computation .
 
 	A close look at the translation candidate obtain when use LL , the most popular association measure in projection-based approach , show that they be often collocates of the reference translation .
-
-	Therefore , LL may fare well in an indirect approach , like the one in ( Daille and Morin , 2005 Moreover , we have see that the cosine similarity measure and sentence context give moreLO be use .
 
 	While the present work do not investigate all the parameter that could potentially impact result , we believe it constitute the most complete and systematic comparison make so far with variant of the context-based projection approach .
 
 	Naturally , study differ in the way each cooccurrence ( either window or syntax-based ) be weight , and a plethora of association score have be investigate and compare , the likelihood score ( Dunning , 1993 ) be among the most popular .
-
-	While a few study have investigate pattern match approach to compare source and target context ( Fung , 1995 ; Diab and Finch , 2000 ; Yu and Tsujii , 2009 most variant make use of a bilingual lexicon in order to translate the word of the context of a term ( often call seed word Dejean et al 2005 ) instead use a bilingual thesaurus for translate these.Another distinction between approach lie in the way the context be define .
 
 	Problems with the standard EM estimation of IBM Model 1 be point out by Moore and a number of heuristic change to the estimation procedure , such as smooth the parameter estimate , be show to reduce the alignment error rate , but the effect on translation performance be not report .
 
@@ -164,6 +207,8 @@ Sentences in cluster n0:
 
 	Qc 2011 Association for Computational Linguistics Chung and Gildea apply a sparse Dirichlet prior on the multinomial parameter to prevent overfitting .
 
+	Bayesian inference , the approach in this paper , have recently be apply to several unsupervised learn problem in NLP ( Goldwater and Griffiths , 2007 ; Johnson et al 2007 ) as well as to other task in SMT such as synchronous grammar induction ( Blunsom et al 2009 ) and learn phrase alignment directly ( DeNero et al 2008 Word alignment learn problem be address jointly with segmentation learn in Xu et al 2008 Nguyen et al 2010 and Chung and Gildea ( 2009 The former two work place nonparametric prior ( also know as cache model ) on the parameter and utilize Gibbs sampling .
+
 	We develop a Gibbs sampler for alignment under IBM Model 1 , In the proposed Bayesian setting , we treat T as a random variable with a prior P ( T To find a suitable prior for T , we re-write as : VE VF which be relevant for the state-of-the-art SMT sys tems since 1 ) Model 1 be use in bootstrapping the parameter setting for EM training of high P ( E , F , A | T n s P ( I 1 ) J n n ( t e = 1 f = 1e , f ) ne , f VE VF Porder alignment model , and many state-of-the n n ( te , f ) Ne , f n J art SMT system use Model 1 translation probabil ities as feature in their log-linear model .
 
 	We believe that decode algorithms derive from our framework can be of practical significance .
@@ -173,51 +218,6 @@ Sentences in cluster n0:
 	We show that both of these problem be easy to solve and provide efficient solution for them .
 
 	In perhaps the first work on the computational complexity of Decoding , Kevin Knight show that the problem be closely relate to the more famous Traveling Salesman problem ( TSP Independently , Christoph Tillman adapt the Held-Karp dynamic programming algorithm for TSP ( Held and Karp , 1962 ) to Decoding ( Tillman , 2001 The original HeldKarp algorithm for TSP be an exponential time dynamic programming algorithm and Tillmans adaptation to Decoding have a prohibitive com plexity of O ( l3m2 2m ) O ( m5 2m ( where m and l be the length of the source and tar get sentence respectively Tillman and Ney show how to improve the complexity of the Held-Karp algorithm for restrict word re order and give a O ( l3m4 ) O ( m7 ) algo rithm for French-English translation ( Tillman and Ney , 2000 An optimal decoder base on the well-known A heuristic be implement and benchmarked in ( Och et al 2001 Since optimal solution can not be compute for practical problem instance in a reasonable amount of time , much of recent work have focus on good quality suboptimal solution .
-
-
-
-
-Sentences in cluster n1:
-.....................................
-	Section 3 present our cache-based approach to documentlevel SMT .
-
-	Specifically , two type of semantic role feature be propose in this paper : a semantic role reorder feature design to capture the skeletonlevel permutation , and a semantic role deletion fea716 Proceedings of the 23rd International Conference on Computational Linguistics ( Coling 2010 page 716724 , Beijing , August 2010 ture design to penalize miss semantic role in the target sentence .
-
-	We will investigate the incorporation of monolingual document for potentially good bilingual LSA modeling
-
-	We will investigate this in the future .
-
-	The experience obtain in the Verbmobil project , in particular a large-scale end-to-end evaluation , show that the statistical approach result in significantly low error rate than three compete translation approach : the sentence error rate be 29percent in comparison with 52percent to 62percent for the other translation approach .
-
-	In this paper , we have analyze the complexity of the greedy decode algorithm originally present in Germann et al 2001 ) and presented improvement that drastically reduce the decoder complexity and speed to practically linear time.Experimental data suggest a good correlation betweenG1 decode anddecoding ( with 10 translation per input word consider , a list of 498 candidate for INSERT , a maximum swap distance of 2 and a maximum swap segment size of 5 The profile show be cumulative , so that the top curve reflect the total decoding time .
-
-	Operations not include in the figure consume so little time that their plot can not be discern in the graph .
-
-	The speed improvement discuss in this paper make multiple randomized search per sentence feasible , lead to a faster and good decoder for machine translation with IBM Model 4.6 .
-
-	Section 3 present the data use in our experiment and Section 4 provide detail on the approach and the experimental setup .
-
-	In this paper , we propose a new task of Japanese noun phrase segmentation .
-
-	Further , our result offer suggestive evidence that bilingual word embeddings act as high-quality semantic feature and embody bilingual translation equivalence across language .6 We report case-insensitive BLEU7 With 4-gram BLEU metric from .
-
-	We introduce bilingual word embeddings : semantic embeddings associate across two language in the context of neural language model .
-
-	Our result showthat there can not exist a closed form expression ( whose representation be polynomial in the size of the input ) for P ( f | e ) and the count in the EMiterations for Models 3-5 unless P NP
-
-	enomial time solution for any of these hardeproblems ( unless P NP and P # P P our result highlight and justify the need for develop polynomial time approximation for these computation .
-
-	In future work , other parameter which influence the performance will be study , among which the use of a terminological extractor to treat complex term ( Daille and Morin , 2005 more contextual window configuration , and the use of syntactic information in combination with lexical information ( Yu and Tsujii , 2009 It would also be interest to compare the projection-based approach to ( Haghighi et al 2008 ) s generative model for bilingual lexicon acquisition from monolingual corpus .
-
-	In the remainder of this paper , we describe the projection-based approach to translation spot in Section 2 and detail the parameter that directly influence its performance .
-
-	Bayesian inference , the approach in this paper , have recently be apply to several unsupervised learn problem in NLP ( Goldwater and Griffiths , 2007 ; Johnson et al 2007 ) as well as to other task in SMT such as synchronous grammar induction ( Blunsom et al 2009 ) and learn phrase alignment directly ( DeNero et al 2008 Word alignment learn problem be address jointly with segmentation learn in Xu et al 2008 Nguyen et al 2010 and Chung and Gildea ( 2009 The former two work place nonparametric prior ( also know as cache model ) on the parameter and utilize Gibbs sampling .
-
-	An O ( m6 ) greedy search algorithm be develop ( Germann et al 2003 ) whose complexity be re duced far to O ( m2 Germann , 2003 In this paper , we propose an algorithmic framework for solve the decoding problem and show that several efficient decode algorithm can be derive from the technique develop in the framework .
-
-	We start with a mathematical formulation of the decoding problem ( Section 2 We then develop the alternate search paradigm and use it to develop several decode algorithm ( Section 3 Next , we demonstrate the practical utility of our algorithm with the help of result from our initial experiment ( Section 5 ) .
-
-	Decoding be know to belong to a class of computational problem popularly know as NPhard problem ( Knight , 1999 NP-hard problem be know to be computationally hard and have elude polynomial time algorithm ( Garey and Johnson , 1979 The first algorithm for the decoding problem be base on what be know among the speech recognition community as stack-based search ( Jelinek , 1969 The original IBM solution to the decoding problem employ a restrict stack-based search ( Berger et al 1996 This idea be far explore by Wang and Waibel ( Wang and Waibel , 1997 ) who develop a faster stack-based search algorithm .
 
 	At one end of the spectrum be a provably linear time algorithm for compute a suboptimal solution and at the other end be an exponential time algorithm for computingNIST Scores7 Logscoresmada .
 

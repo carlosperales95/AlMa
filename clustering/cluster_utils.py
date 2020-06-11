@@ -3,6 +3,10 @@ from nltk.cluster import KMeansClusterer, euclidean_distance
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
+from nltk.corpus import stopwords
+import string
+import spacy
+
 
 import sys
 import os
@@ -63,6 +67,7 @@ def isImportant(label, mentions):
                 if lab in mention:
                     count+=1
                     #print(lab + " matched")
+                    continue
                 if count == len(label):
                     important = True
                     break
@@ -115,16 +120,39 @@ def tsne_plot_mentions(model, mentions):
     plt.show()
 
 
-def tsne_plot_custom(model, mentions):
+def tsne_plot_custom(model, mentions, ax):
     "Creates and TSNE model and plots it"
     labels = []
     tokens = []
+    nlp_base = spacy.load("en_core_web_sm")
+
 
     for word in model.wv.vocab:
         if isImportant(word, mentions) == True:
-            tokens.append(model[word])
-            labels.append(word)
-            #print(word)
+            label = word.split(' ')
+            no_stopword_word = ""
+
+            for la in label:
+                if la in set(stopwords.words('english')):
+                    continue
+                if la in string.punctuation:
+                    continue
+                else:
+                    no_stopword_word = no_stopword_word + " " + la
+
+            doc = nlp_base(no_stopword_word)
+            ents = doc.ents
+            ignore = False
+            if len(ents)>0:
+                for e in ents:
+                    if hasattr(e, 'label_') and e.label_ == 'PERSON':
+                    #    #print(e.label_ + " | " + e.text)
+                        ignore = True
+                        break
+            if ignore == False:
+                labels.append(no_stopword_word)
+                tokens.append(model[word])
+
 
     tsne_model = TSNE(perplexity=40, n_components=2, init='pca', n_iter=2500, random_state=23)
     new_values = tsne_model.fit_transform(tokens)
@@ -135,17 +163,17 @@ def tsne_plot_custom(model, mentions):
         x.append(value[0])
         y.append(value[1])
 
-    plt.figure(figsize=(50, 20))
+    #ax.figure(figsize=(50, 20))
     for i in range(len(x)):
-        plt.scatter(x[i],y[i])
-        plt.annotate(labels[i],
+        ax.scatter(x[i],y[i])
+        ax.annotate(labels[i],
                      xy=(x[i], y[i]),
                      xytext=(5, 2),
                      textcoords='offset points',
                      ha='right',
                      va='bottom')
-    plt.tight_layout()
-    plt.show()
+    #ax.tight_layout()
+    #plt.show()
 
 
 ##############################################
@@ -295,12 +323,29 @@ def scatter_Annotate(clusters, vectors2, c_id, labels2, ax):
     return None
 
 
-def scatter_Model(vectors2, labels2, ax):
+def scatter_Model(vectors, labels, ax):
+
+    new_vecs = []
+    new_labs = []
+    for idx, lab in enumerate(labels):
+        lab_splt = lab.split(' ')
+        no_stopword_lab = ""
+        if isinstance(lab_splt, list):
+            for la in lab_splt:
+                if la in set(stopwords.words('english')):
+                    continue
+                if la in string.punctuation:
+                    continue
+                else:
+                    no_stopword_lab = no_stopword_lab + " " + la
+
+        new_labs.append(no_stopword_lab)
+        new_vecs.append(vectors[idx])
 
 
     # test k-means using 2 means, euclidean distance, and 10 trial clustering repetitions with random seeds
     clusterer = KMeansClusterer(4, euclidean_distance, repeats=10)
-    clusters = clusterer.cluster(vectors2, True)
+    clusters = clusterer.cluster(new_vecs, True)
     centroids = clusterer.means()
     print('Clustered ')
     print('As:', clusters)
@@ -308,7 +353,7 @@ def scatter_Model(vectors2, labels2, ax):
 
 
     for i in range(4):
-        scatter_Annotate(clusters, vectors2, i, labels2, ax)
+        scatter_Annotate(clusters, new_vecs, i, new_labs, ax)
 
     #x4 = np.array([x[0] for idx, x in enumerate(w2v_vectors) if clusters[idx]==4])
     #y4 = np.array([x[1] for idx, x in enumerate(w2v_vectors) if clusters[idx]==4])
@@ -327,6 +372,22 @@ def scatter_Model(vectors2, labels2, ax):
     return None
 
 
+def tsne_plot_Models(bigrams_model, trigrams_model, men):
+
+    fig, axes = plt.subplots(1, 2, figsize=(40,10))
+    fig.suptitle('ScatterPlots of Methods')
+    axes[0].set_title('Bigram Model', fontsize=14)
+    axes[1].set_title('Trigram Model', fontsize=14)
+
+    tsne_plot_custom(bigrams_model, men, axes[0])
+    tsne_plot_custom(trigrams_model, men, axes[1])
+
+    fig.tight_layout()
+    #plt.show()
+    plt.savefig('TSNEbitri.png')
+
+    return None
+
 def W2V_plot_Models(bi_vectors, tri_vectors, bi_labels, tri_labels):
 
     fig, axes = plt.subplots(1, 2, figsize=(40,10))
@@ -338,8 +399,23 @@ def W2V_plot_Models(bi_vectors, tri_vectors, bi_labels, tri_labels):
     scatter_Model(tri_vectors, tri_labels, axes[1])
 
     fig.tight_layout()
-    plt.show()
+    #plt.show()
+    plt.savefig('Scatterbitri.png')
 
+
+def W2V_plot_Models_together(bi_vectors, tri_vectors, bi_labels, tri_labels):
+
+    fig, axes = plt.subplots(1, figsize=(50,10))
+    fig.suptitle('ScatterPlots of Methods')
+    axes.set_title('BiTrigram Model', fontsize=14)
+    #axes[1].set_title('Trigram Model', fontsize=14)
+
+    scatter_Model(bi_vectors, bi_labels, axes)
+    scatter_Model(tri_vectors, tri_labels, axes)
+
+    fig.tight_layout()
+    #plt.show()
+    plt.savefig('SCatter_bitri_together.png')
 
 def plot_elbows(X, X2):
 
@@ -404,7 +480,31 @@ def clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemma
     Kmeans_PCA(fig, axes[0], bi_clusters, X, lr, "bigram_evidences.txt")
     Kmeans_PCA(fig, axes[1], tri_clusters, X2, lr2, "trigram_evidences.txt")
 
-    plt.show()
+    #plt.show()
+    plt.savefig('Clusteredbitri.png')
 
 
 ##############################################
+
+
+def create_output():
+    f = open('output.html','w')
+
+    message = """<html>
+    <head></head>
+    <body>
+    <img src="./Scatterbitri.png" position='centered' alt="plot" width="1000" height="200">
+    <p></p>
+    <img src="./TSNEbitri.png" alt="plot" width="1000" height="250">
+    <p></p>
+    <p></p>
+    <p></p>
+    <img src="./Clusteredbitri.png" alt="plot" width="1000" height="1000">
+
+    </body>
+    </html>"""
+
+    f.write(message)
+    f.close()
+
+    return None
