@@ -347,3 +347,10 @@ plt.show()
 
     #fig.gca().relim()
     #fig.gca().autoscale_view()
+
+
+        <img src="./Scatterbitri.png" position='centered' alt="plot" width="1000" height="200">
+        <p></p>
+        <img src="./TSNEbitri.png" alt="plot" width="1000" height="250">
+        <p></p>
+        <p></p>

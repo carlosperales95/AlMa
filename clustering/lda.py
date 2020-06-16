@@ -10,50 +10,83 @@ import sys
 from os import listdir
 from os.path import isfile, join
 import os
+from word2utils import *
+import spacy
+from nltk.stem import WordNetLemmatizer
+
+
 
 
 dir= str(sys.argv[1])
-onlyfiles = [f for f in listdir(dir) if isfile(join(dir, f))]
-evidences = []
-claims = []
-paper_evidences = []
-paper_claims = []
+
+dir = "./rank/batch_503/"
+nlp_base = spacy.load("en_core_web_sm")
+nlp = spacy.load('mymodel')
 
 
-for file in onlyfiles:
+print("Joining evidences....................")
 
-    if file.startswith( 'evidence' ):
-        paper_evidences.append(file)
+evidences, claims = getClaimsEvidences(dir)
+lemmatizer = WordNetLemmatizer()
 
-    if file.startswith( 'claim' ):
-        paper_claims.append(file)
+sentences = claims
+lemmatized_s=[]
+for e in evidences:
+    lemmatized_s.append(lemmatize_sentence(e, lemmatizer))
+    sentences.append(e)
 
-for idx,file in enumerate(paper_evidences):
+for c in claims:
+    lemmatized_s.append(lemmatize_sentence(c, lemmatizer))
 
-    f = open(dir+file, "r")
-    paper_full =f.read()
 
-    jso = json.loads(paper_full)
-    for idx,item in enumerate(jso):
-        evidences.append(jso[idx]['evidence'])
+bigrams_, trigrams_ = convertSentsToBiTriGs(lemmatized_s)
 
-    f.close()
+#NEED TO CLEAN ARGS, BIGRAMS ARE TOO WEIRD
+trigrams_ = filter_stringRubble(trigrams_)
 
-#for idx,file in enumerate(paper_claims):
 
-#    f = open(dir+file, "r")
-#    paper_full =f.read()
+#mentions = filterDates(mentions)
+#mentions = filterWeirdChars(mentions)
 
-#    jso = json.loads(paper_full)
-#    for idx,item in enumerate(jso):
-#        claims.append(jso[idx]['claim'])
+print("Finding Technology/Method mentions....................")
 
-#    f.close()
+pointed_mentions = getRankedMentions(lemmatized_s, nlp, nlp_base)
+
+
+men = mentionRankThreshold(pointed_mentions)
+
+#print(men[0])
+
+
+def crossRef(evid, men):
+
+    definit=[]
+    for ev in evid:
+        evi=ev.split(" ")
+        for word in evi:
+            important=False
+            if len(word)<3:
+                continue
+            for m in men:
+                if isinstance(m, list):
+                    ml = [each_string.lower() for each_string in m]
+                    if word.lower() in ml:
+                        important = True
+                        break
+                elif word.lower()==m.lower():
+                    important = True
+                    break
+            if important == False:
+                definit.append(word)
+
+
+    return definit
 
 
 
 # Load the library with the CountVectorizer method
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction import text
 import seaborn as sns
 sns.set_style('whitegrid')
 
@@ -79,9 +112,18 @@ def plot_10_most_common_words(count_data, count_vectorizer):
     plt.ylabel('counts')
     plt.show()# Initialise the count vectorizer with the English stop words
 
-count_vectorizer = CountVectorizer(stop_words='english')# Fit and transform the processed titles
-count_data = count_vectorizer.fit_transform(evidences)# Visualise the 10 most common words
-plot_10_most_common_words(count_data, count_vectorizer)
+
+others = crossRef(sentences, men)
+others.append("et")
+others.append("al")
+my_stop_words = text.ENGLISH_STOP_WORDS.union(others)
+print(others)
+#print(my_stop_words)
+
+count_vectorizer = CountVectorizer(stop_words=my_stop_words)# Fit and transform the processed titles
+count_data = count_vectorizer.fit_transform(sentences)# Visualise the 10 most common words
+#count_data = crossRef(count_data, men)
+#plot_10_most_common_words(count_data, count_vectorizer)
 
 
 import warnings
@@ -89,20 +131,20 @@ warnings.simplefilter("ignore", DeprecationWarning)# Load the LDA model from sk-
 from sklearn.decomposition import LatentDirichletAllocation as LDA
 
 # Helper function
-def print_topics(model, count_vectorizer, n_top_words):
+def print_topics(model, count_vectorizer, n_top_words, men):
     words = count_vectorizer.get_feature_names()
+
     for topic_idx, topic in enumerate(model.components_):
         print("\nTopic #%d:" % topic_idx)
-        print(" ".join([words[i]
-                        for i in topic.argsort()[:-n_top_words - 1:-1]]))
+        print(" ".join([words[i] for i in topic.argsort()[:-n_top_words - 1:-1]]))
 
 # Tweak the two parameters below
-number_topics = 3
+number_topics = 5
 number_words = 10# Create and fit the LDA model
 lda = LDA(n_components=number_topics, n_jobs=-1)
 lda.fit(count_data)# Print the topics found by the LDA model
 print("Topics found via LDA:")
-print_topics(lda, count_vectorizer, number_words)
+#print_topics(lda, count_vectorizer, number_words, men)
 
 import pyLDAvis
 from pyLDAvis import sklearn as sklearn_lda
@@ -114,10 +156,11 @@ LDAvis_data_filepath = os.path.join('./ldavis_prepared_'+str(number_topics))
 # # if you want to execute visualization prep yourself
 if 1 == 1:
     LDAvis_prepared = sklearn_lda.prepare(lda, count_data, count_vectorizer)
-    with open(LDAvis_data_filepath, 'w') as f:
+    with open(LDAvis_data_filepath, 'wb') as f:
         pickle.dump(LDAvis_prepared, f)
-
+    f.close()
 # load the pre-prepared pyLDAvis data from disk
-with open(LDAvis_data_filepath) as f:
+with open(LDAvis_data_filepath, 'rb') as f:
+    #f.encode('utf-8').strip()
     LDAvis_prepared = pickle.load(f)
     pyLDAvis.save_html(LDAvis_prepared, './ldavis_prepared_'+ str(number_topics) +'.html')

@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from nltk.corpus import stopwords
 import string
 import spacy
+import json
 
 
 import sys
@@ -18,6 +19,9 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 from scipy.spatial import ConvexHull
+
+import mpld3
+#import seaborn as sns
 
 
 
@@ -53,7 +57,7 @@ def tsne_plot_original(model):
                      textcoords='offset points',
                      ha='right',
                      va='bottom')
-    plt.show()
+    #plt.show()
 
 
 def isImportant(label, mentions):
@@ -82,20 +86,34 @@ def tsne_plot_mentions(model, mentions):
     "Creates and TSNE model and plots it"
     labels = []
     tokens = []
+    nlp_base = spacy.load("en_core_web_sm")
+
 
     for word in model.wv.vocab:
-        for mention in mentions:
-            if len(word) > 3:
-                ment = [x.lower() for x in mention]
-                if word in ment:
-                    double = False
-                    for label in labels:
-                        if label == word:
-                            double = True
-                    if double == False:
-                        print(word)
-                        tokens.append(model[word])
-                        labels.append(word)
+        if isImportant(word, mentions) == True:
+            label = word.split(' ')
+            no_stopword_word = ""
+
+            for la in label:
+                if la in set(stopwords.words('english')):
+                    continue
+                if la in string.punctuation:
+                    continue
+                else:
+                    no_stopword_word = no_stopword_word + " " + la
+
+            doc = nlp_base(no_stopword_word)
+            ents = doc.ents
+            ignore = False
+            if len(ents)>0:
+                for e in ents:
+                    if hasattr(e, 'label_') and e.label_ == 'PERSON':
+                    #    #print(e.label_ + " | " + e.text)
+                        ignore = True
+                        break
+            if ignore == False:
+                labels.append(no_stopword_word)
+                tokens.append(model[word])
 
     #print(labels)
     tsne_model = TSNE(perplexity=40, n_components=2, init='pca', n_iter=2500, random_state=23)
@@ -107,17 +125,19 @@ def tsne_plot_mentions(model, mentions):
         x.append(value[0])
         y.append(value[1])
 
-    plt.figure(figsize=(16, 16))
-    for i in range(len(x)):
-        plt.scatter(x[i],y[i])
-        plt.annotate(labels[i],
-                     xy=(x[i], y[i]),
-                     xytext=(5, 2),
-                     textcoords='offset points',
-                     ha='right',
-                     va='bottom')
-        #plt.axis([0,5,5,20])
-    plt.show()
+    fig, ax = plt.subplots(subplot_kw=dict(facecolor='#EEEEEE'))
+
+    scatter = ax.scatter(x,
+                         y,
+                         cmap=plt.cm.jet)
+    ax.grid(color='white', linestyle='solid')
+
+    ax.set_title("Scatter Plot (with tooltips!)", size=20)
+
+    tooltip = mpld3.plugins.PointLabelTooltip(scatter, labels=labels)
+    mpld3.plugins.connect(fig, tooltip)
+
+    mpld3.show()
 
 
 def tsne_plot_custom(model, mentions, ax):
@@ -384,9 +404,13 @@ def tsne_plot_Models(bigrams_model, trigrams_model, men):
 
     fig.tight_layout()
     #plt.show()
+
+
+    mpld3.show()
     plt.savefig('TSNEbitri.png')
 
     return None
+
 
 def W2V_plot_Models(bi_vectors, tri_vectors, bi_labels, tri_labels):
 
@@ -417,6 +441,7 @@ def W2V_plot_Models_together(bi_vectors, tri_vectors, bi_labels, tri_labels):
     #plt.show()
     plt.savefig('SCatter_bitri_together.png')
 
+
 def plot_elbows(X, X2):
 
     fig, axes = plt.subplots(1, 2, figsize=(20,20))
@@ -433,26 +458,35 @@ def plot_elbows(X, X2):
     axes[0].plot(range(1,8), wcss1)
     axes[1].plot(range(1,8), wcss2)
 
-    plt.show()
+    #plt.show()
 
 
 def plot_PCA(fig, X, labels, clf, axs):
 
     pca = PCA(n_components=2).fit(X)
     coords = pca.transform(X)
-    label_colors = ['#2AB0E9', '#2BAF74', '#D7665E', '#CCCCCC',
-                    '#D2CA0D', '#522A64', '#A3DB05', '#FC6514',
+    label_colors = ['#2AB0E9', '#D2CA0D', '#D7665E', '#2BAF74',
+                    '#CCCCCC', '#522A64', '#A3DB05', '#FC6514',
                     '#FF7F50', '#BDB76B', '#FF7F50', '#00FA9A',
                     '#FFA07A', '#FFFACD', '#006400', '#32CD32',
                     '#DC143C', '#FFEFD5', '#8FBC8F', '#808000'
                     ]
-
     colors = [label_colors[i] for i in labels]
     axs.scatter(coords[:, 0], coords[:, 1], c=colors)
+
     centroids = clf.cluster_centers_
-    centroid_coords = pca.transform(centroids)
-    axs.scatter(centroid_coords[:, 0], centroid_coords[:, 1], marker='X', s=10,
-    linewidths=2, c='#444d61')
+    #centroid_coords = pca.transform(centroids)
+    #axs.scatter(centroid_coords[:, 0], centroid_coords[:, 1], marker='X', s=10,
+    #linewidths=2, c='#444d61')
+
+    for idy,r in enumerate(centroids):
+        cluster_cl = np.array([coords[idx] for idx, x in enumerate(labels) if labels[idx]==idy])
+        #cluster_cl=np.asarray(cluster_cl)
+        hull = ConvexHull(cluster_cl)
+        #plt.plot(cluster_cl[:,0], cluster_cl[:,1], 'o')
+        for simplex in hull.simplices:
+            axs.plot(cluster_cl[simplex, 0], cluster_cl[simplex, 1], label_colors[idy] ,'k-')
+            axs.fill(cluster_cl[hull.vertices,0], cluster_cl[hull.vertices,1], label_colors[idy], alpha=0.05)
 
 
 def clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemmatized):
@@ -461,7 +495,7 @@ def clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemma
     X, lr = vectorizeToX(bigrams_, bigrams_model, lemmatized)
     X2, lr2 = vectorizeToX(trigrams_, trigrams_model, lemmatized)
 
-    #plot_elbows(X, X2)
+    plot_elbows(X, X2)
 
     print("After seeing the elbow method, insert the number of clusters")
     bi_clusters = int(input("Clusters for the Bigram Model: "))
@@ -470,6 +504,7 @@ def clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemma
 
     fig, axes = plt.subplots(1, 2, figsize=(20,20))
     fig.suptitle('Clustered Evidences (K-means)')
+
     axes[0].set_title('Bigram Model', fontsize=14)
     axes[1].set_title('Trigram Model', fontsize=14)
 
@@ -481,6 +516,7 @@ def clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemma
     Kmeans_PCA(fig, axes[1], tri_clusters, X2, lr2, "trigram_evidences.txt")
 
     #plt.show()
+
     plt.savefig('Clusteredbitri.png')
 
 
@@ -488,21 +524,106 @@ def clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemma
 
 
 def create_output():
+
+
+
     f = open('output.html','w')
 
     message = """<html>
-    <head></head>
-    <body>
-    <img src="./Scatterbitri.png" position='centered' alt="plot" width="1000" height="200">
-    <p></p>
-    <img src="./TSNEbitri.png" alt="plot" width="1000" height="250">
-    <p></p>
-    <p></p>
-    <p></p>
-    <img src="./Clusteredbitri.png" alt="plot" width="1000" height="1000">
+    <head>
+      <style type="text/css">
+        .column {
+            float: left;
+            width: 50%;
+        }
 
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .collapsible {
+          background-color: #eee;
+          color: #444;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+        }
+
+        .active, .collapsible:hover {
+          background-color: #ccc;
+        }
+
+        .content {
+          padding: 0 18px;
+          display: none;
+          overflow: hidden;
+          background-color: #f1f1f1;
+        }
+      </style>
+        <script type="text/javascript">
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+        </script>
+    </head>
+    <body>
+        <p></p>
+         <div class="row">
+          <div class="column">
+              <img src="./Clusteredbitri.png" alt="plot" width="1000" height="1000">
+          </div>
+          <div class="column">
+            <p></p>
+            <p></p>
+            <p></p>
+            """
+
+    fp = open('./bigram_evidences.txt', "r")
+    line = fp.readline()
+    count=0
+    while line:
+        line = fp.readline()
+        #print(line)
+        if line.find("---") != -1 or line.find("....") != -1:
+            continue
+        elif line.find("Sentences in cluster n") != -1:
+            count+=1
+            if count > 1:
+                message = message + "</div>" + "\n"
+
+            message = message + '<button type="button" class="collapsible">' + line[line.find("Sentences in cluster n"):line.find("Sentences in cluster n")+len("Sentences in cluster n")+1] + "</button>" + "\n"
+            message = message + '<div class="content">' + "\n"
+
+        else:
+            message = message + "<p> "+ line + "</p>" + "\n"
+            message = message + "<p>  </p>" + "\n"
+
+    fp.close()
+    message = message + "</div>" + "\n"
+
+    msg = """
+          </div>
+        </div>
     </body>
     </html>"""
+
+    message+message+msg
 
     f.write(message)
     f.close()
