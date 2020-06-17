@@ -1,0 +1,68 @@
+PCA on evidences
+----------------
+----------------
+
+Sentences in cluster n0:
+.....................................
+	Context-based projection method for identify the translation of term in comparable corpus have attract a lot of attention in the community , e.g Fung ,1998 ; Rapp , 1999 Surprisingly , none of those work have systematically investigate the impact of the many parameter control their approach .
+
+	We show that the algorithmic handle provide by our framework can be employ to develop a very fast decoding algorithm which find good quality translation .
+
+	We show that both of these problem be easy to solve and provide efficient solution for them .
+
+	We have also show that alternate maximization can be employ tocome up with O ( m2 ) decode algorithm .
+
+	An additional advantage be that the sense cluster often contain more than one translation and , therefore , provide supplementary material for the comparison of the vector in the target language .
+
+	Our experiment be carry out on the English-Slovene language pair but as the method be totally data-driven , the approach can be easily apply to other languages.The paper be organize as follow : In the next section , we present some related work on bilingual lexicon extraction from comparable corpus .
+
+	The beauty of the bLSA framework be that the model search for a common latent topic space in an unsupervised fashion , rather than to require manual interaction .
+
+	In such case , as Hillary Clinton be a famous female leader , she may be associate with other Chinese female leader in Chinese corpus , while such association be rarely observe in English corpus , which cause asymmetry .
+
+	That be , Hillary Clinton be atemporal , as Figure 1 show , such that use such dissimilarity against decide this pair as a correct translation would be harmful .
+
+	This paper validate that consider temporality selectively be helpful for improve the translation quality .
+
+	In such case partial SRSs must be record in such a way that they can be combine later with other partial SRSs .
+
+	One problem with the dynamic cache be that those initial sentence in a test document may not benefit from the dynamic cache .
+
+	Another problem be that the dynamic cache may be prone to noise and cause error propagation .
+
+	Thirdly , reference translation of a test document write by human translator tend to have flexible expression in order to avoid produce monotonous text .
+
+	During last decade , tremendous work have be do to improve the quality of statistical machineCorresponding author .
+
+	As the translation process continue , the dynamic cache grows and contribute more and more to the translation of subsequent sentence .
+
+	Among them , encyclopedias be especially important in that they contain a lot of term that a morphological dictionary fails to cover .
+
+	As hiragana be mainly use to write function word and other basic word , segmentation error concern hiragana often bring disastrous effect on application of morphological analysis .
+
+	We show that incorporate lexical weighting feature condition on soft domain membership directly into our model be an effective strategy for dynamically bias SMT towards relevant translation , as evidence by significant performance gain .
+
+	We propose an approach that bias machine translation system toward relevant translation base on topic-specific context , where topic be induce in an unsupervised way use topic model ; this can be think of as induce subcorpora for adaptation without any human annotation .
+
+	Names have be largely neglect in the prior MT research due to the following reason : The current dominant automatic MT score metric ( such as Bilingual Evaluation Understudy ( BLEU Papineni et al 2002 treat all word equally , but name have relative low frequency in text ( about 6percent in newswire and only 3percent in web document ) and thus be vastly outnumber by function word and common noun , etc.Name translation pose a great complexity because the set of name be open and highly dynamic .
+
+
+
+
+Sentences in cluster n1:
+.....................................
+	We believe that by perform a rescoring on translation word graph we will obtain a more significant improvement in translation quality .
+
+	We believe that decode algorithms derive from our framework can be of practical significance .
+
+	We assume here that the MT system be capable of provide word alignment ( or equivalent ) information during decoding , which be generally true for current statistical MT system .
+
+	However , our analysis have show that for Arabic , these genre typically contain more Latin script and transliterated word , and thus there be less morphology to score .
+
+	Finally , we conclude this paper in Section 6 We have show that our cache-based approach significantly improve the performance with the help of various cache , such as the dynamic , static and topic cache , although the cache-based approach may introduce some negative impact onBLEU score for certain documents.In the future , we will far explore how to reflect document divergence during training and dynamically adjust cache weight accord to different documents.There be many useful component in trainingdocuments , such as name entity , event and coreference .
+
+	1 Some of the resource and open source program develop in this work be make freely available for research purpose at A typical statistical MT system can only translate 60percent person name correctly ( Ji et al 2009 Incorrect segmentation and translation of name which often carry central meaning of a sentence can also yield incorrect translation of long context .
+
+
+
+

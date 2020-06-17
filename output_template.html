@@ -1,0 +1,165 @@
+<html>
+    <head>
+      <style type="text/css">
+
+        p {
+          font-size: 14px;
+        }
+        .column {
+            float: left;
+            width: 50%;
+            padding:0%;
+            margin:0%;
+
+        }
+
+        .row {
+          width:100%;
+          padding:0%;
+          margin:0%;
+
+        }
+
+        img {
+
+          max-width: 100%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .collapsible {
+          background-color: #66ccff;
+          color: #444;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+        }
+
+        .active, .collapsible:hover {
+          background-color: #ccc;
+        }
+
+        .content {
+          padding: 0 18px;
+          display: none;
+          overflow: hidden;
+          background-color: #f1f1f1;
+          width: 100%;
+          padding:0%;
+          margin:0%;
+
+        }
+
+        #subcollapsible {
+          background-color: #4bab81 !important;
+
+        }
+
+        #subsubcollapsible {
+          background-color: #81a118 !important;
+
+        }
+      </style>
+    </head>
+    <body>
+
+      <button type="button" class="collapsible">Results for the query (QUERY)</button>
+      <div class="content">
+        <div class="row">
+          <div class="column" name="paper_titles">
+              <p> The Paper Titles</p>
+          </div>
+          <div class="column">
+            <button type="button" class="collapsible">Technology Methods</button>
+            <div class="content" name="mentions">
+
+            </div>
+            <button type="button" class="collapsible">Stats2</button>
+            <div class="content" name="stats2">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button"  class="collapsible">Claims</button>
+      <div class="content">
+        <button type="button" id="subcollapsible" class="collapsible">Cluster of Claims (Bigrams)</button>
+        <div class="content">
+          <div class="row">
+            <div class="column">
+                <img src="./claims_bigrams.png" alt="plot" width="1000" height="1000">
+            </div>
+            <div class="column" name="bigram_claims">
+
+            </div>
+          </div>
+        </div>
+        <button type="button" id="subcollapsible" class="collapsible">Cluster of Claims (Trigrams)</button>
+        <div class="content">
+          <div class="row">
+            <div class="column">
+                <img src="./claims_trigrams.png" alt="plot" width="1000" height="1000">
+            </div>
+            <div class="column" name="trigram_claims">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <button type="button" class="collapsible">Evidences</button>
+      <div class="content">
+        <button type="button" id="subcollapsible" class="collapsible">Cluster of Evidences (Bigrams)</button>
+        <div class="content">
+          <div class="row">
+            <div class="column">
+                <img src="./evidences_bigrams.png" alt="plot" width="1000" height="1000">
+            </div>
+            <div class="column" name="bigram_evidences">
+            </div>
+          </div>
+        </div>
+        <button type="button" id="subcollapsible" class="collapsible">Cluster of Evidences (Trigrams)</button>
+        <div class="content">
+          <div class="row">
+            <div class="column">
+                <img src="./evidences_trigrams.png" alt="plot" width="1000" height="1000">
+            </div>
+            <div class="column" name="trigram_evidences">
+              <button type="button" class="collapsible">Evidences in cluster n0</button>
+              <div class="content">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+      </script>
+
+    </body>
+</html>

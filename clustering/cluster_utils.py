@@ -247,7 +247,7 @@ def w2vectorizer(sent, m):
         return np.asarray(vec) / numw
 
 
-def vectorizeToX(data, model, evidences):
+def vectorizeToX(data, model, lemmatized):
 
     l=[]
     lr=[]
@@ -256,7 +256,7 @@ def vectorizeToX(data, model, evidences):
             vectorized = w2vectorizer(i, model)
             if len(vectorized) > 0:
                 l.append(vectorized)
-                lr.append(evidences[idx])
+                lr.append(lemmatized[idx])
 
     X=np.array(l)
 
@@ -489,7 +489,7 @@ def plot_PCA(fig, X, labels, clf, axs):
             axs.fill(cluster_cl[hull.vertices,0], cluster_cl[hull.vertices,1], label_colors[idy], alpha=0.05)
 
 
-def clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemmatized):
+def clusterPlot_Models(type, bigrams_, bigrams_model, trigrams_, trigrams_model, lemmatized):
 
 
     X, lr = vectorizeToX(bigrams_, bigrams_model, lemmatized)
@@ -501,131 +501,160 @@ def clusterPlot_Models(bigrams_, bigrams_model, trigrams_, trigrams_model, lemma
     bi_clusters = int(input("Clusters for the Bigram Model: "))
     tri_clusters = int(input("Clusters for the Trigram Model: "))
 
+    fig, axes = plt.subplots(1, figsize=(20,20))
+    axes.set_title('Bigram Model', fontsize=14)
+    #axes[1].set_title('Trigram Model', fontsize=14)
 
-    fig, axes = plt.subplots(1, 2, figsize=(20,20))
-    fig.suptitle('Clustered Evidences (K-means)')
+    axes.set(xlabel='Number of clusters', ylabel='WCSS')
 
-    axes[0].set_title('Bigram Model', fontsize=14)
-    axes[1].set_title('Trigram Model', fontsize=14)
+    Kmeans_PCA(fig, axes, bi_clusters, X, lr, "bigram_"+type+".txt")
+    plt.savefig(type+'_bigrams.png')
 
-    for ax in axes.flat:
-        ax.set(xlabel='Number of clusters', ylabel='WCSS')
+    fig, axes = plt.subplots(1, figsize=(20,20))
+    axes.set_title('Bigram Model', fontsize=14)
+    #axes[1].set_title('Trigram Model', fontsize=14)
 
+    axes.set(xlabel='Number of clusters', ylabel='WCSS')
 
-    Kmeans_PCA(fig, axes[0], bi_clusters, X, lr, "bigram_evidences.txt")
-    Kmeans_PCA(fig, axes[1], tri_clusters, X2, lr2, "trigram_evidences.txt")
+    Kmeans_PCA(fig, axes, tri_clusters, X2, lr2, "trigram_"+type+".txt")
+    plt.savefig(type+'_trigrams.png')
 
     #plt.show()
 
-    plt.savefig('Clusteredbitri.png')
 
 
 ##############################################
 
 
-def create_output():
+def fill_titles(full_content):
+
+    template = full_content
+
+    start_id = template.find('name="paper_titles">')+len('name="paper_titles">')
+    #print(start_id)
+    end_id = template[start_id:].find("</div>")
+    start = template[:start_id]
+    end = template[start_id+end_id:]
+
+    fp = open('./paper_titles.txt', "r")
+    file_orig = fp.read()
+    file=file_orig
+    message = "\n"
+    count=0
+    finished=False
+    while finished==False:
+        title_start = file.find("- ")
+        if title_start != -1:
+            end_title = file.find("---------------------")
+            if len(file[title_start:end_title]) > 3:
+                message = message + "\t\t\t\t\t\t\t<p> ("+ str(count+1) +") "+ (file[title_start:end_title].replace("\n\r", " ")) + "\t\t\t\t\t\t\t</p>" + "\n"
+                count+=1
+            if file[end_title:].find("\n") != -1:
+                new_file_id = file[end_title:].find("\n")+1
+                file = file[new_file_id:]
+            else:
+                finished = True
+        else:
+            finished = True
+
+    fp.close()
+
+    content = start+message+end
+    return content
 
 
+def fill_clustering(arg_name, full_content):
 
-    f = open('output.html','w')
+        if full_content == "":
+            f = open('output_template.html','r')
+            template = f.read()
+            f.close()
+        else:
+            template=full_content
 
-    message = """<html>
-    <head>
-      <style type="text/css">
-        .column {
-            float: left;
-            width: 50%;
-        }
+        start_id = template.find('name="'+arg_name+'">')+len('name="'+arg_name+'">')
+        #print(start_id)
+        end_id = template[start_id:].find("</div>")
+        start = template[:start_id]
+        end = template[start_id+end_id:]
 
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        .collapsible {
-          background-color: #eee;
-          color: #444;
-          cursor: pointer;
-          padding: 18px;
-          width: 100%;
-          border: none;
-          text-align: left;
-          outline: none;
-          font-size: 15px;
-        }
+        fp = open('./'+arg_name+'.txt', "r")
+        line = fp.readline()
+        message = "\n"
+        count=0
+        while line:
+            line = fp.readline()
+            #print(line)
+            if line.find("---") != -1 or line.find("....") != -1:
+                continue
+            elif line.find("Sentences in cluster n") != -1:
+                count+=1
+                if count > 1:
+                    message = message + "\t\t\t\t\t</div>" + "\n"
 
-        .active, .collapsible:hover {
-          background-color: #ccc;
-        }
+                message = message + '\t\t\t\t\t\t<button type="button" id="subsubcollapsible" class="collapsible">' + line[line.find("Sentences in cluster n"):line.find("Sentences in cluster n")+len("Sentences in cluster n")+1] + "</button>" + "\n"
+                message = message + '\t\t\t\t\t\t<div class="content">' + "\n"
 
-        .content {
-          padding: 0 18px;
-          display: none;
-          overflow: hidden;
-          background-color: #f1f1f1;
-        }
-      </style>
-        <script type="text/javascript">
-            var coll = document.getElementsByClassName("collapsible");
-            var i;
+            else:
+                message = message + "\t\t\t\t\t\t\t<p> "+ line + "\t\t\t\t\t\t\t</p>" + "\n"
+                message = message + "\t\t\t\t\t\t\t<p>  \t\t\t\t\t\t\t</p>" + "\n"
 
-            for (i = 0; i < coll.length; i++) {
-              coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                  content.style.display = "none";
-                } else {
-                  content.style.display = "block";
-                }
-              });
-            }
-        </script>
-    </head>
-    <body>
-        <p></p>
-         <div class="row">
-          <div class="column">
-              <img src="./Clusteredbitri.png" alt="plot" width="1000" height="1000">
-          </div>
-          <div class="column">
-            <p></p>
-            <p></p>
-            <p></p>
-            """
+        fp.close()
+        message = message + "\t\t\t\t\t</div>" + "\n"
 
-    fp = open('./bigram_evidences.txt', "r")
+        content=start+message+end
+
+        return content
+
+
+def fill_mentions(full_content):
+
+    template = full_content
+
+    start_id = template.find('name="mentions">')+len('name="mentions">')
+    #print(start_id)
+    end_id = template[start_id:].find("</div>")
+    start = template[:start_id]
+    end = template[start_id+end_id:]
+
+    fp = open('./pointed_mentions.txt', "r")
+
     line = fp.readline()
+    message = "\n"
     count=0
     while line:
         line = fp.readline()
-        #print(line)
-        if line.find("---") != -1 or line.find("....") != -1:
+
+        if line.find("--------") != -1:
             continue
-        elif line.find("Sentences in cluster n") != -1:
-            count+=1
-            if count > 1:
-                message = message + "</div>" + "\n"
-
-            message = message + '<button type="button" class="collapsible">' + line[line.find("Sentences in cluster n"):line.find("Sentences in cluster n")+len("Sentences in cluster n")+1] + "</button>" + "\n"
-            message = message + '<div class="content">' + "\n"
-
-        else:
-            message = message + "<p> "+ line + "</p>" + "\n"
-            message = message + "<p>  </p>" + "\n"
+        #print(line)
+        message = message + "\t\t\t\t\t\t\t<p> "+ line + "\t\t\t\t\t\t\t</p>" + "\n"
+        message = message + "\t\t\t\t\t\t\t<p>  \t\t\t\t\t\t\t</p>" + "\n"
 
     fp.close()
-    message = message + "</div>" + "\n"
 
-    msg = """
-          </div>
-        </div>
-    </body>
-    </html>"""
+    content = start+message+end
+    return content
 
-    message+message+msg
 
-    f.write(message)
+def dynamicfill_output():
+
+    full_content = ""
+    full_content = fill_clustering("bigram_claims", full_content)
+    full_content = fill_clustering("trigram_claims", full_content)
+    full_content = fill_clustering("bigram_evidences", full_content)
+    full_content = fill_clustering("trigram_evidences", full_content)
+
+    full_content = fill_titles(full_content)
+    full_content = fill_mentions(full_content)
+
+    f = open('./batch_statistics_view.html', "w")
+    f.write(full_content)
     f.close()
+
+
+#    message+message+msg
+#    f.write(message)
+    #f.close()
 
     return None

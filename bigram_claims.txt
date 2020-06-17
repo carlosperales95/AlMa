@@ -1,0 +1,156 @@
+PCA on evidences
+----------------
+----------------
+
+Sentences in cluster n0:
+.....................................
+	We show that it be possible to significantly decrease training and test corpus perplexity of the translation model .
+
+	We believe that by perform a rescoring on translation word graph we will obtain a more significant improvement in translation quality .
+
+	Out-of-vocabulary recognition may have two-sided effect on SMT performance .
+
+	We also show that the propose method effectively address the well-known rare word problem in EM-estimated model ; and at the same time induce a much small dictionary of bilingual word-pairs .
+
+	We prove that while IBM Models 1-2 be conceptually and computationally simple , computation involve the high ( and more useful ) model be hard.Since it be unlikely that there exist a poly-language 1 ( Tillman , 2001 Wang , 1997 Germann et al 2003 Udupa et al 2004 The model be independent of the language pair and therefore , can be use to build a translation system for any language pair as long as a parallel corpus of text be available for training .
+
+	We also believe that our result may help in the design of effective heuristicsfor some of these task .
+
+	One latent outcome of this work be that Wikipedia be surprisingly suitable for mine medical term .
+
+	One interesting outcome of this study be that significant gain can be obtain by use an association measure that be rarely use in practice .
+
+	We plan to check its adequacy for other domain and verify that LO remain a good association measure for different corpus and domain
+
+	Context-based projection method for identify the translation of term in comparable corpus have attract a lot of attention in the community , e.g Fung ,1998 ; Rapp , 1999 Surprisingly , none of those work have systematically investigate the impact of the many parameter control their approach .
+
+	Still , it be already strike that a direct comparison of them be difficult , if not impossible .
+
+	Further , our result offer suggestive evidence that bilingual word embeddings act as high-quality semantic feature and embody bilingual translation equivalence across language .6 We report case-insensitive BLEU7 With 4-gram BLEU metric from .
+
+	We show that the algorithmic handle provide by our framework can be employ to develop a very fast decoding algorithm which find good quality translation .
+
+	We believe that decode algorithms derive from our framework can be of practical significance .
+
+	We show that both of these problem be easy to solve and provide efficient solution for them .
+
+	We have also show that alternate maximization can be employ tocome up with O ( m2 ) decode algorithm .
+
+	We expect the disambiguation to have a beneficial impact on the result give that polysemy be a frequent phenomenon in a general , mixed-domain corpus .
+
+	However , word in a general language corpus like Wikipedia can be polysemous and it be important to identify translation correspond to their different sens .
+
+	An additional advantage be that the sense cluster often contain more than one translation and , therefore , provide supplementary material for the comparison of the vector in the target language .
+
+	We expect that a method capable of identify the correct sense of the feature and translate them accordingly could contribute to produce cleaner vector and to extract high quality lexicons.In this paper , we show how source vector can be translate into the target language by a cross-lingual Word Sense Disambiguation ( WSD ) method which exploit the output of data-driven Word Sense Induction ( WSI Apidianaki , 2009 and demonstrate how feature disambiguation enhance the quality of the translation extract from the comparable corpus .
+
+	Moreover , it be clear that disambiguate the vector improve the quality of the extracted lexicon and manages to beat the simpler , but yet powerful , most frequent translation heuristic .
+
+	The beauty of the bLSA framework be that the model search for a common latent topic space in an unsupervised fashion , rather than to require manual interaction .
+
+	That be , Hillary Clinton be atemporal , as Figure 1 show , such that use such dissimilarity against decide this pair as a correct translation would be harmful .
+
+	This paper study name entity translation and propose selective temporality as a new feature , as use temporal feature may be harmful for translate atemporal entity .
+
+	This paper validate that consider temporality selectively be helpful for improve the translation quality .
+
+	Empirical evidence suggest that such algorithm can perform resonably well .
+
+	All these number suggest that approximative algorithm be a feasible choice for practical application .
+
+	However , the quadratic component have such a small coefficient that it do not have any noticable effect on the translation speed for all reasonable input .
+
+	We assume here that the MT system be capable of provide word alignment ( or equivalent ) information during decoding , which be generally true for current statistical MT system .
+
+	Considering our semantic feature be the most basic one , use more sophisticated feature ( e.g the head word and their translation of the sourceside semantic role ) provide a possible direction for further experimentation
+
+	However , our analysis have show that for Arabic , these genre typically contain more Latin script and transliterated word , and thus there be less morphology to score .
+
+	However , LM statistic be sparse , and they be make sparser by morphological variation .
+
+	Qc 2012 Association for Computational LinguisticsIt have also be suggest that this setting require morphological generation because the bitext may not Pron + Fem + SgVerb + Masc +3 + PlPrtConj contain all inflected variant ( Minkov et al 2007 ; Toutanova et al 2008 ; Fraser et al 2012 However , use lexical coverage experiment , we show thatit there be ample room for translation quality improvement through good selection of form that already exist in the translation model.they writewilland .
+
+	Our motivation to employ similar bilingual document pair in the training parallel corpus be simple : a human translator often collect similar bilingual document pair to help translation .
+
+	During last decade , tremendous work have be do to improve the quality of statistical machineCorresponding author .
+
+	However , there have not be until very recently that the application of mixture modelling in SMT have receive increase attention .
+
+	Among them , encyclopedias be especially important in that they contain a lot of term that a morphological dictionary fails to cover .
+
+	Word segmentation be the first step of natural language processing for Japanese , Chinese and Thai because they do not delimit word by white-space .
+
+	Most improvement come from correction of over-segmentation because the initial segmentation by the analyzer show a tendency of oversegmentation .
+
+	We assume that the meaning of constituent in a noun phrase rarely depend on out context .
+
+	Although external lexical resource for human reader be potentially good knowledge source , they have not be utilize due to difference in segmentation criterion .
+
+	We can now segment them into word in a more sophisticated way .
+
+	We show that incorporate lexical weighting feature condition on soft domain membership directly into our model be an effective strategy for dynamically bias SMT towards relevant translation , as evidence by significant performance gain .
+
+	We propose an approach that bias machine translation system toward relevant translation base on topic-specific context , where topic be induce in an unsupervised way use topic model ; this can be think of as induce subcorpora for adaptation without any human annotation .
+
+	Even without recognition error , speech translation have to cope with a lack of conventional syntactic structure because the structure of spontaneous speech differ from that of write language .
+
+	It be also important to acknowledge that there be many fundamental difference between the translation of name and other token , depend on whether a name be render phonetically , semantically , or a mixture of both ( Ji et al 2009 ) .
+
+	Names have be largely neglect in the prior MT research due to the following reason : The current dominant automatic MT score metric ( such as Bilingual Evaluation Understudy ( BLEU Papineni et al 2002 treat all word equally , but name have relative low frequency in text ( about 6percent in newswire and only 3percent in web document ) and thus be vastly outnumber by function word and common noun , etc.Name translation pose a great complexity because the set of name be open and highly dynamic .
+
+	While high quality entity translation be essential in cross-lingual information access and trans lation , it be non-trivial to achieve , due to the challenge that entity translation , though typically bear pronunciation similarity , can also be arbitrary , e.g Jackie Chan and fiX : it ( pronounced Cheng Long Existing effort to address these challenge can be categorize into transliterationand corpusbased approach .
+
+	Corpus-based similarity can support arbitrary translation , but require highly scarce resource of bilingual co-occurrence , obtain from parallel or comparable bilingual corpus .
+
+
+
+
+Sentences in cluster n1:
+.....................................
+	There be also significant disagreement on the specification , although much of their content be the same .
+
+	In future work , other parameter which influence the performance will be study , among which the use of a terminological extractor to treat complex term ( Daille and Morin , 2005 more contextual window configuration , and the use of syntactic information in combination with lexical information ( Yu and Tsujii , 2009 It would also be interest to compare the projection-based approach to ( Haghighi et al 2008 ) s generative model for bilingual lexicon acquisition from monolingual corpus .
+
+	A close look at the translation candidate obtain when use LL , the most popular association measure in projection-based approach , show that they be often collocates of the reference translation .
+
+	Nevertheless , they find that human mind be very well capable of derive dependency such as morphology , cognate , proper name , spell variation etc and that this capability be finally at the basis of the good result produce by human compare to corpus base machine translation .
+
+	As there be a large overlap between the modeled event in the combined probabilistic model , we assume that log-linear combination would result in more improvement of the translation quality than the combination by linear interpolation do .
+
+	The result show that data-driven semantic analysis can help to circumvent the need for an external seed dictionary , traditionally consider as a prerequisite for translation extraction from parallel corpus .
+
+	An avenue that we intend to explore in future work be to extract translation correspond to different sens of the headword .
+
+	Our experiment be carry out on the English-Slovene language pair but as the method be totally data-driven , the approach can be easily apply to other languages.The paper be organize as follow : In the next section , we present some related work on bilingual lexicon extraction from comparable corpus .
+
+	In such case , as Hillary Clinton be a famous female leader , she may be associate with other Chinese female leader in Chinese corpus , while such association be rarely observe in English corpus , which cause asymmetry .
+
+	In such case partial SRSs must be record in such a way that they can be combine later with other partial SRSs .
+
+	Finally , we conclude this paper in Section 6 We have show that our cache-based approach significantly improve the performance with the help of various cache , such as the dynamic , static and topic cache , although the cache-based approach may introduce some negative impact onBLEU score for certain documents.In the future , we will far explore how to reflect document divergence during training and dynamically adjust cache weight accord to different documents.There be many useful component in trainingdocuments , such as name entity , event and coreference .
+
+	Tiedemann show that the repetition and consistency be very important when model natural language and translation .
+
+	Thirdly , reference translation of a test document write by human translator tend to have flexible expression in order to avoid produce monotonous text .
+
+	Mixture modelling be a standard technique for density estimation , but its use in statistical machine translation ( SMT ) have just start to be explore .
+
+	Although supervise segmentation be very competitive , we show that it can be supplement + very important to identify hiragana word correctly .
+
+	As hiragana be mainly use to write function word and other basic word , segmentation error concern hiragana often bring disastrous effect on application of morphological analysis .
+
+	Experiments show that the propose method efficiently correct the initial segmentation give by a morphological analyzer .
+
+	Comparative evaluation with other translation approach of the Verbmobil prototype system show that the statistical translation be superior , especially in the presence of speech input and ungrammatical input
+
+	In comparison with write language , speech and especially spontaneous speech pose additional difficulty for the task of automatic translation .
+
+	1 Some of the resource and open source program develop in this work be make freely available for research purpose at A typical statistical MT system can only translate 60percent person name correctly ( Ji et al 2009 Incorrect segmentation and translation of name which often carry central meaning of a sentence can also yield incorrect translation of long context .
+
+	It can be observe from the experimental result on the data set of Text Retrieval Evaluation Conference ( TREC ) that the obvious performance improvement for query translation can be obtain , which be very beneficial to CLIR and can improve the whole retrieval performance In this paper , the propose model improve the acquirement ability for OOV term translation through Web mining , and solve the translation pair selection and evaluation in a novel way by fuse multiple feature and introduce the supervise learning base on Ranking SVM .
+
+	To summarize , we believe that this paper have the following contribution : We abstract entity translation problem as a graph mapping between entity-relationship graph in two languages.We develop an effective matching algorithm leverage both pronunciation and cooccurrence similarity .
+
+
+
+
