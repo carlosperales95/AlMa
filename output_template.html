@@ -12,6 +12,13 @@
             margin:0%;
 
         }
+        .subcolumn {
+            float: left;
+            width: 30%;
+            padding:0%;
+            margin:0%;
+
+        }
 
         .row {
           width:100%;
@@ -22,7 +29,7 @@
 
         img {
 
-          max-width: 100%;
+          max-width: 96%;
         }
 
         .row:after {
@@ -47,12 +54,12 @@
         }
 
         .content {
+          padding:1% !important;
           padding: 0 18px;
           display: none;
           overflow: hidden;
           background-color: #f1f1f1;
-          width: 100%;
-          padding:0%;
+          max-width: 100%;
           margin:0%;
 
         }
@@ -79,12 +86,42 @@
           <div class="column">
             <button type="button" class="collapsible">Technology Methods</button>
             <div class="content" name="mentions">
+              <div class="row">
+                <div class="subcolumn" name="left-mentions">
 
-            </div>
-            <button type="button" class="collapsible">Stats2</button>
-            <div class="content" name="stats2">
+                </div>
+                <div class="subcolumn" name="center-mentions">
 
+                </div>
+                <div class="subcolumn" name="right-mentions">
+
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="row">
+                <div class="column">
+                </div>
+                <div class="column">
+                  <!--<div id="button"><a href="./ldavis_prepared_11.html">See the LDA</a></div> -->
+                </div>
+          </div>
+          <div class="row">
+              <button type="button" class="collapsible">Mentions per paper</button>
+              <div class="content" name="papers-mentions">
+
+              </div>
+          </div>
+          <div class="row">
+              <button type="button" class="collapsible">ScatterPlot of Methods (TSNE)</button>
+              <div class="content" name="stats2">
+                <div class="column">
+                  <img src="./men_bigrams.png" alt="plot" width="1000" height="1000">
+                </div>
+                <div class="column">
+                  <img src="./men_trigrams.png" alt="plot" width="1000" height="1000">
+                </div>
+              </div>
           </div>
         </div>
       </div>

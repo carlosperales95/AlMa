@@ -469,7 +469,7 @@ def mentionRankThreshold(pointed_mentions):
 
     tris = []
     for pm in pointed_mentions:
-        if pm[1] > 1.5:
+        if pm[1] > 1.6:
             tris.append(pm[0])
     return tris
 
@@ -743,7 +743,7 @@ def getRankedMentions(lemmatized, nlp, nlp_base):
     pointed_mentions = sorted(pointed_mentions, key=lambda tup: tup[1], reverse=True)
 
 
-    f = open('./pointed_mentions.txt', "w")
+    f = open('./outs/pointed_mentions.txt', "w")
     f.write("List of scored Method/Technologies")
     f.write("\n")
     f.write("-----------------------------------")

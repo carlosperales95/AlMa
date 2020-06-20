@@ -83,31 +83,31 @@ trigrams_model = gensim.models.Word2Vec(
 print("Finding Technology/Method mentions....................")
 
 ###########pointed_mentions = getRankedMentions(lemmatized_e, nlp, nlp_base)
-    #pointed_mentions = getRankedMentions(lemmatized_sentences, nlp, nlp_base)
+pointed_mentions = getRankedMentions(lemmatized_sentences, nlp, nlp_base)
 
 print("Creating ScatterPlots of Bigrams/Trigrams....................")
 
 
 ###filterW2VSoft/HArd
-    #bi_vectors, bi_labels = W2V_filter_hard(bigrams_model, pointed_mentions)
-    #tri_vectors, tri_labels = W2V_filter_soft(trigrams_model, pointed_mentions)
+bi_vectors, bi_labels = W2V_filter_hard(bigrams_model, pointed_mentions)
+tri_vectors, tri_labels = W2V_filter_soft(trigrams_model, pointed_mentions)
 
 
     #W2V_plot_Models(bi_vectors, tri_vectors, bi_labels, tri_labels)
-    #men = mentionRankThreshold(pointed_mentions)
+men = mentionRankThreshold(pointed_mentions)
 ##########men = [x[0] for x in men]
-#tsne_plot_Models(bigrams_model, trigrams_model, men)
+tsne_plot_Models(bigrams_model, trigrams_model, men)
 
 #tsne_plot_mentions(bigrams_model, men)
 print("Clustering/Plotting Evidence Models....................")
 
-    #clusterPlot_Models("claims", bigrams_c, bigrams_model, trigrams_c, trigrams_model, lemmatized_c)
-    #clusterPlot_Models("evidences", bigrams_e, bigrams_model, trigrams_e, trigrams_model, lemmatized_e)
+clusterPlot_Models("claims", bigrams_c, bigrams_model, trigrams_c, trigrams_model, lemmatized_c, claims)
+clusterPlot_Models("evidences", bigrams_e, bigrams_model, trigrams_e, trigrams_model, lemmatized_e, evidences)
 ##########clusterPlot_Model(bigrams_, bigrams_model, lemmatized_e)
 #######################################################################
 
 
-dynamicfill_output()
+dynamicfill_output(men)
 #create_output()
 #webbrowser.open_new_tab('output.html')
 
