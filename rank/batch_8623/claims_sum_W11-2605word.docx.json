@@ -1,0 +1,21 @@
+[
+    {
+        "claim": "a learning method based on inductive logic programming quickly converges to the correct model with respect to many phonological and morphological differences that are regular in nature", 
+        "claim_score": 0.63420572, 
+        "evidence_score": -0.10520811, 
+        "text": "The results show that a learning method based on inductive logic programming quickly converges to the correct model with respect to many phonological and morphological differences that are regular in nature ."
+    }, 
+    {
+        "claim_evidence": "a larger parallel corpus in conjunction with this method could potentially improve the results substantiallywith a larger set of data , thresholds could bemorphophonological generalizations are triggeredlexical correspondences could be learned", 
+        "claim_score": 0.49380272, 
+        "evidence": "We expect that a larger parallel corpus in conjunction with this method could potentially improve the results substantiallywith a larger set of data , thresholds could be set so that morphophonological generalizations are triggered only after a sufficient number of training examples ( avoiding overgeneration and , naturally , many more unique , non-regular , lexical correspondences could be learned .", 
+        "evidence_score": 0.46284197, 
+        "text": "We expect that a larger parallel corpus in conjunction with this method could potentially improve the results substantiallywith a larger set of data , thresholds could be set so that morphophonological generalizations are triggered only after a sufficient number of training examples ( avoiding overgeneration and , naturally , many more unique , non-regular , lexical correspondences could be learned ."
+    }, 
+    {
+        "claim": "The goal is to produce a model that translates individual lexical dialectal items to their standard dialect counterparts in order to facilitate dialectal use of available NLP tools that only assume standard-form input", 
+        "claim_score": 0.20480672, 
+        "evidence_score": -0.21587024, 
+        "text": "The goal is to produce a model that translates individual lexical dialectal items to their standard dialect counterparts in order to facilitate dialectal use of available NLP tools that only assume standard-form input ."
+    }
+]

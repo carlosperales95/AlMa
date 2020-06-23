@@ -1,0 +1,26 @@
+[
+    {
+        "claim_score": -0.82479274, 
+        "evidence": "Best published results are from Christodoulopoulos et al 2010 Berg-Kirkpatrick et al 2010 ) and Leeet al 2010 The latter two papers do not report VM scores .", 
+        "evidence_score": 0.83628947, 
+        "text": "Best published results are from Christodoulopoulos et al 2010 Berg-Kirkpatrick et al 2010 ) and Leeet al 2010 The latter two papers do not report VM scores ."
+    }, 
+    {
+        "claim_score": -0.19692637, 
+        "evidence": "Here , we experimented with token-level context features and alignment features and type-level morphology features , showing that morphology features are helpful in nearly all cases , and alignment features can be helpful if the aligned language is properly chosen .", 
+        "evidence_score": 0.073811948, 
+        "text": "Here , we experimented with token-level context features and alignment features and type-level morphology features , showing that morphology features are helpful in nearly all cases , and alignment features can be helpful if the aligned language is properly chosen ."
+    }, 
+    {
+        "claim_score": -0.96114122, 
+        "evidence": "k-means and SVD2 models could not produce a clustering in the Czech CoNLL corpus dueits size .", 
+        "evidence_score": 0.040647957, 
+        "text": "k-means and SVD2 models could not produce a clustering in the Czech CoNLL corpus dueits size ."
+    }, 
+    {
+        "claim_score": -1.4475105, 
+        "evidence": "We have shown by the gold standard number of classes shown in morphology .", 
+        "evidence_score": 0.011385013, 
+        "text": "We have shown by the gold standard number of classes shown in morphology ."
+    }
+]

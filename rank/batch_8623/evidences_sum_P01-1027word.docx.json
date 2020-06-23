@@ -1,0 +1,40 @@
+[
+    {
+        "claim_evidence": "it is possible to significantly decrease training and test corpus perplexity of the translation models", 
+        "claim_score": 0.22870353, 
+        "evidence": "We show that it is possible to significantly decrease training and test corpus perplexity of the translation models .", 
+        "evidence_score": 1.1620379, 
+        "text": "We show that it is possible to significantly decrease training and test corpus perplexity of the translation models ."
+    }, 
+    {
+        "claim_score": -0.25432741, 
+        "evidence": "In addition , we perform a rescoring of-Best lists using our maximum entropy model and thereby yield an improvement in translation quality .", 
+        "evidence_score": 0.64262339, 
+        "text": "In addition , we perform a rescoring of-Best lists using our maximum entropy model and thereby yield an improvement in translation quality ."
+    }, 
+    {
+        "claim_evidence": "by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality", 
+        "claim_score": 0.16814659, 
+        "evidence": "We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality .", 
+        "evidence_score": 0.63124473, 
+        "text": "We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality ."
+    }, 
+    {
+        "claim_score": -0.81306344, 
+        "evidence": "We have been able to obtain a significant better test corpus perplexity and also a slight improvement in translation quality .", 
+        "evidence_score": 0.4361579, 
+        "text": "We have been able to obtain a significant better test corpus perplexity and also a slight improvement in translation quality ."
+    }, 
+    {
+        "claim_score": -0.7038671, 
+        "evidence": "This additional information could be : Simple context information : information of the words surrounding the word pair ; Syntactic information : part-of-speech information , syntactic constituent , sentence Semantic information : disambiguation information ( e.g.from WordNet currentspeech or dialog act .", 
+        "evidence_score": 0.33505297, 
+        "text": "This additional information could be : Simple context information : information of the words surrounding the word pair ; Syntactic information : part-of-speech information , syntactic constituent , sentence Semantic information : disambiguation information ( e.g.from WordNet currentspeech or dialog act ."
+    }, 
+    {
+        "claim_score": -2.0669844, 
+        "evidence": "Other authors have applied this approach to language modeling ( Rosenfeld , 1996 ; Martin et al 1999 ; Peters and Klakow , 1999 A short review of the maximum entropy approach is outlined in Section 3 .", 
+        "evidence_score": 0.033972985, 
+        "text": "Other authors have applied this approach to language modeling ( Rosenfeld , 1996 ; Martin et al 1999 ; Peters and Klakow , 1999 A short review of the maximum entropy approach is outlined in Section 3 ."
+    }
+]

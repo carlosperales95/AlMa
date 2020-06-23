@@ -1,0 +1,9 @@
+[
+    {
+        "claim_evidence": "Our results suggest the advantage of learning unary rules : unary rule-bases performbetter than binary rulesit is better to directly learn unary rules than to derive them from binary rule-bases", 
+        "claim_score": 0.071750554, 
+        "evidence": "Our results suggest the advantage of learning unary rules : unary rule-bases performbetter than binary rules ; it is better to directly learn unary rules than to derive them from binary rule-bases .", 
+        "evidence_score": 0.00079467258, 
+        "text": "Our results suggest the advantage of learning unary rules : unary rule-bases performbetter than binary rules ; it is better to directly learn unary rules than to derive them from binary rule-bases ."
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "claim_evidence": "Our results using hand-annotated parseimprovements in parsing should translate directly into more accurate semantic representations", 
+        "claim_score": 0.85364871, 
+        "evidence": "Our results using hand-annotated parse trees including traces show that improvements in parsing should translate directly into more accurate semantic representations .", 
+        "evidence_score": 0.47757118, 
+        "text": "Our results using hand-annotated parse trees including traces show that improvements in parsing should translate directly into more accurate semantic representations ."
+    }, 
+    {
+        "claim_score": -0.78064881, 
+        "evidence": "As a first step we are producing a version of PropBank that uses more informative thematic labels based on VerbNet thematic labels ( Kipper , Palmer , and Rambow 2002 We are also working with FrameNet to produce a mapping between our annotation and theirs which will allow us to merge the two annotated data sets .", 
+        "evidence_score": 0.32246647, 
+        "text": "As a first step we are producing a version of PropBank that uses more informative thematic labels based on VerbNet thematic labels ( Kipper , Palmer , and Rambow 2002 We are also working with FrameNet to produce a mapping between our annotation and theirs which will allow us to merge the two annotated data sets ."
+    }, 
+    {
+        "claim_score": -0.98192412, 
+        "evidence": "We have several plans for improving the performance of our automatic semanticrole labeling .", 
+        "evidence_score": 0.099871927, 
+        "text": "We have several plans for improving the performance of our automatic semanticrole labeling ."
+    }, 
+    {
+        "claim_evidence": "the complex relationship between syntactic and semantic structuresstatistical parsersa good job of providing information relevant for this level of semantic interpretation", 
+        "claim_score": 0.21727292, 
+        "evidence": "Despite the complex relationship between syntactic and semantic structures , we find that statistical parsers , although computationally expensive , do a good job of providing information relevant for this level of semantic interpretation .", 
+        "evidence_score": 0.086129336, 
+        "text": "Despite the complex relationship between syntactic and semantic structures , we find that statistical parsers , although computationally expensive , do a good job of providing information relevant for this level of semantic interpretation ."
+    }, 
+    {
+        "claim_score": -0.71368924, 
+        "evidence": "Chen and Rambow make use of extracted tree-adjoining grammars .", 
+        "evidence_score": 0.020417996, 
+        "text": "Chen and Rambow make use of extracted tree-adjoining grammars ."
+    }
+]

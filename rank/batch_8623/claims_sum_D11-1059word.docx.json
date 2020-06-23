@@ -1,0 +1,14 @@
+[
+    {
+        "claim": "No best published results are shown for theclark performs bestthis restriction is very helpful", 
+        "claim_score": 0.90602821, 
+        "evidence_score": -0.21535653, 
+        "text": "No best published results are shown for the MULTEXT languages ; Christodoulopoulos et al 2010 ) report results based on 45 tags suggesting that clark performs best on these corpora.comparison with a token-based version of the model that this restriction is very helpful ."
+    }, 
+    {
+        "claim": "able to easily add multiple kinds of featuresthe latter from parallel corpora Using only context features , our system yields results comparable to state-of-the art , far better than a similar model without the one-class-per-type constraint", 
+        "claim_score": 0.049843344, 
+        "evidence_score": -0.056955279, 
+        "text": "By using a mixture model rather than a sequence model ( e.g HMM we are able to easily add multiple kinds of features , including those at both the type level ( morphology features ) and token level ( context and alignment features , the latter from parallel corpora Using only context features , our system yields results comparable to state-of-the art , far better than a similar model without the one-class-per-type constraint ."
+    }
+]

@@ -1,0 +1,43 @@
+[
+    {
+        "claim_evidence": "the tasks of POS induction and morphological segmentation are dependentit learn only segmentationsthe results in fully unsupervised setting are better", 
+        "claim_score": 0.76033702, 
+        "evidence": "We found some evidence that the tasks of POS induction and morphological segmentation are dependent by conducting semisupervised experiments where we gave the model gold standard tags and segmentations in turn and let it learn only segmentations or tags respectively and found that the results in fully unsupervised setting are better .", 
+        "evidence_score": 0.63600643, 
+        "text": "We found some evidence that the tasks of POS induction and morphological segmentation are dependent by conducting semisupervised experiments where we gave the model gold standard tags and segmentations in turn and let it learn only segmentations or tags respectively and found that the results in fully unsupervised setting are better ."
+    }, 
+    {
+        "claim_evidence": "the model produces state-of-the-art results on POS induction", 
+        "claim_score": 0.37837146, 
+        "evidence": "The evaluation on multilingual data shows that the model produces state-of-the-art results on POS induction .", 
+        "evidence_score": 0.092646063, 
+        "text": "The evaluation on multilingual data shows that the model produces state-of-the-art results on POS induction ."
+    }, 
+    {
+        "claim_evidence": "learning both tasks jointly actually leads to better results than learning", 
+        "claim_score": 0.19167954, 
+        "evidence": "We show that learning both tasks jointly actually leads to better results than learning either task with gold standard data from the other task provided .", 
+        "evidence_score": 0.95216738, 
+        "text": "We show that learning both tasks jointly actually leads to better results than learning either task with gold standard data from the other task provided ."
+    }, 
+    {
+        "claim_evidence": "the tagging results could further be improved by adding additional features concerning punctuationleft out in the current model for enabling to test the concept of joint modelling of two dependent tasks", 
+        "claim_score": 0.088571186, 
+        "evidence": "We believe that the tagging results could further be improved by adding additional features concerning punctuation , capitalization etc. which are heavily used in the other state-of-the-art POS induction systems but these features were intentionally left out in the current model for enabling to test the concept of joint modelling of two dependent tasks .", 
+        "evidence_score": 0.037710906, 
+        "text": "We believe that the tagging results could further be improved by adding additional features concerning punctuation , capitalization etc. which are heavily used in the other state-of-the-art POS induction systems but these features were intentionally left out in the current model for enabling to test the concept of joint modelling of two dependent tasks ."
+    }, 
+    {
+        "claim": "Incorporating segmentation into the same model provides the morphological features to the system and eliminates the need to find them during preprocessing step", 
+        "claim_score": 0.052393882, 
+        "evidence_score": -0.61905145, 
+        "text": "Incorporating segmentation into the same model provides the morphological features to the system and eliminates the need to find them during preprocessing step ."
+    }, 
+    {
+        "claim_evidence": "One way to improve the segmentation results could be to use segment bigrams instead of unigrams", 
+        "claim_score": 0.011892837, 
+        "evidence": "One way to improve the segmentation results could be to use segment bigrams instead of unigrams .", 
+        "evidence_score": 0.14882187, 
+        "text": "One way to improve the segmentation results could be to use segment bigrams instead of unigrams ."
+    }
+]

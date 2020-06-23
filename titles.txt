@@ -1,0 +1,48 @@
+- ﻿Semantic Role Features for Machine Translation   #../scisumm-corpus/data/Test-Set-2016/P98-1046/Documents_TXT/C10-1081word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Computational Complexity of Statistical Machine  Translation   #../scisumm-corpus/data/Test-Set-2016/C00-2123/Documents_TXT/E06-1004word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿An Algorithmic Framework for the Decoding Problem in Statistical Machine Translation   #../scisumm-corpus/data/Test-Set-2016/C00-2123/Documents_TXT/C04-1091word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Greedy Decoding for Statistical Machine Translation in Almost Linear Time   #../scisumm-corpus/data/Test-Set-2016/C00-2123/Documents_TXT/N03-1010word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Refined Lexicon Models for Statistical Machine Translation using a Maximum Entropy Approach   #../scisumm-corpus/data/Test-Set-2016/C00-2123/Documents_TXT/P01-1027word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Toward hierarchical models for statistical machine translation of  inflected languages   #../scisumm-corpus/data/Test-Set-2016/C00-2123/Documents_TXT/W01-1407word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿The RWTH System for Statistical Translation of Spoken Dialogues   #../scisumm-corpus/data/Test-Set-2016/C00-2123/Documents_TXT/H01-1062word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Enriching Entity Translation  Discovery using Selective Temporality   #../scisumm-corpus/data/Test-Set-2016/C04-1089/Documents_TXT/P13-2036word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Fusion of Multiple Features and Ranking SVM for Web-based English-Chinese OOV Term Translation   #../scisumm-corpus/data/Test-Set-2016/C04-1089/Documents_TXT/C10-2164word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Mining Name Translations from Entity Graph Mapping∗   #../scisumm-corpus/data/Test-Set-2016/C04-1089/Documents_TXT/D10-1042word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Cross-lingual WSD for Translation Extraction  from Comparable Corpora   #../scisumm-corpus/data/Test-Set-2016/C04-1089/Documents_TXT/W13-2501word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Name-aware Machine Translation  Haibo Li†	Jing Zheng‡	Heng Ji†	Qi Li†	Wen Wang‡   #../scisumm-corpus/data/Test-Set-2016/C04-1089/Documents_TXT/P13-1059word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Revisiting Context-based Projection Methods for Term-Translation Spotting in Comparable Corpora   #../scisumm-corpus/data/Test-Set-2016/C04-1089/Documents_TXT/C10-1070word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿ NICT-ATR Speech-to-Speech Translation System   #../scisumm-corpus/data/Test-Set-2016/N06-2049/Documents_TXT/P07-2007word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Improved Statistical Machine Translation by Multiple Chinese Word Segmentation   #../scisumm-corpus/data/Test-Set-2016/N06-2049/Documents_TXT/W08-0335word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Bayesian Word Alignment for Statistical Machine Translation   #../scisumm-corpus/data/Development-Set-Apr8/P06-2124/Documents_TXT/P11-2032word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Topic Models for Dynamic Translation Model Adaptation   #../scisumm-corpus/data/Development-Set-Apr8/P06-2124/Documents_TXT/P12-2023word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Domain Adaptation in Statistical Machine Translation with Mixture Modelling ∗   #../scisumm-corpus/data/Development-Set-Apr8/P06-2124/Documents_TXT/W07-0722word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Cache-based Document-level Statistical Machine Translation   #../scisumm-corpus/data/Development-Set-Apr8/P06-2124/Documents_TXT/D11-1084word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Bilingual-LSA Based LM Adaptation for Spoken Language Translation   #../scisumm-corpus/data/Development-Set-Apr8/P06-2124/Documents_TXT/P07-1066word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Bilingual Word Embeddings for Phrase-Based Machine Translation   #../scisumm-corpus/data/Development-Set-Apr8/P06-2124/Documents_TXT/D13-1141word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿The Karlsruhe Institute of Technology Translation Systems  for the WMT 2011   #../scisumm-corpus/data/Development-Set-Apr8/C08-1098/Documents_TXT/W11-2145word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿A Class-Based Agreement Model for Generating Accurately Inflected Translations   #../scisumm-corpus/data/Development-Set-Apr8/C10-1045/Documents_TXT/P12-1016word.docx.txt
+---------------------------------------------------------------------------------
+- ﻿Discovering Commonsense Entailment  Rules Implicit in Sentences   #../scisumm-corpus/data/Development-Set-Apr8/W08-2222/Documents_TXT/W11-2408word.docx.txt
+---------------------------------------------------------------------------------

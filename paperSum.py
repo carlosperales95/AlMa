@@ -101,23 +101,24 @@ for idx,file in enumerate(onlyfiles):
     f2.write("\n")
 
     print("Writing .... (2/4)")
+    if len(sections) > 1:
+        
+        intro = getSection(paper_full, sections[0], sections[1])
+        if intro.endswith(' 2 ') or intro.endswith(' 2.') or intro.endswith(' 2. ') or intro.endswith(' 2.\t') or intro.endswith(' 2  ') or intro.endswith(' 2\t'):
+            intro = intro[:-3]
 
-    intro = getSection(paper_full, sections[0], sections[1])
-    if intro.endswith(' 2 ') or intro.endswith(' 2.') or intro.endswith(' 2. ') or intro.endswith(' 2.\t') or intro.endswith(' 2  ') or intro.endswith(' 2\t'):
-        intro = intro[:-3]
 
+        intro = filter(lambda x: x in printable, intro)
 
-    intro = filter(lambda x: x in printable, intro)
+        if intro[len(intro)-1:] != ".":
+                intro = intro + "."
 
-    if intro[len(intro)-1:] != ".":
-            intro = intro + "."
+        intro = cleanTextRubble(intro)
+        intro =  intro.replace('   ', ' ').replace('  ', ' ')
 
-    intro = cleanTextRubble(intro)
-    intro =  intro.replace('   ', ' ').replace('  ', ' ')
-
-    f2.write(intro)
-    f2.write("\n")
-    f2.write("\n")
+        f2.write(intro)
+        f2.write("\n")
+        f2.write("\n")
 
     #intro = getIntro(paper_full)
 

@@ -1,0 +1,15 @@
+[
+    {
+        "claim_evidence": "the representation of some discourse constraints depend on the expressive power of RTGs", 
+        "claim_score": 0.027452671, 
+        "evidence": "We then showed that the representation of some discourse constraints depend on the expressive power of RTGs .", 
+        "evidence_score": 0.87906155, 
+        "text": "We then showed that the representation of some discourse constraints depend on the expressive power of RTGs ."
+    }, 
+    {
+        "claim_score": -0.80165058, 
+        "evidence": "We show how to use Regular Tree Gramamrs to process such constraints , and how the representation of some constraints depends on the expressive power of this formalism .", 
+        "evidence_score": 0.04850323, 
+        "text": "We show how to use Regular Tree Gramamrs to process such constraints , and how the representation of some constraints depends on the expressive power of this formalism ."
+    }
+]

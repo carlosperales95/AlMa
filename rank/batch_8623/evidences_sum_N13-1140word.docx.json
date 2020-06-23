@@ -1,0 +1,14 @@
+[
+    {
+        "claim_score": -0.24392488, 
+        "evidence": "We described a generative model which makes use of morphological analyzers to produce richer word distributions through sharing of statistical strength between stems .", 
+        "evidence_score": 0.32143324, 
+        "text": "We described a generative model which makes use of morphological analyzers to produce richer word distributions through sharing of statistical strength between stems ."
+    }, 
+    {
+        "claim_score": -0.26082915, 
+        "evidence": "We obtain state-of-the-art results in language modeling , word alignment , and unsupervised morphological disambiguation for a variety of morphologically rich languages .", 
+        "evidence_score": 0.0031378115, 
+        "text": "We obtain state-of-the-art results in language modeling , word alignment , and unsupervised morphological disambiguation for a variety of morphologically rich languages ."
+    }
+]

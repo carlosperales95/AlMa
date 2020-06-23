@@ -1,0 +1,42 @@
+[
+    {
+        "claim_evidence": "using on-line composition of the word form , error model and dictionary is usable for morphologically complex languages", 
+        "claim_score": 0.91833968, 
+        "evidence": "We showed that using on-line composition of the word form , error model and dictionary is usable for morphologically complex languages .", 
+        "evidence_score": 0.53000653, 
+        "text": "We showed that using on-line composition of the word form , error model and dictionary is usable for morphologically complex languages ."
+    }, 
+    {
+        "claim_evidence": "correcting only the first input letter affords a significant speed improvement", 
+        "claim_score": 0.31571702, 
+        "evidence": "We verified that correcting only the first input letter affords a significant speed improvement , but that this improvement is not greatly dependent on the position of such a restriction .", 
+        "evidence_score": 0.50054482, 
+        "text": "We verified that correcting only the first input letter affords a significant speed improvement , but that this improvement is not greatly dependent on the position of such a restriction ."
+    }, 
+    {
+        "claim_evidence": "the error models can be automatically optimised in several ways to gain some speed at cost of recall", 
+        "claim_score": 0.30971323, 
+        "evidence": "Furthermore we showed that the error models can be automatically optimised in several ways to gain some speed at cost of recall .", 
+        "evidence_score": 0.39781247, 
+        "text": "Furthermore we showed that the error models can be automatically optimised in several ways to gain some speed at cost of recall ."
+    }, 
+    {
+        "claim_evidence": "the memory consumption of the spell-checking process is mainly unaffected by theselection of error model , apart from the need to store a greater set of suggestions for models that generate more suggestions", 
+        "claim_score": 0.29730967, 
+        "evidence": "We showed that the memory consumption of the spell-checking process is mainly unaffected by theselection of error model , apart from the need to store a greater set of suggestions for models that generate more suggestions .", 
+        "evidence_score": 0.2097468, 
+        "text": "We showed that the memory consumption of the spell-checking process is mainly unaffected by theselection of error model , apart from the need to store a greater set of suggestions for models that generate more suggestions ."
+    }, 
+    {
+        "claim": "it may cause the least drop in practical recall figures", 
+        "claim_score": 0.23701923, 
+        "evidence_score": -0.043197113, 
+        "text": "This practice is somewhat supported by our tentative finding that it may cause the least drop in practical recall figures , at least in Finnish ."
+    }, 
+    {
+        "claim": "it increases the size of the error model", 
+        "claim_score": 0.11592763, 
+        "evidence_score": -0.043349392, 
+        "text": "The practical improvement from doing this is extremely modest , and it increases the size of the error model ."
+    }
+]

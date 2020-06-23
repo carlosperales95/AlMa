@@ -1,0 +1,48 @@
+[
+    {
+        "claim_evidence": "using on-line composition of the word form , error model and dictionary is usable for morphologically complex languages", 
+        "claim_score": 0.91833968, 
+        "evidence": "We showed that using on-line composition of the word form , error model and dictionary is usable for morphologically complex languages .", 
+        "evidence_score": 0.53000653, 
+        "text": "We showed that using on-line composition of the word form , error model and dictionary is usable for morphologically complex languages ."
+    }, 
+    {
+        "claim_evidence": "correcting only the first input letter affords a significant speed improvement", 
+        "claim_score": 0.31571702, 
+        "evidence": "We verified that correcting only the first input letter affords a significant speed improvement , but that this improvement is not greatly dependent on the position of such a restriction .", 
+        "evidence_score": 0.50054482, 
+        "text": "We verified that correcting only the first input letter affords a significant speed improvement , but that this improvement is not greatly dependent on the position of such a restriction ."
+    }, 
+    {
+        "claim_score": -0.66790906, 
+        "evidence": "Overviewing previous work , we conduct large-scale tests involving three languagesEnglish , Finnish and Greenlandicand a variety of error models and algorithms , including proposed improvements of our own .", 
+        "evidence_score": 0.49200475, 
+        "text": "Overviewing previous work , we conduct large-scale tests involving three languagesEnglish , Finnish and Greenlandicand a variety of error models and algorithms , including proposed improvements of our own ."
+    }, 
+    {
+        "claim_evidence": "the error models can be automatically optimised in several ways to gain some speed at cost of recall", 
+        "claim_score": 0.30971323, 
+        "evidence": "Furthermore we showed that the error models can be automatically optimised in several ways to gain some speed at cost of recall .", 
+        "evidence_score": 0.39781247, 
+        "text": "Furthermore we showed that the error models can be automatically optimised in several ways to gain some speed at cost of recall ."
+    }, 
+    {
+        "claim_evidence": "the memory consumption of the spell-checking process is mainly unaffected by theselection of error model , apart from the need to store a greater set of suggestions for models that generate more suggestions", 
+        "claim_score": 0.29730967, 
+        "evidence": "We showed that the memory consumption of the spell-checking process is mainly unaffected by theselection of error model , apart from the need to store a greater set of suggestions for models that generate more suggestions .", 
+        "evidence_score": 0.2097468, 
+        "text": "We showed that the memory consumption of the spell-checking process is mainly unaffected by theselection of error model , apart from the need to store a greater set of suggestions for models that generate more suggestions ."
+    }, 
+    {
+        "claim_score": -0.54532981, 
+        "evidence": "We described a way to avoid having a finite-state error model perform redundant work , such as deleting and inserting the same letter in succession .", 
+        "evidence_score": 0.13954545, 
+        "text": "We described a way to avoid having a finite-state error model perform redundant work , such as deleting and inserting the same letter in succession ."
+    }, 
+    {
+        "claim_score": -2.0204651, 
+        "evidence": "In this article , we built a full-fledged finite-state spell-checking system from existing finite-state language models and generated error models .", 
+        "evidence_score": 0.040984137, 
+        "text": "In this article , we built a full-fledged finite-state spell-checking system from existing finite-state language models and generated error models ."
+    }
+]

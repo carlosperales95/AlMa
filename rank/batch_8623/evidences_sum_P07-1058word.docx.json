@@ -1,0 +1,22 @@
+[
+    {
+        "claim_evidence": "their quality is comparable but they effectively complement each other in terms of rule coverage", 
+        "claim_score": 1.2113504, 
+        "evidence": "We found that their quality is comparable but they effectively complement each other in terms of rule coverage .", 
+        "evidence_score": 0.80959474, 
+        "text": "We found that their quality is comparable but they effectively complement each other in terms of rule coverage ."
+    }, 
+    {
+        "claim_evidence": "most learned rules are not paraphrases but rather one-directional entailment rulesmany of the rules are context sensitive", 
+        "claim_score": 0.66631735, 
+        "evidence": "Also , we found that most learned rules are not paraphrases but rather one-directional entailment rules , and that many of the rules are context sensitive .", 
+        "evidence_score": 0.50863794, 
+        "text": "Also , we found that most learned rules are not paraphrases but rather one-directional entailment rules , and that many of the rules are context sensitive ."
+    }, 
+    {
+        "claim_score": -1.6363755, 
+        "evidence": "We also conducted the first comparison between two state-of-the-art acquisition algorithms , DIRT and TEASE , using the new methodology .", 
+        "evidence_score": 0.26343382, 
+        "text": "We also conducted the first comparison between two state-of-the-art acquisition algorithms , DIRT and TEASE , using the new methodology ."
+    }
+]

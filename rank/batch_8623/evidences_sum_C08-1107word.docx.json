@@ -1,0 +1,45 @@
+[
+    {
+        "claim_score": -1.7336939, 
+        "evidence": "We tested the different approaches utilizing a standard IE test-set and compared them to binary rule learning .", 
+        "evidence_score": 0.41850515, 
+        "text": "We tested the different approaches utilizing a standard IE test-set and compared them to binary rule learning ."
+    }, 
+    {
+        "claim_score": -1.0536701, 
+        "evidence": "In addition , the Balanced-Inclusion measure outperformed all other tested methods .", 
+        "evidence_score": 0.32752858, 
+        "text": "In addition , the Balanced-Inclusion measure outperformed all other tested methods ."
+    }, 
+    {
+        "claim_score": -0.012100999, 
+        "evidence": "The results show that the learned unary rule-sets outperform the binary rule-set .", 
+        "evidence_score": 0.16315264, 
+        "text": "The results show that the learned unary rule-sets outperform the binary rule-set ."
+    }, 
+    {
+        "claim_score": -0.56150743, 
+        "evidence": "In addition , a novel directional similarity measure for learning entailment , termed Balanced-Inclusion , is the best performing measure . .", 
+        "evidence_score": 0.063895976, 
+        "text": "In addition , a novel directional similarity measure for learning entailment , termed Balanced-Inclusion , is the best performing measure . ."
+    }, 
+    {
+        "claim_score": -2.0603224, 
+        "evidence": "Under the first approach we proposed a novel directional measure for scoring entailment rules , termed Balanced-Inclusion .", 
+        "evidence_score": 0.017122692, 
+        "text": "Under the first approach we proposed a novel directional measure for scoring entailment rules , termed Balanced-Inclusion ."
+    }, 
+    {
+        "claim_score": -1.8600338, 
+        "evidence": "We presented two approaches for unsupervised acquisition of unary entailment rules from regular ( non-comparable ) corpora .", 
+        "evidence_score": 0.014824873, 
+        "text": "We presented two approaches for unsupervised acquisition of unary entailment rules from regular ( non-comparable ) corpora ."
+    }, 
+    {
+        "claim_evidence": "Our results suggest the advantage of learning unary rules : unary rule-bases performbetter than binary rulesit is better to directly learn unary rules than to derive them from binary rule-bases", 
+        "claim_score": 0.071750554, 
+        "evidence": "Our results suggest the advantage of learning unary rules : unary rule-bases performbetter than binary rules ; it is better to directly learn unary rules than to derive them from binary rule-bases .", 
+        "evidence_score": 0.00079467258, 
+        "text": "Our results suggest the advantage of learning unary rules : unary rule-bases performbetter than binary rules ; it is better to directly learn unary rules than to derive them from binary rule-bases ."
+    }
+]

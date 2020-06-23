@@ -1,0 +1,26 @@
+[
+    {
+        "claim_score": -0.94553303, 
+        "evidence": "We presented a two stage approach to model nonlocal dependencies and saw that it outperformed existing approaches to modeling non-local dependencies .", 
+        "evidence_score": 0.76350856, 
+        "text": "We presented a two stage approach to model nonlocal dependencies and saw that it outperformed existing approaches to modeling non-local dependencies ."
+    }, 
+    {
+        "claim_score": -0.73487221, 
+        "evidence": "Our approach also makes it easy to incorporate non-local information from other documents in the test corpus , and this gives us a 13.3 percent error reduction over NER systems using local-information alone .", 
+        "evidence_score": 0.60992716, 
+        "text": "Our approach also makes it easy to incorporate non-local information from other documents in the test corpus , and this gives us a 13.3 percent error reduction over NER systems using local-information alone ."
+    }, 
+    {
+        "claim_score": -0.72590996, 
+        "evidence": "Using features capturing non-local dependencies from the same document , our approach yields a 12.6 percent relative error reduction on the F1 score , over state-of-theart NER systems using local-information alone , when compared to the 9.3 percent relative error reduction offered by the best systems that exploit non-local information .", 
+        "evidence_score": 0.11860773, 
+        "text": "Using features capturing non-local dependencies from the same document , our approach yields a 12.6 percent relative error reduction on the F1 score , over state-of-theart NER systems using local-information alone , when compared to the 9.3 percent relative error reduction offered by the best systems that exploit non-local information ."
+    }, 
+    {
+        "claim_score": -1.3316653, 
+        "evidence": "Our approach also made it easy to exploit various dependencies across documents in the test corpus , whereas incorporating this information in most existing approaches would make them intractable due to the complexity of the resultant graphical model .", 
+        "evidence_score": 0.040243781, 
+        "text": "Our approach also made it easy to exploit various dependencies across documents in the test corpus , whereas incorporating this information in most existing approaches would make them intractable due to the complexity of the resultant graphical model ."
+    }
+]

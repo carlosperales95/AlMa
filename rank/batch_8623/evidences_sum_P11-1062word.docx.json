@@ -1,0 +1,28 @@
+[
+    {
+        "claim_evidence": "Our algorithm is guaranteed to provide an optimal solutionit substantially improves performance over Schoenmackers et al. s recent resource", 
+        "claim_score": 1.0735732, 
+        "evidence": "Our algorithm is guaranteed to provide an optimal solution and we have shown empirically that it substantially improves performance over Schoenmackers et al. s recent resource and over several baselines .", 
+        "evidence_score": 0.95004919, 
+        "text": "Our algorithm is guaranteed to provide an optimal solution and we have shown empirically that it substantially improves performance over Schoenmackers et al. s recent resource and over several baselines ."
+    }, 
+    {
+        "claim_evidence": "the algorithm over a large data set of extracted predicate instancesa resource of typed entailment rules has beenusing global transitivity information substantially improves performanceour scaling methods allow us to increase the scope of global learning of entailment-rule graphs", 
+        "claim_score": 1.1449428, 
+        "evidence": "We apply the algorithm over a large data set of extracted predicate instances , from which a resource of typed entailment rules has been recently released ( Schoenmackers et al 2010 Our results show that using global transitivity information substantially improves performance over this resource and several baselines , and that our scaling methods allow us to increase the scope of global learning of entailment-rule graphs .", 
+        "evidence_score": 0.60370167, 
+        "text": "We apply the algorithm over a large data set of extracted predicate instances , from which a resource of typed entailment rules has been recently released ( Schoenmackers et al 2010 Our results show that using global transitivity information substantially improves performance over this resource and several baselines , and that our scaling methods allow us to increase the scope of global learning of entailment-rule graphs ."
+    }, 
+    {
+        "claim_score": -0.08912789, 
+        "evidence": "In future work , we aim to scale the algorithm further and learn entailment rules between untyped predicates .", 
+        "evidence_score": 0.23878411, 
+        "text": "In future work , we aim to scale the algorithm further and learn entailment rules between untyped predicates ."
+    }, 
+    {
+        "claim_score": -0.29890183, 
+        "evidence": "This would require explicit modeling of predicate ambiguity and using approximation techniques when an optimal solution can not be attained", 
+        "evidence_score": 0.14152755, 
+        "text": "This would require explicit modeling of predicate ambiguity and using approximation techniques when an optimal solution can not be attained"
+    }
+]

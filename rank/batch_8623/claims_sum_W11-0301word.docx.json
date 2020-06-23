@@ -1,0 +1,22 @@
+[
+    {
+        "claim_evidence": "incorporating POS categorization yields substantial performance gains on morphological segmentation of Arabic", 
+        "claim_score": 0.54393523, 
+        "evidence": "Our results demonstrate that incorporating POS categorization yields substantial performance gains on morphological segmentation of Arabic .", 
+        "evidence_score": 0.62067909, 
+        "text": "Our results demonstrate that incorporating POS categorization yields substantial performance gains on morphological segmentation of Arabic ."
+    }, 
+    {
+        "claim_evidence": "words with common affixes are likely to be in the same syntactic category and uses learned syntactic categories to refine the segmentation boundaries of words", 
+        "claim_score": 0.28821587, 
+        "evidence": "Our model learns that words with common affixes are likely to be in the same syntactic category and uses learned syntactic categories to refine the segmentation boundaries of words .", 
+        "evidence_score": 0.34887371, 
+        "text": "Our model learns that words with common affixes are likely to be in the same syntactic category and uses learned syntactic categories to refine the segmentation boundaries of words ."
+    }, 
+    {
+        "claim": "morphological structure is wellknownis rarely exploited to improve morphological segmentation performance", 
+        "claim_score": 0.069331473, 
+        "evidence_score": -0.46011504, 
+        "text": "Although the connection between syntactic ( POS ) categories and morphological structure is wellknown , this relation is rarely exploited to improve morphological segmentation performance ."
+    }
+]

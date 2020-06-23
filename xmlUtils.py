@@ -8,30 +8,31 @@ import shutil
 def xmlToSections(file):
 
     topic_sections_titles = []
+    
+    if os.path.isfile(file):
+        f = open(file, "r")
+        xmlstring = f.read()
+        while xmlstring.find('<SECTION ') != -1:
 
-    f = open(file, "r")
-    xmlstring = f.read()
-    while xmlstring.find('<SECTION ') != -1:
+            index = xmlstring.find('<SECTION ')
+            temp_xmlstring = xmlstring[index+9:]
 
-        index = xmlstring.find('<SECTION ')
-        temp_xmlstring = xmlstring[index+9:]
+            end_title_ind = temp_xmlstring.find("number =")
+            if end_title_ind == -1 or end_title_ind > 70:
+                end_title_ind = temp_xmlstring.find(">")
 
-        end_title_ind = temp_xmlstring.find("number =")
-        if end_title_ind == -1 or end_title_ind > 70:
-            end_title_ind = temp_xmlstring.find(">")
+            title = temp_xmlstring[len("title="): end_title_ind]
+            ind = title.find(".")
+            if ind != -1:
+                title = title[:ind]
 
-        title = temp_xmlstring[len("title="): end_title_ind]
-        ind = title.find(".")
-        if ind != -1:
-            title = title[:ind]
+            topic_sections_titles.append(title.replace('"', ""))
 
-        topic_sections_titles.append(title.replace('"', ""))
+            next_index = temp_xmlstring.find('</SECTION>')
+            xmlstring = temp_xmlstring[next_index:]
+            #print(title.replace('"', ""))
 
-        next_index = temp_xmlstring.find('</SECTION>')
-        xmlstring = temp_xmlstring[next_index:]
-        #print(title.replace('"', ""))
-
-    f.close()
+        f.close()
 
     return topic_sections_titles
 

@@ -6,58 +6,75 @@ import matplotlib.pyplot as plt
 
 
 from word2utils import *
+from htmlUtils import *
 from cluster_utils import *
 
 import warnings
 import webbrowser
 
-#warnings.simplefilter("ignore")
+warnings.simplefilter("ignore")
 
-dir = "./rank/batch_503/"
+#dir = "./rank/batch_503/"
+dir = sys.argv[1]
 nlp_base = spacy.load("en_core_web_sm")
 nlp = spacy.load('mymodel')
-
-
-print("Joining evidences....................")
-
-evidences, claims = getClaimsEvidences(dir)
-
 lemmatizer = WordNetLemmatizer()
 
-lemmatized_sentences = []
 
+print("Joining Claims/Evidences....................")
+evidences, claims = getClaimsEvidences(dir)
+print("Number of Evidences: " + str(len(evidences)))
+print("Number of Claims: " + str(len(claims)))
+print("Total Number of Arguments: " + str(len(evidences) + len(claims)))
+print("\n")
+
+
+print("Lemmatizing Claims/Evidences....................")
+print("\n")
+
+lemmatized_sentences = []
 lemmatized_c=[]
 for c in claims:
-    lemmatized_c.append(lemmatize_sentence(c, lemmatizer))
-    lemmatized_sentences.append(lemmatize_sentence(c, lemmatizer))
+    lemmatized_c.append(lemmatize_sentence(c[1], lemmatizer))
+    lemmatized_sentences.append(lemmatize_sentence(c[1], lemmatizer))
 
 
 lemmatized_e=[]
 for e in evidences:
-    lemmatized_e.append(lemmatize_sentence(e, lemmatizer))
-    lemmatized_sentences.append(lemmatize_sentence(e, lemmatizer))
+    lemmatized_e.append(lemmatize_sentence(e[1], lemmatizer))
+    lemmatized_sentences.append(lemmatize_sentence(e[1], lemmatizer))
 
 
-#bigrams_, trigrams_ = convertSentsToBiTriGs(lemmatized_e)
+
+print("Converting Claims/Evidences to Bigrams and Trigrams....................")
+
 bigrams_c, trigrams_c = convertSentsToBiTriGs(lemmatized_c)
-
 #NEED TO CLEAN ARGS, BIGRAMS ARE TOO WEIRD
 trigrams_c = filter_stringRubble(trigrams_c)
 
 bigrams_e, trigrams_e = convertSentsToBiTriGs(lemmatized_e)
-
 #NEED TO CLEAN ARGS, BIGRAMS ARE TOO WEIRD
 trigrams_e = filter_stringRubble(trigrams_e)
 
+
 #bigrams_, trigrams_ = convertSentsToBiTriGs(lemmatized_e)
 bigrams_, trigrams_ = convertSentsToBiTriGs(lemmatized_sentences)
-
 #NEED TO CLEAN ARGS, BIGRAMS ARE TOO WEIRD
 trigrams_ = filter_stringRubble(trigrams_)
 
+print("Found Bigrams on Claims: " + str(len(bigrams_c)))
+print("Found Bigrams on Evidences: " + str(len(bigrams_e)))
+print("Total Number of Bigrams: " + str(len(bigrams_)))
+print("\n")
+print("Found Trigrams on Claims: " + str(len(trigrams_c)))
+print("Found Trigrams on Evidences: " + str(len(trigrams_e)))
+print("Total Number of Trigrams: " + str(len(trigrams_)))
+print("\n")
 
-print("(word2vec) Finding for bigrams and trigrams....................")
 
+
+print("(word2vec) Creating Models....................")
+print("\n")
 
 bigrams_model = gensim.models.Word2Vec(
         bigrams_,
@@ -76,42 +93,40 @@ trigrams_model = gensim.models.Word2Vec(
         iter=10)
 
 
-
 #mentions = filterDates(mentions)
 #mentions = filterWeirdChars(mentions)
 
 print("Finding Technology/Method mentions....................")
 
-###########pointed_mentions = getRankedMentions(lemmatized_e, nlp, nlp_base)
 pointed_mentions = getRankedMentions(lemmatized_sentences, nlp, nlp_base)
 
-print("Creating ScatterPlots of Bigrams/Trigrams....................")
-
-
+print("Number of potential mentions: " + str(len(pointed_mentions)))
 ###filterW2VSoft/HArd
-bi_vectors, bi_labels = W2V_filter_hard(bigrams_model, pointed_mentions)
-tri_vectors, tri_labels = W2V_filter_soft(trigrams_model, pointed_mentions)
+#bi_vectors, bi_labels = W2V_filter_hard(bigrams_model, pointed_mentions)
+#print("Mentions matching Bigrams: " + str(len(bi_labels)))
 
+#tri_vectors, tri_labels = W2V_filter_soft(trigrams_model, pointed_mentions)
+#print("Mentions matching Trigrams: " + str(len(tri_labels)))
 
     #W2V_plot_Models(bi_vectors, tri_vectors, bi_labels, tri_labels)
 men = mentionRankThreshold(pointed_mentions)
-##########men = [x[0] for x in men]
-tsne_plot_Models(bigrams_model, trigrams_model, men)
+#print("Number of mentions after score filter: " + str(len(men)))
+print("\n")
 
-#tsne_plot_mentions(bigrams_model, men)
-print("Clustering/Plotting Evidence Models....................")
 
-clusterPlot_Models("claims", bigrams_c, bigrams_model, trigrams_c, trigrams_model, lemmatized_c, claims)
-clusterPlot_Models("evidences", bigrams_e, bigrams_model, trigrams_e, trigrams_model, lemmatized_e, evidences)
-##########clusterPlot_Model(bigrams_, bigrams_model, lemmatized_e)
+print("Plotting Bigrams/Trigrams models based on Technology/Method mentions....................")
+print("\n")
+#tsne_plot_Models(bigrams_model, trigrams_model, men)
+
+
+print("Clustering/Plotting Evidence/Claim Models....................")
+
+#clusterPlot_Models("claims", bigrams_c, bigrams_model, trigrams_c, trigrams_model, lemmatized_c, claims)
+#clusterPlot_Models("evidences", bigrams_e, bigrams_model, trigrams_e, trigrams_model, lemmatized_e, evidences)
+
+
 #######################################################################
 
+print("Creating Output....................")
 
-dynamicfill_output(men)
-#create_output()
-#webbrowser.open_new_tab('output.html')
-
-
-
-#tsne_plot(model)
-#tsne_plot2(model, tris)
+dynamicfill_output(men, claims, evidences)

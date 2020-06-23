@@ -1,0 +1,35 @@
+[
+    {
+        "claim_evidence": "our MEDLDA-based approach is able to effectively and consistently incorporate informative features", 
+        "claim_score": 0.57141771, 
+        "evidence": "Our analysis show that our MEDLDA-based approach is able to effectively and consistently incorporate informative features .", 
+        "evidence_score": 0.72335544, 
+        "text": "Our analysis show that our MEDLDA-based approach is able to effectively and consistently incorporate informative features ."
+    }, 
+    {
+        "claim_evidence": "the proposed approach achieves better overall performance than SVMbased and LLDA-based approaches across all metrics", 
+        "claim_score": 0.19515561, 
+        "evidence": "Our experiments show that the proposed approach achieves better overall performance than SVMbased and LLDA-based approaches across all metrics .", 
+        "evidence_score": 0.60116829, 
+        "text": "Our experiments show that the proposed approach achieves better overall performance than SVMbased and LLDA-based approaches across all metrics ."
+    }, 
+    {
+        "claim_evidence": "combination of max margin and maximum likelihood can help to improve relation detection task", 
+        "claim_score": 0.91942019, 
+        "evidence": "Our approach was motivated by the idea that combination of max margin and maximum likelihood can help to improve relation detection task .", 
+        "evidence_score": 0.47147166, 
+        "text": "Our approach was motivated by the idea that combination of max margin and maximum likelihood can help to improve relation detection task ."
+    }, 
+    {
+        "claim_score": -2.1663643, 
+        "evidence": "For this , we adapted the existing work on MEDLDA and mixed membership models and formulated ERD as a topic detection task .", 
+        "evidence_score": 0.15151188, 
+        "text": "For this , we adapted the existing work on MEDLDA and mixed membership models and formulated ERD as a topic detection task ."
+    }, 
+    {
+        "claim_score": -0.7289131, 
+        "evidence": "Our approach achieves better overall performance for precision , recall and Fmeasure metrics as compared to SVM-based and LLDA-based models .", 
+        "evidence_score": 0.0015439601, 
+        "text": "Our approach achieves better overall performance for precision , recall and Fmeasure metrics as compared to SVM-based and LLDA-based models ."
+    }
+]

@@ -1,0 +1,70 @@
+[
+    {
+        "claim_score": -0.29907564, 
+        "evidence": "1 , we see a significant increase in accuracy for the four data sets .", 
+        "evidence_score": 0.36088033, 
+        "text": "1 , we see a significant increase in accuracy for the four data sets ."
+    }, 
+    {
+        "claim_score": -1.0520292, 
+        "evidence": "Fig. 3 shows the precision , recall , F-score of the two baseline systems and our final system for which we generate m 15 new data sets for bagging .", 
+        "evidence_score": 0.34181578, 
+        "text": "Fig. 3 shows the precision , recall , F-score of the two baseline systems and our final system for which we generate m 15 new data sets for bagging ."
+    }, 
+    {
+        "claim_evidence": "We think the different performance is mainlydatasets are annotated by using different standards.We have presented a thorough study of the difference between word-based and character-based segmentation approaches for Chinese", 
+        "claim_score": 0.35939295, 
+        "evidence": "We think the different performance is mainly because the four datasets are annotated by using different standards.We have presented a thorough study of the difference between word-based and character-based segmentation approaches for Chinese .", 
+        "evidence_score": 0.3195523, 
+        "text": "We think the different performance is mainly because the four datasets are annotated by using different standards.We have presented a thorough study of the difference between word-based and character-based segmentation approaches for Chinese ."
+    }, 
+    {
+        "claim_evidence": "the combination strategy is helpful", 
+        "claim_score": 1.5064693, 
+        "evidence": "Experiments show that the combination strategy is helpful", 
+        "evidence_score": 0.29365296, 
+        "text": "Experiments show that the combination strategy is helpful"
+    }, 
+    {
+        "claim_score": -1.2939323, 
+        "evidence": "In the oracle experiment , we let the three segmenters , i.e. baseline segmenters and the gold segmenter , vote .", 
+        "evidence_score": 0.28897863, 
+        "text": "In the oracle experiment , we let the three segmenters , i.e. baseline segmenters and the gold segmenter , vote ."
+    }, 
+    {
+        "claim_score": -1.5974945, 
+        "evidence": "Compared these results with Tab .", 
+        "evidence_score": 0.280862, 
+        "text": "Compared these results with Tab ."
+    }, 
+    {
+        "claim_score": -0.39923456, 
+        "evidence": "We think the optimal combination system should choose the right prediction when the two segmenters do not agree with each other .", 
+        "evidence_score": 0.27618391, 
+        "text": "We think the optimal combination system should choose the right prediction when the two segmenters do not agree with each other ."
+    }, 
+    {
+        "claim_score": -1.4907756, 
+        "evidence": "In this case , our system prefer B to reduce error propagation .5.3 ResultsFig .", 
+        "evidence_score": 0.25444839, 
+        "text": "In this case , our system prefer B to reduce error propagation .5.3 ResultsFig ."
+    }, 
+    {
+        "claim_score": -0.29460694, 
+        "evidence": "The experiments highlight the fundamental difference between word-based and character-based models , which enlighten us to design new models .", 
+        "evidence_score": 0.18109728, 
+        "text": "The experiments highlight the fundamental difference between word-based and character-based models , which enlighten us to design new models ."
+    }, 
+    {
+        "claim_score": -1.4741504, 
+        "evidence": "Our analysis points out several drawbacks of each one .", 
+        "evidence_score": 0.089615536, 
+        "text": "Our analysis points out several drawbacks of each one ."
+    }, 
+    {
+        "claim_score": -0.57774612, 
+        "evidence": "In the training phase , given a training set D of size n , our model generates m new training sets Di of size 63.2 percentn bysampling examples from D without replacement.Namely no example will be repeated in each Di Each Di is separately used to train a word-based segmenter and a character-based segmenter .", 
+        "evidence_score": 0.039569578, 
+        "text": "In the training phase , given a training set D of size n , our model generates m new training sets Di of size 63.2 percentn bysampling examples from D without replacement.Namely no example will be repeated in each Di Each Di is separately used to train a word-based segmenter and a character-based segmenter ."
+    }
+]

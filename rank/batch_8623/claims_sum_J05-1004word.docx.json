@@ -1,0 +1,28 @@
+[
+    {
+        "claim_evidence": "Our results using hand-annotated parseimprovements in parsing should translate directly into more accurate semantic representations", 
+        "claim_score": 0.85364871, 
+        "evidence": "Our results using hand-annotated parse trees including traces show that improvements in parsing should translate directly into more accurate semantic representations .", 
+        "evidence_score": 0.47757118, 
+        "text": "Our results using hand-annotated parse trees including traces show that improvements in parsing should translate directly into more accurate semantic representations ."
+    }, 
+    {
+        "claim": "Researchers were able to construct a reasonable IE system by simply mapping specific Arg labels for a set of verbs to template slots , completely avoiding the necessity of building explicit regular expression patternis equal hope for advantages for machine translation", 
+        "claim_score": 0.24189363, 
+        "evidence_score": -0.45458535, 
+        "text": "Researchers were able to construct a reasonable IE system by simply mapping specific Arg labels for a set of verbs to template slots , completely avoiding the necessity of building explicit regular expression pattern matchers ( Surdeanu et al. 2003 There is equal hope for advantages for machine translation , and proposition banks in Chinese ( Xue and Palmer 2003 ) and Korean are already being built , focusing where possible on parallel data ."
+    }, 
+    {
+        "claim_evidence": "the complex relationship between syntactic and semantic structuresstatistical parsersa good job of providing information relevant for this level of semantic interpretation", 
+        "claim_score": 0.21727292, 
+        "evidence": "Despite the complex relationship between syntactic and semantic structures , we find that statistical parsers , although computationally expensive , do a good job of providing information relevant for this level of semantic interpretation .", 
+        "evidence_score": 0.086129336, 
+        "text": "Despite the complex relationship between syntactic and semantic structures , we find that statistical parsers , although computationally expensive , do a good job of providing information relevant for this level of semantic interpretation ."
+    }, 
+    {
+        "claim": "The resulting resource can be thought of as shallowit does not represent coreferenceit covers every instance of every verb in the corpus", 
+        "claim_score": 0.029514588, 
+        "evidence_score": -0.67505453, 
+        "text": "The resulting resource can be thought of as shallow , in that it does not represent coreference , quantification , and many other higher-order phenomena , but also broad , in that it covers every instance of every verb in the corpus and allows representative statistics to be calculated ."
+    }
+]

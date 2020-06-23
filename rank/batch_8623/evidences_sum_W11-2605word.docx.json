@@ -1,0 +1,21 @@
+[
+    {
+        "claim_score": -0.71619355, 
+        "evidence": "We have been able to improve on the results of a naive baseline using two methods to infer phonological rules of the information extracted from the corpus and applying them with finite state transducers .", 
+        "evidence_score": 0.55076009, 
+        "text": "We have been able to improve on the results of a naive baseline using two methods to infer phonological rules of the information extracted from the corpus and applying them with finite state transducers ."
+    }, 
+    {
+        "claim_evidence": "a larger parallel corpus in conjunction with this method could potentially improve the results substantiallywith a larger set of data , thresholds could bemorphophonological generalizations are triggeredlexical correspondences could be learned", 
+        "claim_score": 0.49380272, 
+        "evidence": "We expect that a larger parallel corpus in conjunction with this method could potentially improve the results substantiallywith a larger set of data , thresholds could be set so that morphophonological generalizations are triggered only after a sufficient number of training examples ( avoiding overgeneration and , naturally , many more unique , non-regular , lexical correspondences could be learned .", 
+        "evidence_score": 0.46284197, 
+        "text": "We expect that a larger parallel corpus in conjunction with this method could potentially improve the results substantiallywith a larger set of data , thresholds could be set so that morphophonological generalizations are triggered only after a sufficient number of training examples ( avoiding overgeneration and , naturally , many more unique , non-regular , lexical correspondences could be learned ."
+    }, 
+    {
+        "claim_score": -0.40607691, 
+        "evidence": "This paper explores two different methods of learning dialectal morphology from a small parallel corpus of standard and dialect-form text , given that a computational description of the standard morphology is available .", 
+        "evidence_score": 0.03060304, 
+        "text": "This paper explores two different methods of learning dialectal morphology from a small parallel corpus of standard and dialect-form text , given that a computational description of the standard morphology is available ."
+    }
+]

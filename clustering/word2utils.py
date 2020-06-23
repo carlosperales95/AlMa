@@ -58,6 +58,7 @@ def getClaimsEvidences(dir):
 
     evidences = []
     claims = []
+    paper_rel=[]
     for idx,file in enumerate(paper_evidences):
 
         f = open(dir+file, "r")
@@ -66,8 +67,8 @@ def getClaimsEvidences(dir):
         jso = json.loads(paper_full)
         for idx,item in enumerate(jso):
             if jso[idx] != "":
-                evidences.append(jso[idx]['text'])
-
+                evidences.append([file, jso[idx]['text']])
+                #paper_rel.append([file, jso[idx]['text']])
         f.close()
 
     for idx,file in enumerate(paper_claims):
@@ -78,12 +79,13 @@ def getClaimsEvidences(dir):
         jso = json.loads(paper_full)
         for idx,item in enumerate(jso):
             if jso[idx] != "":
-                claims.append(jso[idx]['text'])
+                claims.append([file, jso[idx]['text']])
+                #paper_rel.append([file, jso[idx]['text']])
 
         f.close()
 
 
-    return evidences, claims
+    return evidences, claims #, paper_rel
 
 
 ##############################################
@@ -309,12 +311,31 @@ def filter_spacyOutliers(nlp_base, mentions):
         split_m = m.split(' ')
         if len(split_m) == 1:
             f_doc = nlp_base(m)
-            if len(f_doc.ents) > 0 and f_doc.ents[0].label_ in ['GPE', 'DATE']:
+            if len(f_doc.ents) > 0 and f_doc.ents[0].label_ in ['GPE', 'DATE', 'PERSON']:
                 continue
 
         mens.append(m)
     return mens
 
+
+def filter_spacy_base(nlp_base, mentions):
+    mens=[]
+    for m in mentions:
+        if isinstance(m, list):
+            m = ""
+            for idx, t in enumerate(m):
+                if idx == 0:
+                    m=t
+                else:
+                    m = m + " " + t
+        f_doc = nlp_base(m)
+        if len(f_doc.ents) > 0 and f_doc.ents[0].label_ in ['PERSON']:
+            continue
+
+        mention = m.split(" ")
+        mens.append(mention)
+
+    return mens
 
 def W2V_filter_soft(model, pointed_mentions):
 

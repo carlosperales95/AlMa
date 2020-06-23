@@ -73,10 +73,10 @@ for file in txt_files:
                     topic_xml.append(xmlfile)
 
             topic_papers.append(file)
-            f2.write("- " + paper_title.replace("\n", " ") + "\n")
+            f2.write("- " + paper_title.replace("\n", " ") + "  #"+file+ "\n")
             f2.write("---------------------------------------------------------------------------------\n")
             #print(paper_title + "\nOTHER PAPER\n\n\n")
-
+            break
     f.close()
 f2.close()
 

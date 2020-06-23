@@ -1,0 +1,35 @@
+[
+    {
+        "claim_evidence": "our method produces a large amount of annotations with high inter-annotator agreement for a low cost at a short period of time", 
+        "claim_score": 0.068145064, 
+        "evidence": "We show that our method produces a large amount of annotations with high inter-annotator agreement for a low cost at a short period of time , without requiring training expert annotators .", 
+        "evidence_score": 0.55559261, 
+        "text": "We show that our method produces a large amount of annotations with high inter-annotator agreement for a low cost at a short period of time , without requiring training expert annotators ."
+    }, 
+    {
+        "claim_score": -0.80741147, 
+        "evidence": "We have presented the methodological principles we developed to get the entailment decision across to Turkers , achieving very high agreement both with our annotations and between the annotators themselves .", 
+        "evidence_score": 0.37977009, 
+        "text": "We have presented the methodological principles we developed to get the entailment decision across to Turkers , achieving very high agreement both with our annotations and between the annotators themselves ."
+    }, 
+    {
+        "claim_evidence": "able to take advantage of crowdsourcing services to replace trained expert annotators , resulting in good quality large scale annotations , for reasonable time and cost", 
+        "claim_score": 0.034573809, 
+        "evidence": "We have shown that by simplifying the previously-proposed instance-based evaluation framework we are able to take advantage of crowdsourcing services to replace trained expert annotators , resulting in good quality large scale annotations , for reasonable time and cost .", 
+        "evidence_score": 0.24410967, 
+        "text": "We have shown that by simplifying the previously-proposed instance-based evaluation framework we are able to take advantage of crowdsourcing services to replace trained expert annotators , resulting in good quality large scale annotations , for reasonable time and cost ."
+    }, 
+    {
+        "claim_evidence": "the proposed methodology can be beneficial for both resource developers evaluating their output as well as inference system developers wanting to assess the quality of existing resources", 
+        "claim_score": 0.23531333, 
+        "evidence": "Using the CrowdFlower forms we provide with this paper , the proposed methodology can be beneficial for both resource developers evaluating their output as well as inference system developers wanting to assess the quality of existing resources", 
+        "evidence_score": 0.083844166, 
+        "text": "Using the CrowdFlower forms we provide with this paper , the proposed methodology can be beneficial for both resource developers evaluating their output as well as inference system developers wanting to assess the quality of existing resources"
+    }, 
+    {
+        "claim_score": -1.4753621, 
+        "evidence": "Our framework simplifies a previously proposed instance-based evaluation method that involved substantial annotator training , making it suitable for crowdsourcing .", 
+        "evidence_score": 0.015646097, 
+        "text": "Our framework simplifies a previously proposed instance-based evaluation method that involved substantial annotator training , making it suitable for crowdsourcing ."
+    }
+]

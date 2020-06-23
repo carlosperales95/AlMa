@@ -1,0 +1,21 @@
+[
+    {
+        "claim_evidence": "The experiment results show that although coverage is still not satisfyingthe precision is promising", 
+        "claim_score": 0.48952636, 
+        "evidence": "The experiment results show that although coverage is still not satisfying , the precision is promising .", 
+        "evidence_score": 0.061027004, 
+        "text": "The experiment results show that although coverage is still not satisfying , the precision is promising ."
+    }, 
+    {
+        "claim": "A different issue remains the fact that a lot of rules we could use for textual entailment detection are still lacking", 
+        "claim_score": 0.39618205, 
+        "evidence_score": -0.07547141, 
+        "text": "A different issue remains the fact that a lot of rules we could use for textual entailment detection are still lacking ."
+    }, 
+    {
+        "claim": "they are not the correct hypernymrelation", 
+        "claim_score": 0.044008967, 
+        "evidence_score": -0.42781979, 
+        "text": "In general , we can identify pairs in which the patterns of an inference rule are present but the anchors are mismatched , or they are not the correct hypernymrelation ."
+    }
+]

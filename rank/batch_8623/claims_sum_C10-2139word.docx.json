@@ -1,0 +1,52 @@
+[
+    {
+        "claim_evidence": "the combination strategy is helpful", 
+        "claim_score": 1.5064693, 
+        "evidence": "Experiments show that the combination strategy is helpful", 
+        "evidence_score": 0.29365296, 
+        "text": "Experiments show that the combination strategy is helpful"
+    }, 
+    {
+        "claim": "since 2m is an even numberthere may be equal number", 
+        "claim_score": 0.95544713, 
+        "evidence_score": -0.86772652, 
+        "text": "Note that since 2m is an even number , there may be equal number of B and I labels ."
+    }, 
+    {
+        "claim": "there is no significant difference between the two sampling strategies in terms of accuracy", 
+        "claim_score": 0.63352247, 
+        "evidence_score": -0.24840754, 
+        "text": "Our experiment shows that there is no significant difference between the two sampling strategies in terms of accuracy ."
+    }, 
+    {
+        "claim": "the theoretical differences cause different error distribution.The two approaches are either based on a particular view of segmentation", 
+        "claim_score": 0.42869565, 
+        "evidence_score": -0.48253263, 
+        "text": "The above analysis indicates that the theoretical differences cause different error distribution.The two approaches are either based on a particular view of segmentation ."
+    }, 
+    {
+        "claim": "The upper bound of error reduction with system combination is overis a machine learning ensemble meta-algorithm to improve classificationrate is a comparison between the F-score", 
+        "claim_score": 0.41170815, 
+        "evidence_score": -0.37750559, 
+        "text": "The upper bound of error reduction with system combination is over 30percent .5.2 Our ModelBootstrap aggregating ( Bagging ) is a machine learning ensemble meta-algorithm to improve classification and regression models in terms of reduction ( ER ) rate is a comparison between the F-score produced by the oracle combination system and the character-based system ( see Tab ."
+    }, 
+    {
+        "claim_evidence": "We think the different performance is mainlydatasets are annotated by using different standards.We have presented a thorough study of the difference between word-based and character-based segmentation approaches for Chinese", 
+        "claim_score": 0.35939295, 
+        "evidence": "We think the different performance is mainly because the four datasets are annotated by using different standards.We have presented a thorough study of the difference between word-based and character-based segmentation approaches for Chinese .", 
+        "evidence_score": 0.3195523, 
+        "text": "We think the different performance is mainly because the four datasets are annotated by using different standards.We have presented a thorough study of the difference between word-based and character-based segmentation approaches for Chinese ."
+    }, 
+    {
+        "claim": "When the baseline segmenters are agreethe gold segmenter can not change the segmentation whether it is right or wrong", 
+        "claim_score": 0.34160078, 
+        "evidence_score": -0.14076853, 
+        "text": "When the baseline segmenters are agree with each other , the gold segmenter can not change the segmentation whether it is right or wrong ."
+    }, 
+    {
+        "claim": "A word-based model may be improvedthere is still space for improvement", 
+        "claim_score": 0.0085443935, 
+        "evidence_score": -1.1133216, 
+        "text": "A word-based model may be improved by solving this problem .5 System CombinationThe error analysis also suggests that there is still space for improvement , just by combining the two existing models ."
+    }
+]
