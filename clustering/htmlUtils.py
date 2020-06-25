@@ -11,6 +11,31 @@ from os.path import isfile, join
 
 
 
+def fill_query(full_content):
+
+    if full_content == "":
+        f = open('./output_template.html','r')
+        template = f.read()
+        f.close()
+    else:
+        template=full_content
+
+    start_id = template.find('name="topicsquery">')+len('name="topicsquery">')
+    end_id = template[start_id:].find("</button>")
+    start = template[:start_id]
+    end = template[start_id+end_id:]
+
+    fp = open('./query.txt', "r")
+    file = fp.read()
+
+    message = "Paper results for query: <strong> (" + file + ") </strong> "
+
+    fp.close()
+
+    content = start+message+end
+    return content
+
+
 
 def fill_titles(full_content):
 
@@ -234,16 +259,38 @@ def fill_menperPaper(full_content, mentions):
     return content
 
 
-def dynamicfill_output(mentions, c_labels, e_labels):
+def fill_scatters(full_content, plot, id):
+
+    template = full_content
+
+    start_id = template.find('name="scatter_'+str(id)+'">')+len('name="scatter_'+str(id)+'">')
+    #print(start_id)
+    end_id = template[start_id:].find("</div>")
+    start = template[:start_id]
+    end = template[start_id+end_id:]
+
+
+    message = "\t\t\t\t\t\t\t<div> "+ plot + "\t\t\t\t\t\t\t</div>" + "\n"
+    #message = message + "\t\t\t\t\t\t\t<p>  \t\t\t\t\t\t\t</p>" + "\n"
+
+
+    content = start+message+end
+    return content
+
+
+def dynamicfill_output(mentions, c_labels, e_labels, plots):
 
     full_content = ""
     full_content, titles = fill_titles(full_content)
-
+    full_content = fill_query(full_content)
     full_content = fill_clustering("bigram_claims", full_content, mentions, c_labels, titles)
     full_content = fill_clustering("trigram_claims", full_content, mentions, c_labels, titles)
     full_content = fill_clustering("bigram_evidences", full_content, mentions, e_labels, titles)
     full_content = fill_clustering("trigram_evidences", full_content, mentions, e_labels, titles)
 
+    for idx, plot in enumerate(plots):
+
+        full_content = fill_scatters(full_content, plot, (idx+1))
 
     right_m=[]
     center_m=[]

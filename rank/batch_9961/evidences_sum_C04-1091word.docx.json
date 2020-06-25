@@ -1,0 +1,96 @@
+[
+    {
+        "claim_score": -2.4800189, 
+        "evidence": "2003 .", 
+        "evidence_score": 0.99761955, 
+        "text": "2003 ."
+    }, 
+    {
+        "claim_score": -2.4800189, 
+        "evidence": "2003 .", 
+        "evidence_score": 0.99761955, 
+        "text": "2003 ."
+    }, 
+    {
+        "claim_score": -2.2546666, 
+        "evidence": "2 .", 
+        "evidence_score": 0.88063411, 
+        "text": "2 ."
+    }, 
+    {
+        "claim_score": -1.0405897, 
+        "evidence": "An O ( m6 ) greedy search algorithm was developed ( Germann et al 2003 ) whose complexity was re duced further to O ( m2 Germann , 2003 In this paper , we propose an algorithmic framework for solving the decoding problem and show that several efficient decoding algorithms can be derived from the techniques developed in the framework .", 
+        "evidence_score": 0.62778504, 
+        "text": "An O ( m6 ) greedy search algorithm was developed ( Germann et al 2003 ) whose complexity was re duced further to O ( m2 Germann , 2003 In this paper , we propose an algorithmic framework for solving the decoding problem and show that several efficient decoding algorithms can be derived from the techniques developed in the framework ."
+    }, 
+    {
+        "claim_evidence": "decoding algorithms derived from our framework can be of practical significance", 
+        "claim_score": 0.74563549, 
+        "evidence": "We believe that decoding algorithms derived from our framework can be of practical significance .", 
+        "evidence_score": 0.51123533, 
+        "text": "We believe that decoding algorithms derived from our framework can be of practical significance ."
+    }, 
+    {
+        "claim_evidence": "alternating maximization can be employed", 
+        "claim_score": 0.093171025, 
+        "evidence": "We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm .", 
+        "evidence_score": 0.50280489, 
+        "text": "We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm ."
+    }, 
+    {
+        "claim_score": -1.6376663, 
+        "evidence": "In an iterative search for a local optimal solution , we alternate between the two algorithms and refine our solution .", 
+        "evidence_score": 0.48118913, 
+        "text": "In an iterative search for a local optimal solution , we alternate between the two algorithms and refine our solution ."
+    }, 
+    {
+        "claim_score": -0.8188571, 
+        "evidence": "We start with a mathematical formulation of the decoding problem ( Section 2 We then develop the alternating search paradigm and use it to develop several decoding algorithms ( Section 3 Next , we demonstrate the practical utility of our algorithms with the help of results from our initial experiments ( Section 5 ) .", 
+        "evidence_score": 0.45407411, 
+        "text": "We start with a mathematical formulation of the decoding problem ( Section 2 We then develop the alternating search paradigm and use it to develop several decoding algorithms ( Section 3 Next , we demonstrate the practical utility of our algorithms with the help of results from our initial experiments ( Section 5 ) ."
+    }, 
+    {
+        "claim_evidence": "the algorithmic handles provided by our framework can be employed to develop a very fast decoding algorithm which finds good quality translations", 
+        "claim_score": 1.1475651, 
+        "evidence": "We show that the algorithmic handles provided by our framework can be employed to develop a very fast decoding algorithm which finds good quality translations .", 
+        "evidence_score": 0.38004317, 
+        "text": "We show that the algorithmic handles provided by our framework can be employed to develop a very fast decoding algorithm which finds good quality translations ."
+    }, 
+    {
+        "claim_evidence": "both of these problems are easy to solve and provide efficient solutions for them", 
+        "claim_score": 0.53327949, 
+        "evidence": "We show that both of these problems are easy to solve and provide efficient solutions for them .", 
+        "evidence_score": 0.36718273, 
+        "text": "We show that both of these problems are easy to solve and provide efficient solutions for them ."
+    }, 
+    {
+        "claim_score": -0.83500629, 
+        "evidence": "Decoding is known to belong to a class of computational problems popularly known as NPhard problems ( Knight , 1999 NP-hard problems are known to be computationally hard and have eluded polynomial time algorithms ( Garey and Johnson , 1979 The first algorithms for the decoding problem were based on what is known among the speech recognition community as stack-based search ( Jelinek , 1969 The original IBM solution to the decoding problem employed a restricted stack-based search ( Berger et al 1996 This idea was further explored by Wang and Waibel ( Wang and Waibel , 1997 ) who developed a faster stack-based search algorithm .", 
+        "evidence_score": 0.33705547, 
+        "text": "Decoding is known to belong to a class of computational problems popularly known as NPhard problems ( Knight , 1999 NP-hard problems are known to be computationally hard and have eluded polynomial time algorithms ( Garey and Johnson , 1979 The first algorithms for the decoding problem were based on what is known among the speech recognition community as stack-based search ( Jelinek , 1969 The original IBM solution to the decoding problem employed a restricted stack-based search ( Berger et al 1996 This idea was further explored by Wang and Waibel ( Wang and Waibel , 1997 ) who developed a faster stack-based search algorithm ."
+    }, 
+    {
+        "claim_score": -0.20648458, 
+        "evidence": "In perhaps the first work on the computational complexity of Decoding , Kevin Knight showed that the problem is closely related to the more famous Traveling Salesman problem ( TSP Independently , Christoph Tillman adapted the Held-Karp dynamic programming algorithm for TSP ( Held and Karp , 1962 ) to Decoding ( Tillman , 2001 The original HeldKarp algorithm for TSP is an exponential time dynamic programming algorithm and Tillmans adaptation to Decoding has a prohibitive com plexity of O ( l3m2 2m ) O ( m5 2m ( where m and l are the lengths of the source and tar get sentences respectively Tillman and Ney showed how to improve the complexity of the Held-Karp algorithm for restricted word re ordering and gave a O ( l3m4 ) O ( m7 ) algo rithm for French-English translation ( Tillman and Ney , 2000 An optimal decoder based on the well-known A heuristic was implemented and benchmarked in ( Och et al 2001 Since optimal solution can not be computed for practical problem instances in a reasonable amount of time , much of recent work has focused on good quality suboptimal solutions .", 
+        "evidence_score": 0.31523421, 
+        "text": "In perhaps the first work on the computational complexity of Decoding , Kevin Knight showed that the problem is closely related to the more famous Traveling Salesman problem ( TSP Independently , Christoph Tillman adapted the Held-Karp dynamic programming algorithm for TSP ( Held and Karp , 1962 ) to Decoding ( Tillman , 2001 The original HeldKarp algorithm for TSP is an exponential time dynamic programming algorithm and Tillmans adaptation to Decoding has a prohibitive com plexity of O ( l3m2 2m ) O ( m5 2m ( where m and l are the lengths of the source and tar get sentences respectively Tillman and Ney showed how to improve the complexity of the Held-Karp algorithm for restricted word re ordering and gave a O ( l3m4 ) O ( m7 ) algo rithm for French-English translation ( Tillman and Ney , 2000 An optimal decoder based on the well-known A heuristic was implemented and benchmarked in ( Och et al 2001 Since optimal solution can not be computed for practical problem instances in a reasonable amount of time , much of recent work has focused on good quality suboptimal solutions ."
+    }, 
+    {
+        "claim_score": -1.5162795, 
+        "evidence": "Our fast suboptimal search algorithms can translate sentences that are 50 words long in about 5 seconds on a simple computing facility .", 
+        "evidence_score": 0.075001969, 
+        "text": "Our fast suboptimal search algorithms can translate sentences that are 50 words long in about 5 seconds on a simple computing facility ."
+    }, 
+    {
+        "claim_score": -0.67210721, 
+        "evidence": "At one end of the spectrum is a provably linear time algorithm for computing a suboptimal solution and at the other end is an exponential time algorithm for computingNIST Scores7 Logscoresmada .", 
+        "evidence_score": 0.060055447, 
+        "text": "At one end of the spectrum is a provably linear time algorithm for computing a suboptimal solution and at the other end is an exponential time algorithm for computingNIST Scores7 Logscoresmada ."
+    }, 
+    {
+        "claim_score": -0.81641386, 
+        "evidence": "A family of provably fast decoding algorithms can be derived from the basic techniques underlying the framework and we present a few illustrations .", 
+        "evidence_score": 0.05334718, 
+        "text": "A family of provably fast decoding algorithms can be derived from the basic techniques underlying the framework and we present a few illustrations ."
+    }
+]

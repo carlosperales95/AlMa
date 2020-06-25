@@ -1,5 +1,6 @@
 import spacy
 import gensim
+import re
 from gensim.models import Word2Vec
 from nltk.stem import WordNetLemmatizer
 import matplotlib.pyplot as plt
@@ -76,6 +77,38 @@ print("\n")
 print("(word2vec) Creating Models....................")
 print("\n")
 
+STOP_WORDS = nltk.corpus.stopwords.words()
+
+def clean_sentence(val):
+    "remove chars that are not letters or numbers, downcase, then remove stop words"
+    regex = re.compile('([^\s\w]|_)+')
+    sentence = regex.sub('', val)
+    sentence = sentence.split(" ")
+
+    for word in list(sentence):
+        if word in STOP_WORDS:
+            sentence.remove(word)
+
+    sentence = " ".join(sentence)
+    return sentence
+
+
+unigrams = []
+for s in lemmatized_sentences:
+    sentence = clean_sentence(s)
+    sentence_tokens = nltk.word_tokenize(sentence)
+    unigrams.append(sentence_tokens)
+
+#print(unigrams)
+
+unigrams_model = gensim.models.Word2Vec(
+        unigrams,
+        size=150,
+        window=10,
+        min_count=2,
+        workers=10,
+        iter=10)
+
 bigrams_model = gensim.models.Word2Vec(
         bigrams_,
         size=150,
@@ -112,8 +145,21 @@ print("Number of potential mentions: " + str(len(pointed_mentions)))
 men = mentionRankThreshold(pointed_mentions)
 #print("Number of mentions after score filter: " + str(len(men)))
 print("\n")
+#####fig, axes = plt.subplots(1, figsize=(20,20))
+######axes.set_title('Bigram Model', fontsize=14)
+#axes[1].set_title('Trigram Model', fontsize=14)
 
+#axes.margins(1, 1)
+plot_uni = tsne_plot_mentions(unigrams_model, men)
+plot_bi = tsne_plot_mentions(bigrams_model, men)
+plot_tri = tsne_plot_mentions(trigrams_model, men)
 
+plots=[]
+plots.append(plot_uni)
+plots.append(plot_bi)
+plots.append(plot_tri)
+
+#####plt.show()
 print("Plotting Bigrams/Trigrams models based on Technology/Method mentions....................")
 print("\n")
 #tsne_plot_Models(bigrams_model, trigrams_model, men)
@@ -129,4 +175,4 @@ print("Clustering/Plotting Evidence/Claim Models....................")
 
 print("Creating Output....................")
 
-dynamicfill_output(men, claims, evidences)
+dynamicfill_output(men, claims, evidences, plots)

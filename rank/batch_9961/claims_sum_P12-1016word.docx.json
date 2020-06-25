@@ -1,0 +1,33 @@
+[
+    {
+        "claim": "there is less morphology to score", 
+        "claim_score": 0.30704379, 
+        "evidence_score": -0.18010181, 
+        "text": "However , our analysis has shown that for Arabic , these genres typically contain more Latin script and transliterated words , and thus there is less morphology to score ."
+    }, 
+    {
+        "claim": "The subject should agree with the verb in both genderverb has masculine inflection", 
+        "claim_score": 0.24355726, 
+        "evidence_score": -0.562936, 
+        "text": "The subject should agree with the verb in both gender and number , but the verb has masculine inflection ."
+    }, 
+    {
+        "claim": "statistics are sparse , and they are made sparser by morphological variation", 
+        "claim_score": 0.15651973, 
+        "evidence_score": -0.50284311, 
+        "text": "However , LM statistics are sparse , and they are made sparser by morphological variation ."
+    }, 
+    {
+        "claim_evidence": "+ PlPrtConj contain all inflectedthatit there is ample room for translation quality improvements through better selection of forms", 
+        "claim_score": 0.087880262, 
+        "evidence": "Qc 2012 Association for Computational LinguisticsIt has also been suggested that this setting requires morphological generation because the bitext may not Pron + Fem + SgVerb + Masc +3 + PlPrtConj contain all inflected variants ( Minkov et al 2007 ; Toutanova et al 2008 ; Fraser et al 2012 However , using lexical coverage experiments , we show thatit there is ample room for translation quality improvements through better selection of forms that already exist in the translation model.they writewilland .", 
+        "evidence_score": 0.42239509, 
+        "text": "Qc 2012 Association for Computational LinguisticsIt has also been suggested that this setting requires morphological generation because the bitext may not Pron + Fem + SgVerb + Masc +3 + PlPrtConj contain all inflected variants ( Minkov et al 2007 ; Toutanova et al 2008 ; Fraser et al 2012 However , using lexical coverage experiments , we show thatit there is ample room for translation quality improvements through better selection of forms that already exist in the translation model.they writewilland ."
+    }, 
+    {
+        "claim": "English is a weakly inflected language", 
+        "claim_score": 0.04412825, 
+        "evidence_score": -0.48366479, 
+        "text": "English is a weakly inflected language : it has a narrow verbal paradigm , restricted nominal inflection ( plurals and only the vestiges of a case system ."
+    }
+]

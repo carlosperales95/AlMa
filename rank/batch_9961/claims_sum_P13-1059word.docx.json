@@ -1,0 +1,20 @@
+[
+    {
+        "claim": "the resources and open source programs developed in this work are made freely available for research purpose at A typical statistical MT system can only translate 60percent person namesIncorrect segmentation and translation of names which often carry central meanings of a sentence can also yield incorrect translation of long contexts", 
+        "claim_score": 0.50517936, 
+        "evidence_score": -0.40755012, 
+        "text": "1 Some of the resources and open source programs developed in this work are made freely available for research purpose at A typical statistical MT system can only translate 60percent person names correctly ( Ji et al 2009 Incorrect segmentation and translation of names which often carry central meanings of a sentence can also yield incorrect translation of long contexts ."
+    }, 
+    {
+        "claim": "It is also important to acknowledge that there are many fundamental differences between the translation of names and other tokensa name is rendered phonetically", 
+        "claim_score": 0.22893084, 
+        "evidence_score": -0.37606056, 
+        "text": "It is also important to acknowledge that there are many fundamental differences between the translation of names and other tokens , depending on whether a name is rendered phonetically , semantically , or a mixture of both ( Ji et al 2009 ) ."
+    }, 
+    {
+        "claim": "etc.Name translations pose a greater complexity because the set of names is open and highly dynamic", 
+        "claim_score": 0.11825803, 
+        "evidence_score": -0.17255593, 
+        "text": "Names have been largely neglected in the prior MT research due to the following reasons : The current dominant automatic MT scoring metrics ( such as Bilingual Evaluation Understudy ( BLEU Papineni et al 2002 treat all words equally , but names have relative low frequency in text ( about 6percent in newswire and only 3percent in web documents ) and thus are vastly outnumbered by function words and common nouns , etc.Name translations pose a greater complexity because the set of names is open and highly dynamic ."
+    }
+]

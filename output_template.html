@@ -77,7 +77,8 @@
     </head>
     <body>
 
-      <button type="button" class="collapsible">Results for the query (QUERY)</button>
+      <button type="button" class="collapsible" name="topicsquery">
+      </button>
       <div class="content">
         <div class="row">
           <div class="column" name="paper_titles">
@@ -113,13 +114,22 @@
               </div>
           </div>
           <div class="row">
-              <button type="button" id="subcollapsible" class="collapsible">ScatterPlot of Methods (TSNE)</button>
-              <div class="content" name="stats2">
-                <div class="column">
-                  <img src="./men_bigrams.png" alt="plot" width="1000" height="1000">
+              <button type="button" id="subcollapsible" class="collapsible">Interactive ScatterPlots of Mentions (Word2Vec + TSNE)</button>
+              <div class="content">
+                <div class="subcolumn">
+                  <button type="button" id="subcollapsible" class="collapsible">Unigram Model</button>
+                  <div class="content" name="scatter_1">
+                  </div>
                 </div>
-                <div class="column">
-                  <img src="./men_trigrams.png" alt="plot" width="1000" height="1000">
+                <div class="subcolumn">
+                  <button type="button" id="subcollapsible" class="collapsible">Bigram Model</button>
+                  <div class="content" name="scatter_2">
+                  </div>
+                </div>
+                <div class="subcolumn">
+                  <button type="button" id="subcollapsible" class="collapsible">Trigram Model</button>
+                  <div class="content" name="scatter_3">
+                  </div>
                 </div>
               </div>
           </div>

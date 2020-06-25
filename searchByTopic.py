@@ -49,6 +49,12 @@ topic_papers = []
 topic_xml = []
 f2 = open("titles.txt", "w")
 
+f3 = open("query.txt", "w")
+query = ""
+for t in topics:
+    query = query + t + " "
+f3.write(query)
+f3.close()
 
 for file in txt_files:
 

@@ -1,0 +1,76 @@
+[
+    {
+        "claim_score": -1.0346818, 
+        "evidence": "Section 4 reports experimental results and Section 5 concludes our work.English PeopleEntityCube GeChinese Renlifang GcAbstracting translation as graph mapping Figure 1 : Illustration of entity-relationship graphs .", 
+        "evidence_score": 0.4299146, 
+        "text": "Section 4 reports experimental results and Section 5 concludes our work.English PeopleEntityCube GeChinese Renlifang GcAbstracting translation as graph mapping Figure 1 : Illustration of entity-relationship graphs ."
+    }, 
+    {
+        "claim_score": -1.4139472, 
+        "evidence": "Similarly , we can mine Chinese news articles to obtain the re lationships between t Jli Vi and 1 ' 1 li \\ itJli Vi .", 
+        "evidence_score": 0.37164561, 
+        "text": "Similarly , we can mine Chinese news articles to obtain the re lationships between t Jli Vi and 1 ' 1 li \\ itJli Vi ."
+    }, 
+    {
+        "claim_score": -0.91660498, 
+        "evidence": "To highlight the advantage of our proposed approach , we compare our results with commercial machine translators Engkoo3 developed in Microsoft Research Asia and Google Translator4 .", 
+        "evidence_score": 0.33973397, 
+        "text": "To highlight the advantage of our proposed approach , we compare our results with commercial machine translators Engkoo3 developed in Microsoft Research Asia and Google Translator4 ."
+    }, 
+    {
+        "claim_score": -1.2457405, 
+        "evidence": "Our evaluation results empirically validated the accuracy of our algorithm over real-life datasets , and showed the effectiveness on our proposed perspective", 
+        "evidence_score": 0.30256127, 
+        "text": "Our evaluation results empirically validated the accuracy of our algorithm over real-life datasets , and showed the effectiveness on our proposed perspective"
+    }, 
+    {
+        "claim_score": -0.44719795, 
+        "evidence": "To achieve this goal , we developed a graph alignment algorithm that iteratively reinforces the matching similarity exploiting relational similarity and then extracts correct matches .", 
+        "evidence_score": 0.22419731, 
+        "text": "To achieve this goal , we developed a graph alignment algorithm that iteratively reinforces the matching similarity exploiting relational similarity and then extracts correct matches ."
+    }, 
+    {
+        "claim_score": -1.8052818, 
+        "evidence": "1com430 Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing , pages 430439 , MIT , Massachusetts , USA , 9-11 October 2010 .", 
+        "evidence_score": 0.22253289, 
+        "text": "1com430 Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing , pages 430439 , MIT , Massachusetts , USA , 9-11 October 2010 ."
+    }, 
+    {
+        "claim_score": -2.5684582, 
+        "evidence": "Such engine This work was done when the first two authors visited Microsoft Research Asia .", 
+        "evidence_score": 0.11672567, 
+        "text": "Such engine This work was done when the first two authors visited Microsoft Research Asia ."
+    }, 
+    {
+        "claim_score": -2.2732785, 
+        "evidence": "Section 3 then develops our framework .", 
+        "evidence_score": 0.10202778, 
+        "text": "Section 3 then develops our framework ."
+    }, 
+    {
+        "claim_score": -0.35552086, 
+        "evidence": "To illustrate , Figure 1 demonstrates the query result for Bill Gates , retrieving and visualizing the entity-relationship graph of related people names that frequently co-occur with Bill in English corpus .", 
+        "evidence_score": 0.092548561, 
+        "text": "To illustrate , Figure 1 demonstrates the query result for Bill Gates , retrieving and visualizing the entity-relationship graph of related people names that frequently co-occur with Bill in English corpus ."
+    }, 
+    {
+        "claim_evidence": "high quality entity translation is essential in cross-lingual information access and trans lationit is non-trivial to achieveentity translationExisting efforts to address these challenges can be categorized into transliterationand corpusbased approaches", 
+        "claim_score": 0.95876354, 
+        "evidence": "While high quality entity translation is essential in cross-lingual information access and trans lation , it is non-trivial to achieve , due to the challenge that entity translation , though typically bearing pronunciation similarity , can also be arbitrary , e.g Jackie Chan and fiX : it ( pronounced Cheng Long Existing efforts to address these challenges can be categorized into transliterationand corpusbased approaches .", 
+        "evidence_score": 0.034490897, 
+        "text": "While high quality entity translation is essential in cross-lingual information access and trans lation , it is non-trivial to achieve , due to the challenge that entity translation , though typically bearing pronunciation similarity , can also be arbitrary , e.g Jackie Chan and fiX : it ( pronounced Cheng Long Existing efforts to address these challenges can be categorized into transliterationand corpusbased approaches ."
+    }, 
+    {
+        "claim_score": -0.90136984, 
+        "evidence": "To illustrate this , an English news article mentioning Bill Gates and Melinda Gates evidences a relationship between the two entities , which can be quantified from their co-occurrences in the entire English Web corpus .", 
+        "evidence_score": 0.034072672, 
+        "text": "To illustrate this , an English news article mentioning Bill Gates and Melinda Gates evidences a relationship between the two entities , which can be quantified from their co-occurrences in the entire English Web corpus ."
+    }, 
+    {
+        "claim_evidence": "translation problem as a graph mapping between entity-relationship graphs in two languages.We develop an effective matching algorithm leveraging both pronunciation and cooccurrence similarity", 
+        "claim_score": 0.12152759, 
+        "evidence": "To summarize , we believe that this paper has the following contributions : We abstract entity translation problem as a graph mapping between entity-relationship graphs in two languages.We develop an effective matching algorithm leveraging both pronunciation and cooccurrence similarity .", 
+        "evidence_score": 0.014962229, 
+        "text": "To summarize , we believe that this paper has the following contributions : We abstract entity translation problem as a graph mapping between entity-relationship graphs in two languages.We develop an effective matching algorithm leveraging both pronunciation and cooccurrence similarity ."
+    }
+]

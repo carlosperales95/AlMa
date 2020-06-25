@@ -23,7 +23,7 @@ from scipy.spatial import ConvexHull
 from os import listdir
 from os.path import isfile, join
 
-
+import mpld3
 
 ################# TSNE ######################
 
@@ -56,7 +56,7 @@ def tsne_plot_original(model):
                      textcoords='offset points',
                      ha='right',
                      va='bottom')
-    #plt.show()
+    plt.show()
 
 
 def isImportant(label, mentions):
@@ -133,13 +133,15 @@ def tsne_plot_mentions(model, mentions):
                          cmap=plt.cm.jet)
     ax.grid(color='white', linestyle='solid')
 
-    ax.set_title("Scatter Plot (with tooltips!)", size=20)
+    #ax.set_title("Model", size=20)
 
     tooltip = mpld3.plugins.PointLabelTooltip(scatter, labels=labels)
     mpld3.plugins.connect(fig, tooltip)
 
-    mpld3.show()
+    #mpld3.show()
+    html_str = mpld3.fig_to_html(fig, template_type='simple')
 
+    return html_str
 
 
 ############## MAINLY USED TSNE #############
@@ -179,6 +181,7 @@ def tsne_plot_custom(model, mentions, ax):
                 if len(double_c) > 1:
                     labels.append(no_stopword_word)
                     tokens.append(model[word])
+                    #print(no_stopword_word)
 
 
     tsne_model = TSNE(perplexity=40, n_components=2, init='pca', n_iter=2500, random_state=23)
