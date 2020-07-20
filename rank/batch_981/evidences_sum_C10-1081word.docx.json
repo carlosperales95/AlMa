@@ -1,0 +1,8 @@
+[
+    {
+        "claim_score": -0.9427685, 
+        "evidence": "Specifically , two types of semantic role features are proposed in this paper : a semantic role reordering feature designed to capture the skeletonlevel permutation , and a semantic role deletion fea716 Proceedings of the 23rd International Conference on Computational Linguistics ( Coling 2010 pages 716724 , Beijing , August 2010 ture designed to penalize missing semantic roles in the target sentence .", 
+        "evidence_score": 0.21841641, 
+        "text": "Specifically , two types of semantic role features are proposed in this paper : a semantic role reordering feature designed to capture the skeletonlevel permutation , and a semantic role deletion fea716 Proceedings of the 23rd International Conference on Computational Linguistics ( Coling 2010 pages 716724 , Beijing , August 2010 ture designed to penalize missing semantic roles in the target sentence ."
+    }
+]

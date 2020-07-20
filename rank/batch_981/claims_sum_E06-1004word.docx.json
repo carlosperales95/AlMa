@@ -1,0 +1,14 @@
+[
+    {
+        "claim": "1-2 are conceptuallythere exists aThe models are independent of the language pair and therefore , can be used to build a translation system for any language pair as long as a parallel corpus of texts is available for training", 
+        "claim_score": 0.79625989, 
+        "evidence_score": -0.38175598, 
+        "text": "We prove that while IBM Models 1-2 are conceptually and computationally simple , computations involving the higher ( and more useful ) models are hard.Since it is unlikely that there exists a poly-language 1 ( Tillman , 2001 Wang , 1997 Germann et al 2003 Udupa et al 2004 The models are independent of the language pair and therefore , can be used to build a translation system for any language pair as long as a parallel corpus of texts is available for training ."
+    }, 
+    {
+        "claim": "our results may help in the design of effective heuristicsfor", 
+        "claim_score": 0.66234789, 
+        "evidence_score": -0.12081358, 
+        "text": "We also believe that our results may help in the design of effective heuristicsfor some of these tasks ."
+    }
+]

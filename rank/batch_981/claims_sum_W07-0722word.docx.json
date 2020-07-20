@@ -1,0 +1,14 @@
+[
+    {
+        "claim": "the application of mixture modelling in SMT has received increasing attention", 
+        "claim_score": 0.62391379, 
+        "evidence_score": -0.3638559, 
+        "text": "However , there have not been until very recently that the application of mixture modelling in SMT has received increasing attention ."
+    }, 
+    {
+        "claim": "Mixture modelling is a standard technique for density estimationhas just started to be explored", 
+        "claim_score": 0.15168031, 
+        "evidence_score": -0.095410581, 
+        "text": "Mixture modelling is a standard technique for density estimation , but its use in statistical machine translation ( SMT ) has just started to be explored ."
+    }
+]

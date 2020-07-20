@@ -4,29 +4,21 @@ PCA on evidences
 
 Sentences in cluster n0:
 .....................................
-	We show that incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamically biasing SMT towards relevant translations , as evidenced by significant performance gains .
-
 	To obtain the lexical probability conditioned on topic distribution , we first compute the expected count ezn ( e , f of a word pair under topic zn : features in the translation model , and interpolating them log-linearly with our other features , thus allowezn ( e , f =p ( zn | di ) cj ( e , f 1 ) ing us to discriminatively optimize their weights on di T xj di an arbitrary objective function .
 
-	Depending on the model used to select subcorpora , we can bias our translation toward any arbitrary distinction .
+	We can construct a topic model once on the training data , and use it infer topics on any test set to adapt the translation model .
 
-	In this work , we consider the underlying latent topics of the documents ( Blei et al 2003 Topic modeling has received some use in SMT , for instance Bilingual LSA adaptation ( Tam et al 2007 and the BiTAM model ( Zhao and Xing , 2006 which uses a bilingual topic model for learning alignment .
+	We show that it is possible to significantly decrease training and test corpus perplexity of the translation models .
 
-	We induce unsupervised domains from large corpora , and we incorporate soft , probabilistic domain membership into a translation model .
+	In addition , we perform a rescoring of-Best lists using our maximum entropy model and thereby yield an improvement in translation quality .
 
 	This additional information could be : Simple context information : information of the words surrounding the word pair ; Syntactic information : part-of-speech information , syntactic constituent , sentence Semantic information : disambiguation information ( e.g.from WordNet currentspeech or dialog act .
 
-	Other authors have applied this approach to language modeling ( Rosenfeld , 1996 ; Martin et al 1999 ; Peters and Klakow , 1999 A short review of the maximum entropy approach is outlined in Section 3 .
-
-	Finally , we conclude this paper in Section 6 We have shown that our cache-based approach significantly improves the performance with the help of various caches , such as the dynamic , static and topic caches , although the cache-based approach may introduce some negative impact onBLEU scores for certain documents.In the future , we will further explore how to reflect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments , such as named entity , event and coreference .
-
 	Tiedemann showed that the repetition and consistency are very important when modeling natural language and translation .
 
-	He proposed to employ cache-based language and translation models in a phrase-based SMT system for domain909 Proceedings of the 2011 Conference on Empirical Methods in Natural Language Processing , pages 909919 , Edinburgh , Scotland , UK , July 2731 , 2011 .
+	First of all , most of parallel corpora lack the annotation of document boundaries ( Tam , 2007 Secondly , although it is easy to incorporate a new feature into the classical log-linear model ( Och , 2003 it is difficult to capture document-level information and model it via some simple features .
 
 	In order to resolve this problem , this paper employs a topic model to weaken those noisybilingual phrase pairs by recommending the decoder to choose most likely phrase pairs according to the topic words extracted from the target-side text of similar bilingual document pairs .
-
-	In particular , three new features are designed to explore various kinds of document-level information in above three kinds of caches .
 
 	Section 3 presents our cache-based approach to documentlevel SMT .
 
@@ -34,86 +26,19 @@ Sentences in cluster n0:
 
 	In ( Civera and Juan , 2006 a mixture extension of IBM model 2 along with a specific dynamicprogramming decoding algorithm were proposed .
 
-	In ( Zhao and Xing , 2006 three fairly sophisticated bayesian topical translation models , taking IBM Model 1 as a baseline model , were presented under the bilingual topic admixture model formalism .
-
-	Our evaluation results empirically validated the accuracy of our algorithm over real-life datasets , and showed the effectiveness on our proposed perspective
-
-	To achieve this goal , we developed a graph alignment algorithm that iteratively reinforces the matching similarity exploiting relational similarity and then extracts correct matches .
-
-	Such engine This work was done when the first two authors visited Microsoft Research Asia .
-
-	Results showed that our approach significantly reduces the word perplexity on the target language in both cases using ASR hypotheses and manual transcripts .
-
-	We will investigate the incorporation of monolingual documents for potentially better bilingual LSA modeling
-
-	We interpolated multiple translation models generated by the CWS schemes and found our approaches were very effective in improving the translations .
-
-	We investigated the effect of CWS on SMT from two points of view .
-
-	Experimental results on the German-English Verbmobil Source Language Textmorpho-syntactic AnalysisTransformation f J 1 Global Search : maximize Pr ( e I J e I task are reported .
-
-	We furthermore suggest the use of hierarchical lexicon models .
-
-	Tightly integrate joint bilingual name tagging into MT training by coordinating tagged604 Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics , pages 604614 , Sofia , Bulgaria , August 4-9 2013 .
-
-	This need can be addressed in part by cross-lingual information access tasks such as entity linking ( McNamee et al 2011 ; Cassidy et al 2012 event extraction ( Hakkani-Tur et al 2007 slot filling ( Snover et al 2011 ) and question answering ( Parton et al 2009 ; Parton and McKeown , 2010 A key bottleneck of highquality cross-lingual information access lies in the performance of Machine Translation ( MT Traditional MT approaches focus on the fluency and accuracy of the overall translation but fall short in their ability to translate certain content words including critical information , especially names .
-
-
-
-
-Sentences in cluster n1:
-.....................................
-	In our case , by building a topic distribution for the source side of the training data , we abstract the notion of domain to include automatically derived subcorpora with probabilistic membership .
-
-	Qc 2012 Association for Computational Linguisticsdata come from ; and even if we do , subcorpus may not be the most useful notion of domain for better translations .
-
-	Conditioning lexical probabilities on the topic biases translations toward topicrelevant output , resulting in significant improvements of up to 1 BLEU and 3 TER on Chinese to English translation over a strong baseline .
-
-	We can construct a topic model once on the training data , and use it infer topics on any test set to adapt the translation model .
-
-	They then learn a mapping from these features to sentence weights , use the sentence weights to bias the model probability estimates and subsequently learn the model weights .
-
-	We show that it is possible to significantly decrease training and test corpus perplexity of the translation models .
-
-	In addition , we perform a rescoring of-Best lists using our maximum entropy model and thereby yield an improvement in translation quality .
-
-	We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality .
-
-	We have been able to obtain a significant better test corpus perplexity and also a slight improvement in translation quality .
-
-	Statistical machine translation systems are usually trained on a large amount of bilingual sentence pairs and translate one sentence at a time , ignoring document-level information .
-
-	First of all , most of parallel corpora lack the annotation of document boundaries ( Tam , 2007 Secondly , although it is easy to incorporate a new feature into the classical log-linear model ( Och , 2003 it is difficult to capture document-level information and model it via some simple features .
-
-	Specifically , two types of semantic role features are proposed in this paper : a semantic role reordering feature designed to capture the skeletonlevel permutation , and a semantic role deletion fea716 Proceedings of the 23rd International Conference on Computational Linguistics ( Coling 2010 pages 716724 , Beijing , August 2010 ture designed to penalize missing semantic roles in the target sentence .
-
-	Qc 2007 Association for Computational Linguistics taking advantage of the localization phenomenon of word alignment in European languages , and the efficient and exact computation of the E-step and Viterbi alignment by using a dynamic-programming approach .
-
-	3 Mixture of HMM alignment models Let us suppose that p ( x has been generated using a T-component mixture of HMM alignment models : T p ( x p ( t p ( x y t = 1 T p ( t p ( x , a y , t ) .
-
 	Section 4 reports experimental results and Section 5 concludes our work.English PeopleEntityCube GeChinese Renlifang GcAbstracting translation as graph mapping Figure 1 : Illustration of entity-relationship graphs .
 
 	Similarly , we can mine Chinese news articles to obtain the re lationships between t Jli Vi and 1 ' 1 li \ itJli Vi .
 
-	To highlight the advantage of our proposed approach , we compare our results with commercial machine translators Engkoo3 developed in Microsoft Research Asia and Google Translator4 .
-
-	1com430 Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing , pages 430439 , MIT , Massachusetts , USA , 9-11 October 2010 .
-
-	Section 3 then develops our framework .
+	Such engine This work was done when the first two authors visited Microsoft Research Asia .
 
 	To illustrate , Figure 1 demonstrates the query result for Bill Gates , retrieving and visualizing the entity-relationship graph of related people names that frequently co-occur with Bill in English corpus .
 
 	While high quality entity translation is essential in cross-lingual information access and trans lation , it is non-trivial to achieve , due to the challenge that entity translation , though typically bearing pronunciation similarity , can also be arbitrary , e.g Jackie Chan and fiX : it ( pronounced Cheng Long Existing efforts to address these challenges can be categorized into transliterationand corpusbased approaches .
 
-	To illustrate this , an English news article mentioning Bill Gates and Melinda Gates evidences a relationship between the two entities , which can be quantified from their co-occurrences in the entire English Web corpus .
-
 	To summarize , we believe that this paper has the following contributions : We abstract entity translation problem as a graph mapping between entity-relationship graphs in two languages.We develop an effective matching algorithm leveraging both pronunciation and cooccurrence similarity .
 
-	We evaluated the adapted LM on SMT and found that the evaluation metrics are crucial to reflect the actual improvement in performance .
-
 	In Section 3 , we present the effect of LM adaptation on word perplexity , followed by SMT experiments reported in BLEU on both speech and text input in Section 3.3 .
-
-	We organize the paper as follows : In Section 2 , we introduce the bLSA framework including Latent Dirichlet-Tree Allocation ( LDTA Tam and Schultz , 2007 ) as a correlated LSA model , bLSA training and crosslingual LM adaptation .
 
 	The key property of the bLSA model is that Proceedings of the 45th Annual Meeting of the Association of Computational Linguistics , pages 520527 , Prague , Czech Republic , June 2007 .
 
@@ -121,21 +46,11 @@ Sentences in cluster n1:
 
 	We also found the correlation between the CWS F-score and SMT BLEU score was very weak .
 
-	We found these approaches were very effective in improving quality of translations .
-
-	We tested dictionarybased and CRF-based approaches and found there was no significant difference between the two in the qualty of the resulting translations .
-
-	This approach produced a significant improvement in translation andachieved the best BLEU score of all the CWSschemes .
-
-	We have published a much more detailed paper ( Zhang et al 2008 ) to describe the relations between CWS and SMT
-
 	Secondly , we investigated the advantages and disadvantages of various CWS approaches , both dictionary-based and CRF-based , and built CWSs using these approaches to examine their effect on translations .
 
 	We proposed a new approach to linear interpolation of translation features .
 
 	Which approach pro 1 A CWS competition organized by the ACL special interest group on Chinese .216 Proceedings of the Third Workshop on Statistical Machine Translation , pages 216223 , Columbus , Ohio , USA , June 2008 .
-
-	In this work , we also propose approaches to make use of all the Sighan training data regardless of the specifications .
 
 	We grouped all of the CWS methods into two classes : the class without out-of-vocabulary ( OOV ) recognition and the class with OOV recognition , represented by the dictionary-based CWS and the CRF-based CWS , respectively .
 
@@ -149,13 +64,98 @@ Sentences in cluster n1:
 
 	We will investigate this in the future .
 
-	It has been successfully applied to realistic tasks in various national and international research programs .
-
 	Qc 2013 Association for Computational Linguistics names in parallel corpora , updating word segmentation , word alignment and grammar extraction ( Section 3.1 We developed a name-aware MT framework which tightly integrates name tagging and name translation into training and decoding of MT. Experiments on Chinese-English translation demonstrated the effectiveness of our approach over a high-quality MT baseline in both overall translation and name translation , especially for formal genres .
+
+
+
+
+Sentences in cluster n1:
+.....................................
+	In our case , by building a topic distribution for the source side of the training data , we abstract the notion of domain to include automatically derived subcorpora with probabilistic membership .
+
+	Qc 2012 Association for Computational Linguisticsdata come from ; and even if we do , subcorpus may not be the most useful notion of domain for better translations .
+
+	We show that incorporating lexical weighting features conditioned on soft domain membership directly into our model is an effective strategy for dynamically biasing SMT towards relevant translations , as evidenced by significant performance gains .
+
+	Conditioning lexical probabilities on the topic biases translations toward topicrelevant output , resulting in significant improvements of up to 1 BLEU and 3 TER on Chinese to English translation over a strong baseline .
+
+	Depending on the model used to select subcorpora , we can bias our translation toward any arbitrary distinction .
+
+	In this work , we consider the underlying latent topics of the documents ( Blei et al 2003 Topic modeling has received some use in SMT , for instance Bilingual LSA adaptation ( Tam et al 2007 and the BiTAM model ( Zhao and Xing , 2006 which uses a bilingual topic model for learning alignment .
+
+	They then learn a mapping from these features to sentence weights , use the sentence weights to bias the model probability estimates and subsequently learn the model weights .
+
+	We induce unsupervised domains from large corpora , and we incorporate soft , probabilistic domain membership into a translation model .
+
+	We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality .
+
+	We have been able to obtain a significant better test corpus perplexity and also a slight improvement in translation quality .
+
+	Other authors have applied this approach to language modeling ( Rosenfeld , 1996 ; Martin et al 1999 ; Peters and Klakow , 1999 A short review of the maximum entropy approach is outlined in Section 3 .
+
+	Finally , we conclude this paper in Section 6 We have shown that our cache-based approach significantly improves the performance with the help of various caches , such as the dynamic , static and topic caches , although the cache-based approach may introduce some negative impact onBLEU scores for certain documents.In the future , we will further explore how to reflect document divergence during training and dynamically adjust cache weights according to different documents.There are many useful components in trainingdocuments , such as named entity , event and coreference .
+
+	Statistical machine translation systems are usually trained on a large amount of bilingual sentence pairs and translate one sentence at a time , ignoring document-level information .
+
+	He proposed to employ cache-based language and translation models in a phrase-based SMT system for domain909 Proceedings of the 2011 Conference on Empirical Methods in Natural Language Processing , pages 909919 , Edinburgh , Scotland , UK , July 2731 , 2011 .
+
+	In particular , three new features are designed to explore various kinds of document-level information in above three kinds of caches .
+
+	Specifically , two types of semantic role features are proposed in this paper : a semantic role reordering feature designed to capture the skeletonlevel permutation , and a semantic role deletion fea716 Proceedings of the 23rd International Conference on Computational Linguistics ( Coling 2010 pages 716724 , Beijing , August 2010 ture designed to penalize missing semantic roles in the target sentence .
+
+	Qc 2007 Association for Computational Linguistics taking advantage of the localization phenomenon of word alignment in European languages , and the efficient and exact computation of the E-step and Viterbi alignment by using a dynamic-programming approach .
+
+	In ( Zhao and Xing , 2006 three fairly sophisticated bayesian topical translation models , taking IBM Model 1 as a baseline model , were presented under the bilingual topic admixture model formalism .
+
+	3 Mixture of HMM alignment models Let us suppose that p ( x has been generated using a T-component mixture of HMM alignment models : T p ( x p ( t p ( x y t = 1 T p ( t p ( x , a y , t ) .
+
+	To highlight the advantage of our proposed approach , we compare our results with commercial machine translators Engkoo3 developed in Microsoft Research Asia and Google Translator4 .
+
+	Our evaluation results empirically validated the accuracy of our algorithm over real-life datasets , and showed the effectiveness on our proposed perspective
+
+	To achieve this goal , we developed a graph alignment algorithm that iteratively reinforces the matching similarity exploiting relational similarity and then extracts correct matches .
+
+	1com430 Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing , pages 430439 , MIT , Massachusetts , USA , 9-11 October 2010 .
+
+	Section 3 then develops our framework .
+
+	To illustrate this , an English news article mentioning Bill Gates and Melinda Gates evidences a relationship between the two entities , which can be quantified from their co-occurrences in the entire English Web corpus .
+
+	We evaluated the adapted LM on SMT and found that the evaluation metrics are crucial to reflect the actual improvement in performance .
+
+	We organize the paper as follows : In Section 2 , we introduce the bLSA framework including Latent Dirichlet-Tree Allocation ( LDTA Tam and Schultz , 2007 ) as a correlated LSA model , bLSA training and crosslingual LM adaptation .
+
+	Results showed that our approach significantly reduces the word perplexity on the target language in both cases using ASR hypotheses and manual transcripts .
+
+	We will investigate the incorporation of monolingual documents for potentially better bilingual LSA modeling
+
+	We interpolated multiple translation models generated by the CWS schemes and found our approaches were very effective in improving the translations .
+
+	We found these approaches were very effective in improving quality of translations .
+
+	We tested dictionarybased and CRF-based approaches and found there was no significant difference between the two in the qualty of the resulting translations .
+
+	This approach produced a significant improvement in translation andachieved the best BLEU score of all the CWSschemes .
+
+	We have published a much more detailed paper ( Zhang et al 2008 ) to describe the relations between CWS and SMT
+
+	We investigated the effect of CWS on SMT from two points of view .
+
+	In this work , we also propose approaches to make use of all the Sighan training data regardless of the specifications .
+
+	Experimental results on the German-English Verbmobil Source Language Textmorpho-syntactic AnalysisTransformation f J 1 Global Search : maximize Pr ( e I J e I task are reported .
+
+	We furthermore suggest the use of hierarchical lexicon models .
+
+	It has been successfully applied to realistic tasks in various national and international research programs .
 
 	Compared to previous methods , the novel contributions of our approach are : 1 .
 
 	Experiments on Chinese-English translation demonstrated the effectiveness of our approach on enhancing the quality of overall translation , name translation and word alignment over a high-quality MT baseline1 .
+
+	Tightly integrate joint bilingual name tagging into MT training by coordinating tagged604 Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics , pages 604614 , Sofia , Bulgaria , August 4-9 2013 .
+
+	This need can be addressed in part by cross-lingual information access tasks such as entity linking ( McNamee et al 2011 ; Cassidy et al 2012 event extraction ( Hakkani-Tur et al 2007 slot filling ( Snover et al 2011 ) and question answering ( Parton et al 2009 ; Parton and McKeown , 2010 A key bottleneck of highquality cross-lingual information access lies in the performance of Machine Translation ( MT Traditional MT approaches focus on the fluency and accuracy of the overall translation but fall short in their ability to translate certain content words including critical information , especially names .
 
 	We propose a novel Name-aware MT ( NAMT ) approach which can tightly integrate name processing into the training and decoding processes of an end-to-end MT pipeline , and a new name-aware metric to evaluate MT which can assign different weights to different tokens according to their importance values in a document .
 

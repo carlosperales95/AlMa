@@ -4,21 +4,19 @@ PCA on evidences
 
 Sentences in cluster n0:
 .....................................
-	We show that it is possible to significantly decrease training and test corpus perplexity of the translation models .
+	We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality .
 
-	Out-of-vocabulary recognition may have two-sided effects on SMT performance .
+	There is also significant disagreement on the specifications , although much of their contents is the same .
 
-	We also show that the proposed method effectively addresses the well-known rare word problem in EM-estimated models ; and at the same time induces a much smaller dictionary of bilingual word-pairs .
+	We prove that while IBM Models 1-2 are conceptually and computationally simple , computations involving the higher ( and more useful ) models are hard.Since it is unlikely that there exists a poly-language 1 ( Tillman , 2001 Wang , 1997 Germann et al 2003 Udupa et al 2004 The models are independent of the language pair and therefore , can be used to build a translation system for any language pair as long as a parallel corpus of texts is available for training .
 
 	We also believe that our results may help in the design of effective heuristicsfor some of these tasks .
 
-	One latent outcome of this work is that Wikipedia is surprisingly suitable for mining medical terms .
+	In future works , other parameters which influence the performance will be studied , among which the use of a terminological extractor to treat complex terms ( Daille and Morin , 2005 more contextual window configurations , and the use of syntactic information in combination with lexical information ( Yu and Tsujii , 2009 It would also be interesting to compare the projection-based approaches to ( Haghighi et al 2008 ) s generative model for bilingual lexicon acquisition from monolingual corpora .
 
 	A closer look at the translation candidates obtained when using LL , the most popular association measure in projection-based approaches , shows that they are often collocates of the reference translation .
 
-	One interesting outcome of this study is that significant gains can be obtained by using an association measure that is rarely used in practice .
-
-	Context-based projection methods for identifying the translation of terms in comparable corpora has attracted a lot of attention in the community , e.g Fung ,1998 ; Rapp , 1999 Surprisingly , none of those works have systematically investigated the impact of the many parameters controlling their approach .
+	We plan to check its adequacy for other domains and verify that LO remains a better association measure for different corpora and domains
 
 	Still , it is already striking that a direct comparison of them is difficult , if not impossible .
 
@@ -28,32 +26,34 @@ Sentences in cluster n0:
 
 	We believe that decoding algorithms derived from our framework can be of practical significance .
 
-	We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm .
-
-	The results show that data-driven semantic analysis can help to circumvent the need for an external seed dictionary , traditionally considered as a prerequisite for translation extraction from parallel corpora .
-
-	We expect the disambiguation to have a beneficial impact on the results given that polysemy is a frequent phenomenon in a general , mixed-domain corpus .
-
 
 
 
 Sentences in cluster n1:
 .....................................
-	We believe that by performing a rescoring on translation word graphs we will obtain a more significant improvement in translation quality .
+	We show that it is possible to significantly decrease training and test corpus perplexity of the translation models .
 
-	There is also significant disagreement on the specifications , although much of their contents is the same .
+	Out-of-vocabulary recognition may have two-sided effects on SMT performance .
 
-	We prove that while IBM Models 1-2 are conceptually and computationally simple , computations involving the higher ( and more useful ) models are hard.Since it is unlikely that there exists a poly-language 1 ( Tillman , 2001 Wang , 1997 Germann et al 2003 Udupa et al 2004 The models are independent of the language pair and therefore , can be used to build a translation system for any language pair as long as a parallel corpus of texts is available for training .
+	We also show that the proposed method effectively addresses the well-known rare word problem in EM-estimated models ; and at the same time induces a much smaller dictionary of bilingual word-pairs .
 
-	In future works , other parameters which influence the performance will be studied , among which the use of a terminological extractor to treat complex terms ( Daille and Morin , 2005 more contextual window configurations , and the use of syntactic information in combination with lexical information ( Yu and Tsujii , 2009 It would also be interesting to compare the projection-based approaches to ( Haghighi et al 2008 ) s generative model for bilingual lexicon acquisition from monolingual corpora .
+	One latent outcome of this work is that Wikipedia is surprisingly suitable for mining medical terms .
 
-	We plan to check its adequacy for other domains and verify that LO remains a better association measure for different corpora and domains
+	One interesting outcome of this study is that significant gains can be obtained by using an association measure that is rarely used in practice .
+
+	Context-based projection methods for identifying the translation of terms in comparable corpora has attracted a lot of attention in the community , e.g Fung ,1998 ; Rapp , 1999 Surprisingly , none of those works have systematically investigated the impact of the many parameters controlling their approach .
 
 	Nevertheless , they found that human mind is very well capable of deriving dependencies such as morphology , cognates , proper names , spelling variations etc and that this capability was finally at the basis of the better results produced by humans compared to corpus based machine translation .
 
 	As there is a large overlap between the modeled events in the combined probabilistic models , we assume that log-linear combination would result in more improvement of the translation quality than the combination by linear interpolation does .
 
 	We show that both of these problems are easy to solve and provide efficient solutions for them .
+
+	We have also shown that alternating maximization can be employed tocome up with O ( m2 ) decoding algorithm .
+
+	The results show that data-driven semantic analysis can help to circumvent the need for an external seed dictionary , traditionally considered as a prerequisite for translation extraction from parallel corpora .
+
+	We expect the disambiguation to have a beneficial impact on the results given that polysemy is a frequent phenomenon in a general , mixed-domain corpus .
 
 
 

@@ -1,0 +1,8 @@
+[
+    {
+        "claim": "the obvious performance improvement for query translation can be obtained , which is very beneficial to CLIR and can improve the whole retrieval performancethe proposed model improves the acquirement ability for OOV term translationsolves the translation pair selection and evaluation in a novel way by fusing multiple features", 
+        "claim_score": 0.62383449, 
+        "evidence_score": -0.18005725, 
+        "text": "It can be observed from the experimental results on the data sets of Text Retrieval Evaluation Conference ( TREC ) that the obvious performance improvement for query translation can be obtained , which is very beneficial to CLIR and can improve the whole retrieval performance In this paper , the proposed model improves the acquirement ability for OOV term translation through Web mining , and solves the translation pair selection and evaluation in a novel way by fusing multiple features and introducing the supervised learning based on Ranking SVM ."
+    }
+]

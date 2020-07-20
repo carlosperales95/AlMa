@@ -139,6 +139,21 @@ def tokenize_sentences(evidences):
     return data
 
 
+def clean_sentence(val):
+    STOP_WORDS = nltk.corpus.stopwords.words()
+
+    "remove chars that are not letters or numbers, downcase, then remove stop words"
+    regex = re.compile('([^\s\w]|_)+')
+    sentence = regex.sub('', val)
+    sentence = sentence.split(" ")
+
+    for word in list(sentence):
+        if word in STOP_WORDS:
+            sentence.remove(word)
+
+    sentence = " ".join(sentence)
+    return sentence
+
 ##############################################
 
 

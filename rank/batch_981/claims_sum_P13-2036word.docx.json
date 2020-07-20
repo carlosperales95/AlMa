@@ -1,0 +1,28 @@
+[
+    {
+        "claim": "association is rarely observed in English corpus", 
+        "claim_score": 0.53515892, 
+        "evidence_score": -0.65136781, 
+        "text": "In such case , as Hillary Clinton is a famous female leader , she may be associated with other Chinese female leaders in Chinese corpus , while such association is rarely observed in English corpus , which causes asymmetry ."
+    }, 
+    {
+        "claim_evidence": "using such dissimilarity against deciding this pair as a correct translation would be harmful", 
+        "claim_score": 0.18704286, 
+        "evidence": "That is , Hillary Clinton is atemporal , as Figure 1 shows , such that using such dissimilarity against deciding this pair as a correct translation would be harmful .", 
+        "evidence_score": 0.0007461317, 
+        "text": "That is , Hillary Clinton is atemporal , as Figure 1 shows , such that using such dissimilarity against deciding this pair as a correct translation would be harmful ."
+    }, 
+    {
+        "claim_evidence": "proposes selective temporality as a new featuretemporal features may be harmful for translating atemporal entities", 
+        "claim_score": 0.072463136, 
+        "evidence": "This paper studies named entity translation and proposes selective temporality as a new feature , as using temporal features may be harmful for translating atemporal entities .", 
+        "evidence_score": 0.14418173, 
+        "text": "This paper studies named entity translation and proposes selective temporality as a new feature , as using temporal features may be harmful for translating atemporal entities ."
+    }, 
+    {
+        "claim": "considering temporality selectively is helpful for improving the translation quality", 
+        "claim_score": 0.029364359, 
+        "evidence_score": -0.039554159, 
+        "text": "This paper validated that considering temporality selectively is helpful for improving the translation quality ."
+    }
+]

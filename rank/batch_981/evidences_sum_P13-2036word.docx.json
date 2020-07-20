@@ -1,0 +1,46 @@
+[
+    {
+        "claim_score": -0.47563998, 
+        "evidence": "We validate this selective use of temporal features boosts the accuracy by 6.1 percent .", 
+        "evidence_score": 0.76413157, 
+        "text": "We validate this selective use of temporal features boosts the accuracy by 6.1 percent ."
+    }, 
+    {
+        "claim_score": -0.64425774, 
+        "evidence": "We developed a classifier to distinguish temporalentities and our proposed method outperforms the state-of-the-art approach by 6.1", 
+        "evidence_score": 0.44299131, 
+        "text": "We developed a classifier to distinguish temporalentities and our proposed method outperforms the state-of-the-art approach by 6.1"
+    }, 
+    {
+        "claim_score": -1.4638359, 
+        "evidence": "In contrast , Figure 1 illustrates asymmetry , by showing the frequencies of Usain Bolt , a Jamaican sprinter , and Hillary Clinton , an American politician , in comparable news articles during the year 2008 .", 
+        "evidence_score": 0.43898491, 
+        "text": "In contrast , Figure 1 illustrates asymmetry , by showing the frequencies of Usain Bolt , a Jamaican sprinter , and Hillary Clinton , an American politician , in comparable news articles during the year 2008 ."
+    }, 
+    {
+        "claim_score": -0.41137687, 
+        "evidence": "To overcome such problems , we propose a new notion of selective temporality ( called this fea 2.3 Step 3 : Reinforcement We reinforce R0 by leveraging R and obtain a converged matrix R using the following model : ture ST to distinguish from T ) to automatically distinguish temporal and atemporal entities .", 
+        "evidence_score": 0.2480615, 
+        "text": "To overcome such problems , we propose a new notion of selective temporality ( called this fea 2.3 Step 3 : Reinforcement We reinforce R0 by leveraging R and obtain a converged matrix R using the following model : ture ST to distinguish from T ) to automatically distinguish temporal and atemporal entities ."
+    }, 
+    {
+        "claim_score": -1.8760508, 
+        "evidence": "Early efforts of named entity translation have focused on using phonetic feature ( called PH ) to estimate a phonetic similarity between two names ( Knight and Graehl , 1998 ; Li et al 2004 ; Virga and Khudanpur , 2003 In contrast , some approaches have focused on using context feature ( called CX ) which compares surrounding words of entities ( Fung and Yee , 1998 ; Diab and Finch , 2000 ; Laroche and Langlais , 2010 Recently , holistic approaches combining such similarities have been studied ( Shao and Ng , 2004 ; You et al 2010 ; Kim et al 2011 Shao and Ng , 2004 ) rank translation candidates using PH and CX independently and return results with the highest average rank You et al 2010 ) compute initial translation scores using PH and iteratively update the scores using relationship feature ( called R Kim et al 2011 ) boost Yous approach by additionally leveraging CX .", 
+        "evidence_score": 0.22161077, 
+        "text": "Early efforts of named entity translation have focused on using phonetic feature ( called PH ) to estimate a phonetic similarity between two names ( Knight and Graehl , 1998 ; Li et al 2004 ; Virga and Khudanpur , 2003 In contrast , some approaches have focused on using context feature ( called CX ) which compares surrounding words of entities ( Fung and Yee , 1998 ; Diab and Finch , 2000 ; Laroche and Langlais , 2010 Recently , holistic approaches combining such similarities have been studied ( Shao and Ng , 2004 ; You et al 2010 ; Kim et al 2011 Shao and Ng , 2004 ) rank translation candidates using PH and CX independently and return results with the highest average rank You et al 2010 ) compute initial translation scores using PH and iteratively update the scores using relationship feature ( called R Kim et al 2011 ) boost Yous approach by additionally leveraging CX ."
+    }, 
+    {
+        "claim_evidence": "proposes selective temporality as a new featuretemporal features may be harmful for translating atemporal entities", 
+        "claim_score": 0.072463136, 
+        "evidence": "This paper studies named entity translation and proposes selective temporality as a new feature , as using temporal features may be harmful for translating atemporal entities .", 
+        "evidence_score": 0.14418173, 
+        "text": "This paper studies named entity translation and proposes selective temporality as a new feature , as using temporal features may be harmful for translating atemporal entities ."
+    }, 
+    {
+        "claim_evidence": "using such dissimilarity against deciding this pair as a correct translation would be harmful", 
+        "claim_score": 0.18704286, 
+        "evidence": "That is , Hillary Clinton is atemporal , as Figure 1 shows , such that using such dissimilarity against deciding this pair as a correct translation would be harmful .", 
+        "evidence_score": 0.0007461317, 
+        "text": "That is , Hillary Clinton is atemporal , as Figure 1 shows , such that using such dissimilarity against deciding this pair as a correct translation would be harmful ."
+    }
+]

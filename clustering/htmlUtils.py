@@ -269,28 +269,58 @@ def fill_scatters(full_content, plot, id):
     start = template[:start_id]
     end = template[start_id+end_id:]
 
-
-    message = "\t\t\t\t\t\t\t<div> "+ plot + "\t\t\t\t\t\t\t</div>" + "\n"
     #message = message + "\t\t\t\t\t\t\t<p>  \t\t\t\t\t\t\t</p>" + "\n"
 
+
+    content = start+ plot + "\t\t\t\t\t\t\t\t\t" +end
+    return content
+
+
+def fill_lda(full_content, lda):
+
+    template = full_content
+
+    start_id = template.find('name="lda">')+len('name="lda">')
+    end_id = template[start_id:].find("</div>")
+    start = template[:start_id]
+    end = template[start_id+end_id:]
+
+    message = "\n \t\t\t\t\t\t\t"+ lda + "\t\t\t\t\t\t\t" + "\n"
+            #message = message + "\t\t\t\t\t\t\t<p>  \t\t\t\t\t\t\t</p>" + "\n"
+            #print(lda)
 
     content = start+message+end
     return content
 
 
-def dynamicfill_output(mentions, c_labels, e_labels, plots):
+def dynamicfill_output(mentions, c_labels, e_labels):
 
     full_content = ""
     full_content, titles = fill_titles(full_content)
+
+###### Suspended until mpld3_to_html works ######
+    #for idx, plot in enumerate(plots):
+    #    full_content = fill_scatters(full_content, plot, (idx+1))
+
     full_content = fill_query(full_content)
+
+
     full_content = fill_clustering("bigram_claims", full_content, mentions, c_labels, titles)
     full_content = fill_clustering("trigram_claims", full_content, mentions, c_labels, titles)
     full_content = fill_clustering("bigram_evidences", full_content, mentions, e_labels, titles)
     full_content = fill_clustering("trigram_evidences", full_content, mentions, e_labels, titles)
 
-    for idx, plot in enumerate(plots):
 
-        full_content = fill_scatters(full_content, plot, (idx+1))
+    full_content = fill_menperPaper(full_content, mentions)
+    path= "./outs/"
+    onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
+    for i in onlyfiles:
+        if os.path.isfile(path+i) and 'ldavis_prepared' in i:
+            f = open(path+i, 'r')
+            lda = f.read()
+            f.close()
+            break
+    full_content = fill_lda(full_content, lda)
 
     right_m=[]
     center_m=[]
@@ -310,7 +340,7 @@ def dynamicfill_output(mentions, c_labels, e_labels, plots):
     full_content = fill_mentions(full_content, left_m, "left-mentions")
     full_content = fill_mentions(full_content, center_m, "center-mentions")
     full_content = fill_mentions(full_content, right_m, "right-mentions")
-    full_content = fill_menperPaper(full_content, mentions)
+
 
     f = open('./outs/batch_statistics_view.html', "w")
     f.write(full_content)

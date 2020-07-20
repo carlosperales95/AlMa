@@ -81,7 +81,7 @@ def isImportant(label, mentions):
     return important
 
 
-def tsne_plot_mentions(model, mentions):
+def tsne_plot_mentions_mpld3(model, mentions):
     "Creates and TSNE model and plots it"
     labels = []
     tokens = []
@@ -139,7 +139,11 @@ def tsne_plot_mentions(model, mentions):
     mpld3.plugins.connect(fig, tooltip)
 
     #mpld3.show()
-    html_str = mpld3.fig_to_html(fig, template_type='simple')
+    html_mpld3 = mpld3.fig_to_html(fig, template_type='simple')
+    #plt.show()
+    plt.close()
+
+    html_str = "\n" + '\t\t\t\t\t\t\t\t\t\t<div class="row">'+ html_mpld3 + "\n" + "\t\t\t\t\t\t\t\t\t\t</div>" + "\n"
 
     return html_str
 
@@ -147,7 +151,7 @@ def tsne_plot_mentions(model, mentions):
 ############## MAINLY USED TSNE #############
 
 
-def tsne_plot_custom(model, mentions, ax):
+def tsne_plot_mentions(model, mentions, ax):
     "Creates and TSNE model and plots it"
     labels = []
     tokens = []
@@ -284,8 +288,9 @@ def Kmeans_PCA(sentences, fig, axs, n_clusters, X, lr, filename):
         f.write("\n")
         f.write(".....................................")
         f.write("\n")
-        cluster_cl = [sentences[idx] for idx, x in enumerate(labels) if labels[idx]==r]
+        cluster_cl = [sentences[idx][1] for idx, x in enumerate(labels) if labels[idx]==r]
         for c in cluster_cl:
+            #print(c)
             f.write("\t" + c)
             f.write("\n")
             f.write("\n")
@@ -372,24 +377,25 @@ def scatter_Model(vectors, labels, ax):
     return None
 
 
-def tsne_plot_Models(bigrams_model, trigrams_model, men):
+def tsne_plot_Models(unigrams_model, bigrams_model, trigrams_model, men):
 
     #fig.suptitle('ScatterPlots of Methods')
     #fig.tight_layout()
     #plt.show()
     fig, axes = plt.subplots(1, figsize=(20,20))
-    axes.set_title('Bigram Based', fontsize=14)
-
-    tsne_plot_custom(bigrams_model, men, axes)
+    tsne_plot_mentions(unigrams_model, men, axes)
     plt.tight_layout()
+    plt.savefig('./outs/men_unigrams.png')
+    plt.close()
 
+    fig, axes = plt.subplots(1, figsize=(20,20))
+    tsne_plot_mentions(bigrams_model, men, axes)
+    plt.tight_layout()
     plt.savefig('./outs/men_bigrams.png')
     plt.close()
 
     fig, axes = plt.subplots(1, figsize=(20,20))
-    axes.set_title('Trigram Based', fontsize=14)
-    tsne_plot_custom(trigrams_model, men, axes)
-
+    tsne_plot_mentions(trigrams_model, men, axes)
     plt.tight_layout()
     plt.savefig('./outs/men_trigrams.png')
     plt.close()
@@ -466,6 +472,7 @@ def clusterPlot_Models(type, bigrams_, bigrams_model, trigrams_, trigrams_model,
     X, lr = vectorizeToX(bigrams_, bigrams_model, lemmatized)
     X2, lr2 = vectorizeToX(trigrams_, trigrams_model, lemmatized)
 
+
     print("Plotting elbow Method for cluster input for Bigram and Trigram models in "+type+":")
     plot_elbows(X, X2)
 
@@ -476,9 +483,7 @@ def clusterPlot_Models(type, bigrams_, bigrams_model, trigrams_, trigrams_model,
 
     fig, axes = plt.subplots(1, figsize=(20,20))
     axes.set_title('Bigram Model', fontsize=14)
-    #axes[1].set_title('Trigram Model', fontsize=14)
 
-    axes.set(xlabel='Number of clusters', ylabel='WCSS')
 
     Kmeans_PCA(sentences, fig, axes, bi_clusters, X, lr, "./outs/bigram_"+type+".txt")
     plt.savefig('./outs/'+type+'_bigrams.png')
@@ -486,20 +491,11 @@ def clusterPlot_Models(type, bigrams_, bigrams_model, trigrams_, trigrams_model,
 
     fig, axes = plt.subplots(1, figsize=(20,20))
     axes.set_title('Bigram Model', fontsize=14)
-    #axes[1].set_title('Trigram Model', fontsize=14)
 
-    axes.set(xlabel='Number of clusters', ylabel='WCSS')
 
     Kmeans_PCA(sentences, fig, axes, tri_clusters, X2, lr2, "./outs/trigram_"+type+".txt")
     plt.savefig('./outs/'+type+'_trigrams.png')
     plt.close()
-
-
-
-
-
-
-
 
 
 

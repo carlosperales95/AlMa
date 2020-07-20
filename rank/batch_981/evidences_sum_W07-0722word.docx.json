@@ -1,0 +1,26 @@
+[
+    {
+        "claim_score": -0.39372964, 
+        "evidence": "Qc 2007 Association for Computational Linguistics taking advantage of the localization phenomenon of word alignment in European languages , and the efficient and exact computation of the E-step and Viterbi alignment by using a dynamic-programming approach .", 
+        "evidence_score": 0.22720386, 
+        "text": "Qc 2007 Association for Computational Linguistics taking advantage of the localization phenomenon of word alignment in European languages , and the efficient and exact computation of the E-step and Viterbi alignment by using a dynamic-programming approach ."
+    }, 
+    {
+        "claim_score": -1.8620428, 
+        "evidence": "In ( Civera and Juan , 2006 a mixture extension of IBM model 2 along with a specific dynamicprogramming decoding algorithm were proposed .", 
+        "evidence_score": 0.18314891, 
+        "text": "In ( Civera and Juan , 2006 a mixture extension of IBM model 2 along with a specific dynamicprogramming decoding algorithm were proposed ."
+    }, 
+    {
+        "claim_score": -1.6139092, 
+        "evidence": "In ( Zhao and Xing , 2006 three fairly sophisticated bayesian topical translation models , taking IBM Model 1 as a baseline model , were presented under the bilingual topic admixture model formalism .", 
+        "evidence_score": 0.13722302, 
+        "text": "In ( Zhao and Xing , 2006 three fairly sophisticated bayesian topical translation models , taking IBM Model 1 as a baseline model , were presented under the bilingual topic admixture model formalism ."
+    }, 
+    {
+        "claim_score": -0.49616586, 
+        "evidence": "3 Mixture of HMM alignment models Let us suppose that p ( x has been generated using a T-component mixture of HMM alignment models : T p ( x p ( t p ( x y t = 1 T p ( t p ( x , a y , t ) .", 
+        "evidence_score": 0.1109651, 
+        "text": "3 Mixture of HMM alignment models Let us suppose that p ( x has been generated using a T-component mixture of HMM alignment models : T p ( x p ( t p ( x y t = 1 T p ( t p ( x , a y , t ) ."
+    }
+]
