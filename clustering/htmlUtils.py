@@ -11,6 +11,13 @@ from os.path import isfile, join
 
 
 
+
+"""
+This file contains all the utilities needed to create the html output file of AlMa.
+
+"""
+
+
 def fill_query(full_content):
 
     if full_content == "":
@@ -25,7 +32,7 @@ def fill_query(full_content):
     start = template[:start_id]
     end = template[start_id+end_id:]
 
-    fp = open('./query.txt', "r")
+    fp = open('./outs/query.txt', "r")
     file = fp.read()
 
     message = "Paper results for query: <strong> (" + file + ") </strong> "
@@ -52,7 +59,7 @@ def fill_titles(full_content):
     start = template[:start_id]
     end = template[start_id+end_id:]
 
-    fp = open('./titles.txt', "r")
+    fp = open('./outs/titles.txt', "r")
     file = fp.read()
     message = "\n"
     count=0
@@ -107,7 +114,7 @@ def fill_clustering(arg_name, full_content, mentions, s_labels, titles):
         line = fp.readline()
         message = "\n"
         count=0
-        f = open('./comparison.txt', "w")
+        f = open('./outs/comparison.txt', "w")
         msg="\n"
         sent_idxed=[]
         while line:

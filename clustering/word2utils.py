@@ -505,7 +505,7 @@ def mentionRankThreshold(pointed_mentions):
 
     tris = []
     for pm in pointed_mentions:
-        if pm[1] > 1.6:
+        if pm[1] > 2:
             tris.append(pm[0])
     return tris
 

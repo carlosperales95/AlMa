@@ -25,6 +25,15 @@ from os.path import isfile, join
 
 import mpld3
 
+
+
+"""
+This file contains all the utility methods needed for the data clustering module of AlMa.
+
+"""
+
+
+
 ################# TSNE ######################
 
 

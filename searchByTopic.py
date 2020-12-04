@@ -47,9 +47,9 @@ xml_files = scisummFindXML(corpus_path, xml_folder_name)
 ###SEARCH TOPIC IN TITLE
 topic_papers = []
 topic_xml = []
-f2 = open("titles.txt", "w")
+f2 = open("outs/titles.txt", "w")
 
-f3 = open("query.txt", "w")
+f3 = open("outs/query.txt", "w")
 query = ""
 for t in topics:
     query = query + t + " "

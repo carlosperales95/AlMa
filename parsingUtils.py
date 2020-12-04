@@ -7,6 +7,11 @@ import shutil
 import re
 
 
+"""
+This file contains all the utility methods needed for the paper summarization module of AlMa.
+
+"""
+
 
 def findFigureIndex(conclusion_doubt):
 

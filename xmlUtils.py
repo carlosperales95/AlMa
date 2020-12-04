@@ -5,10 +5,13 @@ from os.path import isfile, join
 import shutil
 
 
+
+
+
 def xmlToSections(file):
 
     topic_sections_titles = []
-    
+
     if os.path.isfile(file):
         f = open(file, "r")
         xmlstring = f.read()

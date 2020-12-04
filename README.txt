@@ -1,6 +1,6 @@
 === AlMa PACKAGE ===
 
-1. Run the script searchByTopic.py and add the topic words of choose as an argument.
+1. Run the script searchByTopic.py and add the topic words of choose as arguments to the call.
 It will run through the scientific papers in the database, search for the topic words in the title and get them ready for later processing in the folder ./full_batch.
 
 2. Run the script paperSum.py, this will summarize the papers into Abstract and Conclusion

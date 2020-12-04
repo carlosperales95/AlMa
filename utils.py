@@ -4,14 +4,11 @@ from os import listdir
 from os.path import isfile, join
 import shutil
 
-#f = open("./full_batch/D11-1059word.docx.txt", "r")
-#paper =f.read()
-#indis = paper.find("Conclusion")
-#cut_end = paper.find("Acknowledgments")
-#conclusion = paper[indis:cut_end]
 
-#conclusion = "el titulo\njoeresmuyayonosequecontartepixa\n\nvamo\na\n\n\nver\nxaba\nTable 4 quenoteente\nra\nsae\n"
-#conclusion = "el titulo\nTable 4 quenoteente\n"
+"""
+This file contains the high-level utilities used by AlMa (batch/folder management, file retrieval...)
+
+"""
 
 
 

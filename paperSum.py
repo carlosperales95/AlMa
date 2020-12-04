@@ -45,7 +45,7 @@ else:
         onlyfiles.append(str(sys.argv[1]))
         dir=""
 
-filen = open("INTROS.txt", "w")
+filen = open("out/INTROS.txt", "w")
 
 for idx,file in enumerate(onlyfiles):
 
@@ -102,7 +102,7 @@ for idx,file in enumerate(onlyfiles):
 
     print("Writing .... (2/4)")
     if len(sections) > 1:
-        
+
         intro = getSection(paper_full, sections[0], sections[1])
         if intro.endswith(' 2 ') or intro.endswith(' 2.') or intro.endswith(' 2. ') or intro.endswith(' 2.\t') or intro.endswith(' 2  ') or intro.endswith(' 2\t'):
             intro = intro[:-3]
